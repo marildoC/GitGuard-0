@@ -1,0 +1,16 @@
+# config/default.yaml
+
+camera:
+  index: 0
+  width: 640
+  height: 480
+  fps: 30
+
+paths:
+  models_dir: "models"
+  logs_dir: "logs"
+  evidence_dir: "evidence"
+
+runtime:
+  use_gpu: true       # prefer GPU if available
+  save_evidence: false
