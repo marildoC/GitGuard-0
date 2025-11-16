@@ -8,7 +8,6 @@ import cv2
 from schemas import Frame
 from .camera import CameraSource
 from .dummies import (
-    DummyIdentityEngine,
     DummyEventsEngine,
     DummyAlertEngine,
 )
@@ -20,15 +19,18 @@ from ui.overlay import draw_overlay
 # Phase-1 perception engine (YOLO + OC-SORT + appearance + ring buffer)
 from perception.perception_engine import Phase1PerceptionEngine
 
+# Phase-2A: real face-based IdentityEngine
+from identity.identity_engine import FaceIdentityEngine
+
 
 def run() -> None:
     """
-    Run the GaitGuard Phase-1 pipeline.
+    Run the GaitGuard pipeline (Phase-1 + Phase-2A Face).
 
     Pipeline:
         Frame (camera) ->
         Perception (detect + track + ring buffers) ->
-        Identity (dummy) ->
+        Identity (face route + gallery) ->
         Events (dummy) ->
         Alerts (dummy) ->
         UI overlay
@@ -42,18 +44,36 @@ def run() -> None:
 
     # ---- decide device (GPU/CPU + FP16) ----
     # This is mainly for logging / future phases.
-    # The Detector inside Phase1PerceptionEngine will also auto-select CUDA if available.
+    # The Detector inside Phase1PerceptionEngine and the face route
+    # will auto-select CUDA if available.
     device, use_half = select_device(prefer_gpu=cfg.runtime.use_gpu)
     log.info("Runtime device=%s | half=%s", device, use_half)
 
     # ---- instantiate engines ----
     # Phase-1: real perception engine (YOLO + OC-SORT + appearance + ring buffer).
-    # Identity / events / alerts are still dummy.
     perception = Phase1PerceptionEngine()
 
-    identity = DummyIdentityEngine()
+    # Phase-2A: real face-based identity engine (FaceRoute + FaceGallery + temporal smoothing).
+    identity = FaceIdentityEngine()
+
+    # Events / alerts still dummy for now.
     events_engine = DummyEventsEngine()
     alert_engine = DummyAlertEngine()
+
+    # Optional warmup hooks (if implemented on these classes).
+    if hasattr(perception, "warmup"):
+        try:
+            log.info("Warming up perception engine (if supported)...")
+            perception.warmup()  # type: ignore[call-arg]
+        except Exception:
+            log.exception("Perception warmup failed")
+
+    if hasattr(identity, "warmup"):
+        try:
+            log.info("Warming up identity engine (if supported)...")
+            identity.warmup()  # type: ignore[call-arg]
+        except Exception:
+            log.exception("Identity warmup failed")
 
     # ---- camera source ----
     src = CameraSource(
@@ -65,7 +85,7 @@ def run() -> None:
     )
     src.start()
 
-    log.info("GaitGuard Phase-1 pipeline started. Press ESC to exit.")
+    log.info("GaitGuard pipeline (Phase-1 + Face 2A) started. Press ESC to exit.")
 
     frame_id = 0
     camera_id = "cam0"
@@ -95,9 +115,14 @@ def run() -> None:
             frame_id += 1
 
             # ---- full pipeline ----
+            # Perception: detect + track
             tracks = perception.process_frame(frame)
+
+            # Identity: face route + gallery -> IdSignals -> IdentityDecision
             signals = identity.update_signals(frame, tracks)
             decisions = identity.decide(signals)
+
+            # Events / alerts (still dummy)
             events = events_engine.update(frame, tracks, decisions)
             alerts = alert_engine.update(frame, events, decisions)
 
@@ -115,7 +140,7 @@ def run() -> None:
                     len(alerts),
                 )
 
-            cv2.imshow("GaitGuard 1.0 - Phase 1", display_img)
+            cv2.imshow("GaitGuard 1.0 - Phase 1 + Face 2A", display_img)
 
             # ESC to exit
             if cv2.waitKey(1) & 0xFF == 27:
@@ -124,7 +149,7 @@ def run() -> None:
     finally:
         src.stop()
         cv2.destroyAllWindows()
-        log.info("GaitGuard Phase-1 pipeline stopped.")
+        log.info("GaitGuard pipeline stopped.")
 
 
 if __name__ == "__main__":

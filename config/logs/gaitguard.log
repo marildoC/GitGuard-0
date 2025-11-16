@@ -2101,3 +2101,938 @@
 2025-11-14 22:51:55,157 [INFO] gaitguard.main: FPS=18.4 | tracks=1 | alerts=0
 2025-11-14 22:51:57,077 [INFO] gaitguard.main: FPS=18.3 | tracks=1 | alerts=0
 2025-11-14 22:51:58,774 [INFO] gaitguard.main: GaitGuard Phase-1 pipeline stopped.
+2025-11-14 23:04:43,007 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-14 23:04:43,007 [INFO] gaitguard.main: Runtime device=cuda | half=True
+2025-11-14 23:04:43,007 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cuda'
+2025-11-14 23:04:43,930 [INFO] perception.detector: YOLO model loaded in FP16 on CUDA
+2025-11-14 23:04:43,930 [INFO] perception.detector: YOLO model ready
+2025-11-14 23:04:43,930 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-14 23:04:48,822 [INFO] gaitguard.main: GaitGuard Phase-1 pipeline started. Press ESC to exit.
+2025-11-14 23:04:50,482 [INFO] gaitguard.main: FPS=18.5 | tracks=3 | alerts=0
+2025-11-14 23:04:51,556 [INFO] gaitguard.main: FPS=22.2 | tracks=2 | alerts=0
+2025-11-14 23:04:52,606 [INFO] gaitguard.main: FPS=24.0 | tracks=1 | alerts=0
+2025-11-14 23:04:53,880 [INFO] gaitguard.main: FPS=23.9 | tracks=1 | alerts=0
+2025-11-14 23:04:55,493 [INFO] gaitguard.main: FPS=22.6 | tracks=2 | alerts=0
+2025-11-14 23:04:57,096 [INFO] gaitguard.main: FPS=21.8 | tracks=2 | alerts=0
+2025-11-14 23:04:58,232 [INFO] gaitguard.main: FPS=22.4 | tracks=3 | alerts=0
+2025-11-14 23:04:59,260 [INFO] gaitguard.main: FPS=23.1 | tracks=3 | alerts=0
+2025-11-14 23:05:00,409 [INFO] gaitguard.main: FPS=23.4 | tracks=2 | alerts=0
+2025-11-14 23:05:01,481 [INFO] gaitguard.main: FPS=23.8 | tracks=2 | alerts=0
+2025-11-14 23:05:02,580 [INFO] gaitguard.main: FPS=24.0 | tracks=2 | alerts=0
+2025-11-14 23:05:03,768 [INFO] gaitguard.main: FPS=24.1 | tracks=2 | alerts=0
+2025-11-14 23:05:04,873 [INFO] gaitguard.main: FPS=24.4 | tracks=2 | alerts=0
+2025-11-14 23:05:05,888 [INFO] gaitguard.main: FPS=24.7 | tracks=3 | alerts=0
+2025-11-14 23:05:07,000 [INFO] gaitguard.main: FPS=24.8 | tracks=3 | alerts=0
+2025-11-14 23:05:08,060 [INFO] gaitguard.main: FPS=25.0 | tracks=2 | alerts=0
+2025-11-14 23:05:09,085 [INFO] gaitguard.main: FPS=25.2 | tracks=3 | alerts=0
+2025-11-14 23:05:10,109 [INFO] gaitguard.main: FPS=25.4 | tracks=2 | alerts=0
+2025-11-14 23:05:11,184 [INFO] gaitguard.main: FPS=25.5 | tracks=3 | alerts=0
+2025-11-14 23:05:12,219 [INFO] gaitguard.main: FPS=25.7 | tracks=4 | alerts=0
+2025-11-14 23:05:13,247 [INFO] gaitguard.main: FPS=25.8 | tracks=2 | alerts=0
+2025-11-14 23:05:14,315 [INFO] gaitguard.main: FPS=25.9 | tracks=2 | alerts=0
+2025-11-14 23:05:15,377 [INFO] gaitguard.main: FPS=26.0 | tracks=2 | alerts=0
+2025-11-14 23:05:16,422 [INFO] gaitguard.main: FPS=26.1 | tracks=2 | alerts=0
+2025-11-14 23:05:17,523 [INFO] gaitguard.main: FPS=26.2 | tracks=2 | alerts=0
+2025-11-14 23:05:18,671 [INFO] gaitguard.main: FPS=26.2 | tracks=3 | alerts=0
+2025-11-14 23:05:19,848 [INFO] gaitguard.main: FPS=26.1 | tracks=2 | alerts=0
+2025-11-14 23:05:20,930 [INFO] gaitguard.main: FPS=26.2 | tracks=2 | alerts=0
+2025-11-14 23:05:22,003 [INFO] gaitguard.main: FPS=26.2 | tracks=2 | alerts=0
+2025-11-14 23:05:23,069 [INFO] gaitguard.main: FPS=26.3 | tracks=2 | alerts=0
+2025-11-14 23:05:24,183 [INFO] gaitguard.main: FPS=26.3 | tracks=3 | alerts=0
+2025-11-14 23:05:25,291 [INFO] gaitguard.main: FPS=26.3 | tracks=3 | alerts=0
+2025-11-14 23:05:26,357 [INFO] gaitguard.main: FPS=26.4 | tracks=2 | alerts=0
+2025-11-14 23:05:27,419 [INFO] gaitguard.main: FPS=26.5 | tracks=3 | alerts=0
+2025-11-14 23:05:28,718 [INFO] gaitguard.main: FPS=26.3 | tracks=2 | alerts=0
+2025-11-14 23:05:29,787 [INFO] gaitguard.main: FPS=26.4 | tracks=2 | alerts=0
+2025-11-14 23:05:30,832 [INFO] gaitguard.main: FPS=26.4 | tracks=1 | alerts=0
+2025-11-14 23:05:31,858 [INFO] gaitguard.main: FPS=26.5 | tracks=1 | alerts=0
+2025-11-14 23:05:32,883 [INFO] gaitguard.main: FPS=26.6 | tracks=1 | alerts=0
+2025-11-14 23:05:33,937 [INFO] gaitguard.main: FPS=26.6 | tracks=1 | alerts=0
+2025-11-14 23:05:34,997 [INFO] gaitguard.main: FPS=26.7 | tracks=1 | alerts=0
+2025-11-14 23:05:35,966 [INFO] gaitguard.main: FPS=26.7 | tracks=1 | alerts=0
+2025-11-14 23:05:36,958 [INFO] gaitguard.main: FPS=26.8 | tracks=2 | alerts=0
+2025-11-14 23:05:37,958 [INFO] gaitguard.main: FPS=26.9 | tracks=2 | alerts=0
+2025-11-14 23:05:38,976 [INFO] gaitguard.main: FPS=26.9 | tracks=2 | alerts=0
+2025-11-14 23:05:40,002 [INFO] gaitguard.main: FPS=27.0 | tracks=1 | alerts=0
+2025-11-14 23:05:41,578 [INFO] gaitguard.main: FPS=26.7 | tracks=1 | alerts=0
+2025-11-14 23:05:43,372 [INFO] gaitguard.main: FPS=26.4 | tracks=1 | alerts=0
+2025-11-14 23:05:45,185 [INFO] gaitguard.main: FPS=26.1 | tracks=1 | alerts=0
+2025-11-14 23:05:46,992 [INFO] gaitguard.main: FPS=25.8 | tracks=2 | alerts=0
+2025-11-14 23:05:48,794 [INFO] gaitguard.main: FPS=25.5 | tracks=2 | alerts=0
+2025-11-14 23:05:50,601 [INFO] gaitguard.main: FPS=25.3 | tracks=1 | alerts=0
+2025-11-14 23:05:52,401 [INFO] gaitguard.main: FPS=25.0 | tracks=1 | alerts=0
+2025-11-14 23:05:54,207 [INFO] gaitguard.main: FPS=24.8 | tracks=1 | alerts=0
+2025-11-14 23:05:55,953 [INFO] gaitguard.main: FPS=24.6 | tracks=1 | alerts=0
+2025-11-14 23:05:57,770 [INFO] gaitguard.main: FPS=24.4 | tracks=1 | alerts=0
+2025-11-14 23:05:59,574 [INFO] gaitguard.main: FPS=24.2 | tracks=1 | alerts=0
+2025-11-14 23:06:01,373 [INFO] gaitguard.main: FPS=24.0 | tracks=1 | alerts=0
+2025-11-14 23:06:03,168 [INFO] gaitguard.main: FPS=23.8 | tracks=1 | alerts=0
+2025-11-14 23:06:04,528 [INFO] gaitguard.main: FPS=23.8 | tracks=1 | alerts=0
+2025-11-14 23:06:05,569 [INFO] gaitguard.main: FPS=23.9 | tracks=1 | alerts=0
+2025-11-14 23:06:06,600 [INFO] gaitguard.main: FPS=23.9 | tracks=1 | alerts=0
+2025-11-14 23:06:07,598 [INFO] gaitguard.main: FPS=24.0 | tracks=1 | alerts=0
+2025-11-14 23:06:08,610 [INFO] gaitguard.main: FPS=24.1 | tracks=1 | alerts=0
+2025-11-14 23:06:09,611 [INFO] gaitguard.main: FPS=24.1 | tracks=1 | alerts=0
+2025-11-14 23:06:10,608 [INFO] gaitguard.main: FPS=24.2 | tracks=1 | alerts=0
+2025-11-14 23:06:11,632 [INFO] gaitguard.main: FPS=24.3 | tracks=1 | alerts=0
+2025-11-14 23:06:12,656 [INFO] gaitguard.main: FPS=24.3 | tracks=1 | alerts=0
+2025-11-14 23:06:13,754 [INFO] gaitguard.main: FPS=24.4 | tracks=1 | alerts=0
+2025-11-14 23:06:14,787 [INFO] gaitguard.main: FPS=24.4 | tracks=1 | alerts=0
+2025-11-14 23:06:15,804 [INFO] gaitguard.main: FPS=24.5 | tracks=1 | alerts=0
+2025-11-14 23:06:16,815 [INFO] gaitguard.main: FPS=24.6 | tracks=2 | alerts=0
+2025-11-14 23:06:18,014 [INFO] gaitguard.main: FPS=24.6 | tracks=1 | alerts=0
+2025-11-14 23:06:20,521 [INFO] gaitguard.main: FPS=24.2 | tracks=1 | alerts=0
+2025-11-14 23:06:22,865 [INFO] gaitguard.main: FPS=23.9 | tracks=1 | alerts=0
+2025-11-14 23:06:24,784 [INFO] gaitguard.main: FPS=23.8 | tracks=1 | alerts=0
+2025-11-14 23:06:26,589 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-14 23:06:27,745 [INFO] gaitguard.main: FPS=23.7 | tracks=1 | alerts=0
+2025-11-14 23:06:28,796 [INFO] gaitguard.main: FPS=23.7 | tracks=1 | alerts=0
+2025-11-14 23:06:30,065 [INFO] gaitguard.main: FPS=23.7 | tracks=1 | alerts=0
+2025-11-14 23:06:31,918 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-14 23:06:33,743 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-14 23:06:34,813 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-14 23:06:36,097 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-14 23:06:37,133 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-14 23:06:38,255 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-14 23:06:39,266 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-14 23:06:40,305 [INFO] gaitguard.main: FPS=23.7 | tracks=1 | alerts=0
+2025-11-14 23:06:41,515 [INFO] gaitguard.main: GaitGuard Phase-1 pipeline stopped.
+2025-11-15 15:49:32,062 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 15:49:32,062 [INFO] gaitguard.main: Runtime device=cuda | half=True
+2025-11-15 15:49:32,077 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cuda'
+2025-11-15 15:49:34,564 [INFO] perception.detector: YOLO model loaded in FP16 on CUDA
+2025-11-15 15:49:34,564 [INFO] perception.detector: YOLO model ready
+2025-11-15 15:49:34,564 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-15 15:49:34,564 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 15:49:34,564 [INFO] face.config: FaceConfig initialised | device=cuda half=True | gallery=C:\Users\ildi\Desktop\GaitGuard\data\face_gallery.enc
+2025-11-15 15:49:34,564 [INFO] face.detector_align: Initialising FaceDetectorAligner with model=retinaface_r50_v1 ctx_id=0 det_size=(640, 640)
+2025-11-15 16:25:58,487 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 16:25:58,487 [INFO] gaitguard.main: Runtime device=cuda | half=True
+2025-11-15 16:25:58,487 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cuda'
+2025-11-15 16:25:59,495 [INFO] perception.detector: YOLO model loaded in FP16 on CUDA
+2025-11-15 16:25:59,495 [INFO] perception.detector: YOLO model ready
+2025-11-15 16:25:59,495 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-15 16:25:59,495 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 16:25:59,505 [INFO] face.config: FaceConfig initialised | device=cuda half=True | gallery=C:\Users\ildi\Desktop\GaitGuard\data\face_gallery.enc
+2025-11-15 16:25:59,505 [INFO] face.detector_align: Initialising FaceDetectorAligner with model=retinaface_r50_v1 ctx_id=0 det_size=(640, 640)
+2025-11-15 18:20:24,153 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 18:20:24,153 [INFO] gaitguard.main: Runtime device=cuda | half=True
+2025-11-15 18:20:24,153 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cuda'
+2025-11-15 18:20:25,288 [INFO] perception.detector: YOLO model loaded in FP16 on CUDA
+2025-11-15 18:20:25,288 [INFO] perception.detector: YOLO model ready
+2025-11-15 18:20:25,289 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-15 18:20:25,289 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 18:20:25,289 [INFO] face.config: FaceConfig initialised | device=cuda half=True | gallery=C:\Users\ildi\Desktop\GaitGuard\data\face_gallery.enc
+2025-11-15 18:20:25,289 [INFO] face.detector_align: Initialising FaceDetectorAligner with model=retinaface_r50_v1 ctx_id=0 det_size=(640, 640)
+2025-11-15 18:32:42,740 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 18:32:42,740 [INFO] gaitguard.main: Runtime device=cuda | half=True
+2025-11-15 18:32:42,740 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cuda'
+2025-11-15 18:32:43,761 [INFO] perception.detector: YOLO model loaded in FP16 on CUDA
+2025-11-15 18:32:43,762 [INFO] perception.detector: YOLO model ready
+2025-11-15 18:32:43,763 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-15 18:32:43,763 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 18:32:43,765 [INFO] face.config: FaceConfig initialised | device=cuda half=True | gallery=C:\Users\ildi\Desktop\GaitGuard\data\face_gallery.enc
+2025-11-15 18:32:43,765 [INFO] face.detector_align: Initialising FaceDetectorAligner with model=retinaface_r50_v1 ctx_id=0 det_size=(640, 640)
+2025-11-15 20:20:52,725 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 20:20:52,727 [INFO] gaitguard.main: Runtime device=cuda | half=True
+2025-11-15 20:20:52,727 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cuda'
+2025-11-15 20:20:53,745 [INFO] perception.detector: YOLO model loaded in FP16 on CUDA
+2025-11-15 20:20:53,745 [INFO] perception.detector: YOLO model ready
+2025-11-15 20:20:53,745 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-15 20:20:53,745 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 20:20:53,748 [INFO] face.config: FaceConfig initialised | device=cuda half=True | gallery=C:\Users\ildi\Desktop\GaitGuard\data\face_gallery.enc
+2025-11-15 20:20:53,748 [INFO] face.detector_align: Initialising FaceDetectorAligner with model=retinaface_r50_v1 ctx_id=0 det_size=(640, 640)
+2025-11-15 21:33:27,028 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 21:33:27,028 [INFO] gaitguard.main: Runtime device=cuda | half=True
+2025-11-15 21:33:27,028 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cuda'
+2025-11-15 21:33:28,075 [INFO] perception.detector: YOLO model loaded in FP16 on CUDA
+2025-11-15 21:33:28,075 [INFO] perception.detector: YOLO model ready
+2025-11-15 21:33:28,087 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-15 21:33:28,087 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 21:33:28,089 [INFO] face.config: FaceConfig initialised | device=cuda half=True | gallery=C:\Users\ildi\Desktop\GaitGuard\data\face_gallery.enc
+2025-11-15 21:33:28,090 [INFO] face.detector_align: Initialising FaceDetectorAligner with pack=buffalo_l ctx_id=0 det_size=(640, 640) providers=['CUDAExecutionProvider', 'CPUExecutionProvider']
+2025-11-15 21:34:42,158 [INFO] face.route: FaceRoute initialised | lookback=2.0s max_entries=30 every_n_frames=5
+2025-11-15 21:34:42,158 [INFO] identity.identity_engine: FaceIdentityEngine initialised | strong_match_dist=0.900
+2025-11-15 21:34:46,116 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Face 2A) started. Press ESC to exit.
+2025-11-15 21:34:48,316 [INFO] gaitguard.main: FPS=13.9 | tracks=0 | alerts=0
+2025-11-15 21:34:49,547 [INFO] gaitguard.main: FPS=17.7 | tracks=0 | alerts=0
+2025-11-15 21:34:50,704 [INFO] gaitguard.main: FPS=19.8 | tracks=0 | alerts=0
+2025-11-15 21:34:51,844 [INFO] gaitguard.main: FPS=21.1 | tracks=0 | alerts=0
+2025-11-15 21:34:52,826 [INFO] gaitguard.main: FPS=22.4 | tracks=0 | alerts=0
+2025-11-15 21:34:57,021 [INFO] gaitguard.main: FPS=16.5 | tracks=1 | alerts=0
+2025-11-15 21:34:58,396 [INFO] gaitguard.main: FPS=17.1 | tracks=1 | alerts=0
+2025-11-15 21:34:59,795 [INFO] gaitguard.main: FPS=17.6 | tracks=1 | alerts=0
+2025-11-15 21:35:01,197 [INFO] gaitguard.main: FPS=17.9 | tracks=2 | alerts=0
+2025-11-15 21:35:02,903 [INFO] gaitguard.main: FPS=18.0 | tracks=2 | alerts=0
+2025-11-15 21:35:04,835 [INFO] gaitguard.main: FPS=17.8 | tracks=2 | alerts=0
+2025-11-15 21:35:06,849 [INFO] gaitguard.main: FPS=17.4 | tracks=2 | alerts=0
+2025-11-15 21:35:08,658 [INFO] gaitguard.main: FPS=17.4 | tracks=1 | alerts=0
+2025-11-15 21:35:10,445 [INFO] gaitguard.main: FPS=17.3 | tracks=2 | alerts=0
+2025-11-15 21:35:12,291 [INFO] gaitguard.main: FPS=17.3 | tracks=3 | alerts=0
+2025-11-15 21:35:14,501 [INFO] gaitguard.main: FPS=16.9 | tracks=1 | alerts=0
+2025-11-15 21:35:16,147 [INFO] gaitguard.main: FPS=17.0 | tracks=1 | alerts=0
+2025-11-15 21:35:17,460 [INFO] gaitguard.main: FPS=17.2 | tracks=1 | alerts=0
+2025-11-15 21:35:18,873 [INFO] gaitguard.main: FPS=17.4 | tracks=1 | alerts=0
+2025-11-15 21:35:20,215 [INFO] gaitguard.main: FPS=17.6 | tracks=1 | alerts=0
+2025-11-15 21:35:21,294 [INFO] gaitguard.main: FPS=17.9 | tracks=0 | alerts=0
+2025-11-15 21:35:22,453 [INFO] gaitguard.main: FPS=18.2 | tracks=1 | alerts=0
+2025-11-15 21:35:23,651 [INFO] gaitguard.main: FPS=18.4 | tracks=1 | alerts=0
+2025-11-15 21:35:24,822 [INFO] gaitguard.main: FPS=18.6 | tracks=1 | alerts=0
+2025-11-15 21:35:26,294 [INFO] gaitguard.main: FPS=18.7 | tracks=1 | alerts=0
+2025-11-15 21:35:27,649 [INFO] gaitguard.main: FPS=18.8 | tracks=1 | alerts=0
+2025-11-15 21:35:30,081 [INFO] gaitguard.main: FPS=18.4 | tracks=1 | alerts=0
+2025-11-15 21:35:31,896 [INFO] gaitguard.main: FPS=18.4 | tracks=1 | alerts=0
+2025-11-15 21:35:33,701 [INFO] gaitguard.main: FPS=18.3 | tracks=1 | alerts=0
+2025-11-15 21:35:35,515 [INFO] gaitguard.main: FPS=18.2 | tracks=1 | alerts=0
+2025-11-15 21:35:37,317 [INFO] gaitguard.main: FPS=18.2 | tracks=1 | alerts=0
+2025-11-15 21:35:39,045 [INFO] gaitguard.main: FPS=18.1 | tracks=1 | alerts=0
+2025-11-15 21:35:40,246 [INFO] gaitguard.main: FPS=18.3 | tracks=1 | alerts=0
+2025-11-15 21:35:41,448 [INFO] gaitguard.main: FPS=18.4 | tracks=1 | alerts=0
+2025-11-15 21:35:42,720 [INFO] gaitguard.main: FPS=18.6 | tracks=1 | alerts=0
+2025-11-15 21:35:43,986 [INFO] gaitguard.main: FPS=18.7 | tracks=1 | alerts=0
+2025-11-15 21:35:45,298 [INFO] gaitguard.main: FPS=18.8 | tracks=1 | alerts=0
+2025-11-15 21:35:46,119 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-15 21:37:58,261 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 21:37:58,270 [INFO] gaitguard.main: Runtime device=cuda | half=True
+2025-11-15 21:37:58,270 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cuda'
+2025-11-15 21:37:59,415 [INFO] perception.detector: YOLO model loaded in FP16 on CUDA
+2025-11-15 21:37:59,415 [INFO] perception.detector: YOLO model ready
+2025-11-15 21:37:59,415 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-15 21:37:59,415 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 21:37:59,416 [INFO] face.config: FaceConfig initialised | device=cuda half=True | gallery=C:\Users\ildi\Desktop\GaitGuard\data\face_gallery.enc
+2025-11-15 21:37:59,416 [INFO] face.detector_align: Initialising FaceDetectorAligner with pack=buffalo_l ctx_id=0 det_size=(640, 640) providers=['CUDAExecutionProvider', 'CPUExecutionProvider']
+2025-11-15 21:38:00,507 [INFO] face.route: FaceRoute initialised | lookback=2.0s max_entries=30 every_n_frames=5
+2025-11-15 21:38:00,509 [INFO] identity.identity_engine: FaceIdentityEngine initialised | strong_match_dist=0.900
+2025-11-15 21:38:03,402 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Face 2A) started. Press ESC to exit.
+2025-11-15 21:38:41,641 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-15 21:38:56,751 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 21:38:56,751 [INFO] gaitguard.main: Runtime device=cuda | half=True
+2025-11-15 21:38:56,751 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cuda'
+2025-11-15 21:38:57,775 [INFO] perception.detector: YOLO model loaded in FP16 on CUDA
+2025-11-15 21:38:57,776 [INFO] perception.detector: YOLO model ready
+2025-11-15 21:38:57,778 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-15 21:38:57,778 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 21:38:57,779 [INFO] face.config: FaceConfig initialised | device=cuda half=True | gallery=C:\Users\ildi\Desktop\GaitGuard\data\face_gallery.enc
+2025-11-15 21:38:57,780 [INFO] face.detector_align: Initialising FaceDetectorAligner with pack=buffalo_l ctx_id=0 det_size=(640, 640) providers=['CUDAExecutionProvider', 'CPUExecutionProvider']
+2025-11-15 21:38:58,726 [INFO] face.route: FaceRoute initialised | lookback=2.0s max_entries=30 every_n_frames=5
+2025-11-15 21:38:58,726 [INFO] identity.identity_engine: FaceIdentityEngine initialised | strong_match_dist=0.900
+2025-11-15 21:39:02,403 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Face 2A) started. Press ESC to exit.
+2025-11-15 21:39:05,177 [INFO] gaitguard.main: FPS=10.9 | tracks=1 | alerts=0
+2025-11-15 21:39:06,637 [INFO] gaitguard.main: FPS=14.3 | tracks=1 | alerts=0
+2025-11-15 21:39:08,045 [INFO] gaitguard.main: FPS=16.0 | tracks=1 | alerts=0
+2025-11-15 21:39:09,799 [INFO] gaitguard.main: FPS=16.3 | tracks=1 | alerts=0
+2025-11-15 21:39:11,692 [INFO] gaitguard.main: FPS=16.2 | tracks=1 | alerts=0
+2025-11-15 21:39:13,518 [INFO] gaitguard.main: FPS=16.2 | tracks=1 | alerts=0
+2025-11-15 21:39:15,332 [INFO] gaitguard.main: FPS=16.3 | tracks=1 | alerts=0
+2025-11-15 21:39:17,157 [INFO] gaitguard.main: FPS=16.3 | tracks=1 | alerts=0
+2025-11-15 21:39:19,000 [INFO] gaitguard.main: FPS=16.3 | tracks=1 | alerts=0
+2025-11-15 21:39:20,788 [INFO] gaitguard.main: FPS=16.3 | tracks=1 | alerts=0
+2025-11-15 21:39:22,655 [INFO] gaitguard.main: FPS=16.3 | tracks=1 | alerts=0
+2025-11-15 21:39:24,518 [INFO] gaitguard.main: FPS=16.3 | tracks=1 | alerts=0
+2025-11-15 21:39:26,336 [INFO] gaitguard.main: FPS=16.3 | tracks=1 | alerts=0
+2025-11-15 21:39:28,166 [INFO] gaitguard.main: FPS=16.3 | tracks=2 | alerts=0
+2025-11-15 21:39:30,172 [INFO] gaitguard.main: FPS=16.2 | tracks=2 | alerts=0
+2025-11-15 21:39:32,056 [INFO] gaitguard.main: FPS=16.2 | tracks=3 | alerts=0
+2025-11-15 21:39:34,126 [INFO] gaitguard.main: FPS=16.1 | tracks=3 | alerts=0
+2025-11-15 21:39:36,090 [INFO] gaitguard.main: FPS=16.0 | tracks=3 | alerts=0
+2025-11-15 21:39:38,127 [INFO] gaitguard.main: FPS=16.0 | tracks=1 | alerts=0
+2025-11-15 21:39:39,969 [INFO] gaitguard.main: FPS=16.0 | tracks=1 | alerts=0
+2025-11-15 21:39:41,961 [INFO] gaitguard.main: FPS=15.9 | tracks=1 | alerts=0
+2025-11-15 21:39:43,933 [INFO] gaitguard.main: FPS=15.9 | tracks=1 | alerts=0
+2025-11-15 21:39:45,837 [INFO] gaitguard.main: FPS=15.9 | tracks=1 | alerts=0
+2025-11-15 21:39:47,805 [INFO] gaitguard.main: FPS=15.9 | tracks=1 | alerts=0
+2025-11-15 21:39:49,721 [INFO] gaitguard.main: FPS=15.9 | tracks=1 | alerts=0
+2025-11-15 21:39:51,574 [INFO] gaitguard.main: FPS=15.9 | tracks=1 | alerts=0
+2025-11-15 21:39:53,374 [INFO] gaitguard.main: FPS=15.9 | tracks=1 | alerts=0
+2025-11-15 21:39:55,190 [INFO] gaitguard.main: FPS=15.9 | tracks=1 | alerts=0
+2025-11-15 21:39:57,071 [INFO] gaitguard.main: FPS=15.9 | tracks=1 | alerts=0
+2025-11-15 21:39:58,868 [INFO] gaitguard.main: FPS=15.9 | tracks=1 | alerts=0
+2025-11-15 21:40:00,680 [INFO] gaitguard.main: FPS=16.0 | tracks=1 | alerts=0
+2025-11-15 21:40:02,475 [INFO] gaitguard.main: FPS=16.0 | tracks=1 | alerts=0
+2025-11-15 21:40:04,384 [INFO] gaitguard.main: FPS=16.0 | tracks=1 | alerts=0
+2025-11-15 21:40:05,263 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-15 21:43:38,140 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 21:43:38,140 [INFO] gaitguard.main: Runtime device=cuda | half=True
+2025-11-15 21:43:38,140 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cuda'
+2025-11-15 21:43:39,193 [INFO] perception.detector: YOLO model loaded in FP16 on CUDA
+2025-11-15 21:43:39,193 [INFO] perception.detector: YOLO model ready
+2025-11-15 21:43:39,193 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-15 21:43:39,195 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 21:43:39,196 [INFO] face.config: FaceConfig initialised | device=cuda half=True | gallery=C:\Users\ildi\Desktop\GaitGuard\data\face_gallery.enc
+2025-11-15 21:43:39,196 [INFO] face.detector_align: Initialising FaceDetectorAligner with pack=buffalo_l ctx_id=0 det_size=(640, 640) providers=['CUDAExecutionProvider', 'CPUExecutionProvider']
+2025-11-15 21:43:40,131 [INFO] face.route: FaceRoute initialised | lookback=2.0s max_entries=30 every_n_frames=5
+2025-11-15 21:43:40,131 [INFO] identity.identity_engine: FaceIdentityEngine initialised | strong_match_dist=0.900
+2025-11-15 21:43:45,210 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Face 2A) started. Press ESC to exit.
+2025-11-15 21:43:47,319 [INFO] gaitguard.main: FPS=14.5 | tracks=1 | alerts=0
+2025-11-15 21:43:49,058 [INFO] gaitguard.main: FPS=15.7 | tracks=1 | alerts=0
+2025-11-15 21:43:50,456 [INFO] gaitguard.main: FPS=17.3 | tracks=1 | alerts=0
+2025-11-15 21:43:51,867 [INFO] gaitguard.main: FPS=18.1 | tracks=1 | alerts=0
+2025-11-15 21:43:53,181 [INFO] gaitguard.main: FPS=18.9 | tracks=1 | alerts=0
+2025-11-15 21:43:54,549 [INFO] gaitguard.main: FPS=19.3 | tracks=1 | alerts=0
+2025-11-15 21:43:55,824 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
+2025-11-15 21:43:57,181 [INFO] gaitguard.main: FPS=20.1 | tracks=1 | alerts=0
+2025-11-15 21:43:58,374 [INFO] gaitguard.main: FPS=20.6 | tracks=1 | alerts=0
+2025-11-15 21:43:59,712 [INFO] gaitguard.main: FPS=20.7 | tracks=1 | alerts=0
+2025-11-15 21:44:01,056 [INFO] gaitguard.main: FPS=20.9 | tracks=1 | alerts=0
+2025-11-15 21:44:02,299 [INFO] gaitguard.main: FPS=21.1 | tracks=1 | alerts=0
+2025-11-15 21:44:03,776 [INFO] gaitguard.main: FPS=21.0 | tracks=1 | alerts=0
+2025-11-15 21:44:05,320 [INFO] gaitguard.main: FPS=20.9 | tracks=1 | alerts=0
+2025-11-15 21:44:06,931 [INFO] gaitguard.main: FPS=20.7 | tracks=1 | alerts=0
+2025-11-15 21:44:08,669 [INFO] gaitguard.main: FPS=20.5 | tracks=1 | alerts=0
+2025-11-15 21:44:10,468 [INFO] gaitguard.main: FPS=20.2 | tracks=1 | alerts=0
+2025-11-15 21:44:12,328 [INFO] gaitguard.main: FPS=19.9 | tracks=1 | alerts=0
+2025-11-15 21:44:16,886 [INFO] gaitguard.main: FPS=18.0 | tracks=1 | alerts=0
+2025-11-15 21:44:18,679 [INFO] gaitguard.main: FPS=17.9 | tracks=1 | alerts=0
+2025-11-15 21:44:20,507 [INFO] gaitguard.main: FPS=17.9 | tracks=1 | alerts=0
+2025-11-15 21:44:22,347 [INFO] gaitguard.main: FPS=17.8 | tracks=1 | alerts=0
+2025-11-15 21:44:24,096 [INFO] gaitguard.main: FPS=17.8 | tracks=1 | alerts=0
+2025-11-15 21:44:25,721 [INFO] gaitguard.main: FPS=17.8 | tracks=1 | alerts=0
+2025-11-15 21:44:27,522 [INFO] gaitguard.main: FPS=17.7 | tracks=1 | alerts=0
+2025-11-15 21:44:29,388 [INFO] gaitguard.main: FPS=17.7 | tracks=1 | alerts=0
+2025-11-15 21:44:31,472 [INFO] gaitguard.main: FPS=17.5 | tracks=1 | alerts=0
+2025-11-15 21:44:33,644 [INFO] gaitguard.main: FPS=17.4 | tracks=1 | alerts=0
+2025-11-15 21:44:35,735 [INFO] gaitguard.main: FPS=17.2 | tracks=1 | alerts=0
+2025-11-15 21:44:37,754 [INFO] gaitguard.main: FPS=17.1 | tracks=1 | alerts=0
+2025-11-15 21:44:39,869 [INFO] gaitguard.main: FPS=17.0 | tracks=1 | alerts=0
+2025-11-15 21:44:41,888 [INFO] gaitguard.main: FPS=16.9 | tracks=1 | alerts=0
+2025-11-15 21:44:44,016 [INFO] gaitguard.main: FPS=16.8 | tracks=1 | alerts=0
+2025-11-15 21:44:46,033 [INFO] gaitguard.main: FPS=16.8 | tracks=1 | alerts=0
+2025-11-15 21:44:48,114 [INFO] gaitguard.main: FPS=16.7 | tracks=1 | alerts=0
+2025-11-15 21:44:50,228 [INFO] gaitguard.main: FPS=16.6 | tracks=1 | alerts=0
+2025-11-15 21:44:52,301 [INFO] gaitguard.main: FPS=16.6 | tracks=1 | alerts=0
+2025-11-15 21:44:54,346 [INFO] gaitguard.main: FPS=16.5 | tracks=1 | alerts=0
+2025-11-15 21:44:56,392 [INFO] gaitguard.main: FPS=16.4 | tracks=1 | alerts=0
+2025-11-15 21:44:58,271 [INFO] gaitguard.main: FPS=16.4 | tracks=1 | alerts=0
+2025-11-15 21:45:00,310 [INFO] gaitguard.main: FPS=16.4 | tracks=1 | alerts=0
+2025-11-15 21:45:02,351 [INFO] gaitguard.main: FPS=16.3 | tracks=1 | alerts=0
+2025-11-15 21:45:04,399 [INFO] gaitguard.main: FPS=16.3 | tracks=1 | alerts=0
+2025-11-15 21:45:06,521 [INFO] gaitguard.main: FPS=16.2 | tracks=1 | alerts=0
+2025-11-15 21:45:08,678 [INFO] gaitguard.main: FPS=16.2 | tracks=1 | alerts=0
+2025-11-15 21:45:10,761 [INFO] gaitguard.main: FPS=16.1 | tracks=1 | alerts=0
+2025-11-15 21:45:12,875 [INFO] gaitguard.main: FPS=16.1 | tracks=1 | alerts=0
+2025-11-15 21:45:14,908 [INFO] gaitguard.main: FPS=16.1 | tracks=1 | alerts=0
+2025-11-15 21:45:16,931 [INFO] gaitguard.main: FPS=16.0 | tracks=1 | alerts=0
+2025-11-15 21:45:19,068 [INFO] gaitguard.main: FPS=16.0 | tracks=1 | alerts=0
+2025-11-15 21:45:21,224 [INFO] gaitguard.main: FPS=15.9 | tracks=1 | alerts=0
+2025-11-15 21:45:23,224 [INFO] gaitguard.main: FPS=15.9 | tracks=1 | alerts=0
+2025-11-15 21:45:25,244 [INFO] gaitguard.main: FPS=15.9 | tracks=1 | alerts=0
+2025-11-15 21:45:27,269 [INFO] gaitguard.main: FPS=15.9 | tracks=1 | alerts=0
+2025-11-15 21:45:29,348 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:45:31,445 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:45:33,517 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:45:35,679 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:45:37,539 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:45:39,428 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:45:41,334 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:45:43,242 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:45:45,090 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:45:46,948 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:45:48,835 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:45:50,718 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:45:52,615 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:45:54,520 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:45:56,367 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:45:58,257 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:46:00,100 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:46:01,976 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:46:03,863 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:46:05,757 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:46:07,549 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:46:09,400 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:46:11,458 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:46:13,627 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:46:15,713 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-11-15 21:46:17,759 [INFO] gaitguard.main: FPS=15.7 | tracks=1 | alerts=0
+2025-11-15 21:46:19,818 [INFO] gaitguard.main: FPS=15.7 | tracks=1 | alerts=0
+2025-11-15 21:46:22,016 [INFO] gaitguard.main: FPS=15.7 | tracks=1 | alerts=0
+2025-11-15 21:46:24,011 [INFO] gaitguard.main: FPS=15.7 | tracks=1 | alerts=0
+2025-11-15 21:46:26,079 [INFO] gaitguard.main: FPS=15.7 | tracks=1 | alerts=0
+2025-11-15 21:46:28,245 [INFO] gaitguard.main: FPS=15.6 | tracks=1 | alerts=0
+2025-11-15 21:46:30,354 [INFO] gaitguard.main: FPS=15.6 | tracks=1 | alerts=0
+2025-11-15 21:46:32,305 [INFO] gaitguard.main: FPS=15.6 | tracks=1 | alerts=0
+2025-11-15 21:46:34,430 [INFO] gaitguard.main: FPS=15.6 | tracks=1 | alerts=0
+2025-11-15 21:46:36,552 [INFO] gaitguard.main: FPS=15.6 | tracks=1 | alerts=0
+2025-11-15 21:46:38,651 [INFO] gaitguard.main: FPS=15.6 | tracks=1 | alerts=0
+2025-11-15 21:46:40,713 [INFO] gaitguard.main: FPS=15.6 | tracks=1 | alerts=0
+2025-11-15 21:46:42,736 [INFO] gaitguard.main: FPS=15.5 | tracks=1 | alerts=0
+2025-11-15 21:46:44,796 [INFO] gaitguard.main: FPS=15.5 | tracks=1 | alerts=0
+2025-11-15 21:46:46,893 [INFO] gaitguard.main: FPS=15.5 | tracks=1 | alerts=0
+2025-11-15 21:46:49,059 [INFO] gaitguard.main: FPS=15.5 | tracks=1 | alerts=0
+2025-11-15 21:46:51,215 [INFO] gaitguard.main: FPS=15.5 | tracks=1 | alerts=0
+2025-11-15 21:46:53,235 [INFO] gaitguard.main: FPS=15.5 | tracks=1 | alerts=0
+2025-11-15 21:46:55,277 [INFO] gaitguard.main: FPS=15.5 | tracks=1 | alerts=0
+2025-11-15 21:46:57,357 [INFO] gaitguard.main: FPS=15.5 | tracks=1 | alerts=0
+2025-11-15 21:46:59,468 [INFO] gaitguard.main: FPS=15.4 | tracks=1 | alerts=0
+2025-11-15 21:47:01,311 [INFO] gaitguard.main: FPS=15.5 | tracks=1 | alerts=0
+2025-11-15 21:47:02,936 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-15 23:17:21,877 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 23:17:21,877 [INFO] gaitguard.main: Runtime device=cuda | half=True
+2025-11-15 23:17:21,877 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cuda'
+2025-11-15 23:17:23,006 [INFO] perception.detector: YOLO model loaded in FP16 on CUDA
+2025-11-15 23:17:23,006 [INFO] perception.detector: YOLO model ready
+2025-11-15 23:17:23,006 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-15 23:17:23,006 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 23:17:23,011 [INFO] face.config: FaceConfig initialised | device=cuda half=True | gallery=C:\Users\ildi\Desktop\GaitGuard\data\face_gallery.enc
+2025-11-15 23:17:23,011 [INFO] face.detector_align: Initialising FaceDetectorAligner with pack=buffalo_l ctx_id=0 det_size=(640, 640) providers=['CUDAExecutionProvider', 'CPUExecutionProvider']
+2025-11-15 23:17:23,950 [INFO] face.route: FaceRoute initialised | lookback=2.0s max_entries=30 every_n_frames=5
+2025-11-15 23:17:23,950 [INFO] identity.identity_engine: FaceIdentityEngine initialised | strong_match_dist=0.900
+2025-11-15 23:17:29,349 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Face 2A) started. Press ESC to exit.
+2025-11-15 23:17:30,969 [INFO] gaitguard.main: FPS=18.9 | tracks=0 | alerts=0
+2025-11-15 23:17:31,961 [INFO] gaitguard.main: FPS=23.3 | tracks=0 | alerts=0
+2025-11-15 23:17:32,931 [INFO] gaitguard.main: FPS=25.3 | tracks=0 | alerts=0
+2025-11-15 23:17:33,922 [INFO] gaitguard.main: FPS=26.4 | tracks=0 | alerts=0
+2025-11-15 23:17:34,913 [INFO] gaitguard.main: FPS=27.1 | tracks=0 | alerts=0
+2025-11-15 23:17:35,903 [INFO] gaitguard.main: FPS=27.6 | tracks=0 | alerts=0
+2025-11-15 23:17:36,883 [INFO] gaitguard.main: FPS=28.0 | tracks=0 | alerts=0
+2025-11-15 23:17:37,875 [INFO] gaitguard.main: FPS=28.2 | tracks=0 | alerts=0
+2025-11-15 23:17:38,869 [INFO] gaitguard.main: FPS=28.4 | tracks=0 | alerts=0
+2025-11-15 23:17:39,843 [INFO] gaitguard.main: FPS=28.7 | tracks=0 | alerts=0
+2025-11-15 23:17:40,837 [INFO] gaitguard.main: FPS=28.8 | tracks=0 | alerts=0
+2025-11-15 23:17:41,828 [INFO] gaitguard.main: FPS=28.9 | tracks=0 | alerts=0
+2025-11-15 23:17:42,820 [INFO] gaitguard.main: FPS=29.0 | tracks=0 | alerts=0
+2025-11-15 23:17:43,793 [INFO] gaitguard.main: FPS=29.1 | tracks=0 | alerts=0
+2025-11-15 23:17:44,785 [INFO] gaitguard.main: FPS=29.2 | tracks=0 | alerts=0
+2025-11-15 23:17:45,778 [INFO] gaitguard.main: FPS=29.3 | tracks=0 | alerts=0
+2025-11-15 23:17:46,769 [INFO] gaitguard.main: FPS=29.3 | tracks=0 | alerts=0
+2025-11-15 23:17:47,745 [INFO] gaitguard.main: FPS=29.4 | tracks=0 | alerts=0
+2025-11-15 23:17:48,738 [INFO] gaitguard.main: FPS=29.4 | tracks=0 | alerts=0
+2025-11-15 23:17:49,729 [INFO] gaitguard.main: FPS=29.5 | tracks=0 | alerts=0
+2025-11-15 23:17:50,721 [INFO] gaitguard.main: FPS=29.5 | tracks=0 | alerts=0
+2025-11-15 23:17:51,703 [INFO] gaitguard.main: FPS=29.6 | tracks=0 | alerts=0
+2025-11-15 23:17:52,688 [INFO] gaitguard.main: FPS=29.6 | tracks=0 | alerts=0
+2025-11-15 23:17:53,680 [INFO] gaitguard.main: FPS=29.6 | tracks=0 | alerts=0
+2025-11-15 23:17:54,675 [INFO] gaitguard.main: FPS=29.6 | tracks=0 | alerts=0
+2025-11-15 23:17:55,651 [INFO] gaitguard.main: FPS=29.7 | tracks=0 | alerts=0
+2025-11-15 23:17:56,644 [INFO] gaitguard.main: FPS=29.7 | tracks=0 | alerts=0
+2025-11-15 23:17:57,632 [INFO] gaitguard.main: FPS=29.7 | tracks=0 | alerts=0
+2025-11-15 23:17:58,614 [INFO] gaitguard.main: FPS=29.8 | tracks=0 | alerts=0
+2025-11-15 23:17:59,605 [INFO] gaitguard.main: FPS=29.8 | tracks=0 | alerts=0
+2025-11-15 23:18:00,595 [INFO] gaitguard.main: FPS=29.8 | tracks=0 | alerts=0
+2025-11-15 23:18:01,585 [INFO] gaitguard.main: FPS=29.8 | tracks=0 | alerts=0
+2025-11-15 23:18:02,562 [INFO] gaitguard.main: FPS=29.8 | tracks=0 | alerts=0
+2025-11-15 23:18:03,552 [INFO] gaitguard.main: FPS=29.8 | tracks=0 | alerts=0
+2025-11-15 23:18:04,545 [INFO] gaitguard.main: FPS=29.9 | tracks=0 | alerts=0
+2025-11-15 23:18:05,545 [INFO] gaitguard.main: FPS=29.9 | tracks=0 | alerts=0
+2025-11-15 23:18:06,516 [INFO] gaitguard.main: FPS=29.9 | tracks=0 | alerts=0
+2025-11-15 23:18:07,504 [INFO] gaitguard.main: FPS=29.9 | tracks=0 | alerts=0
+2025-11-15 23:18:08,501 [INFO] gaitguard.main: FPS=29.9 | tracks=0 | alerts=0
+2025-11-15 23:18:09,491 [INFO] gaitguard.main: FPS=29.9 | tracks=0 | alerts=0
+2025-11-15 23:18:10,465 [INFO] gaitguard.main: FPS=29.9 | tracks=0 | alerts=0
+2025-11-15 23:18:11,468 [INFO] gaitguard.main: FPS=29.9 | tracks=0 | alerts=0
+2025-11-15 23:18:12,456 [INFO] gaitguard.main: FPS=29.9 | tracks=0 | alerts=0
+2025-11-15 23:18:13,449 [INFO] gaitguard.main: FPS=30.0 | tracks=0 | alerts=0
+2025-11-15 23:18:14,416 [INFO] gaitguard.main: FPS=30.0 | tracks=0 | alerts=0
+2025-11-15 23:18:15,412 [INFO] gaitguard.main: FPS=30.0 | tracks=0 | alerts=0
+2025-11-15 23:18:16,401 [INFO] gaitguard.main: FPS=30.0 | tracks=0 | alerts=0
+2025-11-15 23:18:17,394 [INFO] gaitguard.main: FPS=30.0 | tracks=0 | alerts=0
+2025-11-15 23:18:18,375 [INFO] gaitguard.main: FPS=30.0 | tracks=0 | alerts=0
+2025-11-15 23:18:19,361 [INFO] gaitguard.main: FPS=30.0 | tracks=0 | alerts=0
+2025-11-15 23:18:20,352 [INFO] gaitguard.main: FPS=30.0 | tracks=0 | alerts=0
+2025-11-15 23:18:21,330 [INFO] gaitguard.main: FPS=30.0 | tracks=0 | alerts=0
+2025-11-15 23:18:22,321 [INFO] gaitguard.main: FPS=30.0 | tracks=0 | alerts=0
+2025-11-15 23:18:23,312 [INFO] gaitguard.main: FPS=30.0 | tracks=0 | alerts=0
+2025-11-15 23:18:24,305 [INFO] gaitguard.main: FPS=30.0 | tracks=0 | alerts=0
+2025-11-15 23:18:25,287 [INFO] gaitguard.main: FPS=30.0 | tracks=0 | alerts=0
+2025-11-15 23:18:26,273 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:27,269 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:28,266 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:29,237 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:30,227 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:31,222 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:32,208 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:33,187 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:34,178 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:35,170 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:36,161 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:37,138 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:38,133 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:39,125 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:40,117 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:41,089 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:42,082 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:43,077 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:44,050 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:45,044 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:46,035 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:47,027 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:48,005 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:48,996 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:49,987 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:50,979 [INFO] gaitguard.main: FPS=30.1 | tracks=0 | alerts=0
+2025-11-15 23:18:51,956 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:18:52,947 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:18:53,937 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:18:54,934 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:18:55,907 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:18:56,898 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:18:57,899 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:18:58,882 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:18:59,859 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:00,850 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:01,847 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:02,834 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:03,810 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:04,804 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:05,794 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:06,772 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:07,764 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:08,754 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:09,747 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:10,723 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:11,718 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:12,709 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:13,712 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:14,677 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:15,667 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:16,659 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:17,654 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:18,629 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:19,619 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:20,613 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:21,606 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:22,585 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:23,571 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:24,573 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:25,558 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:26,534 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:27,523 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:28,516 [INFO] gaitguard.main: FPS=30.2 | tracks=0 | alerts=0
+2025-11-15 23:19:30,514 [INFO] gaitguard.main: FPS=30.0 | tracks=1 | alerts=0
+2025-11-15 23:19:31,885 [INFO] gaitguard.main: FPS=29.9 | tracks=1 | alerts=0
+2025-11-15 23:19:33,247 [INFO] gaitguard.main: FPS=29.8 | tracks=1 | alerts=0
+2025-11-15 23:19:34,549 [INFO] gaitguard.main: FPS=29.7 | tracks=1 | alerts=0
+2025-11-15 23:19:35,880 [INFO] gaitguard.main: FPS=29.6 | tracks=1 | alerts=0
+2025-11-15 23:19:37,243 [INFO] gaitguard.main: FPS=29.6 | tracks=1 | alerts=0
+2025-11-15 23:19:38,638 [INFO] gaitguard.main: FPS=29.5 | tracks=1 | alerts=0
+2025-11-15 23:19:39,995 [INFO] gaitguard.main: FPS=29.4 | tracks=1 | alerts=0
+2025-11-15 23:19:41,321 [INFO] gaitguard.main: FPS=29.3 | tracks=1 | alerts=0
+2025-11-15 23:19:42,655 [INFO] gaitguard.main: FPS=29.3 | tracks=1 | alerts=0
+2025-11-15 23:19:44,018 [INFO] gaitguard.main: FPS=29.2 | tracks=1 | alerts=0
+2025-11-15 23:19:45,273 [INFO] gaitguard.main: FPS=29.1 | tracks=1 | alerts=0
+2025-11-15 23:19:46,606 [INFO] gaitguard.main: FPS=29.1 | tracks=1 | alerts=0
+2025-11-15 23:19:47,903 [INFO] gaitguard.main: FPS=29.0 | tracks=1 | alerts=0
+2025-11-15 23:19:49,165 [INFO] gaitguard.main: FPS=29.0 | tracks=1 | alerts=0
+2025-11-15 23:19:50,544 [INFO] gaitguard.main: FPS=28.9 | tracks=1 | alerts=0
+2025-11-15 23:19:51,903 [INFO] gaitguard.main: FPS=28.8 | tracks=1 | alerts=0
+2025-11-15 23:19:53,300 [INFO] gaitguard.main: FPS=28.8 | tracks=1 | alerts=0
+2025-11-15 23:19:54,657 [INFO] gaitguard.main: FPS=28.7 | tracks=1 | alerts=0
+2025-11-15 23:19:56,021 [INFO] gaitguard.main: FPS=28.6 | tracks=1 | alerts=0
+2025-11-15 23:19:57,330 [INFO] gaitguard.main: FPS=28.6 | tracks=1 | alerts=0
+2025-11-15 23:19:58,681 [INFO] gaitguard.main: FPS=28.5 | tracks=1 | alerts=0
+2025-11-15 23:20:00,074 [INFO] gaitguard.main: FPS=28.5 | tracks=1 | alerts=0
+2025-11-15 23:20:01,432 [INFO] gaitguard.main: FPS=28.4 | tracks=1 | alerts=0
+2025-11-15 23:20:03,319 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-15 23:49:11,645 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 23:49:11,645 [INFO] gaitguard.main: Runtime device=cuda | half=True
+2025-11-15 23:49:11,645 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cuda'
+2025-11-15 23:49:12,719 [INFO] perception.detector: YOLO model loaded in FP16 on CUDA
+2025-11-15 23:49:12,721 [INFO] perception.detector: YOLO model ready
+2025-11-15 23:49:12,721 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-15 23:49:12,721 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-15 23:49:12,721 [INFO] face.config: FaceConfig initialised | device=cuda half=True | gallery=C:\Users\ildi\Desktop\GaitGuard\data\face_gallery.enc
+2025-11-15 23:49:12,721 [INFO] face.detector_align: Initialising FaceDetectorAligner with pack=buffalo_l ctx_id=0 det_size=(640, 640) providers=['CUDAExecutionProvider', 'CPUExecutionProvider']
+2025-11-15 23:49:13,682 [INFO] face.route: FaceRoute initialised | lookback=2.0s max_entries=30 every_n_frames=5
+2025-11-15 23:49:13,682 [INFO] identity.crypto: Loaded AES key from env var 'GAITGUARD_FACE_KEY' (length=32 bytes).
+2025-11-15 23:49:13,682 [INFO] identity.face_gallery: Face gallery loaded from C:\Users\ildi\Desktop\GaitGuard\data\face_gallery.enc (persons=1).
+2025-11-15 23:49:13,682 [INFO] identity.identity_engine: FaceIdentityEngine initialised | strong_match_dist=0.900
+2025-11-15 23:49:19,098 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Face 2A) started. Press ESC to exit.
+2025-11-15 23:49:22,083 [INFO] gaitguard.main: FPS=10.1 | tracks=1 | alerts=0
+2025-11-15 23:49:23,376 [INFO] gaitguard.main: FPS=14.1 | tracks=1 | alerts=0
+2025-11-15 23:49:24,652 [INFO] gaitguard.main: FPS=16.3 | tracks=1 | alerts=0
+2025-11-15 23:49:25,891 [INFO] gaitguard.main: FPS=17.7 | tracks=1 | alerts=0
+2025-11-15 23:49:26,904 [INFO] identity.face_gallery: Face gallery FAISS index rebuilt (templates=5).
+2025-11-15 23:49:27,194 [INFO] gaitguard.main: FPS=18.6 | tracks=1 | alerts=0
+2025-11-15 23:49:28,696 [INFO] gaitguard.main: FPS=18.9 | tracks=2 | alerts=0
+2025-11-15 23:49:30,165 [INFO] gaitguard.main: FPS=19.0 | tracks=1 | alerts=0
+2025-11-15 23:49:31,504 [INFO] gaitguard.main: FPS=19.4 | tracks=1 | alerts=0
+2025-11-15 23:49:32,813 [INFO] gaitguard.main: FPS=19.7 | tracks=1 | alerts=0
+2025-11-15 23:49:34,172 [INFO] gaitguard.main: FPS=19.9 | tracks=1 | alerts=0
+2025-11-15 23:49:35,589 [INFO] gaitguard.main: FPS=20.0 | tracks=2 | alerts=0
+2025-11-15 23:49:37,115 [INFO] gaitguard.main: FPS=20.0 | tracks=2 | alerts=0
+2025-11-15 23:49:38,488 [INFO] gaitguard.main: FPS=20.1 | tracks=1 | alerts=0
+2025-11-15 23:49:39,825 [INFO] gaitguard.main: FPS=20.3 | tracks=1 | alerts=0
+2025-11-15 23:49:41,202 [INFO] gaitguard.main: FPS=20.4 | tracks=1 | alerts=0
+2025-11-15 23:49:42,536 [INFO] gaitguard.main: FPS=20.5 | tracks=1 | alerts=0
+2025-11-15 23:49:43,876 [INFO] gaitguard.main: FPS=20.6 | tracks=1 | alerts=0
+2025-11-15 23:49:45,216 [INFO] gaitguard.main: FPS=20.7 | tracks=1 | alerts=0
+2025-11-15 23:49:46,581 [INFO] gaitguard.main: FPS=20.8 | tracks=1 | alerts=0
+2025-11-15 23:49:47,970 [INFO] gaitguard.main: FPS=20.8 | tracks=1 | alerts=0
+2025-11-15 23:49:49,321 [INFO] gaitguard.main: FPS=20.9 | tracks=1 | alerts=0
+2025-11-15 23:49:50,648 [INFO] gaitguard.main: FPS=20.9 | tracks=1 | alerts=0
+2025-11-15 23:49:51,999 [INFO] gaitguard.main: FPS=21.0 | tracks=1 | alerts=0
+2025-11-15 23:49:53,366 [INFO] gaitguard.main: FPS=21.0 | tracks=1 | alerts=0
+2025-11-15 23:49:54,740 [INFO] gaitguard.main: FPS=21.1 | tracks=1 | alerts=0
+2025-11-15 23:49:56,107 [INFO] gaitguard.main: FPS=21.1 | tracks=1 | alerts=0
+2025-11-15 23:49:57,443 [INFO] gaitguard.main: FPS=21.1 | tracks=1 | alerts=0
+2025-11-15 23:49:58,769 [INFO] gaitguard.main: FPS=21.2 | tracks=1 | alerts=0
+2025-11-15 23:50:00,114 [INFO] gaitguard.main: FPS=21.2 | tracks=1 | alerts=0
+2025-11-15 23:50:01,435 [INFO] gaitguard.main: FPS=21.3 | tracks=1 | alerts=0
+2025-11-15 23:50:02,794 [INFO] gaitguard.main: FPS=21.3 | tracks=1 | alerts=0
+2025-11-15 23:50:04,140 [INFO] gaitguard.main: FPS=21.3 | tracks=1 | alerts=0
+2025-11-15 23:50:05,374 [INFO] gaitguard.main: FPS=21.4 | tracks=1 | alerts=0
+2025-11-15 23:50:06,706 [INFO] gaitguard.main: FPS=21.4 | tracks=1 | alerts=0
+2025-11-15 23:50:07,936 [INFO] gaitguard.main: FPS=21.5 | tracks=1 | alerts=0
+2025-11-15 23:50:09,212 [INFO] gaitguard.main: FPS=21.6 | tracks=1 | alerts=0
+2025-11-15 23:50:11,186 [INFO] gaitguard.main: FPS=21.3 | tracks=1 | alerts=0
+2025-11-15 23:50:12,462 [INFO] gaitguard.main: FPS=21.4 | tracks=1 | alerts=0
+2025-11-15 23:50:13,638 [INFO] gaitguard.main: FPS=21.5 | tracks=1 | alerts=0
+2025-11-15 23:50:15,149 [INFO] gaitguard.main: FPS=21.4 | tracks=1 | alerts=0
+2025-11-15 23:50:16,563 [INFO] gaitguard.main: FPS=21.4 | tracks=1 | alerts=0
+2025-11-15 23:50:17,944 [INFO] gaitguard.main: FPS=21.4 | tracks=1 | alerts=0
+2025-11-15 23:50:19,480 [INFO] gaitguard.main: FPS=21.4 | tracks=1 | alerts=0
+2025-11-15 23:50:20,915 [INFO] gaitguard.main: FPS=21.4 | tracks=1 | alerts=0
+2025-11-15 23:50:22,328 [INFO] gaitguard.main: FPS=21.4 | tracks=1 | alerts=0
+2025-11-15 23:50:23,906 [INFO] gaitguard.main: FPS=21.3 | tracks=1 | alerts=0
+2025-11-15 23:50:25,407 [INFO] gaitguard.main: FPS=21.3 | tracks=1 | alerts=0
+2025-11-15 23:50:26,901 [INFO] gaitguard.main: FPS=21.2 | tracks=1 | alerts=0
+2025-11-15 23:50:28,284 [INFO] gaitguard.main: FPS=21.3 | tracks=1 | alerts=0
+2025-11-15 23:50:29,172 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-16 00:01:56,883 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-16 00:01:56,883 [INFO] gaitguard.main: Runtime device=cuda | half=True
+2025-11-16 00:01:56,883 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cuda'
+2025-11-16 00:01:57,973 [INFO] perception.detector: YOLO model loaded in FP16 on CUDA
+2025-11-16 00:01:57,973 [INFO] perception.detector: YOLO model ready
+2025-11-16 00:01:57,973 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-16 00:01:57,973 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-16 00:01:57,989 [INFO] face.config: FaceConfig initialised | device=cuda half=True | gallery=C:\Users\ildi\Desktop\GaitGuard\data\face_gallery.enc
+2025-11-16 00:01:57,989 [INFO] face.detector_align: Initialising FaceDetectorAligner with pack=buffalo_l ctx_id=0 det_size=(640, 640) providers=['CUDAExecutionProvider', 'CPUExecutionProvider']
+2025-11-16 00:01:58,966 [INFO] face.route: FaceRoute initialised | lookback=2.0s max_entries=30 every_n_frames=5
+2025-11-16 00:01:58,966 [INFO] identity.crypto: Loaded AES key from env var 'GAITGUARD_FACE_KEY' (length=32 bytes).
+2025-11-16 00:01:58,977 [INFO] identity.face_gallery: Face gallery loaded from C:\Users\ildi\Desktop\GaitGuard\data\face_gallery.enc (persons=1).
+2025-11-16 00:01:58,977 [INFO] identity.identity_engine: FaceIdentityEngine initialised | strong_match_dist=0.900
+2025-11-16 00:02:04,514 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Face 2A) started. Press ESC to exit.
+2025-11-16 00:02:06,694 [INFO] gaitguard.main: FPS=14.0 | tracks=1 | alerts=0
+2025-11-16 00:02:07,842 [INFO] gaitguard.main: FPS=18.2 | tracks=0 | alerts=0
+2025-11-16 00:02:08,813 [INFO] gaitguard.main: FPS=21.0 | tracks=0 | alerts=0
+2025-11-16 00:02:09,790 [INFO] gaitguard.main: FPS=22.8 | tracks=0 | alerts=0
+2025-11-16 00:02:10,781 [INFO] gaitguard.main: FPS=24.0 | tracks=0 | alerts=0
+2025-11-16 00:02:11,788 [INFO] gaitguard.main: FPS=24.8 | tracks=0 | alerts=0
+2025-11-16 00:02:12,760 [INFO] gaitguard.main: FPS=25.6 | tracks=0 | alerts=0
+2025-11-16 00:02:13,757 [INFO] gaitguard.main: FPS=26.0 | tracks=0 | alerts=0
+2025-11-16 00:02:14,733 [INFO] gaitguard.main: FPS=26.5 | tracks=0 | alerts=0
+2025-11-16 00:02:15,725 [INFO] gaitguard.main: FPS=26.8 | tracks=0 | alerts=0
+2025-11-16 00:02:16,704 [INFO] gaitguard.main: FPS=27.1 | tracks=0 | alerts=0
+2025-11-16 00:02:17,725 [INFO] gaitguard.main: FPS=27.3 | tracks=0 | alerts=0
+2025-11-16 00:02:18,765 [INFO] gaitguard.main: FPS=27.4 | tracks=0 | alerts=0
+2025-11-16 00:02:19,745 [INFO] gaitguard.main: FPS=27.6 | tracks=0 | alerts=0
+2025-11-16 00:02:20,736 [INFO] gaitguard.main: FPS=27.8 | tracks=0 | alerts=0
+2025-11-16 00:02:21,713 [INFO] gaitguard.main: FPS=28.0 | tracks=0 | alerts=0
+2025-11-16 00:02:22,703 [INFO] gaitguard.main: FPS=28.1 | tracks=0 | alerts=0
+2025-11-16 00:02:23,694 [INFO] gaitguard.main: FPS=28.2 | tracks=0 | alerts=0
+2025-11-16 00:02:24,670 [INFO] gaitguard.main: FPS=28.3 | tracks=0 | alerts=0
+2025-11-16 00:02:25,686 [INFO] gaitguard.main: FPS=28.4 | tracks=0 | alerts=0
+2025-11-16 00:02:26,657 [INFO] gaitguard.main: FPS=28.5 | tracks=0 | alerts=0
+2025-11-16 00:02:27,665 [INFO] gaitguard.main: FPS=28.5 | tracks=0 | alerts=0
+2025-11-16 00:02:28,624 [INFO] gaitguard.main: FPS=28.6 | tracks=0 | alerts=0
+2025-11-16 00:02:29,650 [INFO] gaitguard.main: FPS=28.7 | tracks=0 | alerts=0
+2025-11-16 00:02:30,673 [INFO] gaitguard.main: FPS=28.7 | tracks=0 | alerts=0
+2025-11-16 00:02:31,663 [INFO] gaitguard.main: FPS=28.8 | tracks=0 | alerts=0
+2025-11-16 00:02:32,703 [INFO] gaitguard.main: FPS=28.8 | tracks=0 | alerts=0
+2025-11-16 00:02:33,711 [INFO] gaitguard.main: FPS=28.8 | tracks=0 | alerts=0
+2025-11-16 00:02:34,702 [INFO] gaitguard.main: FPS=28.8 | tracks=0 | alerts=0
+2025-11-16 00:02:35,725 [INFO] gaitguard.main: FPS=28.9 | tracks=0 | alerts=0
+2025-11-16 00:02:36,702 [INFO] gaitguard.main: FPS=28.9 | tracks=0 | alerts=0
+2025-11-16 00:02:37,681 [INFO] gaitguard.main: FPS=29.0 | tracks=0 | alerts=0
+2025-11-16 00:02:38,724 [INFO] gaitguard.main: FPS=29.0 | tracks=0 | alerts=0
+2025-11-16 00:02:39,696 [INFO] gaitguard.main: FPS=29.0 | tracks=0 | alerts=0
+2025-11-16 00:02:40,712 [INFO] gaitguard.main: FPS=29.0 | tracks=0 | alerts=0
+2025-11-16 00:02:41,703 [INFO] gaitguard.main: FPS=29.1 | tracks=0 | alerts=0
+2025-11-16 00:02:42,759 [INFO] gaitguard.main: FPS=29.0 | tracks=0 | alerts=0
+2025-11-16 00:02:43,808 [INFO] gaitguard.main: FPS=29.0 | tracks=0 | alerts=0
+2025-11-16 00:02:44,797 [INFO] gaitguard.main: FPS=29.1 | tracks=0 | alerts=0
+2025-11-16 00:02:45,793 [INFO] gaitguard.main: FPS=29.1 | tracks=0 | alerts=0
+2025-11-16 00:02:46,774 [INFO] gaitguard.main: FPS=29.1 | tracks=0 | alerts=0
+2025-11-16 00:02:47,768 [INFO] gaitguard.main: FPS=29.1 | tracks=0 | alerts=0
+2025-11-16 00:02:48,753 [INFO] gaitguard.main: FPS=29.2 | tracks=0 | alerts=0
+2025-11-16 00:02:49,744 [INFO] gaitguard.main: FPS=29.2 | tracks=0 | alerts=0
+2025-11-16 00:02:50,720 [INFO] gaitguard.main: FPS=29.2 | tracks=0 | alerts=0
+2025-11-16 00:02:52,244 [INFO] gaitguard.main: FPS=28.9 | tracks=1 | alerts=0
+2025-11-16 00:02:52,655 [INFO] identity.face_gallery: Face gallery FAISS index rebuilt (templates=5).
+2025-11-16 00:02:53,623 [INFO] gaitguard.main: FPS=28.7 | tracks=1 | alerts=0
+2025-11-16 00:02:55,186 [INFO] gaitguard.main: FPS=28.4 | tracks=1 | alerts=0
+2025-11-16 00:02:56,618 [INFO] gaitguard.main: FPS=28.2 | tracks=1 | alerts=0
+2025-11-16 00:02:58,044 [INFO] gaitguard.main: FPS=28.0 | tracks=1 | alerts=0
+2025-11-16 00:02:59,541 [INFO] gaitguard.main: FPS=27.8 | tracks=1 | alerts=0
+2025-11-16 00:03:00,946 [INFO] gaitguard.main: FPS=27.7 | tracks=1 | alerts=0
+2025-11-16 00:03:02,310 [INFO] gaitguard.main: FPS=27.5 | tracks=1 | alerts=0
+2025-11-16 00:03:03,636 [INFO] gaitguard.main: FPS=27.4 | tracks=1 | alerts=0
+2025-11-16 00:03:04,958 [INFO] gaitguard.main: FPS=27.3 | tracks=1 | alerts=0
+2025-11-16 00:03:06,333 [INFO] gaitguard.main: FPS=27.2 | tracks=1 | alerts=0
+2025-11-16 00:03:07,693 [INFO] gaitguard.main: FPS=27.1 | tracks=1 | alerts=0
+2025-11-16 00:03:09,161 [INFO] gaitguard.main: FPS=26.9 | tracks=1 | alerts=0
+2025-11-16 00:03:10,608 [INFO] gaitguard.main: FPS=26.8 | tracks=2 | alerts=0
+2025-11-16 00:03:11,957 [INFO] gaitguard.main: FPS=26.7 | tracks=1 | alerts=0
+2025-11-16 00:03:13,156 [INFO] gaitguard.main: FPS=26.7 | tracks=2 | alerts=0
+2025-11-16 00:03:14,413 [INFO] gaitguard.main: FPS=26.6 | tracks=1 | alerts=0
+2025-11-16 00:03:15,724 [INFO] gaitguard.main: FPS=26.6 | tracks=1 | alerts=0
+2025-11-16 00:03:17,001 [INFO] gaitguard.main: FPS=26.5 | tracks=1 | alerts=0
+2025-11-16 00:03:18,318 [INFO] gaitguard.main: FPS=26.4 | tracks=1 | alerts=0
+2025-11-16 00:03:19,823 [INFO] gaitguard.main: FPS=26.3 | tracks=1 | alerts=0
+2025-11-16 00:03:21,224 [INFO] gaitguard.main: FPS=26.2 | tracks=1 | alerts=0
+2025-11-16 00:03:22,676 [INFO] gaitguard.main: FPS=26.1 | tracks=1 | alerts=0
+2025-11-16 00:03:24,082 [INFO] gaitguard.main: FPS=26.0 | tracks=1 | alerts=0
+2025-11-16 00:03:25,445 [INFO] gaitguard.main: FPS=26.0 | tracks=1 | alerts=0
+2025-11-16 00:03:26,828 [INFO] gaitguard.main: FPS=25.9 | tracks=1 | alerts=0
+2025-11-16 00:03:28,130 [INFO] gaitguard.main: FPS=25.8 | tracks=1 | alerts=0
+2025-11-16 00:03:29,524 [INFO] gaitguard.main: FPS=25.8 | tracks=1 | alerts=0
+2025-11-16 00:03:30,953 [INFO] gaitguard.main: FPS=25.7 | tracks=1 | alerts=0
+2025-11-16 00:03:32,324 [INFO] gaitguard.main: FPS=25.6 | tracks=1 | alerts=0
+2025-11-16 00:03:33,690 [INFO] gaitguard.main: FPS=25.6 | tracks=1 | alerts=0
+2025-11-16 00:03:35,095 [INFO] gaitguard.main: FPS=25.5 | tracks=1 | alerts=0
+2025-11-16 00:03:36,487 [INFO] gaitguard.main: FPS=25.4 | tracks=1 | alerts=0
+2025-11-16 00:03:37,797 [INFO] gaitguard.main: FPS=25.4 | tracks=1 | alerts=0
+2025-11-16 00:03:39,165 [INFO] gaitguard.main: FPS=25.4 | tracks=1 | alerts=0
+2025-11-16 00:03:40,305 [INFO] gaitguard.main: FPS=25.4 | tracks=1 | alerts=0
+2025-11-16 00:03:41,719 [INFO] gaitguard.main: FPS=25.3 | tracks=1 | alerts=0
+2025-11-16 00:03:43,007 [INFO] gaitguard.main: FPS=25.3 | tracks=1 | alerts=0
+2025-11-16 00:03:44,397 [INFO] gaitguard.main: FPS=25.2 | tracks=1 | alerts=0
+2025-11-16 00:03:45,767 [INFO] gaitguard.main: FPS=25.2 | tracks=1 | alerts=0
+2025-11-16 00:03:47,075 [INFO] gaitguard.main: FPS=25.2 | tracks=1 | alerts=0
+2025-11-16 00:03:48,502 [INFO] gaitguard.main: FPS=25.1 | tracks=1 | alerts=0
+2025-11-16 00:03:50,047 [INFO] gaitguard.main: FPS=25.0 | tracks=2 | alerts=0
+2025-11-16 00:03:51,536 [INFO] gaitguard.main: FPS=25.0 | tracks=1 | alerts=0
+2025-11-16 00:03:52,942 [INFO] gaitguard.main: FPS=24.9 | tracks=1 | alerts=0
+2025-11-16 00:03:54,435 [INFO] gaitguard.main: FPS=24.8 | tracks=1 | alerts=0
+2025-11-16 00:03:55,730 [INFO] gaitguard.main: FPS=24.8 | tracks=1 | alerts=0
+2025-11-16 00:03:57,169 [INFO] gaitguard.main: FPS=24.8 | tracks=1 | alerts=0
+2025-11-16 00:03:58,590 [INFO] gaitguard.main: FPS=24.7 | tracks=1 | alerts=0
+2025-11-16 00:03:59,923 [INFO] gaitguard.main: FPS=24.7 | tracks=1 | alerts=0
+2025-11-16 00:04:01,237 [INFO] gaitguard.main: FPS=24.7 | tracks=1 | alerts=0
+2025-11-16 00:04:02,662 [INFO] gaitguard.main: FPS=24.6 | tracks=1 | alerts=0
+2025-11-16 00:04:04,018 [INFO] gaitguard.main: FPS=24.6 | tracks=1 | alerts=0
+2025-11-16 00:04:05,363 [INFO] gaitguard.main: FPS=24.6 | tracks=1 | alerts=0
+2025-11-16 00:04:06,697 [INFO] gaitguard.main: FPS=24.6 | tracks=1 | alerts=0
+2025-11-16 00:04:08,073 [INFO] gaitguard.main: FPS=24.5 | tracks=1 | alerts=0
+2025-11-16 00:04:09,518 [INFO] gaitguard.main: FPS=24.5 | tracks=1 | alerts=0
+2025-11-16 00:04:10,901 [INFO] gaitguard.main: FPS=24.5 | tracks=1 | alerts=0
+2025-11-16 00:04:12,252 [INFO] gaitguard.main: FPS=24.4 | tracks=1 | alerts=0
+2025-11-16 00:04:13,574 [INFO] gaitguard.main: FPS=24.4 | tracks=1 | alerts=0
+2025-11-16 00:04:14,931 [INFO] gaitguard.main: FPS=24.4 | tracks=1 | alerts=0
+2025-11-16 00:04:16,237 [INFO] gaitguard.main: FPS=24.4 | tracks=1 | alerts=0
+2025-11-16 00:04:17,539 [INFO] gaitguard.main: FPS=24.4 | tracks=1 | alerts=0
+2025-11-16 00:04:18,984 [INFO] gaitguard.main: FPS=24.3 | tracks=2 | alerts=0
+2025-11-16 00:04:20,532 [INFO] gaitguard.main: FPS=24.3 | tracks=3 | alerts=0
+2025-11-16 00:04:21,986 [INFO] gaitguard.main: FPS=24.2 | tracks=1 | alerts=0
+2025-11-16 00:04:23,455 [INFO] gaitguard.main: FPS=24.2 | tracks=2 | alerts=0
+2025-11-16 00:04:24,579 [INFO] gaitguard.main: FPS=24.2 | tracks=1 | alerts=0
+2025-11-16 00:04:25,793 [INFO] gaitguard.main: FPS=24.2 | tracks=1 | alerts=0
+2025-11-16 00:04:27,024 [INFO] gaitguard.main: FPS=24.2 | tracks=1 | alerts=0
+2025-11-16 00:04:28,515 [INFO] gaitguard.main: FPS=24.2 | tracks=1 | alerts=0
+2025-11-16 00:04:29,812 [INFO] gaitguard.main: FPS=24.2 | tracks=1 | alerts=0
+2025-11-16 00:04:31,278 [INFO] gaitguard.main: FPS=24.1 | tracks=1 | alerts=0
+2025-11-16 00:04:32,598 [INFO] gaitguard.main: FPS=24.1 | tracks=1 | alerts=0
+2025-11-16 00:04:34,016 [INFO] gaitguard.main: FPS=24.1 | tracks=1 | alerts=0
+2025-11-16 00:04:35,439 [INFO] gaitguard.main: FPS=24.1 | tracks=1 | alerts=0
+2025-11-16 00:04:36,826 [INFO] gaitguard.main: FPS=24.0 | tracks=1 | alerts=0
+2025-11-16 00:04:38,276 [INFO] gaitguard.main: FPS=24.0 | tracks=1 | alerts=0
+2025-11-16 00:04:39,654 [INFO] gaitguard.main: FPS=24.0 | tracks=1 | alerts=0
+2025-11-16 00:04:41,106 [INFO] gaitguard.main: FPS=24.0 | tracks=1 | alerts=0
+2025-11-16 00:04:42,528 [INFO] gaitguard.main: FPS=23.9 | tracks=1 | alerts=0
+2025-11-16 00:04:43,921 [INFO] gaitguard.main: FPS=23.9 | tracks=1 | alerts=0
+2025-11-16 00:04:45,349 [INFO] gaitguard.main: FPS=23.9 | tracks=1 | alerts=0
+2025-11-16 00:04:46,701 [INFO] gaitguard.main: FPS=23.9 | tracks=1 | alerts=0
+2025-11-16 00:04:48,076 [INFO] gaitguard.main: FPS=23.8 | tracks=1 | alerts=0
+2025-11-16 00:04:49,448 [INFO] gaitguard.main: FPS=23.8 | tracks=1 | alerts=0
+2025-11-16 00:04:50,805 [INFO] gaitguard.main: FPS=23.8 | tracks=1 | alerts=0
+2025-11-16 00:04:52,162 [INFO] gaitguard.main: FPS=23.8 | tracks=1 | alerts=0
+2025-11-16 00:04:53,572 [INFO] gaitguard.main: FPS=23.8 | tracks=1 | alerts=0
+2025-11-16 00:04:54,997 [INFO] gaitguard.main: FPS=23.8 | tracks=1 | alerts=0
+2025-11-16 00:04:56,340 [INFO] gaitguard.main: FPS=23.8 | tracks=1 | alerts=0
+2025-11-16 00:04:57,748 [INFO] gaitguard.main: FPS=23.7 | tracks=1 | alerts=0
+2025-11-16 00:04:59,065 [INFO] gaitguard.main: FPS=23.7 | tracks=1 | alerts=0
+2025-11-16 00:05:00,403 [INFO] gaitguard.main: FPS=23.7 | tracks=1 | alerts=0
+2025-11-16 00:05:01,804 [INFO] gaitguard.main: FPS=23.7 | tracks=1 | alerts=0
+2025-11-16 00:05:03,201 [INFO] gaitguard.main: FPS=23.7 | tracks=1 | alerts=0
+2025-11-16 00:05:04,551 [INFO] gaitguard.main: FPS=23.7 | tracks=1 | alerts=0
+2025-11-16 00:05:05,927 [INFO] gaitguard.main: FPS=23.7 | tracks=1 | alerts=0
+2025-11-16 00:05:07,313 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-16 00:05:08,670 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-16 00:05:10,081 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-16 00:05:11,388 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-16 00:05:12,724 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-16 00:05:14,034 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-16 00:05:15,374 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-16 00:05:16,772 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-16 00:05:18,180 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:19,485 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:20,814 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:22,140 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:23,516 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:24,830 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:26,200 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:27,507 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:28,883 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:30,204 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:31,568 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:32,930 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:34,262 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:35,598 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:36,931 [INFO] gaitguard.main: FPS=23.4 | tracks=1 | alerts=0
+2025-11-16 00:05:38,307 [INFO] gaitguard.main: FPS=23.4 | tracks=1 | alerts=0
+2025-11-16 00:05:39,583 [INFO] gaitguard.main: FPS=23.4 | tracks=1 | alerts=0
+2025-11-16 00:05:40,724 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:41,875 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:43,052 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:44,193 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:45,334 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:46,468 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:47,605 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:48,739 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-16 00:05:50,279 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:51,866 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:53,496 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:05:55,151 [INFO] gaitguard.main: FPS=23.4 | tracks=1 | alerts=0
+2025-11-16 00:05:56,804 [INFO] gaitguard.main: FPS=23.4 | tracks=1 | alerts=0
+2025-11-16 00:05:58,140 [INFO] gaitguard.main: FPS=23.4 | tracks=1 | alerts=0
+2025-11-16 00:05:59,469 [INFO] gaitguard.main: FPS=23.4 | tracks=1 | alerts=0
+2025-11-16 00:06:00,583 [INFO] gaitguard.main: FPS=23.4 | tracks=1 | alerts=0
+2025-11-16 00:06:01,846 [INFO] gaitguard.main: FPS=23.4 | tracks=1 | alerts=0
+2025-11-16 00:06:03,249 [INFO] gaitguard.main: FPS=23.4 | tracks=1 | alerts=0
+2025-11-16 00:06:04,543 [INFO] gaitguard.main: FPS=23.4 | tracks=1 | alerts=0
+2025-11-16 00:06:05,731 [INFO] gaitguard.main: FPS=23.4 | tracks=1 | alerts=0
+2025-11-16 00:06:06,901 [INFO] gaitguard.main: FPS=23.4 | tracks=1 | alerts=0
+2025-11-16 00:06:08,076 [INFO] gaitguard.main: FPS=23.4 | tracks=1 | alerts=0
+2025-11-16 00:06:09,203 [INFO] gaitguard.main: FPS=23.4 | tracks=1 | alerts=0
+2025-11-16 00:06:10,317 [INFO] gaitguard.main: FPS=23.4 | tracks=1 | alerts=0
+2025-11-16 00:06:11,429 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:06:12,546 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:06:13,692 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:06:14,783 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:06:15,906 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:06:17,030 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:06:18,181 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-11-16 00:06:19,306 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-16 00:06:20,424 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-16 00:06:21,538 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-16 00:06:22,645 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-16 00:06:23,736 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-16 00:06:24,930 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-16 00:06:26,087 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-16 00:06:27,238 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-11-16 00:06:28,374 [INFO] gaitguard.main: FPS=23.7 | tracks=1 | alerts=0
+2025-11-16 00:06:29,544 [INFO] gaitguard.main: FPS=23.7 | tracks=1 | alerts=0
+2025-11-16 00:06:30,678 [INFO] gaitguard.main: FPS=23.7 | tracks=1 | alerts=0
+2025-11-16 00:06:31,953 [INFO] gaitguard.main: FPS=23.7 | tracks=1 | alerts=0
+2025-11-16 00:06:33,343 [INFO] gaitguard.main: FPS=23.7 | tracks=1 | alerts=0
+2025-11-16 00:06:35,365 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-16 10:57:08,777 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-16 10:57:08,777 [INFO] gaitguard.main: Runtime device=cuda | half=True
+2025-11-16 10:57:08,777 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cuda'
+2025-11-16 10:57:10,564 [INFO] perception.detector: YOLO model loaded in FP16 on CUDA
+2025-11-16 10:57:10,564 [INFO] perception.detector: YOLO model ready
+2025-11-16 10:57:10,564 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-16 10:57:10,564 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-16 10:57:10,566 [INFO] face.config: FaceConfig initialised | device=cuda half=True | gallery=C:\Users\ildi\Desktop\GaitGuard\data\face_gallery.enc
+2025-11-16 10:57:10,566 [INFO] face.detector_align: Initialising FaceDetectorAligner with pack=buffalo_l ctx_id=0 det_size=(640, 640) providers=['CUDAExecutionProvider', 'CPUExecutionProvider']
+2025-11-16 10:57:11,761 [INFO] face.route: FaceRoute initialised | lookback=2.0s max_entries=30 every_n_frames=5
+2025-11-16 10:57:11,765 [ERROR] identity.face_gallery: Failed to load face gallery from C:\Users\ildi\Desktop\GaitGuard\data\face_gallery.enc: Encryption key environment variable 'GAITGUARD_FACE_KEY' is not set. Generate a strong random key and set it, e.g.:
+  export GAITGUARD_FACE_KEY="$(openssl rand -hex 32)"
+2025-11-16 10:57:11,765 [INFO] identity.identity_engine: FaceIdentityEngine initialised | strong_match_dist=0.900
+2025-11-16 10:57:16,802 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Face 2A) started. Press ESC to exit.
+2025-11-16 10:57:20,250 [INFO] gaitguard.main: FPS=8.8 | tracks=1 | alerts=0
+2025-11-16 10:57:21,491 [INFO] gaitguard.main: FPS=12.9 | tracks=1 | alerts=0
+2025-11-16 10:57:22,697 [INFO] gaitguard.main: FPS=15.3 | tracks=1 | alerts=0
+2025-11-16 10:57:24,095 [INFO] gaitguard.main: FPS=16.5 | tracks=1 | alerts=0
+2025-11-16 10:57:26,164 [INFO] gaitguard.main: FPS=16.1 | tracks=1 | alerts=0
+2025-11-16 10:57:27,616 [INFO] gaitguard.main: FPS=16.7 | tracks=1 | alerts=0
+2025-11-16 10:57:29,074 [INFO] gaitguard.main: FPS=17.1 | tracks=1 | alerts=0
+2025-11-16 10:57:30,508 [INFO] gaitguard.main: FPS=17.5 | tracks=1 | alerts=0
+2025-11-16 10:57:31,981 [INFO] gaitguard.main: FPS=17.8 | tracks=1 | alerts=0
+2025-11-16 10:57:33,411 [INFO] gaitguard.main: FPS=18.1 | tracks=1 | alerts=0
+2025-11-16 10:57:34,824 [INFO] gaitguard.main: FPS=18.3 | tracks=1 | alerts=0
+2025-11-16 10:57:36,247 [INFO] gaitguard.main: FPS=18.5 | tracks=1 | alerts=0
+2025-11-16 10:57:37,682 [INFO] gaitguard.main: FPS=18.7 | tracks=1 | alerts=0
+2025-11-16 10:57:39,166 [INFO] gaitguard.main: FPS=18.8 | tracks=1 | alerts=0
+2025-11-16 10:57:40,787 [INFO] gaitguard.main: FPS=18.8 | tracks=1 | alerts=0
+2025-11-16 10:57:42,153 [INFO] gaitguard.main: FPS=19.0 | tracks=1 | alerts=0
+2025-11-16 10:57:43,550 [INFO] gaitguard.main: FPS=19.1 | tracks=1 | alerts=0
+2025-11-16 10:57:44,997 [INFO] gaitguard.main: FPS=19.2 | tracks=1 | alerts=0
+2025-11-16 10:57:46,455 [INFO] gaitguard.main: FPS=19.2 | tracks=1 | alerts=0
+2025-11-16 10:57:47,911 [INFO] gaitguard.main: FPS=19.3 | tracks=1 | alerts=0
+2025-11-16 10:57:49,370 [INFO] gaitguard.main: FPS=19.4 | tracks=1 | alerts=0
+2025-11-16 10:57:50,796 [INFO] gaitguard.main: FPS=19.4 | tracks=1 | alerts=0
+2025-11-16 10:57:52,147 [INFO] gaitguard.main: FPS=19.5 | tracks=1 | alerts=0
+2025-11-16 10:57:53,479 [INFO] gaitguard.main: FPS=19.7 | tracks=1 | alerts=0
+2025-11-16 10:57:54,938 [INFO] gaitguard.main: FPS=19.7 | tracks=1 | alerts=0
+2025-11-16 10:57:56,376 [INFO] gaitguard.main: FPS=19.7 | tracks=1 | alerts=0
+2025-11-16 10:57:57,947 [INFO] gaitguard.main: FPS=19.7 | tracks=1 | alerts=0
+2025-11-16 10:57:59,476 [INFO] gaitguard.main: FPS=19.7 | tracks=1 | alerts=0
+2025-11-16 10:58:00,706 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
+2025-11-16 10:58:02,131 [INFO] gaitguard.main: FPS=19.9 | tracks=1 | alerts=0
+2025-11-16 10:58:03,584 [INFO] gaitguard.main: FPS=19.9 | tracks=1 | alerts=0
+2025-11-16 10:58:05,118 [INFO] gaitguard.main: FPS=19.9 | tracks=1 | alerts=0
+2025-11-16 10:58:06,741 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
+2025-11-16 10:58:08,338 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
+2025-11-16 10:58:09,911 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
+2025-11-16 10:58:11,469 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
+2025-11-16 10:58:13,000 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
+2025-11-16 10:58:14,602 [INFO] gaitguard.main: FPS=19.7 | tracks=1 | alerts=0
+2025-11-16 10:58:16,179 [INFO] gaitguard.main: FPS=19.7 | tracks=1 | alerts=0
+2025-11-16 10:58:17,597 [INFO] gaitguard.main: FPS=19.7 | tracks=1 | alerts=0
+2025-11-16 10:58:19,187 [INFO] gaitguard.main: FPS=19.7 | tracks=2 | alerts=0
+2025-11-16 10:58:20,582 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
+2025-11-16 10:58:21,928 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
+2025-11-16 10:58:23,233 [INFO] gaitguard.main: FPS=19.9 | tracks=1 | alerts=0
+2025-11-16 10:58:24,684 [INFO] gaitguard.main: FPS=19.9 | tracks=1 | alerts=0
+2025-11-16 10:58:26,245 [INFO] gaitguard.main: FPS=19.9 | tracks=1 | alerts=0
+2025-11-16 10:58:27,907 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
+2025-11-16 10:58:29,602 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
+2025-11-16 10:58:31,269 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
+2025-11-16 10:58:32,667 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
+2025-11-16 10:58:33,930 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
+2025-11-16 10:58:35,358 [INFO] gaitguard.main: FPS=19.9 | tracks=1 | alerts=0
+2025-11-16 10:58:36,859 [INFO] gaitguard.main: FPS=19.9 | tracks=1 | alerts=0
+2025-11-16 10:58:38,036 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-16 11:06:58,605 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-16 11:06:58,605 [INFO] gaitguard.main: Runtime device=cuda | half=True
+2025-11-16 11:06:58,605 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cuda'
+2025-11-16 11:06:59,642 [INFO] perception.detector: YOLO model loaded in FP16 on CUDA
+2025-11-16 11:06:59,642 [INFO] perception.detector: YOLO model ready
+2025-11-16 11:06:59,642 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-16 11:06:59,642 [INFO] gaitguard.device: Using CUDA device: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+2025-11-16 11:06:59,642 [INFO] face.config: FaceConfig initialised | device=cuda half=True | gallery=C:\Users\ildi\Desktop\GaitGuard\data\face_gallery.enc
+2025-11-16 11:06:59,645 [INFO] face.detector_align: Initialising FaceDetectorAligner with pack=buffalo_l ctx_id=0 det_size=(640, 640) providers=['CUDAExecutionProvider', 'CPUExecutionProvider']
+2025-11-16 11:07:00,530 [INFO] face.route: FaceRoute initialised | lookback=2.0s max_entries=30 every_n_frames=5
+2025-11-16 11:07:00,532 [INFO] identity.crypto: Loaded AES key from env var 'GAITGUARD_FACE_KEY' (length=32 bytes).
+2025-11-16 11:07:00,533 [INFO] identity.face_gallery: Face gallery loaded from C:\Users\ildi\Desktop\GaitGuard\data\face_gallery.enc (persons=1).
+2025-11-16 11:07:00,533 [INFO] identity.identity_engine: FaceIdentityEngine initialised | strong_match_dist=0.900
+2025-11-16 11:07:05,455 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Face 2A) started. Press ESC to exit.
+2025-11-16 11:07:06,987 [INFO] identity.face_gallery: Face gallery FAISS index rebuilt (templates=5).
+2025-11-16 11:07:08,302 [INFO] gaitguard.main: FPS=10.7 | tracks=1 | alerts=0
+2025-11-16 11:07:09,769 [INFO] gaitguard.main: FPS=14.0 | tracks=1 | alerts=0
+2025-11-16 11:07:11,258 [INFO] gaitguard.main: FPS=15.6 | tracks=1 | alerts=0
+2025-11-16 11:07:12,680 [INFO] gaitguard.main: FPS=16.7 | tracks=1 | alerts=0
+2025-11-16 11:07:14,172 [INFO] gaitguard.main: FPS=17.3 | tracks=1 | alerts=0
+2025-11-16 11:07:15,628 [INFO] gaitguard.main: FPS=17.7 | tracks=1 | alerts=0
+2025-11-16 11:07:17,097 [INFO] gaitguard.main: FPS=18.1 | tracks=1 | alerts=0
+2025-11-16 11:07:18,558 [INFO] gaitguard.main: FPS=18.4 | tracks=1 | alerts=0
+2025-11-16 11:07:20,026 [INFO] gaitguard.main: FPS=18.6 | tracks=1 | alerts=0
+2025-11-16 11:07:21,461 [INFO] gaitguard.main: FPS=18.8 | tracks=1 | alerts=0
+2025-11-16 11:07:22,902 [INFO] gaitguard.main: FPS=18.9 | tracks=1 | alerts=0
+2025-11-16 11:07:24,361 [INFO] gaitguard.main: FPS=19.1 | tracks=1 | alerts=0
+2025-11-16 11:07:25,784 [INFO] gaitguard.main: FPS=19.2 | tracks=1 | alerts=0
+2025-11-16 11:07:27,203 [INFO] gaitguard.main: FPS=19.3 | tracks=1 | alerts=0
+2025-11-16 11:07:28,661 [INFO] gaitguard.main: FPS=19.4 | tracks=1 | alerts=0
+2025-11-16 11:07:30,168 [INFO] gaitguard.main: FPS=19.4 | tracks=1 | alerts=0
+2025-11-16 11:07:31,712 [INFO] gaitguard.main: FPS=19.4 | tracks=1 | alerts=0
+2025-11-16 11:07:33,174 [INFO] gaitguard.main: FPS=19.5 | tracks=1 | alerts=0
+2025-11-16 11:07:34,628 [INFO] gaitguard.main: FPS=19.6 | tracks=1 | alerts=0
+2025-11-16 11:07:36,165 [INFO] gaitguard.main: FPS=19.6 | tracks=1 | alerts=0
+2025-11-16 11:07:37,641 [INFO] gaitguard.main: FPS=19.6 | tracks=1 | alerts=0
+2025-11-16 11:07:39,080 [INFO] gaitguard.main: FPS=19.6 | tracks=1 | alerts=0
+2025-11-16 11:07:40,545 [INFO] gaitguard.main: FPS=19.7 | tracks=1 | alerts=0
+2025-11-16 11:07:42,028 [INFO] gaitguard.main: FPS=19.7 | tracks=1 | alerts=0
+2025-11-16 11:07:43,529 [INFO] gaitguard.main: FPS=19.7 | tracks=1 | alerts=0
+2025-11-16 11:07:45,019 [INFO] gaitguard.main: FPS=19.7 | tracks=1 | alerts=0
+2025-11-16 11:07:46,453 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
+2025-11-16 11:07:47,870 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
+2025-11-16 11:07:49,339 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
+2025-11-16 11:07:50,778 [INFO] gaitguard.main: FPS=19.9 | tracks=1 | alerts=0
+2025-11-16 11:07:52,288 [INFO] gaitguard.main: FPS=19.9 | tracks=1 | alerts=0
+2025-11-16 11:07:53,882 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
+2025-11-16 11:07:55,393 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
+2025-11-16 11:07:56,845 [INFO] gaitguard.main: FPS=19.9 | tracks=1 | alerts=0
+2025-11-16 11:07:58,315 [INFO] gaitguard.main: FPS=19.9 | tracks=1 | alerts=0
+2025-11-16 11:07:59,734 [INFO] gaitguard.main: FPS=19.9 | tracks=1 | alerts=0
+2025-11-16 11:08:01,203 [INFO] gaitguard.main: FPS=19.9 | tracks=1 | alerts=0
+2025-11-16 11:08:03,048 [INFO] gaitguard.main: GaitGuard pipeline stopped.

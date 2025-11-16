@@ -3,7 +3,7 @@ Experiment: fast YOLOv8n person detector with threaded camera.
 Not part of core GaitGuard pipeline – used only for benchmarking.
 """
 # fast live "person" detector (nano, FP16, low latency)
-import cv2, time                  # camera + timing
+import cv2, time                  # camera + timing 
 import threading, queue           # run camera capture in background thread
 from ultralytics import YOLO      # YOLOv8 model
 import torch                      # check CUDA and put model on GPU
