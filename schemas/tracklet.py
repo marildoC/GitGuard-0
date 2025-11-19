@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
-from typing import List, Tuple
-
+from typing import List, Tuple, Optional #added Optional
+import numpy as np #imported by (Francesco and Vittorio)
 
 @dataclass
 class Tracklet:
@@ -27,3 +27,19 @@ class Tracklet:
     history_boxes: List[Tuple[float, float, float, float]] = field(
         default_factory=list
     )
+
+    """
+    NEW FIELD FOR GAIT_RECOGNITION(Francesco and Vittorio)
+    This field will contain the sequences of poses of this person
+    Each element of the list will be a np.ndarray which represent a pose.
+    """
+    gait_sequence_data: List[np.ndarray] = field(default_factory=list)
+
+    #this field will contain the numeric embedding of the gait of a single person
+    gait_embedding: Optional[np.ndarray] = None
+
+    #This field will contain the id of the person recognized by walking
+    gait_identity_id: Optional[str] = None
+
+    #This field will contain the confidence of the walk recognition
+    gait_confidence: Optional[float]=None

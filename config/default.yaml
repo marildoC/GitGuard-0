@@ -14,3 +14,14 @@ paths:
 runtime:
   use_gpu: true       # prefer GPU if available
   save_evidence: false
+
+# NEW SECTION: RECOGNIZE THE GAIT (Francesco and Vittorio)
+gait_recognition:
+  enabled: True
+  model_path: "models/percorso_modello_embedding_camminata"
+  gallery_path: "data/gait_gallery.enc" #dove verrano salvate le camminate registrate
+  min_sequence_length: 30 #minimum number of frame for calculate the gait
+  max_sequence_length: 60 #maximum number of frame for calculate the gait
+  similarity_treshold: 0.6 
+  pose_model_complexity: 1 #1=default
+  debug_overlay: true
