@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import logging
 from typing import Dict, List, Optional, Tuple
+import cv2
 
 import numpy as np
 
@@ -13,6 +14,11 @@ from .detector import Detector, Detection
 from .tracker_ocsort import OCSortTracker, Track
 from .appearance import AppearanceExtractor
 from .ring_buffer import RingBuffer, RingBufferConfig
+
+import mediapipe as mp
+import numpy as np
+
+from gait.config import GaitConfig
 
 logger = logging.getLogger(__name__)
 
@@ -83,6 +89,17 @@ class Phase1PerceptionEngine(PerceptionEngine):
         # When to drop a lost track
         self.max_lost_frames = max_lost_frames
 
+
+        # -------------------------------------------------------
+        # Load GaitConfig and initialize MediaPipe Pose
+        # -------------------------------------------------------
+        self.gait_config = GaitConfig.default()   # usa default() dal tuo file config
+        self.mp_pose = mp.solutions.pose.Pose(
+            model_complexity=self.gait_config.pose_model_complexity,
+            enable_segmentation=False,
+            smooth_landmarks=True,
+        )
+
         logger.info("Phase-1 PerceptionEngine initialized.")
 
     # ------------------------------------------------------------------ #
@@ -116,6 +133,45 @@ class Phase1PerceptionEngine(PerceptionEngine):
         for tr in tracks:
             active_ids.add(tr.track_id)
             self._update_track_state(frame, tr)
+
+                
+        # ---- Step 4.1: Extract Pose Keypoints for Each Track ----
+        for tr in tracks:
+            tid = tr.track_id
+            if tid not in self._states:
+                continue
+
+            state = self._states[tid]
+            t = state.tracklet
+
+            # 1. Crop person
+            x1, y1, x2, y2 = map(int, t.last_box)
+            crop = frame.image[y1:y2, x1:x2]
+
+            if crop.size == 0:
+                continue
+
+            # 2. Convert to RGB
+            rgb = cv2.cvtColor(crop, cv2.COLOR_BGR2RGB)
+
+            # 3. MediaPipe Pose
+            results = self.mp_pose.process(rgb)
+
+            if not results.pose_landmarks:
+                continue
+
+            # 4. Convert landmarks to numpy (33x3)
+            keypoints = np.array(
+                [[lm.x, lm.y, lm.visibility] for lm in results.pose_landmarks.landmark],
+                dtype=np.float32
+            )
+
+            # 5. Append to gait sequence
+            t.gait_sequence_data.append(keypoints)
+
+            # 6. Keep a maximum sequence length
+            if len(t.gait_sequence_data) > self.gait_config.max_sequence_length:
+                t.gait_sequence_data.pop(0)
 
         # ---- Step 5: Mark & Remove Lost Tracks ----
         self._increment_lost_and_prune(active_ids)
@@ -167,6 +223,7 @@ class Phase1PerceptionEngine(PerceptionEngine):
         if len(t.history_boxes) > 60:
             t.history_boxes.pop(0)
 
+    
         # Update appearance feature from tracker’s EMA
         state.appearance_feature = None  # not used directly in Phase 1
 
