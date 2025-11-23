@@ -3036,3 +3036,1190 @@
 2025-11-16 11:07:59,734 [INFO] gaitguard.main: FPS=19.9 | tracks=1 | alerts=0
 2025-11-16 11:08:01,203 [INFO] gaitguard.main: FPS=19.9 | tracks=1 | alerts=0
 2025-11-16 11:08:03,048 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 15:27:15,970 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 15:27:15,970 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 16:59:23,910 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 16:59:23,910 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 17:04:46,752 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:04:46,752 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 17:04:46,752 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:04:46,752 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:04:46,752 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cpu'
+2025-11-22 17:04:47,049 [INFO] perception.detector: YOLO model ready
+2025-11-22 17:04:47,053 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:04:47,056 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:04:47,100 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 17:04:47,101 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:04:47,105 [INFO] face.config: FaceConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\face_gallery.enc
+2025-11-22 17:04:47,108 [INFO] face.detector_align: Initialising FaceDetectorAligner with pack=buffalo_l ctx_id=-1 det_size=(640, 640) providers=['CPUExecutionProvider']
+2025-11-22 17:15:29,003 [INFO] face.route: FaceRoute initialised | lookback=2.0s max_entries=30 every_n_frames=5
+2025-11-22 17:15:29,026 [ERROR] identity.face_gallery: Failed to load face gallery from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\face_gallery.enc: cryptography AESGCM backend not available. Install the 'cryptography' package. Original error: No module named 'cryptography'
+2025-11-22 17:15:29,029 [INFO] identity.identity_engine: FaceIdentityEngine initialised | strong_match_dist=0.900
+2025-11-22 17:18:21,844 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:18:21,844 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 17:18:21,844 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:18:21,851 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:18:21,851 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cpu'
+2025-11-22 17:18:22,001 [INFO] perception.detector: YOLO model ready
+2025-11-22 17:18:22,003 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:18:22,003 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:18:22,031 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 17:18:22,031 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:18:22,033 [INFO] face.config: FaceConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\face_gallery.enc
+2025-11-22 17:18:22,033 [INFO] face.detector_align: Initialising FaceDetectorAligner with pack=buffalo_l ctx_id=-1 det_size=(640, 640) providers=['CPUExecutionProvider']
+2025-11-22 17:18:26,051 [INFO] face.route: FaceRoute initialised | lookback=2.0s max_entries=30 every_n_frames=5
+2025-11-22 17:18:26,051 [ERROR] identity.face_gallery: Failed to load face gallery from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\face_gallery.enc: cryptography AESGCM backend not available. Install the 'cryptography' package. Original error: No module named 'cryptography'
+2025-11-22 17:18:26,051 [INFO] identity.identity_engine: FaceIdentityEngine initialised | strong_match_dist=0.900
+2025-11-22 17:18:26,051 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:18:26,051 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:18:26,051 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 17:18:26,051 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 17:18:26,051 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 17:18:26,059 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 17:18:26,060 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 17:18:28,101 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Face 2A) started. Press ESC to exit.
+2025-11-22 17:31:51,312 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:31:51,312 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 17:31:51,312 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:31:51,315 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:31:51,315 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cpu'
+2025-11-22 17:31:51,432 [INFO] perception.detector: YOLO model ready
+2025-11-22 17:31:51,434 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:31:51,434 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:31:51,456 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 17:31:51,456 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:31:51,457 [INFO] face.config: FaceConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\face_gallery.enc
+2025-11-22 17:31:51,459 [INFO] face.detector_align: Initialising FaceDetectorAligner with pack=buffalo_l ctx_id=-1 det_size=(640, 640) providers=['CPUExecutionProvider']
+2025-11-22 17:31:55,284 [INFO] face.route: FaceRoute initialised | lookback=2.0s max_entries=30 every_n_frames=5
+2025-11-22 17:31:55,286 [ERROR] identity.face_gallery: Failed to load face gallery from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\face_gallery.enc: cryptography AESGCM backend not available. Install the 'cryptography' package. Original error: No module named 'cryptography'
+2025-11-22 17:31:55,286 [INFO] identity.identity_engine: FaceIdentityEngine initialised | strong_match_dist=0.900
+2025-11-22 17:31:55,286 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:31:55,286 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:31:55,286 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 17:31:55,292 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 17:31:55,294 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 17:31:55,294 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 17:31:55,295 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 17:31:57,171 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Face 2A) started. Press ESC to exit.
+2025-11-22 17:31:59,622 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 17:36:18,233 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:36:18,233 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 17:36:18,233 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:36:18,233 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:36:18,233 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cpu'
+2025-11-22 17:36:18,337 [INFO] perception.detector: YOLO model ready
+2025-11-22 17:36:18,337 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:36:18,338 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:36:18,353 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 17:36:18,355 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:36:18,356 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:36:18,356 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 17:36:18,358 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 17:36:18,359 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 17:36:18,359 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 17:36:18,359 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 17:36:43,975 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:36:43,975 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 17:36:43,975 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:36:43,975 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:36:43,975 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cpu'
+2025-11-22 17:36:44,077 [INFO] perception.detector: YOLO model ready
+2025-11-22 17:36:44,078 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:36:44,078 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:36:44,095 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 17:36:44,095 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:36:44,095 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:36:44,097 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 17:36:44,097 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 17:36:44,097 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 17:36:44,097 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 17:36:44,100 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 17:37:23,012 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:37:23,014 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 17:37:23,014 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:37:23,014 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:37:23,014 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cpu'
+2025-11-22 17:37:23,155 [INFO] perception.detector: YOLO model ready
+2025-11-22 17:37:23,155 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:37:23,155 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:37:23,171 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 17:37:23,176 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:37:23,178 [INFO] face.config: FaceConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\face_gallery.enc
+2025-11-22 17:37:23,178 [INFO] face.detector_align: Initialising FaceDetectorAligner with pack=buffalo_l ctx_id=-1 det_size=(640, 640) providers=['CPUExecutionProvider']
+2025-11-22 17:37:26,804 [INFO] face.route: FaceRoute initialised | lookback=2.0s max_entries=30 every_n_frames=5
+2025-11-22 17:37:26,804 [ERROR] identity.face_gallery: Failed to load face gallery from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\face_gallery.enc: cryptography AESGCM backend not available. Install the 'cryptography' package. Original error: No module named 'cryptography'
+2025-11-22 17:37:26,804 [INFO] identity.identity_engine: FaceIdentityEngine initialised | strong_match_dist=0.900
+2025-11-22 17:37:26,804 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:37:26,804 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:37:26,804 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 17:37:26,810 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 17:37:26,811 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 17:37:26,811 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 17:37:26,811 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 17:37:28,551 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Face 2A) started. Press ESC to exit.
+2025-11-22 17:37:30,277 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 17:39:05,791 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:39:05,791 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 17:39:05,791 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:39:05,791 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:39:05,791 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cpu'
+2025-11-22 17:39:05,923 [INFO] perception.detector: YOLO model ready
+2025-11-22 17:39:05,925 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:39:05,925 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:39:05,947 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 17:39:05,947 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:39:05,949 [INFO] face.config: FaceConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\face_gallery.enc
+2025-11-22 17:39:05,949 [INFO] face.detector_align: Initialising FaceDetectorAligner with pack=buffalo_l ctx_id=-1 det_size=(640, 640) providers=['CPUExecutionProvider']
+2025-11-22 17:39:10,089 [INFO] face.route: FaceRoute initialised | lookback=2.0s max_entries=30 every_n_frames=5
+2025-11-22 17:39:10,091 [ERROR] identity.face_gallery: Failed to load face gallery from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\face_gallery.enc: cryptography AESGCM backend not available. Install the 'cryptography' package. Original error: No module named 'cryptography'
+2025-11-22 17:39:10,091 [INFO] identity.identity_engine: FaceIdentityEngine initialised | strong_match_dist=0.900
+2025-11-22 17:39:10,091 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:39:10,093 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:39:10,093 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 17:39:10,093 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 17:39:10,093 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 17:39:10,093 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 17:39:10,093 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 17:39:12,064 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Face 2A) started. Press ESC to exit.
+2025-11-22 17:39:14,023 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 17:41:53,257 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:41:53,257 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 17:41:53,257 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:41:53,257 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:41:53,257 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cpu'
+2025-11-22 17:41:53,428 [INFO] perception.detector: YOLO model ready
+2025-11-22 17:41:53,430 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:41:53,432 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:41:53,459 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 17:41:53,471 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:41:53,485 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:41:53,485 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 17:41:53,494 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 17:41:53,497 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 17:41:53,500 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 17:41:53,508 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 17:41:55,343 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Face 2A) started. Press ESC to exit.
+2025-11-22 17:45:09,528 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:45:09,528 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 17:45:09,528 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:45:09,530 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:45:09,530 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cpu'
+2025-11-22 17:45:09,617 [INFO] perception.detector: YOLO model ready
+2025-11-22 17:45:09,617 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:45:09,617 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:45:09,633 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 17:45:09,636 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:45:09,638 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:45:09,639 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 17:45:09,639 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 17:45:09,639 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 17:45:09,642 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 17:45:09,643 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 17:45:11,292 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Face 2A) started. Press ESC to exit.
+2025-11-22 17:45:12,391 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 17:49:32,757 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:49:32,757 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 17:49:32,757 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:49:32,757 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:49:32,757 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cpu'
+2025-11-22 17:49:32,862 [INFO] perception.detector: YOLO model ready
+2025-11-22 17:49:32,879 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 17:49:32,879 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:49:32,882 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:49:32,883 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 17:49:32,883 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 17:49:32,885 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 17:49:32,885 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 17:49:32,885 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 17:49:34,625 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-22 17:49:35,980 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 17:53:16,395 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:53:16,395 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 17:53:16,395 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:53:16,395 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:53:16,404 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cpu'
+2025-11-22 17:53:16,498 [INFO] perception.detector: YOLO model ready
+2025-11-22 17:53:16,515 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 17:53:16,515 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:53:16,515 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:53:16,517 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 17:53:16,517 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 17:53:16,517 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 17:53:16,517 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 17:53:16,517 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 17:53:18,296 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-22 17:53:19,436 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 17:54:23,519 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:54:23,519 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 17:54:23,519 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:54:23,519 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:54:23,519 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cpu'
+2025-11-22 17:54:23,617 [INFO] perception.detector: YOLO model ready
+2025-11-22 17:54:23,633 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 17:54:23,633 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:54:23,633 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:54:23,633 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 17:54:23,637 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 17:54:23,637 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 17:54:23,637 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 17:54:23,637 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 17:54:25,328 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-22 17:54:26,788 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 17:59:40,255 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:59:40,255 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 17:59:40,255 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:59:40,255 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:59:40,257 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cpu'
+2025-11-22 17:59:40,548 [INFO] perception.detector: YOLO model ready
+2025-11-22 17:59:40,567 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 17:59:40,567 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 17:59:40,571 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 17:59:40,574 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 17:59:40,574 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 17:59:40,575 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 17:59:40,575 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 17:59:40,575 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 17:59:42,402 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-22 17:59:43,699 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 18:00:23,797 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:00:23,799 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 18:00:23,799 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:00:23,801 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:00:23,801 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cpu'
+2025-11-22 18:00:23,901 [INFO] perception.detector: YOLO model ready
+2025-11-22 18:00:23,917 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 18:00:23,917 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:00:23,920 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:00:23,920 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 18:00:23,920 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 18:00:23,922 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 18:00:23,922 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 18:00:23,922 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 18:00:25,707 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-22 18:00:34,392 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 18:01:01,409 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:01:01,409 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 18:01:01,409 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:01:01,409 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:01:01,409 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cpu'
+2025-11-22 18:01:01,511 [INFO] perception.detector: YOLO model ready
+2025-11-22 18:01:01,525 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 18:01:01,527 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:01:01,527 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:01:01,528 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 18:01:01,528 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 18:01:01,528 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 18:01:01,530 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 18:01:01,530 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 18:01:03,163 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-22 18:01:06,921 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 18:02:15,143 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:02:15,143 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 18:02:15,143 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:02:15,143 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:02:15,143 [INFO] perception.detector: Loading YOLO model 'yolo11n.pt' on device 'cpu'
+2025-11-22 18:02:15,251 [INFO] perception.detector: YOLO model ready
+2025-11-22 18:02:15,268 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 18:02:15,268 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:02:15,270 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:02:15,270 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 18:02:15,270 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 18:02:15,270 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 18:02:15,270 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 18:02:15,272 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 18:02:17,092 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-22 18:02:21,302 [INFO] gaitguard.main: FPS=7.3 | tracks=1 | alerts=0
+2025-11-22 18:02:24,595 [INFO] gaitguard.main: FPS=8.1 | tracks=1 | alerts=0
+2025-11-22 18:02:28,125 [INFO] gaitguard.main: FPS=8.2 | tracks=1 | alerts=0
+2025-11-22 18:02:31,646 [INFO] gaitguard.main: FPS=8.3 | tracks=1 | alerts=0
+2025-11-22 18:02:35,783 [INFO] gaitguard.main: FPS=8.1 | tracks=3 | alerts=0
+2025-11-22 18:02:38,819 [INFO] gaitguard.main: FPS=8.3 | tracks=4 | alerts=0
+2025-11-22 18:02:41,943 [INFO] gaitguard.main: FPS=8.5 | tracks=1 | alerts=0
+2025-11-22 18:02:44,999 [INFO] gaitguard.main: FPS=8.6 | tracks=1 | alerts=0
+2025-11-22 18:02:48,145 [INFO] gaitguard.main: FPS=8.7 | tracks=1 | alerts=0
+2025-11-22 18:02:51,216 [INFO] gaitguard.main: FPS=8.8 | tracks=1 | alerts=0
+2025-11-22 18:02:54,679 [INFO] gaitguard.main: FPS=8.8 | tracks=1 | alerts=0
+2025-11-22 18:02:58,114 [INFO] gaitguard.main: FPS=8.8 | tracks=1 | alerts=0
+2025-11-22 18:03:01,318 [INFO] gaitguard.main: FPS=8.8 | tracks=1 | alerts=0
+2025-11-22 18:03:04,566 [INFO] gaitguard.main: FPS=8.9 | tracks=1 | alerts=0
+2025-11-22 18:03:07,759 [INFO] gaitguard.main: FPS=8.9 | tracks=2 | alerts=0
+2025-11-22 18:03:11,014 [INFO] gaitguard.main: FPS=8.9 | tracks=2 | alerts=0
+2025-11-22 18:03:15,594 [INFO] gaitguard.main: FPS=8.7 | tracks=1 | alerts=0
+2025-11-22 18:03:16,317 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 18:36:57,562 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:36:57,562 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 18:36:57,562 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:36:57,566 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:37:05,879 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-22 18:37:05,879 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 18:37:05,879 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:37:05,881 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:37:05,881 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 18:37:05,881 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 18:37:05,883 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 18:37:05,883 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 18:37:05,884 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 18:37:07,666 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-22 18:37:11,032 [INFO] gaitguard.main: FPS=9.1 | tracks=0 | alerts=0
+2025-11-22 18:37:12,962 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 18:43:15,236 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:43:15,236 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 18:43:15,238 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:43:15,240 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:43:15,606 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-22 18:43:15,608 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 18:43:15,611 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:43:15,615 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:43:15,618 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 18:43:15,622 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 18:43:15,625 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 18:43:15,628 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 18:43:15,628 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 18:43:17,443 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-22 18:43:20,846 [INFO] gaitguard.main: FPS=9.0 | tracks=1 | alerts=0
+2025-11-22 18:43:23,220 [INFO] gaitguard.main: FPS=10.5 | tracks=1 | alerts=0
+2025-11-22 18:43:25,525 [INFO] gaitguard.main: FPS=11.2 | tracks=1 | alerts=0
+2025-11-22 18:43:27,816 [INFO] gaitguard.main: FPS=11.6 | tracks=1 | alerts=0
+2025-11-22 18:43:30,864 [INFO] gaitguard.main: FPS=11.2 | tracks=1 | alerts=0
+2025-11-22 18:43:31,314 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 18:46:50,118 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:46:50,118 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 18:46:50,118 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:46:50,118 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:46:50,297 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-22 18:46:50,299 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 18:46:50,299 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:46:50,301 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:46:50,301 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 18:46:50,301 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 18:46:50,302 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 18:46:50,302 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 18:46:50,302 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 18:46:52,189 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-22 18:46:53,090 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 18:48:10,397 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:48:10,397 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 18:48:10,397 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:48:10,397 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:48:10,587 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-22 18:48:10,587 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 18:48:10,587 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:48:10,587 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:48:10,587 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 18:48:10,587 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 18:48:10,592 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 18:48:10,592 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 18:48:10,592 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 18:48:12,634 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-22 18:48:15,802 [INFO] gaitguard.main: FPS=9.7 | tracks=1 | alerts=0
+2025-11-22 18:48:18,037 [INFO] gaitguard.main: FPS=11.2 | tracks=1 | alerts=0
+2025-11-22 18:48:20,291 [INFO] gaitguard.main: FPS=11.9 | tracks=1 | alerts=0
+2025-11-22 18:48:22,592 [INFO] gaitguard.main: FPS=12.1 | tracks=1 | alerts=0
+2025-11-22 18:48:24,939 [INFO] gaitguard.main: FPS=12.3 | tracks=1 | alerts=0
+2025-11-22 18:48:27,194 [INFO] gaitguard.main: FPS=12.4 | tracks=1 | alerts=0
+2025-11-22 18:48:29,419 [INFO] gaitguard.main: FPS=12.6 | tracks=1 | alerts=0
+2025-11-22 18:48:32,043 [INFO] gaitguard.main: FPS=12.4 | tracks=1 | alerts=0
+2025-11-22 18:48:34,697 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 18:49:44,867 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:49:44,867 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 18:49:44,867 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:49:44,867 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:49:45,055 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-22 18:49:45,055 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 18:49:45,055 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:49:45,055 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:49:45,055 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 18:49:45,055 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 18:49:45,055 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 18:49:45,055 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 18:49:45,061 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 18:49:47,036 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-22 18:49:48,400 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 18:50:24,423 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:50:24,423 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 18:50:24,423 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:50:24,423 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:50:24,602 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-22 18:50:24,602 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 18:50:24,602 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:50:24,602 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:50:24,602 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 18:50:24,605 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 18:50:24,606 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 18:50:24,606 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 18:50:24,606 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 18:50:26,570 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-22 18:50:27,979 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 18:51:40,159 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:51:40,159 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 18:51:40,159 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:51:40,159 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:51:40,328 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-22 18:51:40,328 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 18:51:40,328 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:51:40,343 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:51:40,343 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 18:51:40,344 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 18:51:40,344 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 18:51:40,344 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 18:51:40,344 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 18:51:42,245 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-22 18:51:45,405 [INFO] gaitguard.main: FPS=9.7 | tracks=1 | alerts=0
+2025-11-22 18:51:47,642 [INFO] gaitguard.main: FPS=11.3 | tracks=1 | alerts=0
+2025-11-22 18:51:49,888 [INFO] gaitguard.main: FPS=11.9 | tracks=1 | alerts=0
+2025-11-22 18:51:52,132 [INFO] gaitguard.main: FPS=12.2 | tracks=1 | alerts=0
+2025-11-22 18:51:54,022 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 18:53:26,311 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:53:26,311 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 18:53:26,311 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:53:26,314 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:53:26,492 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-22 18:53:26,492 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 18:53:26,492 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 18:53:26,492 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 18:53:26,492 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 18:53:26,492 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 18:53:26,495 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 18:53:26,495 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 18:53:26,495 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 18:53:28,339 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-22 18:53:31,502 [INFO] gaitguard.main: FPS=9.7 | tracks=1 | alerts=0
+2025-11-22 18:53:33,956 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 19:01:17,451 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 19:01:17,451 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 19:01:17,451 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 19:01:17,451 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 19:01:17,592 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-22 19:01:17,592 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 19:01:17,594 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 19:01:17,594 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 19:01:17,595 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 19:01:17,595 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 19:01:17,595 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 19:01:17,595 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 19:01:17,595 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 19:01:19,118 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-22 19:01:21,891 [INFO] gaitguard.main: FPS=11.1 | tracks=1 | alerts=0
+2025-11-22 19:01:23,909 [INFO] gaitguard.main: FPS=12.7 | tracks=1 | alerts=0
+2025-11-22 19:01:25,934 [INFO] gaitguard.main: FPS=13.3 | tracks=1 | alerts=0
+2025-11-22 19:01:27,998 [INFO] gaitguard.main: FPS=13.6 | tracks=1 | alerts=0
+2025-11-22 19:01:30,708 [INFO] gaitguard.main: FPS=13.0 | tracks=1 | alerts=0
+2025-11-22 19:01:33,165 [INFO] gaitguard.main: FPS=12.9 | tracks=1 | alerts=0
+2025-11-22 19:01:36,177 [INFO] gaitguard.main: FPS=12.4 | tracks=1 | alerts=0
+2025-11-22 19:01:38,890 [INFO] gaitguard.main: FPS=12.2 | tracks=1 | alerts=0
+2025-11-22 19:01:41,789 [INFO] gaitguard.main: FPS=12.0 | tracks=1 | alerts=0
+2025-11-22 19:01:44,800 [INFO] gaitguard.main: FPS=11.7 | tracks=1 | alerts=0
+2025-11-22 19:01:48,030 [INFO] gaitguard.main: FPS=11.4 | tracks=1 | alerts=0
+2025-11-22 19:01:48,341 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 19:05:42,977 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 19:05:42,977 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 19:05:42,977 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 19:05:42,977 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 19:05:43,127 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-22 19:05:43,127 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 19:05:43,127 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 19:05:43,127 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 19:05:43,141 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 19:05:43,141 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 19:05:43,142 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 19:05:43,142 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 19:05:43,143 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 19:05:44,746 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-22 19:05:46,027 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     343.15       210.6     0.99321]
+2025-11-22 19:05:46,030 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     343.15       210.6     0.99321]
+2025-11-22 19:05:46,030 [DEBUG] gait.gait_engine: Track 1: Not enough poses (1 < 24) for gait analysis.
+2025-11-22 19:05:46,035 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     343.15       210.6     0.99321]
+2025-11-22 19:05:46,036 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     343.15       210.6     0.99321]
+2025-11-22 19:05:46,145 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     344.12      211.71     0.99484]
+2025-11-22 19:05:46,146 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     343.78      211.32     0.99427]
+2025-11-22 19:05:46,146 [DEBUG] gait.gait_engine: Track 1: Not enough poses (2 < 24) for gait analysis.
+2025-11-22 19:05:46,147 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     343.78      211.32     0.99427]
+2025-11-22 19:05:46,148 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     343.78      211.32     0.99427]
+2025-11-22 19:05:46,241 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [      340.6      207.96     0.99513]
+2025-11-22 19:05:46,241 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     341.71      209.14     0.99483]
+2025-11-22 19:05:46,242 [DEBUG] gait.gait_engine: Track 1: Not enough poses (3 < 24) for gait analysis.
+2025-11-22 19:05:46,242 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     341.71      209.14     0.99483]
+2025-11-22 19:05:46,243 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     341.71      209.14     0.99483]
+2025-11-22 19:05:46,348 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     341.72       212.1     0.99455]
+2025-11-22 19:05:46,349 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     341.72      211.07     0.99465]
+2025-11-22 19:05:46,349 [DEBUG] gait.gait_engine: Track 1: Not enough poses (4 < 24) for gait analysis.
+2025-11-22 19:05:46,350 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     341.72      211.07     0.99465]
+2025-11-22 19:05:46,351 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     341.72      211.07     0.99465]
+2025-11-22 19:05:46,448 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     341.66      214.24      0.9938]
+2025-11-22 19:05:46,449 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     341.68      213.13      0.9941]
+2025-11-22 19:05:46,449 [DEBUG] gait.gait_engine: Track 1: Not enough poses (5 < 24) for gait analysis.
+2025-11-22 19:05:46,450 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     341.68      213.13      0.9941]
+2025-11-22 19:05:46,450 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     341.68      213.13      0.9941]
+2025-11-22 19:05:46,547 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     342.89       207.8     0.99439]
+2025-11-22 19:05:46,548 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     342.46      209.66     0.99429]
+2025-11-22 19:05:46,548 [DEBUG] gait.gait_engine: Track 1: Not enough poses (6 < 24) for gait analysis.
+2025-11-22 19:05:46,549 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     342.46      209.66     0.99429]
+2025-11-22 19:05:46,549 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     342.46      209.66     0.99429]
+2025-11-22 19:05:46,647 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     343.57      212.58      0.9945]
+2025-11-22 19:05:46,647 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     343.18      211.56     0.99442]
+2025-11-22 19:05:46,649 [DEBUG] gait.gait_engine: Track 1: Not enough poses (7 < 24) for gait analysis.
+2025-11-22 19:05:46,650 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     343.18      211.56     0.99442]
+2025-11-22 19:05:46,650 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     343.18      211.56     0.99442]
+2025-11-22 19:05:46,746 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     340.47      210.27     0.99549]
+2025-11-22 19:05:46,746 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     341.42      210.72     0.99511]
+2025-11-22 19:05:46,747 [DEBUG] gait.gait_engine: Track 1: Not enough poses (8 < 24) for gait analysis.
+2025-11-22 19:05:46,747 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     341.42      210.72     0.99511]
+2025-11-22 19:05:46,748 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     341.42      210.72     0.99511]
+2025-11-22 19:05:46,849 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     342.08      207.62     0.99361]
+2025-11-22 19:05:46,850 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     341.85      208.71     0.99414]
+2025-11-22 19:05:46,850 [DEBUG] gait.gait_engine: Track 1: Not enough poses (9 < 24) for gait analysis.
+2025-11-22 19:05:46,851 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     341.85      208.71     0.99414]
+2025-11-22 19:05:46,852 [DEBUG] ui.overlay: Skeleton drawn: 14 KPs, 13 bones. First kp: [     341.85      208.71     0.99414]
+2025-11-22 19:05:46,956 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     341.56      206.27     0.99447]
+2025-11-22 19:05:46,957 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     341.66      207.12     0.99435]
+2025-11-22 19:05:46,958 [DEBUG] gait.gait_engine: Track 1: Not enough poses (10 < 24) for gait analysis.
+2025-11-22 19:05:46,958 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     341.66      207.12     0.99435]
+2025-11-22 19:05:46,959 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     341.66      207.12     0.99435]
+2025-11-22 19:05:47,050 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     344.43      207.61     0.99494]
+2025-11-22 19:05:47,050 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     343.46      207.44     0.99473]
+2025-11-22 19:05:47,051 [DEBUG] gait.gait_engine: Track 1: Not enough poses (11 < 24) for gait analysis.
+2025-11-22 19:05:47,052 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     343.46      207.44     0.99473]
+2025-11-22 19:05:47,052 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     343.46      207.44     0.99473]
+2025-11-22 19:05:47,145 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     343.11      209.58     0.99473]
+2025-11-22 19:05:47,145 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     343.23      208.83     0.99473]
+2025-11-22 19:05:47,145 [DEBUG] gait.gait_engine: Track 1: Not enough poses (12 < 24) for gait analysis.
+2025-11-22 19:05:47,146 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     343.23      208.83     0.99473]
+2025-11-22 19:05:47,146 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     343.23      208.83     0.99473]
+2025-11-22 19:05:47,235 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     342.18      206.74     0.99482]
+2025-11-22 19:05:47,235 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     342.55      207.47     0.99479]
+2025-11-22 19:05:47,236 [DEBUG] gait.gait_engine: Track 1: Not enough poses (13 < 24) for gait analysis.
+2025-11-22 19:05:47,236 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     342.55      207.47     0.99479]
+2025-11-22 19:05:47,237 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     342.55      207.47     0.99479]
+2025-11-22 19:05:47,340 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     343.16      204.97     0.99535]
+2025-11-22 19:05:47,340 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     342.95      205.85     0.99516]
+2025-11-22 19:05:47,341 [DEBUG] gait.gait_engine: Track 1: Not enough poses (14 < 24) for gait analysis.
+2025-11-22 19:05:47,341 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     342.95      205.85     0.99516]
+2025-11-22 19:05:47,343 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     342.95      205.85     0.99516]
+2025-11-22 19:05:47,436 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     340.27      207.05     0.99456]
+2025-11-22 19:05:47,437 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     341.21      206.63     0.99477]
+2025-11-22 19:05:47,437 [DEBUG] gait.gait_engine: Track 1: Not enough poses (15 < 24) for gait analysis.
+2025-11-22 19:05:47,438 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     341.21      206.63     0.99477]
+2025-11-22 19:05:47,439 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     341.21      206.63     0.99477]
+2025-11-22 19:05:47,527 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     341.01      203.65     0.99494]
+2025-11-22 19:05:47,527 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     341.08      204.69     0.99488]
+2025-11-22 19:05:47,528 [DEBUG] gait.gait_engine: Track 1: Not enough poses (16 < 24) for gait analysis.
+2025-11-22 19:05:47,530 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     341.08      204.69     0.99488]
+2025-11-22 19:05:47,530 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     341.08      204.69     0.99488]
+2025-11-22 19:05:47,623 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [      339.9      200.57     0.99395]
+2025-11-22 19:05:47,624 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     340.31      202.01     0.99427]
+2025-11-22 19:05:47,624 [DEBUG] gait.gait_engine: Track 1: Not enough poses (17 < 24) for gait analysis.
+2025-11-22 19:05:47,626 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     340.31      202.01     0.99427]
+2025-11-22 19:05:47,627 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     340.31      202.01     0.99427]
+2025-11-22 19:05:47,718 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [      338.5      197.89     0.99216]
+2025-11-22 19:05:47,718 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     339.14      199.34      0.9929]
+2025-11-22 19:05:47,719 [DEBUG] gait.gait_engine: Track 1: Not enough poses (18 < 24) for gait analysis.
+2025-11-22 19:05:47,720 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     339.14      199.34      0.9929]
+2025-11-22 19:05:47,721 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     339.14      199.34      0.9929]
+2025-11-22 19:05:47,809 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     343.68      199.45     0.99104]
+2025-11-22 19:05:47,809 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     342.09      199.41     0.99169]
+2025-11-22 19:05:47,810 [DEBUG] gait.gait_engine: Track 1: Not enough poses (19 < 24) for gait analysis.
+2025-11-22 19:05:47,810 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     342.09      199.41     0.99169]
+2025-11-22 19:05:47,812 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     342.09      199.41     0.99169]
+2025-11-22 19:05:47,906 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     346.02      196.44     0.99102]
+2025-11-22 19:05:47,906 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     344.65      197.48     0.99126]
+2025-11-22 19:05:47,906 [DEBUG] gait.gait_engine: Track 1: Not enough poses (20 < 24) for gait analysis.
+2025-11-22 19:05:47,908 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     344.65      197.48     0.99126]
+2025-11-22 19:05:47,908 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     344.65      197.48     0.99126]
+2025-11-22 19:05:48,010 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     345.73      193.26     0.99018]
+2025-11-22 19:05:48,012 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     345.35      194.73     0.99056]
+2025-11-22 19:05:48,012 [DEBUG] gait.gait_engine: Track 1: Not enough poses (21 < 24) for gait analysis.
+2025-11-22 19:05:48,013 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     345.35      194.73     0.99056]
+2025-11-22 19:05:48,014 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     345.35      194.73     0.99056]
+2025-11-22 19:05:48,104 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [      347.1      186.02      0.9907]
+2025-11-22 19:05:48,104 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     346.49      189.07     0.99065]
+2025-11-22 19:05:48,105 [DEBUG] gait.gait_engine: Track 1: Not enough poses (22 < 24) for gait analysis.
+2025-11-22 19:05:48,105 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     346.49      189.07     0.99065]
+2025-11-22 19:05:48,106 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     346.49      189.07     0.99065]
+2025-11-22 19:05:48,200 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [      347.9      186.17     0.99318]
+2025-11-22 19:05:48,201 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [      347.4      187.19     0.99229]
+2025-11-22 19:05:48,201 [DEBUG] gait.gait_engine: Track 1: Not enough poses (23 < 24) for gait analysis.
+2025-11-22 19:05:48,202 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [      347.4      187.19     0.99229]
+2025-11-22 19:05:48,203 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [      347.4      187.19     0.99229]
+2025-11-22 19:05:48,300 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     342.14      179.19     0.99252]
+2025-11-22 19:05:48,300 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     343.98      181.99     0.99244]
+2025-11-22 19:05:48,301 [DEBUG] gait.gait_extractor: Extracted simulated gait embedding of shape (256,) with quality 0.59.
+2025-11-22 19:05:48,302 [DEBUG] gait.gait_gallery: FAISS index is empty, no search performed.
+2025-11-22 19:05:48,302 [DEBUG] gait.gait_engine: Track 1: Gait recognized as UNKNOWN with confidence 0.00.
+2025-11-22 19:05:48,303 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     343.98      181.99     0.99244]
+2025-11-22 19:05:48,303 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     343.98      181.99     0.99244]
+2025-11-22 19:05:48,395 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     336.65      174.29     0.99216]
+2025-11-22 19:05:48,396 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     339.22      176.98     0.99226]
+2025-11-22 19:05:48,398 [DEBUG] gait.gait_extractor: Extracted simulated gait embedding of shape (256,) with quality 0.59.
+2025-11-22 19:05:48,398 [DEBUG] gait.gait_gallery: FAISS index is empty, no search performed.
+2025-11-22 19:05:48,398 [DEBUG] gait.gait_engine: Track 1: Gait recognized as UNKNOWN with confidence 0.00.
+2025-11-22 19:05:48,399 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     339.22      176.98     0.99226]
+2025-11-22 19:05:48,399 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     339.22      176.98     0.99226]
+2025-11-22 19:05:48,500 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     338.15      169.51     0.99462]
+2025-11-22 19:05:48,500 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     338.52      172.13      0.9938]
+2025-11-22 19:05:48,502 [DEBUG] gait.gait_extractor: Extracted simulated gait embedding of shape (256,) with quality 0.58.
+2025-11-22 19:05:48,502 [DEBUG] gait.gait_gallery: FAISS index is empty, no search performed.
+2025-11-22 19:05:48,502 [DEBUG] gait.gait_engine: Track 1: Gait recognized as UNKNOWN with confidence 0.00.
+2025-11-22 19:05:48,503 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     338.52      172.13      0.9938]
+2025-11-22 19:05:48,503 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     338.52      172.13      0.9938]
+2025-11-22 19:05:48,598 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     330.82      166.41     0.99271]
+2025-11-22 19:05:48,598 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     333.52      168.41     0.99309]
+2025-11-22 19:05:48,600 [DEBUG] gait.gait_extractor: Extracted simulated gait embedding of shape (256,) with quality 0.58.
+2025-11-22 19:05:48,600 [DEBUG] gait.gait_gallery: FAISS index is empty, no search performed.
+2025-11-22 19:05:48,601 [DEBUG] gait.gait_engine: Track 1: Gait recognized as UNKNOWN with confidence 0.00.
+2025-11-22 19:05:48,602 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     333.52      168.41     0.99309]
+2025-11-22 19:05:48,602 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     333.52      168.41     0.99309]
+2025-11-22 19:05:48,693 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     331.82      161.99     0.99291]
+2025-11-22 19:05:48,694 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     332.42      164.24     0.99297]
+2025-11-22 19:05:48,695 [DEBUG] gait.gait_extractor: Extracted simulated gait embedding of shape (256,) with quality 0.58.
+2025-11-22 19:05:48,695 [DEBUG] gait.gait_gallery: FAISS index is empty, no search performed.
+2025-11-22 19:05:48,695 [DEBUG] gait.gait_engine: Track 1: Gait recognized as UNKNOWN with confidence 0.00.
+2025-11-22 19:05:48,696 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     332.42      164.24     0.99297]
+2025-11-22 19:05:48,696 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     332.42      164.24     0.99297]
+2025-11-22 19:05:48,698 [INFO] gaitguard.main: FPS=7.8 | tracks=1 | gait_decisions=1 | alerts=0
+2025-11-22 19:05:48,794 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     326.36      162.14     0.99334]
+2025-11-22 19:05:48,795 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     328.48      162.87     0.99321]
+2025-11-22 19:05:48,796 [DEBUG] gait.gait_extractor: Extracted simulated gait embedding of shape (256,) with quality 0.58.
+2025-11-22 19:05:48,796 [DEBUG] gait.gait_gallery: FAISS index is empty, no search performed.
+2025-11-22 19:05:48,796 [DEBUG] gait.gait_engine: Track 1: Gait recognized as UNKNOWN with confidence 0.00.
+2025-11-22 19:05:48,797 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     328.48      162.87     0.99321]
+2025-11-22 19:05:48,797 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     328.48      162.87     0.99321]
+2025-11-22 19:05:48,893 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     327.04      157.25     0.99314]
+2025-11-22 19:05:48,894 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     327.55      159.22     0.99317]
+2025-11-22 19:05:48,895 [DEBUG] gait.gait_extractor: Extracted simulated gait embedding of shape (256,) with quality 0.57.
+2025-11-22 19:05:48,895 [DEBUG] gait.gait_gallery: FAISS index is empty, no search performed.
+2025-11-22 19:05:48,895 [DEBUG] gait.gait_engine: Track 1: Gait recognized as UNKNOWN with confidence 0.00.
+2025-11-22 19:05:48,896 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     327.55      159.22     0.99317]
+2025-11-22 19:05:48,896 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     327.55      159.22     0.99317]
+2025-11-22 19:05:48,999 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     325.43      157.97     0.99311]
+2025-11-22 19:05:49,000 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     326.17      158.41     0.99313]
+2025-11-22 19:05:49,001 [DEBUG] gait.gait_extractor: Extracted simulated gait embedding of shape (256,) with quality 0.57.
+2025-11-22 19:05:49,001 [DEBUG] gait.gait_gallery: FAISS index is empty, no search performed.
+2025-11-22 19:05:49,002 [DEBUG] gait.gait_engine: Track 1: Gait recognized as UNKNOWN with confidence 0.00.
+2025-11-22 19:05:49,003 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     326.17      158.41     0.99313]
+2025-11-22 19:05:49,004 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     326.17      158.41     0.99313]
+2025-11-22 19:05:49,094 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     322.85      153.37     0.99274]
+2025-11-22 19:05:49,094 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     324.01      155.14     0.99288]
+2025-11-22 19:05:49,095 [DEBUG] gait.gait_extractor: Extracted simulated gait embedding of shape (256,) with quality 0.57.
+2025-11-22 19:05:49,095 [DEBUG] gait.gait_gallery: FAISS index is empty, no search performed.
+2025-11-22 19:05:49,095 [DEBUG] gait.gait_engine: Track 1: Gait recognized as UNKNOWN with confidence 0.00.
+2025-11-22 19:05:49,097 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     324.01      155.14     0.99288]
+2025-11-22 19:05:49,097 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     324.01      155.14     0.99288]
+2025-11-22 19:05:49,198 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     322.11      154.81     0.99287]
+2025-11-22 19:05:49,199 [DEBUG] perception.perception_engine: Track 1: Smoothed keypoints shape: (17, 3), first kp: [     322.78      154.93     0.99287]
+2025-11-22 19:05:49,201 [DEBUG] gait.gait_extractor: Extracted simulated gait embedding of shape (256,) with quality 0.57.
+2025-11-22 19:05:49,201 [DEBUG] gait.gait_gallery: FAISS index is empty, no search performed.
+2025-11-22 19:05:49,201 [DEBUG] gait.gait_engine: Track 1: Gait recognized as UNKNOWN with confidence 0.00.
+2025-11-22 19:05:49,202 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     322.78      154.93     0.99287]
+2025-11-22 19:05:49,202 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     322.78      154.93     0.99287]
+2025-11-22 19:05:49,485 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 19:10:44,951 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 19:10:44,951 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 19:10:44,951 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 19:10:44,951 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 19:10:45,123 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-22 19:10:45,123 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 19:10:45,123 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 19:10:45,123 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 19:10:45,127 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 19:10:45,127 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 19:10:45,129 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 19:10:45,129 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 19:10:45,129 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 19:10:46,793 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-22 19:10:47,734 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     349.23      246.58     0.98572]
+2025-11-22 19:10:47,735 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 202.99887084960938 - 494.6873474121094
+2025-11-22 19:10:47,736 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 226.91934204101562 - 480.0
+2025-11-22 19:10:47,988 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     350.79       245.1     0.98446]
+2025-11-22 19:10:47,990 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 191.2967529296875 - 492.63494873046875
+2025-11-22 19:10:47,990 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 224.97268676757812 - 480.0
+2025-11-22 19:10:48,102 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     349.49      245.96      0.9828]
+2025-11-22 19:10:48,103 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 201.5282745361328 - 493.76312255859375
+2025-11-22 19:10:48,103 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 225.94281005859375 - 480.0
+2025-11-22 19:10:48,105 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     349.49      245.96      0.9828]
+2025-11-22 19:10:48,105 [DEBUG] perception.perception_engine: Track 1: Normalized first kp: [    0.54608     0.51242      0.9828]
+2025-11-22 19:10:48,105 [DEBUG] gait.gait_engine: Track 1: Not enough poses (1 < 24) for gait analysis.
+2025-11-22 19:10:48,112 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.54608     0.51242      0.9828]
+2025-11-22 19:10:48,112 [DEBUG] ui.overlay: Skeleton drawn: 12 KPs, 10 bones. First kp: [    0.54608     0.51242      0.9828]
+2025-11-22 19:10:48,213 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     349.31      243.95     0.98381]
+2025-11-22 19:10:48,213 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 197.4176025390625 - 495.84588623046875
+2025-11-22 19:10:48,213 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 224.5927734375 - 480.0
+2025-11-22 19:10:48,214 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     349.31      243.95     0.98381]
+2025-11-22 19:10:48,215 [DEBUG] perception.perception_engine: Track 1: Normalized first kp: [    0.54579     0.50824     0.98381]
+2025-11-22 19:10:48,215 [DEBUG] gait.gait_engine: Track 1: Not enough poses (2 < 24) for gait analysis.
+2025-11-22 19:10:48,216 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.54589      0.5097     0.98345]
+2025-11-22 19:10:48,217 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.54589      0.5097     0.98345]
+2025-11-22 19:10:48,307 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     348.21      243.62     0.98679]
+2025-11-22 19:10:48,307 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 199.62684631347656 - 498.6768493652344
+2025-11-22 19:10:48,307 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 224.6650848388672 - 480.0
+2025-11-22 19:10:48,309 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     348.21      243.62     0.98679]
+2025-11-22 19:10:48,309 [DEBUG] perception.perception_engine: Track 1: Normalized first kp: [    0.54408     0.50753     0.98679]
+2025-11-22 19:10:48,310 [DEBUG] gait.gait_engine: Track 1: Not enough poses (3 < 24) for gait analysis.
+2025-11-22 19:10:48,310 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.54472     0.50829     0.98562]
+2025-11-22 19:10:48,311 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.54472     0.50829     0.98562]
+2025-11-22 19:10:48,405 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     347.96      242.66     0.98425]
+2025-11-22 19:10:48,405 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 198.14028930664062 - 486.34808349609375
+2025-11-22 19:10:48,406 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 221.6836700439453 - 480.0
+2025-11-22 19:10:48,408 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     347.96      242.66     0.98425]
+2025-11-22 19:10:48,409 [DEBUG] perception.perception_engine: Track 1: Normalized first kp: [    0.54369     0.50555     0.98425]
+2025-11-22 19:10:48,409 [DEBUG] gait.gait_engine: Track 1: Not enough poses (4 < 24) for gait analysis.
+2025-11-22 19:10:48,410 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.54405     0.50651     0.98473]
+2025-11-22 19:10:48,410 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.54405     0.50651     0.98473]
+2025-11-22 19:10:48,512 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     346.67      242.62     0.98724]
+2025-11-22 19:10:48,513 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 194.24073791503906 - 495.01116943359375
+2025-11-22 19:10:48,513 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 222.16357421875 - 480.0
+2025-11-22 19:10:48,515 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     346.67      242.62     0.98724]
+2025-11-22 19:10:48,515 [DEBUG] perception.perception_engine: Track 1: Normalized first kp: [    0.54167     0.50546     0.98724]
+2025-11-22 19:10:48,516 [DEBUG] gait.gait_engine: Track 1: Not enough poses (5 < 24) for gait analysis.
+2025-11-22 19:10:48,517 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [     0.5425     0.50583     0.98636]
+2025-11-22 19:10:48,517 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     0.5425     0.50583     0.98636]
+2025-11-22 19:10:48,606 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     344.99      246.16     0.98437]
+2025-11-22 19:10:48,607 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 194.94381713867188 - 483.9258728027344
+2025-11-22 19:10:48,607 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 223.9815673828125 - 480.0
+2025-11-22 19:10:48,609 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     344.99      246.16     0.98437]
+2025-11-22 19:10:48,609 [DEBUG] perception.perception_engine: Track 1: Normalized first kp: [    0.53904     0.51283     0.98437]
+2025-11-22 19:10:48,609 [DEBUG] gait.gait_engine: Track 1: Not enough poses (6 < 24) for gait analysis.
+2025-11-22 19:10:48,611 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.54025     0.51038     0.98506]
+2025-11-22 19:10:48,611 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.54025     0.51038     0.98506]
+2025-11-22 19:10:48,706 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     346.32      243.66     0.98617]
+2025-11-22 19:10:48,707 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 184.2529754638672 - 491.60693359375
+2025-11-22 19:10:48,707 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 223.24288940429688 - 480.0
+2025-11-22 19:10:48,709 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     346.32      243.66     0.98617]
+2025-11-22 19:10:48,709 [DEBUG] perception.perception_engine: Track 1: Normalized first kp: [    0.54113     0.50763     0.98617]
+2025-11-22 19:10:48,710 [DEBUG] gait.gait_engine: Track 1: Not enough poses (7 < 24) for gait analysis.
+2025-11-22 19:10:48,710 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.54082     0.50859     0.98578]
+2025-11-22 19:10:48,711 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.54082     0.50859     0.98578]
+2025-11-22 19:10:48,807 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     342.74      241.71     0.98552]
+2025-11-22 19:10:48,807 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 197.4080352783203 - 495.1020202636719
+2025-11-22 19:10:48,807 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 221.64418029785156 - 480.0
+2025-11-22 19:10:48,809 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     342.74      241.71     0.98552]
+2025-11-22 19:10:48,809 [DEBUG] perception.perception_engine: Track 1: Normalized first kp: [    0.53552     0.50355     0.98552]
+2025-11-22 19:10:48,809 [DEBUG] gait.gait_engine: Track 1: Not enough poses (8 < 24) for gait analysis.
+2025-11-22 19:10:48,811 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.53738     0.50532     0.98561]
+2025-11-22 19:10:48,811 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.53738     0.50532     0.98561]
+2025-11-22 19:10:48,912 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     340.94      241.84     0.98629]
+2025-11-22 19:10:48,912 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 194.88427734375 - 488.6440734863281
+2025-11-22 19:10:48,912 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 219.76998901367188 - 480.0
+2025-11-22 19:10:48,914 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     340.94      241.84     0.98629]
+2025-11-22 19:10:48,914 [DEBUG] perception.perception_engine: Track 1: Normalized first kp: [    0.53273     0.50384     0.98629]
+2025-11-22 19:10:48,915 [DEBUG] gait.gait_engine: Track 1: Not enough poses (9 < 24) for gait analysis.
+2025-11-22 19:10:48,916 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.53435     0.50435     0.98606]
+2025-11-22 19:10:48,916 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.53435     0.50435     0.98606]
+2025-11-22 19:10:49,013 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [      343.4      239.53     0.98506]
+2025-11-22 19:10:49,013 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 203.16482543945312 - 497.0274353027344
+2025-11-22 19:10:49,013 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 217.19403076171875 - 480.0
+2025-11-22 19:10:49,016 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [      343.4      239.53     0.98506]
+2025-11-22 19:10:49,016 [DEBUG] perception.perception_engine: Track 1: Normalized first kp: [    0.53657     0.49902     0.98506]
+2025-11-22 19:10:49,016 [DEBUG] gait.gait_engine: Track 1: Not enough poses (10 < 24) for gait analysis.
+2025-11-22 19:10:49,017 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.53579     0.50089     0.98541]
+2025-11-22 19:10:49,018 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.53579     0.50089     0.98541]
+2025-11-22 19:10:49,107 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     341.82      235.66     0.98793]
+2025-11-22 19:10:49,107 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 184.6208038330078 - 512.3385620117188
+2025-11-22 19:10:49,107 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 215.64987182617188 - 480.0
+2025-11-22 19:10:49,109 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     341.82      235.66     0.98793]
+2025-11-22 19:10:49,109 [DEBUG] perception.perception_engine: Track 1: Normalized first kp: [     0.5341     0.49096     0.98793]
+2025-11-22 19:10:49,109 [DEBUG] gait.gait_engine: Track 1: Not enough poses (11 < 24) for gait analysis.
+2025-11-22 19:10:49,110 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.53469     0.49443     0.98705]
+2025-11-22 19:10:49,111 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.53469     0.49443     0.98705]
+2025-11-22 19:10:49,204 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     340.32      236.07     0.99197]
+2025-11-22 19:10:49,205 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 134.32627868652344 - 535.1212158203125
+2025-11-22 19:10:49,205 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 215.696044921875 - 480.0
+2025-11-22 19:10:49,206 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     340.32      236.07     0.99197]
+2025-11-22 19:10:49,207 [DEBUG] perception.perception_engine: Track 1: Normalized first kp: [    0.53175      0.4918     0.99197]
+2025-11-22 19:10:49,207 [DEBUG] gait.gait_engine: Track 1: Not enough poses (12 < 24) for gait analysis.
+2025-11-22 19:10:49,208 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.53278     0.49272     0.99025]
+2025-11-22 19:10:49,208 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.53278     0.49272     0.99025]
+2025-11-22 19:10:49,299 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     341.73      236.93     0.99195]
+2025-11-22 19:10:49,300 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 72.60931396484375 - 521.55029296875
+2025-11-22 19:10:49,300 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 215.23281860351562 - 480.0
+2025-11-22 19:10:49,301 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     341.73      236.93     0.99195]
+2025-11-22 19:10:49,302 [DEBUG] perception.perception_engine: Track 1: Normalized first kp: [    0.53396     0.49361     0.99195]
+2025-11-22 19:10:49,302 [DEBUG] gait.gait_engine: Track 1: Not enough poses (13 < 24) for gait analysis.
+2025-11-22 19:10:49,302 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.53355      0.4933     0.99136]
+2025-11-22 19:10:49,304 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.53355      0.4933     0.99136]
+2025-11-22 19:10:49,397 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     342.98      237.72     0.99198]
+2025-11-22 19:10:49,397 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 80.97634887695312 - 546.4669189453125
+2025-11-22 19:10:49,397 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 215.70162963867188 - 480.0
+2025-11-22 19:10:49,399 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     342.98      237.72     0.99198]
+2025-11-22 19:10:49,400 [DEBUG] perception.perception_engine: Track 1: Normalized first kp: [    0.53591     0.49525     0.99198]
+2025-11-22 19:10:49,400 [DEBUG] gait.gait_engine: Track 1: Not enough poses (14 < 24) for gait analysis.
+2025-11-22 19:10:49,401 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.53508     0.49457     0.99176]
+2025-11-22 19:10:49,401 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.53508     0.49457     0.99176]
+2025-11-22 19:10:49,490 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     344.32      239.13     0.98418]
+2025-11-22 19:10:49,491 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 261.14788818359375 - 589.3512573242188
+2025-11-22 19:10:49,491 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 216.6708984375 - 480.0
+2025-11-22 19:10:49,493 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     344.32      239.13     0.98418]
+2025-11-22 19:10:49,493 [DEBUG] perception.perception_engine: Track 1: Normalized first kp: [    0.53801      0.4982     0.98418]
+2025-11-22 19:10:49,493 [DEBUG] gait.gait_engine: Track 1: Not enough poses (15 < 24) for gait analysis.
+2025-11-22 19:10:49,494 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.53698     0.49693     0.98683]
+2025-11-22 19:10:49,495 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.53698     0.49693     0.98683]
+2025-11-22 19:10:49,595 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     344.29      235.39     0.98372]
+2025-11-22 19:10:49,595 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 257.32318115234375 - 604.4700927734375
+2025-11-22 19:10:49,595 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 213.20457458496094 - 478.65679931640625
+2025-11-22 19:10:49,597 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     344.29      235.39     0.98372]
+2025-11-22 19:10:49,597 [DEBUG] perception.perception_engine: Track 1: Normalized first kp: [    0.53796     0.49039     0.98372]
+2025-11-22 19:10:49,597 [DEBUG] gait.gait_engine: Track 1: Not enough poses (16 < 24) for gait analysis.
+2025-11-22 19:10:49,598 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.53762     0.49268     0.98481]
+2025-11-22 19:10:49,599 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.53762     0.49268     0.98481]
+2025-11-22 19:10:49,693 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     348.66      230.31     0.99523]
+2025-11-22 19:10:49,693 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 67.85208129882812 - 475.0934143066406
+2025-11-22 19:10:49,693 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 206.93301391601562 - 480.0
+2025-11-22 19:10:49,697 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     348.66      230.31     0.99523]
+2025-11-22 19:10:49,697 [DEBUG] perception.perception_engine: Track 1: Normalized first kp: [    0.54477     0.47982     0.99523]
+2025-11-22 19:10:49,698 [DEBUG] gait.gait_engine: Track 1: Not enough poses (17 < 24) for gait analysis.
+2025-11-22 19:10:49,699 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.54227     0.48432     0.99158]
+2025-11-22 19:10:49,699 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.54227     0.48432     0.99158]
+2025-11-22 19:10:49,797 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     349.86      228.06     0.99425]
+2025-11-22 19:10:49,797 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 87.43601989746094 - 564.8250732421875
+2025-11-22 19:10:49,798 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 205.88436889648438 - 480.0
+2025-11-22 19:10:49,891 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     346.96      226.95     0.99381]
+2025-11-22 19:10:49,891 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 96.13920593261719 - 576.7678833007812
+2025-11-22 19:10:49,892 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 197.2211151123047 - 480.0
+2025-11-22 19:10:49,893 [DEBUG] perception.perception_engine: Track 2: Raw keypoints shape: (17, 3), first kp: [     346.96      226.95     0.99381]
+2025-11-22 19:10:49,894 [DEBUG] perception.perception_engine: Track 2: Normalized first kp: [    0.54213     0.47282     0.99381]
+2025-11-22 19:10:49,894 [DEBUG] gait.gait_engine: Track 2: Not enough poses (1 < 24) for gait analysis.
+2025-11-22 19:10:49,895 [DEBUG] ui.overlay: Track 2: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.54213     0.47282     0.99381]
+2025-11-22 19:10:49,896 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.54213     0.47282     0.99381]
+2025-11-22 19:10:49,983 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     344.54      227.96     0.99488]
+2025-11-22 19:10:49,983 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 101.92306518554688 - 449.2627258300781
+2025-11-22 19:10:49,984 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 181.25811767578125 - 480.0
+2025-11-22 19:10:49,987 [DEBUG] perception.perception_engine: Track 1: Raw keypoints shape: (17, 3), first kp: [     344.54      227.96     0.99488]
+2025-11-22 19:10:49,987 [DEBUG] perception.perception_engine: Track 1: Normalized first kp: [    0.53834     0.47491     0.99488]
+2025-11-22 19:10:49,987 [DEBUG] perception.perception_engine: Track 2: Raw keypoints shape: (17, 3), first kp: [     342.07      225.84     0.98962]
+2025-11-22 19:10:49,989 [DEBUG] perception.perception_engine: Track 2: Normalized first kp: [    0.53449     0.47049     0.98962]
+2025-11-22 19:10:49,989 [DEBUG] gait.gait_engine: Track 1: Not enough poses (18 < 24) for gait analysis.
+2025-11-22 19:10:49,990 [DEBUG] gait.gait_engine: Track 2: Not enough poses (2 < 24) for gait analysis.
+2025-11-22 19:10:49,991 [DEBUG] ui.overlay: Track 1: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.53972     0.47821     0.99373]
+2025-11-22 19:10:49,991 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.53972     0.47821     0.99373]
+2025-11-22 19:10:49,991 [DEBUG] ui.overlay: Track 2: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.53716     0.47131     0.99109]
+2025-11-22 19:10:49,992 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.53716     0.47131     0.99109]
+2025-11-22 19:10:50,088 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     347.61      225.45     0.99491]
+2025-11-22 19:10:50,088 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 94.00076293945312 - 590.5696411132812
+2025-11-22 19:10:50,088 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 158.93357849121094 - 480.0
+2025-11-22 19:10:50,090 [DEBUG] perception.perception_engine: Track 2: Raw keypoints shape: (17, 3), first kp: [     347.61      225.45     0.99491]
+2025-11-22 19:10:50,090 [DEBUG] perception.perception_engine: Track 2: Normalized first kp: [    0.54315     0.46968     0.99491]
+2025-11-22 19:10:50,091 [DEBUG] gait.gait_engine: Track 2: Not enough poses (3 < 24) for gait analysis.
+2025-11-22 19:10:50,092 [DEBUG] ui.overlay: Track 2: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.54105     0.47025     0.99357]
+2025-11-22 19:10:50,092 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.54105     0.47025     0.99357]
+2025-11-22 19:10:50,185 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     349.07      222.89     0.99439]
+2025-11-22 19:10:50,185 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 100.38166809082031 - 579.6273193359375
+2025-11-22 19:10:50,186 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 151.010498046875 - 480.0
+2025-11-22 19:10:50,187 [DEBUG] perception.perception_engine: Track 2: Raw keypoints shape: (17, 3), first kp: [     349.07      222.89     0.99439]
+2025-11-22 19:10:50,187 [DEBUG] perception.perception_engine: Track 2: Normalized first kp: [    0.54542     0.46436     0.99439]
+2025-11-22 19:10:50,187 [DEBUG] gait.gait_engine: Track 2: Not enough poses (4 < 24) for gait analysis.
+2025-11-22 19:10:50,189 [DEBUG] ui.overlay: Track 2: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.54389     0.46642      0.9941]
+2025-11-22 19:10:50,189 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.54389     0.46642      0.9941]
+2025-11-22 19:10:50,286 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     350.62       228.9     0.99539]
+2025-11-22 19:10:50,286 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 100.46055603027344 - 458.06048583984375
+2025-11-22 19:10:50,287 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 123.55216979980469 - 480.0
+2025-11-22 19:10:50,288 [DEBUG] perception.perception_engine: Track 2: Raw keypoints shape: (17, 3), first kp: [     350.62       228.9     0.99539]
+2025-11-22 19:10:50,288 [DEBUG] perception.perception_engine: Track 2: Normalized first kp: [    0.54785     0.47687     0.99539]
+2025-11-22 19:10:50,288 [DEBUG] gait.gait_engine: Track 2: Not enough poses (5 < 24) for gait analysis.
+2025-11-22 19:10:50,290 [DEBUG] ui.overlay: Track 2: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.54646     0.47322     0.99494]
+2025-11-22 19:10:50,291 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.54646     0.47322     0.99494]
+2025-11-22 19:10:50,381 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     356.34      227.45     0.99493]
+2025-11-22 19:10:50,381 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 105.98765563964844 - 601.57275390625
+2025-11-22 19:10:50,381 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 160.97955322265625 - 480.0
+2025-11-22 19:10:50,383 [DEBUG] perception.perception_engine: Track 2: Raw keypoints shape: (17, 3), first kp: [     356.34      227.45     0.99493]
+2025-11-22 19:10:50,383 [DEBUG] perception.perception_engine: Track 2: Normalized first kp: [    0.55679     0.47386     0.99493]
+2025-11-22 19:10:50,383 [DEBUG] gait.gait_engine: Track 2: Not enough poses (6 < 24) for gait analysis.
+2025-11-22 19:10:50,384 [DEBUG] ui.overlay: Track 2: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.55317     0.47364     0.99493]
+2025-11-22 19:10:50,384 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.55317     0.47364     0.99493]
+2025-11-22 19:10:50,469 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     359.76      225.91     0.99574]
+2025-11-22 19:10:50,470 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 109.75184631347656 - 581.3334350585938
+2025-11-22 19:10:50,470 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 148.50840759277344 - 480.0
+2025-11-22 19:10:50,472 [DEBUG] perception.perception_engine: Track 2: Raw keypoints shape: (17, 3), first kp: [     359.76      225.91     0.99574]
+2025-11-22 19:10:50,472 [DEBUG] perception.perception_engine: Track 2: Normalized first kp: [    0.56212     0.47064     0.99574]
+2025-11-22 19:10:50,474 [DEBUG] gait.gait_engine: Track 2: Not enough poses (7 < 24) for gait analysis.
+2025-11-22 19:10:50,474 [DEBUG] ui.overlay: Track 2: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.55899     0.47169     0.99546]
+2025-11-22 19:10:50,475 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.55899     0.47169     0.99546]
+2025-11-22 19:10:50,567 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     362.27      228.78     0.99651]
+2025-11-22 19:10:50,568 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 122.537841796875 - 553.1316528320312
+2025-11-22 19:10:50,569 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 139.2440185546875 - 480.0
+2025-11-22 19:10:50,570 [DEBUG] perception.perception_engine: Track 2: Raw keypoints shape: (17, 3), first kp: [     362.27      228.78     0.99651]
+2025-11-22 19:10:50,571 [DEBUG] perception.perception_engine: Track 2: Normalized first kp: [    0.56605     0.47663     0.99651]
+2025-11-22 19:10:50,571 [DEBUG] gait.gait_engine: Track 2: Not enough poses (8 < 24) for gait analysis.
+2025-11-22 19:10:50,572 [DEBUG] ui.overlay: Track 2: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.56358      0.4749     0.99615]
+2025-11-22 19:10:50,572 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.56358      0.4749     0.99615]
+2025-11-22 19:10:50,667 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     366.79      236.34     0.99553]
+2025-11-22 19:10:50,667 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 116.091796875 - 483.3374328613281
+2025-11-22 19:10:50,668 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 145.35964965820312 - 480.0
+2025-11-22 19:10:50,669 [DEBUG] perception.perception_engine: Track 2: Raw keypoints shape: (17, 3), first kp: [     366.79      236.34     0.99553]
+2025-11-22 19:10:50,670 [DEBUG] perception.perception_engine: Track 2: Normalized first kp: [    0.57312     0.49237     0.99553]
+2025-11-22 19:10:50,670 [DEBUG] gait.gait_engine: Track 2: Not enough poses (9 < 24) for gait analysis.
+2025-11-22 19:10:50,671 [DEBUG] ui.overlay: Track 2: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.56978     0.48625     0.99575]
+2025-11-22 19:10:50,671 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.56978     0.48625     0.99575]
+2025-11-22 19:10:50,760 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     369.88       230.4     0.99509]
+2025-11-22 19:10:50,760 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 135.19338989257812 - 617.58984375
+2025-11-22 19:10:50,761 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 138.9159393310547 - 480.0
+2025-11-22 19:10:50,762 [DEBUG] perception.perception_engine: Track 2: Raw keypoints shape: (17, 3), first kp: [     369.88       230.4     0.99509]
+2025-11-22 19:10:50,763 [DEBUG] perception.perception_engine: Track 2: Normalized first kp: [    0.57793        0.48     0.99509]
+2025-11-22 19:10:50,763 [DEBUG] gait.gait_engine: Track 2: Not enough poses (10 < 24) for gait analysis.
+2025-11-22 19:10:50,764 [DEBUG] ui.overlay: Track 2: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.57508     0.48219     0.99532]
+2025-11-22 19:10:50,764 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.57508     0.48219     0.99532]
+2025-11-22 19:10:50,764 [INFO] gaitguard.main: FPS=7.7 | tracks=1 | gait_decisions=0 | alerts=0
+2025-11-22 19:10:50,878 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     368.35       239.4     0.99577]
+2025-11-22 19:10:50,897 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 121.49429321289062 - 475.0679626464844
+2025-11-22 19:10:50,911 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 152.99427795410156 - 480.0
+2025-11-22 19:10:50,928 [DEBUG] perception.perception_engine: Track 2: Raw keypoints shape: (17, 3), first kp: [     372.58      234.09     0.99127]
+2025-11-22 19:10:50,938 [DEBUG] perception.perception_engine: Track 2: Normalized first kp: [    0.58215     0.48769     0.99127]
+2025-11-22 19:10:50,941 [DEBUG] gait.gait_engine: Track 2: Not enough poses (11 < 24) for gait analysis.
+2025-11-22 19:10:50,943 [DEBUG] ui.overlay: Track 2: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.57967     0.48577     0.99269]
+2025-11-22 19:10:50,943 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.57967     0.48577     0.99269]
+2025-11-22 19:10:51,044 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     371.56      242.42      0.9959]
+2025-11-22 19:10:51,044 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 131.7866668701172 - 474.762451171875
+2025-11-22 19:10:51,044 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 146.3363494873047 - 480.0
+2025-11-22 19:10:51,046 [DEBUG] perception.perception_engine: Track 2: Raw keypoints shape: (17, 3), first kp: [     372.34      238.84     0.99145]
+2025-11-22 19:10:51,047 [DEBUG] perception.perception_engine: Track 2: Normalized first kp: [    0.58178     0.49759     0.99145]
+2025-11-22 19:10:51,047 [DEBUG] perception.perception_engine: Track 3: Raw keypoints shape: (17, 3), first kp: [     371.56      242.42      0.9959]
+2025-11-22 19:10:51,048 [DEBUG] perception.perception_engine: Track 3: Normalized first kp: [    0.58056     0.50505      0.9959]
+2025-11-22 19:10:51,048 [DEBUG] gait.gait_engine: Track 2: Not enough poses (12 < 24) for gait analysis.
+2025-11-22 19:10:51,048 [DEBUG] gait.gait_engine: Track 3: Not enough poses (1 < 24) for gait analysis.
+2025-11-22 19:10:51,050 [DEBUG] ui.overlay: Track 2: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.58104     0.49345     0.99188]
+2025-11-22 19:10:51,050 [DEBUG] ui.overlay: Skeleton drawn: 14 KPs, 13 bones. First kp: [    0.58104     0.49345     0.99188]
+2025-11-22 19:10:51,051 [DEBUG] ui.overlay: Track 3: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.58056     0.50505      0.9959]
+2025-11-22 19:10:51,051 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.58056     0.50505      0.9959]
+2025-11-22 19:10:51,141 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     373.58      243.57     0.99611]
+2025-11-22 19:10:51,141 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 136.11572265625 - 471.0196533203125
+2025-11-22 19:10:51,141 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 155.98695373535156 - 480.0
+2025-11-22 19:10:51,143 [DEBUG] perception.perception_engine: Track 2: Raw keypoints shape: (17, 3), first kp: [     373.58      243.57     0.99611]
+2025-11-22 19:10:51,144 [DEBUG] perception.perception_engine: Track 2: Normalized first kp: [    0.58371     0.50744     0.99611]
+2025-11-22 19:10:51,144 [DEBUG] gait.gait_engine: Track 2: Not enough poses (13 < 24) for gait analysis.
+2025-11-22 19:10:51,145 [DEBUG] ui.overlay: Track 2: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.58278     0.50254     0.99463]
+2025-11-22 19:10:51,145 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.58278     0.50254     0.99463]
+2025-11-22 19:10:51,241 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     374.48      241.27     0.99635]
+2025-11-22 19:10:51,242 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 138.48965454101562 - 591.2237548828125
+2025-11-22 19:10:51,242 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 155.81817626953125 - 480.0
+2025-11-22 19:10:51,243 [DEBUG] perception.perception_engine: Track 2: Raw keypoints shape: (17, 3), first kp: [     374.48      241.27     0.99635]
+2025-11-22 19:10:51,244 [DEBUG] perception.perception_engine: Track 2: Normalized first kp: [    0.58513     0.50264     0.99635]
+2025-11-22 19:10:51,244 [DEBUG] gait.gait_engine: Track 2: Not enough poses (14 < 24) for gait analysis.
+2025-11-22 19:10:51,246 [DEBUG] ui.overlay: Track 2: Overlay drawing with smoothed KPs: (17, 3), first kp: [     0.5843     0.50261     0.99575]
+2025-11-22 19:10:51,246 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     0.5843     0.50261     0.99575]
+2025-11-22 19:10:51,347 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [      374.7      245.69     0.99619]
+2025-11-22 19:10:51,348 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 137.46380615234375 - 475.5181884765625
+2025-11-22 19:10:51,348 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 155.54722595214844 - 480.0
+2025-11-22 19:10:51,350 [DEBUG] perception.perception_engine: Track 2: Raw keypoints shape: (17, 3), first kp: [      374.7      245.69     0.99619]
+2025-11-22 19:10:51,350 [DEBUG] perception.perception_engine: Track 2: Normalized first kp: [    0.58547     0.51185     0.99619]
+2025-11-22 19:10:51,350 [DEBUG] gait.gait_engine: Track 2: Not enough poses (15 < 24) for gait analysis.
+2025-11-22 19:10:51,352 [DEBUG] ui.overlay: Track 2: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.58506     0.50862     0.99604]
+2025-11-22 19:10:51,352 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.58506     0.50862     0.99604]
+2025-11-22 19:10:51,444 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     372.96       245.3     0.99554]
+2025-11-22 19:10:51,445 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 136.3829803466797 - 490.40472412109375
+2025-11-22 19:10:51,445 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 155.86692810058594 - 480.0
+2025-11-22 19:10:51,535 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     376.13      240.12     0.99419]
+2025-11-22 19:10:51,536 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 149.15457153320312 - 619.1116943359375
+2025-11-22 19:10:51,536 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 169.94403076171875 - 480.0
+2025-11-22 19:10:51,631 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     373.81       243.1     0.99616]
+2025-11-22 19:10:51,632 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 132.3607177734375 - 527.7196044921875
+2025-11-22 19:10:51,632 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 157.09616088867188 - 480.0
+2025-11-22 19:10:51,633 [DEBUG] perception.perception_engine: Track 4: Raw keypoints shape: (17, 3), first kp: [     373.81       243.1     0.99616]
+2025-11-22 19:10:51,634 [DEBUG] perception.perception_engine: Track 4: Normalized first kp: [    0.58408     0.50646     0.99616]
+2025-11-22 19:10:51,634 [DEBUG] perception.perception_engine: Removed track 1 (lost too long).
+2025-11-22 19:10:51,634 [DEBUG] gait.gait_engine: Track 4: Not enough poses (1 < 24) for gait analysis.
+2025-11-22 19:10:51,636 [DEBUG] ui.overlay: Track 4: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.58408     0.50646     0.99616]
+2025-11-22 19:10:51,636 [DEBUG] ui.overlay: Skeleton drawn: 14 KPs, 13 bones. First kp: [    0.58408     0.50646     0.99616]
+2025-11-22 19:10:51,723 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     376.35      241.53     0.99698]
+2025-11-22 19:10:51,723 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 122.10130310058594 - 460.4607849121094
+2025-11-22 19:10:51,723 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 158.81256103515625 - 480.0
+2025-11-22 19:10:51,725 [DEBUG] perception.perception_engine: Track 4: Raw keypoints shape: (17, 3), first kp: [     376.35      241.53     0.99698]
+2025-11-22 19:10:51,726 [DEBUG] perception.perception_engine: Track 4: Normalized first kp: [    0.58805     0.50319     0.99698]
+2025-11-22 19:10:51,726 [DEBUG] gait.gait_engine: Track 4: Not enough poses (2 < 24) for gait analysis.
+2025-11-22 19:10:51,727 [DEBUG] ui.overlay: Track 4: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.58666     0.50434      0.9967]
+2025-11-22 19:10:51,727 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.58666     0.50434      0.9967]
+2025-11-22 19:10:51,823 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     375.46      239.63     0.99387]
+2025-11-22 19:10:51,824 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 111.39064025878906 - 440.2200927734375
+2025-11-22 19:10:51,824 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 163.15322875976562 - 442.53466796875
+2025-11-22 19:10:51,825 [DEBUG] perception.perception_engine: Track 4: Raw keypoints shape: (17, 3), first kp: [     375.46      239.63     0.99387]
+2025-11-22 19:10:51,826 [DEBUG] perception.perception_engine: Track 4: Normalized first kp: [    0.58665     0.49923     0.99387]
+2025-11-22 19:10:51,826 [DEBUG] gait.gait_engine: Track 4: Not enough poses (3 < 24) for gait analysis.
+2025-11-22 19:10:51,827 [DEBUG] ui.overlay: Track 4: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.58665     0.50102     0.99486]
+2025-11-22 19:10:51,828 [DEBUG] ui.overlay: Skeleton drawn: 17 KPs, 16 bones. First kp: [    0.58665     0.50102     0.99486]
+2025-11-22 19:10:51,925 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     372.65      234.69       0.995]
+2025-11-22 19:10:51,926 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 92.18447875976562 - 466.7272644042969
+2025-11-22 19:10:51,926 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 171.54916381835938 - 465.3852844238281
+2025-11-22 19:10:51,928 [DEBUG] perception.perception_engine: Track 4: Raw keypoints shape: (17, 3), first kp: [     372.65      234.69       0.995]
+2025-11-22 19:10:51,928 [DEBUG] perception.perception_engine: Track 4: Normalized first kp: [    0.58227     0.48894       0.995]
+2025-11-22 19:10:51,929 [DEBUG] gait.gait_engine: Track 4: Not enough poses (4 < 24) for gait analysis.
+2025-11-22 19:10:51,929 [DEBUG] ui.overlay: Track 4: Overlay drawing with smoothed KPs: (17, 3), first kp: [     0.5838     0.49317     0.99495]
+2025-11-22 19:10:51,930 [DEBUG] ui.overlay: Skeleton drawn: 17 KPs, 16 bones. First kp: [     0.5838     0.49317     0.99495]
+2025-11-22 19:10:52,022 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     372.75      224.71     0.99357]
+2025-11-22 19:10:52,023 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 74.50909423828125 - 495.23321533203125
+2025-11-22 19:10:52,023 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 199.2410125732422 - 480.0
+2025-11-22 19:10:52,025 [DEBUG] perception.perception_engine: Track 4: Raw keypoints shape: (17, 3), first kp: [     372.75      224.71     0.99357]
+2025-11-22 19:10:52,025 [DEBUG] perception.perception_engine: Track 4: Normalized first kp: [    0.58242     0.46814     0.99357]
+2025-11-22 19:10:52,025 [DEBUG] gait.gait_engine: Track 4: Not enough poses (5 < 24) for gait analysis.
+2025-11-22 19:10:52,026 [DEBUG] ui.overlay: Track 4: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.58291      0.4769     0.99405]
+2025-11-22 19:10:52,027 [DEBUG] ui.overlay: Skeleton drawn: 14 KPs, 13 bones. First kp: [    0.58291      0.4769     0.99405]
+2025-11-22 19:10:52,116 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     371.92      219.27     0.99239]
+2025-11-22 19:10:52,116 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 86.71147155761719 - 483.7454833984375
+2025-11-22 19:10:52,117 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 195.40493774414062 - 480.0
+2025-11-22 19:10:52,118 [DEBUG] perception.perception_engine: Track 4: Raw keypoints shape: (17, 3), first kp: [     371.92      219.27     0.99239]
+2025-11-22 19:10:52,118 [DEBUG] perception.perception_engine: Track 4: Normalized first kp: [    0.58112     0.45681     0.99239]
+2025-11-22 19:10:52,119 [DEBUG] gait.gait_engine: Track 4: Not enough poses (6 < 24) for gait analysis.
+2025-11-22 19:10:52,120 [DEBUG] ui.overlay: Track 4: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.58175     0.46384     0.99297]
+2025-11-22 19:10:52,120 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.58175     0.46384     0.99297]
+2025-11-22 19:10:52,204 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     375.92      218.18      0.9928]
+2025-11-22 19:10:52,205 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 51.12635803222656 - 488.86553955078125
+2025-11-22 19:10:52,205 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 190.87159729003906 - 480.0
+2025-11-22 19:10:52,207 [DEBUG] perception.perception_engine: Track 4: Raw keypoints shape: (17, 3), first kp: [     375.92      218.18      0.9928]
+2025-11-22 19:10:52,207 [DEBUG] perception.perception_engine: Track 4: Normalized first kp: [    0.58737     0.45454      0.9928]
+2025-11-22 19:10:52,207 [DEBUG] gait.gait_engine: Track 4: Not enough poses (7 < 24) for gait analysis.
+2025-11-22 19:10:52,208 [DEBUG] ui.overlay: Track 4: Overlay drawing with smoothed KPs: (17, 3), first kp: [     0.5854      0.4578     0.99286]
+2025-11-22 19:10:52,209 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     0.5854      0.4578     0.99286]
+2025-11-22 19:10:52,306 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     377.89      216.68     0.99294]
+2025-11-22 19:10:52,307 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 71.02113342285156 - 497.94677734375
+2025-11-22 19:10:52,307 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 191.4090576171875 - 480.0
+2025-11-22 19:10:52,309 [DEBUG] perception.perception_engine: Track 4: Raw keypoints shape: (17, 3), first kp: [     377.89      216.68     0.99294]
+2025-11-22 19:10:52,310 [DEBUG] perception.perception_engine: Track 4: Normalized first kp: [    0.59045     0.45143     0.99294]
+2025-11-22 19:10:52,310 [DEBUG] gait.gait_engine: Track 4: Not enough poses (8 < 24) for gait analysis.
+2025-11-22 19:10:52,311 [DEBUG] ui.overlay: Track 4: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.58868     0.45366     0.99291]
+2025-11-22 19:10:52,311 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.58868     0.45366     0.99291]
+2025-11-22 19:10:52,398 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     377.04      230.03     0.99164]
+2025-11-22 19:10:52,399 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 86.44517517089844 - 498.34619140625
+2025-11-22 19:10:52,399 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 202.14028930664062 - 480.0
+2025-11-22 19:10:52,401 [DEBUG] perception.perception_engine: Track 4: Raw keypoints shape: (17, 3), first kp: [     377.04      230.03     0.99164]
+2025-11-22 19:10:52,401 [DEBUG] perception.perception_engine: Track 4: Normalized first kp: [    0.58912     0.47923     0.99164]
+2025-11-22 19:10:52,401 [DEBUG] gait.gait_engine: Track 4: Not enough poses (9 < 24) for gait analysis.
+2025-11-22 19:10:52,403 [DEBUG] ui.overlay: Track 4: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.58897     0.47028     0.99209]
+2025-11-22 19:10:52,403 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.58897     0.47028     0.99209]
+2025-11-22 19:10:52,495 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     373.57      248.19     0.99281]
+2025-11-22 19:10:52,496 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 56.9984130859375 - 505.3167724609375
+2025-11-22 19:10:52,496 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 218.21722412109375 - 480.0
+2025-11-22 19:10:52,498 [DEBUG] perception.perception_engine: Track 4: Raw keypoints shape: (17, 3), first kp: [     373.57      248.19     0.99281]
+2025-11-22 19:10:52,499 [DEBUG] perception.perception_engine: Track 4: Normalized first kp: [     0.5837     0.51706     0.99281]
+2025-11-22 19:10:52,499 [DEBUG] gait.gait_engine: Track 4: Not enough poses (10 < 24) for gait analysis.
+2025-11-22 19:10:52,500 [DEBUG] ui.overlay: Track 4: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.58554     0.50068     0.99256]
+2025-11-22 19:10:52,500 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.58554     0.50068     0.99256]
+2025-11-22 19:10:52,591 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     369.39      261.65     0.98957]
+2025-11-22 19:10:52,592 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 73.23837280273438 - 495.1380615234375
+2025-11-22 19:10:52,592 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 226.22183227539062 - 480.0
+2025-11-22 19:10:52,593 [DEBUG] perception.perception_engine: Track 4: Raw keypoints shape: (17, 3), first kp: [     369.39      261.65     0.98957]
+2025-11-22 19:10:52,594 [DEBUG] perception.perception_engine: Track 4: Normalized first kp: [    0.57717     0.54511     0.98957]
+2025-11-22 19:10:52,594 [DEBUG] perception.perception_engine: Removed track 3 (lost too long).
+2025-11-22 19:10:52,594 [DEBUG] gait.gait_engine: Track 4: Not enough poses (11 < 24) for gait analysis.
+2025-11-22 19:10:52,596 [DEBUG] ui.overlay: Track 4: Overlay drawing with smoothed KPs: (17, 3), first kp: [     0.5801     0.52956     0.99061]
+2025-11-22 19:10:52,596 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [     0.5801     0.52956     0.99061]
+2025-11-22 19:10:52,686 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     363.76      272.83      0.9897]
+2025-11-22 19:10:52,687 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 58.06634521484375 - 507.268798828125
+2025-11-22 19:10:52,687 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 237.87477111816406 - 480.0
+2025-11-22 19:10:52,688 [DEBUG] perception.perception_engine: Track 4: Raw keypoints shape: (17, 3), first kp: [     363.76      272.83      0.9897]
+2025-11-22 19:10:52,689 [DEBUG] perception.perception_engine: Track 4: Normalized first kp: [    0.56837      0.5684      0.9897]
+2025-11-22 19:10:52,689 [DEBUG] gait.gait_engine: Track 4: Not enough poses (12 < 24) for gait analysis.
+2025-11-22 19:10:52,691 [DEBUG] ui.overlay: Track 4: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.57248     0.55481     0.99002]
+2025-11-22 19:10:52,691 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.57248     0.55481     0.99002]
+2025-11-22 19:10:52,782 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     357.42      276.86     0.99167]
+2025-11-22 19:10:52,783 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 48.956024169921875 - 522.9251098632812
+2025-11-22 19:10:52,783 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 228.17343139648438 - 480.0
+2025-11-22 19:10:52,784 [DEBUG] perception.perception_engine: Track 4: Raw keypoints shape: (17, 3), first kp: [     357.42      276.86     0.99167]
+2025-11-22 19:10:52,786 [DEBUG] perception.perception_engine: Track 4: Normalized first kp: [    0.55846      0.5768     0.99167]
+2025-11-22 19:10:52,786 [DEBUG] gait.gait_engine: Track 4: Not enough poses (13 < 24) for gait analysis.
+2025-11-22 19:10:52,786 [DEBUG] ui.overlay: Track 4: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.56337      0.5691     0.99109]
+2025-11-22 19:10:52,787 [DEBUG] ui.overlay: Skeleton drawn: 12 KPs, 10 bones. First kp: [    0.56337      0.5691     0.99109]
+2025-11-22 19:10:52,886 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [      329.9      304.13     0.94855]
+2025-11-22 19:10:52,887 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 51.722808837890625 - 547.974365234375
+2025-11-22 19:10:52,887 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 254.24050903320312 - 480.0
+2025-11-22 19:10:52,889 [DEBUG] perception.perception_engine: Track 4: Raw keypoints shape: (17, 3), first kp: [      329.9      304.13     0.94855]
+2025-11-22 19:10:52,889 [DEBUG] perception.perception_engine: Track 4: Normalized first kp: [    0.51546      0.6336     0.94855]
+2025-11-22 19:10:52,889 [DEBUG] perception.perception_engine: Removed track 2 (lost too long).
+2025-11-22 19:10:52,889 [DEBUG] gait.gait_engine: Track 4: Not enough poses (14 < 24) for gait analysis.
+2025-11-22 19:10:52,891 [DEBUG] ui.overlay: Track 4: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.53223     0.61102     0.96344]
+2025-11-22 19:10:52,892 [DEBUG] ui.overlay: Skeleton drawn: 12 KPs, 10 bones. First kp: [    0.53223     0.61102     0.96344]
+2025-11-22 19:10:52,982 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     349.87      281.29     0.99006]
+2025-11-22 19:10:52,983 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 59.6416015625 - 514.943603515625
+2025-11-22 19:10:52,983 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 241.0951385498047 - 480.0
+2025-11-22 19:10:52,984 [DEBUG] perception.perception_engine: Track 4: Raw keypoints shape: (17, 3), first kp: [     349.87      281.29     0.99006]
+2025-11-22 19:10:52,984 [DEBUG] perception.perception_engine: Track 4: Normalized first kp: [    0.54667     0.58602     0.99006]
+2025-11-22 19:10:52,985 [DEBUG] gait.gait_engine: Track 4: Not enough poses (15 < 24) for gait analysis.
+2025-11-22 19:10:52,985 [DEBUG] ui.overlay: Track 4: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.54162     0.59477     0.98074]
+2025-11-22 19:10:52,986 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.54162     0.59477     0.98074]
+2025-11-22 19:10:53,078 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     346.77      304.92     0.98722]
+2025-11-22 19:10:53,079 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 61.72349548339844 - 540.599609375
+2025-11-22 19:10:53,079 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 252.78207397460938 - 480.0
+2025-11-22 19:10:53,081 [DEBUG] perception.perception_engine: Track 4: Raw keypoints shape: (17, 3), first kp: [     346.77      304.92     0.98722]
+2025-11-22 19:10:53,081 [DEBUG] perception.perception_engine: Track 4: Normalized first kp: [    0.54182     0.63525     0.98722]
+2025-11-22 19:10:53,081 [DEBUG] gait.gait_engine: Track 4: Not enough poses (16 < 24) for gait analysis.
+2025-11-22 19:10:53,082 [DEBUG] ui.overlay: Track 4: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.54175     0.62108     0.98495]
+2025-11-22 19:10:53,083 [DEBUG] ui.overlay: Skeleton drawn: 12 KPs, 10 bones. First kp: [    0.54175     0.62108     0.98495]
+2025-11-22 19:10:53,170 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     357.08      308.12     0.98654]
+2025-11-22 19:10:53,171 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 80.31507873535156 - 528.6793212890625
+2025-11-22 19:10:53,171 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 259.8481750488281 - 480.0
+2025-11-22 19:10:53,172 [DEBUG] perception.perception_engine: Track 4: Raw keypoints shape: (17, 3), first kp: [     357.08      308.12     0.98654]
+2025-11-22 19:10:53,174 [DEBUG] perception.perception_engine: Track 4: Normalized first kp: [    0.55793     0.64192     0.98654]
+2025-11-22 19:10:53,174 [DEBUG] gait.gait_engine: Track 4: Not enough poses (17 < 24) for gait analysis.
+2025-11-22 19:10:53,175 [DEBUG] ui.overlay: Track 4: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.55227     0.63463     0.98598]
+2025-11-22 19:10:53,175 [DEBUG] ui.overlay: Skeleton drawn: 11 KPs, 9 bones. First kp: [    0.55227     0.63463     0.98598]
+2025-11-22 19:10:53,268 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [      364.8      333.53     0.98465]
+2025-11-22 19:10:53,269 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 81.01165771484375 - 524.7819213867188
+2025-11-22 19:10:53,269 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 278.8663330078125 - 480.0
+2025-11-22 19:10:53,270 [DEBUG] perception.perception_engine: Track 4: Raw keypoints shape: (17, 3), first kp: [      364.8      333.53     0.98465]
+2025-11-22 19:10:53,270 [DEBUG] perception.perception_engine: Track 4: Normalized first kp: [       0.57     0.69484     0.98465]
+2025-11-22 19:10:53,270 [DEBUG] gait.gait_engine: Track 4: Not enough poses (18 < 24) for gait analysis.
+2025-11-22 19:10:53,272 [DEBUG] ui.overlay: Track 4: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.56379     0.67377     0.98512]
+2025-11-22 19:10:53,273 [DEBUG] ui.overlay: Skeleton drawn: 13 KPs, 12 bones. First kp: [    0.56379     0.67377     0.98512]
+2025-11-22 19:10:53,371 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, first kp): [     364.76      332.29     0.98704]
+2025-11-22 19:10:53,372 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, X range): 68.42813110351562 - 546.2369384765625
+2025-11-22 19:10:53,372 [DEBUG] perception.perception_engine: YOLOv8-pose Raw KPs (first person, Y range): 280.91851806640625 - 480.0
+2025-11-22 19:10:53,373 [DEBUG] perception.perception_engine: Track 4: Raw keypoints shape: (17, 3), first kp: [     364.76      332.29     0.98704]
+2025-11-22 19:10:53,374 [DEBUG] perception.perception_engine: Track 4: Normalized first kp: [    0.56994     0.69228     0.98704]
+2025-11-22 19:10:53,374 [DEBUG] gait.gait_engine: Track 4: Not enough poses (19 < 24) for gait analysis.
+2025-11-22 19:10:53,374 [DEBUG] ui.overlay: Track 4: Overlay drawing with smoothed KPs: (17, 3), first kp: [    0.56779      0.6858     0.98636]
+2025-11-22 19:10:53,375 [DEBUG] ui.overlay: Skeleton drawn: 11 KPs, 9 bones. First kp: [    0.56779      0.6858     0.98636]
+2025-11-22 19:10:53,654 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-22 19:11:36,282 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 19:11:36,282 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-22 19:11:36,282 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 19:11:36,282 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 19:11:36,451 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-22 19:11:36,451 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-22 19:11:36,451 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-22 19:11:36,451 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-22 19:11:36,451 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-22 19:11:36,451 [INFO] gait.gait_gallery: FAISS IndexIDMap (FlatIP) initialized for 256 dimensions (cosine metric).
+2025-11-22 19:11:36,463 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-22 19:11:36,463 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-22 19:11:36,463 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-22 19:11:38,091 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-22 19:11:42,086 [INFO] gaitguard.main: FPS=7.7 | tracks=1 | alerts=0
+2025-11-22 19:11:45,514 [INFO] gaitguard.main: FPS=8.2 | tracks=1 | alerts=0
+2025-11-22 19:11:48,519 [INFO] gaitguard.main: FPS=8.7 | tracks=1 | alerts=0
+2025-11-22 19:11:51,366 [INFO] gaitguard.main: FPS=9.1 | tracks=1 | alerts=0
+2025-11-22 19:11:54,381 [INFO] gaitguard.main: FPS=9.3 | tracks=1 | alerts=0
+2025-11-22 19:11:57,384 [INFO] gaitguard.main: FPS=9.4 | tracks=1 | alerts=0
+2025-11-22 19:12:00,138 [INFO] gaitguard.main: FPS=9.6 | tracks=1 | alerts=0
+2025-11-22 19:12:02,822 [INFO] gaitguard.main: FPS=9.7 | tracks=1 | alerts=0
+2025-11-22 19:12:05,517 [INFO] gaitguard.main: FPS=9.9 | tracks=1 | alerts=0
+2025-11-22 19:12:08,215 [INFO] gaitguard.main: FPS=10.0 | tracks=1 | alerts=0
+2025-11-22 19:12:10,643 [INFO] gaitguard.main: FPS=10.2 | tracks=1 | alerts=0
+2025-11-22 19:12:13,048 [INFO] gaitguard.main: FPS=10.3 | tracks=1 | alerts=0
+2025-11-22 19:12:15,446 [INFO] gaitguard.main: FPS=10.5 | tracks=2 | alerts=0
+2025-11-22 19:12:17,898 [INFO] gaitguard.main: FPS=10.6 | tracks=2 | alerts=0
+2025-11-22 19:12:20,337 [INFO] gaitguard.main: FPS=10.7 | tracks=1 | alerts=0
+2025-11-22 19:12:22,913 [INFO] gaitguard.main: FPS=10.7 | tracks=2 | alerts=0
+2025-11-22 19:12:25,750 [INFO] gaitguard.main: FPS=10.7 | tracks=2 | alerts=0
+2025-11-22 19:12:28,487 [INFO] gaitguard.main: FPS=10.7 | tracks=2 | alerts=0
+2025-11-22 19:12:31,295 [INFO] gaitguard.main: FPS=10.7 | tracks=2 | alerts=0
+2025-11-22 19:12:32,234 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-23 12:43:05,041 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-23 12:43:05,041 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-23 12:43:05,041 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-23 12:43:05,041 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 12:43:05,295 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-23 12:43:05,295 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-23 12:43:05,295 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-23 12:43:05,295 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 12:43:05,298 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-23 12:43:05,299 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-23 12:43:05,300 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-23 12:43:05,300 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-23 12:43:07,005 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-23 12:43:11,408 [INFO] gaitguard.main: FPS=7.0 | tracks=1 | alerts=0
+2025-11-23 12:43:14,491 [INFO] gaitguard.main: FPS=8.1 | tracks=1 | alerts=0
+2025-11-23 12:43:17,065 [INFO] gaitguard.main: FPS=9.0 | tracks=1 | alerts=0
+2025-11-23 12:43:19,546 [INFO] gaitguard.main: FPS=9.6 | tracks=1 | alerts=0
+2025-11-23 12:43:21,980 [INFO] gaitguard.main: FPS=10.1 | tracks=1 | alerts=0
+2025-11-23 12:43:24,513 [INFO] gaitguard.main: FPS=10.3 | tracks=1 | alerts=0
+2025-11-23 12:43:27,001 [INFO] gaitguard.main: FPS=10.5 | tracks=1 | alerts=0
+2025-11-23 12:43:29,489 [INFO] gaitguard.main: FPS=10.7 | tracks=1 | alerts=0
+2025-11-23 12:43:32,117 [INFO] gaitguard.main: FPS=10.8 | tracks=1 | alerts=0
+2025-11-23 12:43:34,738 [INFO] gaitguard.main: FPS=10.9 | tracks=1 | alerts=0
+2025-11-23 12:43:38,272 [INFO] gaitguard.main: FPS=10.6 | tracks=1 | alerts=0
+2025-11-23 12:43:39,302 [INFO] gaitguard.main: GaitGuard pipeline stopped.
