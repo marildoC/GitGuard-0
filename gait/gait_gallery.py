@@ -223,7 +223,7 @@ class GaitGallery:
             None
         """
         try:
-            self.config.gallery_path.parent.mkdir(parents=True, esist_ok=True)
+            self.config.gallery.gallery_path.parent.mkdir(parents=True, exist_ok=True)
 
             #We save only the idendity, index FAISS will be reconstruct at the load
             state = {

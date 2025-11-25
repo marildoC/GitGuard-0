@@ -18,8 +18,13 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 import logging
-
+import torch
 from core.device import select_device
+
+def select_device(prefer_gpu: bool = True):
+    if prefer_gpu and torch.cuda.is_available():
+        return "cuda", True
+    return "cpu", False
 
 logger = logging.getLogger(__name__)
 
@@ -68,7 +73,7 @@ class GaitModelConfig:
     """
 
     pose_model_name: str = "yolov8n-pose.pt"
-    gait_model_name: str = "gaitbase_v1.onnx"   # placeholder 
+    gait_embedding_model_path: str = "models/gait_temporal_encoder.pth"
 
 
 @dataclass
@@ -257,10 +262,15 @@ def default_gait_config(
     device_cfg = GaitDeviceConfig(device=device_str, use_half=use_half)
 
     # models
+    if base_dir is None:
+        base_dir = Path(".")
+    gait_embedding_model_resolved_path = (base_dir / "models" / "gait_temporal_encoder.pth").resolve().as_posix()
+
     model_cfg = GaitModelConfig(
         pose_model_name="yolov8n-pose.pt",
-        gait_model_name="gaitbase_v1.onnx",  # placeholder
+        gait_embedding_model_path=gait_embedding_model_resolved_path,
     )
+    
 
     # thresholds / route
     thresholds_cfg = GaitThresholdConfig()

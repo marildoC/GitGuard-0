@@ -4223,3 +4223,1126 @@
 2025-11-23 12:43:34,738 [INFO] gaitguard.main: FPS=10.9 | tracks=1 | alerts=0
 2025-11-23 12:43:38,272 [INFO] gaitguard.main: FPS=10.6 | tracks=1 | alerts=0
 2025-11-23 12:43:39,302 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-23 13:39:18,887 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-23 13:39:18,887 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-23 13:39:18,887 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-23 13:39:18,893 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 13:39:19,144 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-23 13:39:19,144 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-23 13:39:19,144 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-23 13:39:19,144 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 13:39:19,144 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-23 13:39:19,144 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-23 13:39:19,144 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-23 13:39:19,144 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-23 13:39:20,797 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-23 13:39:24,316 [INFO] gaitguard.main: FPS=8.7 | tracks=1 | alerts=0
+2025-11-23 13:39:26,636 [INFO] gaitguard.main: FPS=10.4 | tracks=1 | alerts=0
+2025-11-23 13:39:28,988 [INFO] gaitguard.main: FPS=11.1 | tracks=1 | alerts=0
+2025-11-23 13:39:31,311 [INFO] gaitguard.main: FPS=11.5 | tracks=1 | alerts=0
+2025-11-23 13:39:33,716 [INFO] gaitguard.main: FPS=11.7 | tracks=1 | alerts=0
+2025-11-23 13:39:36,296 [INFO] gaitguard.main: FPS=11.6 | tracks=1 | alerts=0
+2025-11-23 13:39:38,363 [INFO] gaitguard.main: FPS=12.0 | tracks=1 | alerts=0
+2025-11-23 13:39:40,266 [INFO] gaitguard.main: FPS=12.4 | tracks=1 | alerts=0
+2025-11-23 13:39:42,090 [INFO] gaitguard.main: FPS=12.7 | tracks=1 | alerts=0
+2025-11-23 13:39:43,910 [INFO] gaitguard.main: FPS=13.0 | tracks=1 | alerts=0
+2025-11-23 13:39:45,761 [INFO] gaitguard.main: FPS=13.2 | tracks=1 | alerts=0
+2025-11-23 13:39:47,636 [INFO] gaitguard.main: FPS=13.4 | tracks=1 | alerts=0
+2025-11-23 13:39:49,728 [INFO] gaitguard.main: FPS=13.5 | tracks=1 | alerts=0
+2025-11-23 13:39:51,897 [INFO] gaitguard.main: FPS=13.5 | tracks=1 | alerts=0
+2025-11-23 13:39:53,951 [INFO] gaitguard.main: FPS=13.6 | tracks=1 | alerts=0
+2025-11-23 13:39:55,919 [INFO] gaitguard.main: FPS=13.7 | tracks=1 | alerts=0
+2025-11-23 13:39:57,879 [INFO] gaitguard.main: FPS=13.8 | tracks=1 | alerts=0
+2025-11-23 13:39:59,861 [INFO] gaitguard.main: FPS=13.8 | tracks=1 | alerts=0
+2025-11-23 13:40:01,923 [INFO] gaitguard.main: FPS=13.9 | tracks=1 | alerts=0
+2025-11-23 13:40:03,924 [INFO] gaitguard.main: FPS=13.9 | tracks=1 | alerts=0
+2025-11-23 13:40:05,925 [INFO] gaitguard.main: FPS=14.0 | tracks=1 | alerts=0
+2025-11-23 13:40:07,948 [INFO] gaitguard.main: FPS=14.0 | tracks=1 | alerts=0
+2025-11-23 13:40:09,984 [INFO] gaitguard.main: FPS=14.0 | tracks=1 | alerts=0
+2025-11-23 13:40:11,994 [INFO] gaitguard.main: FPS=14.1 | tracks=1 | alerts=0
+2025-11-23 13:40:14,302 [INFO] gaitguard.main: FPS=14.0 | tracks=1 | alerts=0
+2025-11-23 13:40:16,622 [INFO] gaitguard.main: FPS=14.0 | tracks=1 | alerts=0
+2025-11-23 13:40:19,132 [INFO] gaitguard.main: FPS=13.9 | tracks=1 | alerts=0
+2025-11-23 13:40:22,054 [INFO] gaitguard.main: FPS=13.7 | tracks=1 | alerts=0
+2025-11-23 13:40:24,556 [INFO] gaitguard.main: FPS=13.7 | tracks=1 | alerts=0
+2025-11-23 13:40:26,862 [INFO] gaitguard.main: FPS=13.6 | tracks=1 | alerts=0
+2025-11-23 13:40:29,187 [INFO] gaitguard.main: FPS=13.6 | tracks=2 | alerts=0
+2025-11-23 13:40:31,519 [INFO] gaitguard.main: FPS=13.6 | tracks=2 | alerts=0
+2025-11-23 13:40:33,854 [INFO] gaitguard.main: FPS=13.6 | tracks=2 | alerts=0
+2025-11-23 13:40:36,203 [INFO] gaitguard.main: FPS=13.5 | tracks=2 | alerts=0
+2025-11-23 13:40:38,509 [INFO] gaitguard.main: FPS=13.5 | tracks=1 | alerts=0
+2025-11-23 13:40:40,799 [INFO] gaitguard.main: FPS=13.5 | tracks=2 | alerts=0
+2025-11-23 13:40:43,112 [INFO] gaitguard.main: FPS=13.5 | tracks=2 | alerts=0
+2025-11-23 13:40:45,433 [INFO] gaitguard.main: FPS=13.5 | tracks=2 | alerts=0
+2025-11-23 13:40:47,760 [INFO] gaitguard.main: FPS=13.5 | tracks=2 | alerts=0
+2025-11-23 13:40:50,387 [INFO] gaitguard.main: FPS=13.4 | tracks=2 | alerts=0
+2025-11-23 13:40:53,069 [INFO] gaitguard.main: FPS=13.3 | tracks=2 | alerts=0
+2025-11-23 13:40:55,447 [INFO] gaitguard.main: FPS=13.3 | tracks=2 | alerts=0
+2025-11-23 13:40:57,763 [INFO] gaitguard.main: FPS=13.3 | tracks=2 | alerts=0
+2025-11-23 13:41:00,087 [INFO] gaitguard.main: FPS=13.3 | tracks=2 | alerts=0
+2025-11-23 13:41:02,394 [INFO] gaitguard.main: FPS=13.3 | tracks=2 | alerts=0
+2025-11-23 13:41:04,703 [INFO] gaitguard.main: FPS=13.3 | tracks=2 | alerts=0
+2025-11-23 13:41:07,008 [INFO] gaitguard.main: FPS=13.3 | tracks=2 | alerts=0
+2025-11-23 13:41:09,320 [INFO] gaitguard.main: FPS=13.3 | tracks=2 | alerts=0
+2025-11-23 13:41:11,650 [INFO] gaitguard.main: FPS=13.3 | tracks=2 | alerts=0
+2025-11-23 13:41:13,059 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-23 13:42:46,432 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-23 13:42:46,432 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-23 13:42:46,432 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-23 13:42:46,432 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 13:42:46,582 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-23 13:42:46,582 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-23 13:42:46,582 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-23 13:42:46,582 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 13:42:46,582 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-23 13:42:46,584 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-23 13:42:46,584 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-23 13:42:46,584 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-23 13:42:48,158 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-23 13:42:52,069 [INFO] gaitguard.main: FPS=7.8 | tracks=2 | alerts=0
+2025-11-23 13:42:54,608 [INFO] gaitguard.main: FPS=9.4 | tracks=2 | alerts=0
+2025-11-23 13:42:56,882 [INFO] gaitguard.main: FPS=10.4 | tracks=2 | alerts=0
+2025-11-23 13:42:59,115 [INFO] gaitguard.main: FPS=11.0 | tracks=1 | alerts=0
+2025-11-23 13:43:01,370 [INFO] gaitguard.main: FPS=11.4 | tracks=1 | alerts=0
+2025-11-23 13:43:03,628 [INFO] gaitguard.main: FPS=11.7 | tracks=2 | alerts=0
+2025-11-23 13:43:05,885 [INFO] gaitguard.main: FPS=11.9 | tracks=2 | alerts=0
+2025-11-23 13:43:08,159 [INFO] gaitguard.main: FPS=12.0 | tracks=2 | alerts=0
+2025-11-23 13:43:10,435 [INFO] gaitguard.main: FPS=12.2 | tracks=2 | alerts=0
+2025-11-23 13:43:11,759 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-23 17:05:57,738 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-23 17:05:57,738 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-23 17:05:57,738 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 17:05:58,016 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-23 17:05:58,016 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-23 17:05:58,021 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 17:05:58,021 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-23 17:05:58,024 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-23 17:05:58,025 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-23 17:05:58,025 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-23 17:06:00,000 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-23 17:06:04,425 [INFO] gaitguard.main: FPS=6.9 | tracks=1 | alerts=0
+2025-11-23 17:06:07,033 [INFO] gaitguard.main: FPS=8.6 | tracks=2 | alerts=0
+2025-11-23 17:06:09,381 [INFO] gaitguard.main: FPS=9.7 | tracks=1 | alerts=0
+2025-11-23 17:06:11,867 [INFO] gaitguard.main: FPS=10.2 | tracks=1 | alerts=0
+2025-11-23 17:06:14,860 [INFO] gaitguard.main: FPS=10.1 | tracks=1 | alerts=0
+2025-11-23 17:06:17,567 [INFO] gaitguard.main: FPS=10.3 | tracks=1 | alerts=0
+2025-11-23 17:06:19,765 [INFO] gaitguard.main: FPS=10.7 | tracks=1 | alerts=0
+2025-11-23 17:06:22,560 [INFO] gaitguard.main: FPS=10.7 | tracks=1 | alerts=0
+2025-11-23 17:06:24,722 [INFO] gaitguard.main: FPS=11.0 | tracks=1 | alerts=0
+2025-11-23 17:06:27,061 [INFO] gaitguard.main: FPS=11.1 | tracks=1 | alerts=0
+2025-11-23 17:06:29,229 [INFO] gaitguard.main: FPS=11.3 | tracks=1 | alerts=0
+2025-11-23 17:06:32,218 [INFO] gaitguard.main: FPS=11.2 | tracks=1 | alerts=0
+2025-11-23 17:06:35,160 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-23 17:11:50,320 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-23 17:11:50,320 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-23 17:11:50,320 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 17:11:50,503 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-23 17:11:50,503 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-23 17:11:50,503 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 17:13:05,895 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-23 17:13:05,898 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-23 17:13:05,898 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 17:13:06,100 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-23 17:13:06,100 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-23 17:13:06,108 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 17:13:06,120 [INFO] gait.gait_extractor: Gait embedding model loaded from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-11-23 17:13:06,120 [INFO] gait.gait_extractor: TemporalGaitEncoder initialized on device: cpu
+2025-11-23 17:13:06,120 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-23 17:13:06,122 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-23 17:13:06,122 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-23 17:13:06,122 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-23 17:13:08,072 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-23 17:13:12,131 [INFO] gaitguard.main: FPS=7.5 | tracks=0 | alerts=0
+2025-11-23 17:13:14,718 [INFO] gaitguard.main: FPS=9.1 | tracks=0 | alerts=0
+2025-11-23 17:13:16,823 [INFO] gaitguard.main: FPS=10.4 | tracks=0 | alerts=0
+2025-11-23 17:13:18,924 [INFO] gaitguard.main: FPS=11.1 | tracks=0 | alerts=0
+2025-11-23 17:13:21,035 [INFO] gaitguard.main: FPS=11.6 | tracks=0 | alerts=0
+2025-11-23 17:13:23,126 [INFO] gaitguard.main: FPS=12.0 | tracks=0 | alerts=0
+2025-11-23 17:13:25,258 [INFO] gaitguard.main: FPS=12.3 | tracks=0 | alerts=0
+2025-11-23 17:13:27,364 [INFO] gaitguard.main: FPS=12.5 | tracks=0 | alerts=0
+2025-11-23 17:13:29,460 [INFO] gaitguard.main: FPS=12.7 | tracks=0 | alerts=0
+2025-11-23 17:13:31,556 [INFO] gaitguard.main: FPS=12.8 | tracks=0 | alerts=0
+2025-11-23 17:13:33,652 [INFO] gaitguard.main: FPS=12.9 | tracks=0 | alerts=0
+2025-11-23 17:13:35,748 [INFO] gaitguard.main: FPS=13.0 | tracks=0 | alerts=0
+2025-11-23 17:13:37,842 [INFO] gaitguard.main: FPS=13.1 | tracks=0 | alerts=0
+2025-11-23 17:13:39,995 [INFO] gaitguard.main: FPS=13.2 | tracks=0 | alerts=0
+2025-11-23 17:13:42,226 [INFO] gaitguard.main: FPS=13.2 | tracks=0 | alerts=0
+2025-11-23 17:13:44,979 [INFO] gaitguard.main: FPS=13.0 | tracks=0 | alerts=0
+2025-11-23 17:13:47,695 [INFO] gaitguard.main: FPS=12.9 | tracks=0 | alerts=0
+2025-11-23 17:13:50,401 [INFO] gaitguard.main: FPS=12.8 | tracks=0 | alerts=0
+2025-11-23 17:13:52,899 [INFO] gaitguard.main: FPS=12.7 | tracks=0 | alerts=0
+2025-11-23 17:13:55,277 [INFO] gaitguard.main: FPS=12.7 | tracks=0 | alerts=0
+2025-11-23 17:13:57,684 [INFO] gaitguard.main: FPS=12.7 | tracks=0 | alerts=0
+2025-11-23 17:14:00,904 [INFO] gaitguard.main: FPS=12.5 | tracks=0 | alerts=0
+2025-11-23 17:14:03,485 [INFO] gaitguard.main: FPS=12.5 | tracks=0 | alerts=0
+2025-11-23 17:14:05,874 [INFO] gaitguard.main: FPS=12.5 | tracks=0 | alerts=0
+2025-11-23 17:14:08,252 [INFO] gaitguard.main: FPS=12.5 | tracks=0 | alerts=0
+2025-11-23 17:14:10,637 [INFO] gaitguard.main: FPS=12.5 | tracks=0 | alerts=0
+2025-11-23 17:14:13,054 [INFO] gaitguard.main: FPS=12.5 | tracks=1 | alerts=0
+2025-11-23 17:14:15,542 [INFO] gaitguard.main: FPS=12.5 | tracks=1 | alerts=0
+2025-11-23 17:14:18,383 [INFO] gaitguard.main: FPS=12.4 | tracks=1 | alerts=0
+2025-11-23 17:14:19,845 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-23 17:22:20,565 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-23 17:22:20,565 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-23 17:22:20,565 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 17:22:20,737 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-23 17:22:20,737 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-23 17:22:20,741 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 17:22:20,745 [INFO] gait.gait_extractor: Gait embedding model loaded from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-11-23 17:22:20,745 [INFO] gait.gait_extractor: TemporalGaitEncoder initialized on device: cpu
+2025-11-23 17:22:20,745 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-23 17:22:20,749 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-23 17:22:20,750 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-23 17:22:20,750 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-23 17:22:22,540 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-23 17:22:26,462 [INFO] gaitguard.main: FPS=7.8 | tracks=1 | alerts=0
+2025-11-23 17:22:29,468 [INFO] gaitguard.main: FPS=8.7 | tracks=1 | alerts=0
+2025-11-23 17:22:32,475 [INFO] gaitguard.main: FPS=9.1 | tracks=1 | alerts=0
+2025-11-23 17:22:35,467 [INFO] gaitguard.main: FPS=9.3 | tracks=1 | alerts=0
+2025-11-23 17:22:38,476 [INFO] gaitguard.main: FPS=9.5 | tracks=1 | alerts=0
+2025-11-23 17:22:41,484 [INFO] gaitguard.main: FPS=9.5 | tracks=1 | alerts=0
+2025-11-23 17:22:44,494 [INFO] gaitguard.main: FPS=9.6 | tracks=1 | alerts=0
+2025-11-23 17:22:46,739 [INFO] gaitguard.main: FPS=9.9 | tracks=1 | alerts=0
+2025-11-23 17:22:49,476 [INFO] gaitguard.main: FPS=10.1 | tracks=1 | alerts=0
+2025-11-23 17:22:52,207 [INFO] gaitguard.main: FPS=10.1 | tracks=1 | alerts=0
+2025-11-23 17:22:54,559 [INFO] gaitguard.main: FPS=10.3 | tracks=1 | alerts=0
+2025-11-23 17:22:56,749 [INFO] gaitguard.main: FPS=10.5 | tracks=1 | alerts=0
+2025-11-23 17:22:59,757 [INFO] gaitguard.main: FPS=10.5 | tracks=1 | alerts=0
+2025-11-23 17:23:02,775 [INFO] gaitguard.main: FPS=10.5 | tracks=1 | alerts=0
+2025-11-23 17:23:03,721 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-23 17:23:34,618 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-23 17:23:34,619 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-23 17:23:34,620 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 17:23:34,798 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-23 17:23:34,806 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-23 17:23:34,806 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 17:23:34,810 [INFO] gait.gait_extractor: Gait embedding model loaded from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-11-23 17:23:34,810 [INFO] gait.gait_extractor: TemporalGaitEncoder initialized on device: cpu
+2025-11-23 17:23:34,810 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-23 17:23:34,810 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-23 17:23:34,810 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-23 17:23:34,810 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-23 17:23:36,786 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-23 17:23:40,695 [INFO] gaitguard.main: FPS=7.8 | tracks=0 | alerts=0
+2025-11-23 17:23:43,713 [INFO] gaitguard.main: FPS=8.7 | tracks=0 | alerts=0
+2025-11-23 17:23:46,720 [INFO] gaitguard.main: FPS=9.1 | tracks=0 | alerts=0
+2025-11-23 17:23:49,712 [INFO] gaitguard.main: FPS=9.3 | tracks=0 | alerts=0
+2025-11-23 17:23:52,563 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-23 17:28:53,548 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-23 17:28:53,548 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-23 17:28:53,548 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 17:28:53,731 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-23 17:28:53,731 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-23 17:28:53,731 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 17:28:53,737 [INFO] gait.gait_extractor: Gait embedding model loaded from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-11-23 17:28:53,737 [INFO] gait.gait_extractor: TemporalGaitEncoder initialized on device: cpu
+2025-11-23 17:28:53,737 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-23 17:28:53,737 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-23 17:28:53,737 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-23 17:28:53,737 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-23 17:28:55,618 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-23 17:28:59,131 [INFO] gaitguard.main: FPS=8.7 | tracks=1 | alerts=0
+2025-11-23 17:29:01,616 [INFO] gaitguard.main: FPS=10.2 | tracks=1 | alerts=0
+2025-11-23 17:29:04,325 [INFO] gaitguard.main: FPS=10.4 | tracks=1 | alerts=0
+2025-11-23 17:29:07,325 [INFO] gaitguard.main: FPS=10.3 | tracks=1 | alerts=0
+2025-11-23 17:29:10,327 [INFO] gaitguard.main: FPS=10.2 | tracks=1 | alerts=0
+2025-11-23 17:29:13,339 [INFO] gaitguard.main: FPS=10.2 | tracks=1 | alerts=0
+2025-11-23 17:29:15,925 [INFO] gaitguard.main: FPS=10.4 | tracks=1 | alerts=0
+2025-11-23 17:29:18,239 [INFO] gaitguard.main: FPS=10.6 | tracks=1 | alerts=0
+2025-11-23 17:29:20,817 [INFO] gaitguard.main: FPS=10.8 | tracks=1 | alerts=0
+2025-11-23 17:29:24,627 [INFO] gaitguard.main: FPS=10.4 | tracks=1 | alerts=0
+2025-11-23 17:29:27,768 [INFO] gaitguard.main: FPS=10.3 | tracks=1 | alerts=0
+2025-11-23 17:29:30,750 [INFO] gaitguard.main: FPS=10.3 | tracks=1 | alerts=0
+2025-11-23 17:29:33,741 [INFO] gaitguard.main: FPS=10.3 | tracks=1 | alerts=0
+2025-11-23 17:29:36,775 [INFO] gaitguard.main: FPS=10.2 | tracks=1 | alerts=0
+2025-11-23 17:29:39,381 [INFO] gaitguard.main: FPS=10.3 | tracks=1 | alerts=0
+2025-11-23 17:29:42,305 [INFO] gaitguard.main: FPS=10.3 | tracks=1 | alerts=0
+2025-11-23 17:29:42,630 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-23 17:39:38,166 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-23 17:39:38,166 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-23 17:39:38,166 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 17:39:38,298 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-23 17:39:38,298 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-23 17:39:38,298 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 17:39:38,298 [INFO] gait.gait_extractor: Gait embedding model loaded from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-11-23 17:39:38,298 [INFO] gait.gait_extractor: TemporalGaitEncoder initialized on device: cpu
+2025-11-23 17:39:38,298 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-23 17:39:38,298 [ERROR] gait.gait_gallery: Error loading gait gallery: Ran out of input
+2025-11-23 17:39:38,308 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-23 17:39:38,308 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-23 17:39:40,003 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-23 17:39:44,032 [INFO] gaitguard.main: FPS=7.6 | tracks=1 | alerts=0
+2025-11-23 17:39:47,038 [INFO] gaitguard.main: FPS=8.6 | tracks=1 | alerts=0
+2025-11-23 17:39:49,866 [INFO] gaitguard.main: FPS=9.2 | tracks=1 | alerts=0
+2025-11-23 17:39:52,322 [INFO] gaitguard.main: FPS=9.8 | tracks=1 | alerts=0
+2025-11-23 17:39:55,523 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-23 17:44:17,345 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-23 17:44:17,345 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-23 17:44:17,345 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 17:44:17,532 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-23 17:44:17,532 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-23 17:44:17,534 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 17:44:17,541 [INFO] gait.gait_extractor: Gait embedding model loaded from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-11-23 17:44:17,541 [INFO] gait.gait_extractor: TemporalGaitEncoder initialized on device: cpu
+2025-11-23 17:44:17,541 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-23 17:44:17,545 [INFO] gait.gait_gallery: Gait gallery file not found, starting with empty gallery.
+2025-11-23 17:44:17,545 [INFO] gait.gait_gallery: GaitGallery initialized with 0 unique identities.
+2025-11-23 17:44:17,545 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-23 17:44:19,105 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-23 17:44:22,962 [INFO] gaitguard.main: FPS=7.9 | tracks=1 | alerts=0
+2025-11-23 17:44:25,972 [INFO] gaitguard.main: FPS=8.8 | tracks=1 | alerts=0
+2025-11-23 17:44:28,975 [INFO] gaitguard.main: FPS=9.2 | tracks=1 | alerts=0
+2025-11-23 17:44:32,083 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-23 17:48:31,318 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-23 17:48:31,318 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-23 17:48:31,322 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 17:48:31,448 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-23 17:48:31,450 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-23 17:48:31,450 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 17:48:31,454 [INFO] gait.gait_extractor: Gait embedding model loaded from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-11-23 17:48:31,456 [INFO] gait.gait_extractor: TemporalGaitEncoder initialized on device: cpu
+2025-11-23 17:48:31,456 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-23 17:48:31,471 [INFO] gait.gait_gallery: FAISS index rebuilt with 1 embeddings.
+2025-11-23 17:48:31,471 [INFO] gait.gait_gallery: GaitGallery initialized with 1 unique identities.
+2025-11-23 17:48:31,471 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-23 17:48:33,153 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-23 17:48:36,763 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:36,763 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:36,884 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:36,884 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:36,979 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:36,980 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:37,076 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:37,076 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:37,182 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:37,183 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:37,184 [INFO] gaitguard.main: FPS=7.6 | tracks=1 | alerts=0
+2025-11-23 17:48:37,286 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:37,287 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:37,381 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:37,382 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:37,471 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:37,472 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:37,590 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:37,591 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:37,694 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:37,694 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:37,794 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:37,794 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:37,888 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:37,889 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:37,998 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:37,999 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:38,098 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:38,098 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:38,193 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:38,193 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:38,286 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:38,286 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:38,399 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:38,400 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:38,501 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:38,501 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:38,597 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:38,597 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:38,692 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:38,693 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:38,800 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:38,800 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:38,899 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:38,899 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:38,995 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:38,996 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:39,090 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:39,090 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:39,199 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:39,199 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:39,294 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:39,295 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:39,396 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:39,397 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:39,492 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:39,493 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:39,598 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:39,598 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:39,697 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:39,698 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:39,794 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:39,795 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:39,889 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:39,889 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:40,002 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:40,003 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:40,097 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:40,097 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:40,194 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:48:40,194 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:48:40,195 [INFO] gaitguard.main: FPS=8.6 | tracks=1 | alerts=0
+2025-11-23 17:48:40,301 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:48:40,301 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:48:40,400 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:48:40,401 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:48:40,498 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:48:40,498 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:48:40,595 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:48:40,595 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:48:40,701 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:48:40,702 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:48:40,800 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:40,800 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:40,895 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:40,896 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:40,995 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:40,996 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:41,106 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:41,106 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:41,201 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:41,202 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:41,297 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:41,297 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:41,406 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:41,407 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:41,499 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:41,499 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:41,601 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:41,601 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:41,699 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:41,700 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:41,795 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:41,795 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:41,906 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:41,906 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:42,000 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:42,000 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:42,102 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:42,102 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:42,195 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:42,196 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:42,303 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:42,304 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:42,402 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:42,403 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:42,498 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:42,499 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:42,593 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:42,595 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:42,702 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:42,703 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:42,800 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:42,801 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:42,895 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:42,895 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:43,006 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:43,006 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:43,133 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:43,168 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:43,292 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:43,293 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:43,294 [INFO] gaitguard.main: FPS=9.0 | tracks=1 | alerts=0
+2025-11-23 17:48:43,386 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.04 (confidence 0.96).
+2025-11-23 17:48:43,387 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.96.
+2025-11-23 17:48:43,479 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.04 (confidence 0.96).
+2025-11-23 17:48:43,479 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.96.
+2025-11-23 17:48:43,576 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.04 (confidence 0.96).
+2025-11-23 17:48:43,577 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.96.
+2025-11-23 17:48:43,669 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:43,669 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:43,760 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:43,760 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:43,856 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:43,857 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:43,948 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:48:43,948 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:48:44,047 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:48:44,047 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:48:44,143 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:48:44,143 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:48:44,234 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:44,234 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:44,329 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:44,329 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:44,423 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:44,424 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:44,516 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:44,516 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:44,623 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:44,624 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:44,731 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:44,731 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:44,846 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:44,847 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:44,959 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:44,959 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:45,066 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:45,067 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:45,177 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:45,177 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:45,285 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:45,285 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:45,406 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:45,407 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:45,520 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:45,521 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:45,624 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:45,625 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:45,735 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:45,735 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:45,843 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:45,843 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:45,960 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:45,960 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:46,070 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:46,070 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:46,181 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:46,181 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:46,291 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:46,291 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:46,401 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:46,402 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:46,404 [INFO] gaitguard.main: FPS=9.1 | tracks=1 | alerts=0
+2025-11-23 17:48:46,518 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:46,518 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:46,617 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:46,618 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:46,722 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:46,722 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:46,827 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:46,827 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:46,916 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:46,917 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:47,007 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:47,007 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:47,109 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:47,109 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:47,203 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:47,204 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:47,311 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:47,311 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:47,406 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:47,406 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:47,499 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:47,499 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:47,603 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:47,603 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:47,718 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:47,718 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:47,808 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:47,809 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:47,902 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:47,902 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:48,001 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:48,002 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:48,111 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:48,112 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:48,209 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:48,210 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:48,301 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:48,301 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:48,391 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:48,391 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:48,511 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:48,511 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:48,608 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:48,608 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:48,708 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:48,708 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:48,795 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:48,795 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:48,905 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:48,905 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:49,011 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:49,011 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:49,107 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:48:49,108 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:48:49,208 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:48:49,208 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:48:49,307 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.05 (confidence 0.95).
+2025-11-23 17:48:49,308 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.95.
+2025-11-23 17:48:49,415 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.07 (confidence 0.93).
+2025-11-23 17:48:49,415 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.93.
+2025-11-23 17:48:49,416 [INFO] gaitguard.main: FPS=9.3 | tracks=1 | alerts=0
+2025-11-23 17:48:49,508 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.10 (confidence 0.90).
+2025-11-23 17:48:49,508 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.90.
+2025-11-23 17:48:49,615 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.14 (confidence 0.86).
+2025-11-23 17:48:49,615 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.86.
+2025-11-23 17:48:49,708 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.19 (confidence 0.81).
+2025-11-23 17:48:49,709 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.81.
+2025-11-23 17:48:49,799 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.23 (confidence 0.77).
+2025-11-23 17:48:49,800 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.77.
+2025-11-23 17:48:50,001 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.28 (confidence 0.72).
+2025-11-23 17:48:50,002 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.72.
+2025-11-23 17:48:50,100 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.36 (confidence 0.64).
+2025-11-23 17:48:50,100 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.64.
+2025-11-23 17:48:50,199 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.43 (confidence 0.57).
+2025-11-23 17:48:50,200 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.57.
+2025-11-23 17:48:50,291 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.50 (confidence 0.50).
+2025-11-23 17:48:50,292 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.50.
+2025-11-23 17:48:50,409 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.57 (confidence 0.43).
+2025-11-23 17:48:50,410 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.43.
+2025-11-23 17:48:50,543 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.63 (confidence 0.37).
+2025-11-23 17:48:50,543 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.37.
+2025-11-23 17:48:50,641 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.69 (confidence 0.31).
+2025-11-23 17:48:50,641 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.31.
+2025-11-23 17:48:50,729 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.70 (confidence 0.30).
+2025-11-23 17:48:50,729 [INFO] gait.gait_engine: Track 1: Gait recognized as person_002 with confidence 0.30.
+2025-11-23 17:48:52,394 [INFO] gaitguard.main: FPS=9.4 | tracks=1 | alerts=0
+2025-11-23 17:48:53,298 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:53,298 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:53,400 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:53,401 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:53,504 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:53,504 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:53,601 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:53,602 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:53,697 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:53,697 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:53,793 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:53,793 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:53,905 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:53,905 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:54,001 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:54,002 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:54,100 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:54,101 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:54,197 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:54,198 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:54,308 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:54,308 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:54,405 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:54,405 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:54,504 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:54,505 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:54,595 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:54,595 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:54,705 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:54,705 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:54,804 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:54,804 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:54,900 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:54,900 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:55,013 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:55,014 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:55,110 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:55,110 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:55,205 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:55,205 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:55,296 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:55,297 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:55,408 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:55,408 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:55,409 [INFO] gaitguard.main: FPS=9.5 | tracks=1 | alerts=0
+2025-11-23 17:48:55,504 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:55,504 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:55,603 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:55,604 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:55,701 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:55,701 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:55,808 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:55,808 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:55,908 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:55,908 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:56,004 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:56,004 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:56,101 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:56,101 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:56,211 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:56,211 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:56,308 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:56,308 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:56,404 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:56,404 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:56,499 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:56,500 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:56,608 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:56,609 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:56,708 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:56,708 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:56,804 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:56,805 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:56,899 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:56,900 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:57,009 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:57,010 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:57,109 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:57,109 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:57,203 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:57,203 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:57,299 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:57,300 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:57,408 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:57,408 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:57,510 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:57,510 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:57,607 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:57,607 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:57,699 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:57,699 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:57,809 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:57,810 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:57,907 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:57,908 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:58,005 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:58,005 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:58,111 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:58,112 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:58,211 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:58,212 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:58,304 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:58,304 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:58,405 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:58,405 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:58,407 [INFO] gaitguard.main: FPS=9.5 | tracks=1 | alerts=0
+2025-11-23 17:48:58,514 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:58,514 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:58,612 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:58,613 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:58,709 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:58,710 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:58,805 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:58,805 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:58,914 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:58,914 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:59,013 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:59,014 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:59,103 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:59,103 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:59,204 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:59,205 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:59,315 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:48:59,315 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:48:59,412 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:59,412 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:59,507 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:59,507 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:59,606 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:59,607 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:59,714 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:59,714 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:59,812 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:59,812 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:48:59,907 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:48:59,907 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:00,004 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:49:00,004 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:49:00,118 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:49:00,119 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:49:00,213 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:49:00,214 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:49:00,305 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:49:00,306 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:49:00,404 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:49:00,405 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:49:00,516 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.05 (confidence 0.95).
+2025-11-23 17:49:00,517 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.95.
+2025-11-23 17:49:00,614 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.09 (confidence 0.91).
+2025-11-23 17:49:00,614 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.91.
+2025-11-23 17:49:00,706 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.13 (confidence 0.87).
+2025-11-23 17:49:00,707 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.87.
+2025-11-23 17:49:00,802 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.19 (confidence 0.81).
+2025-11-23 17:49:00,803 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.81.
+2025-11-23 17:49:00,914 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.25 (confidence 0.75).
+2025-11-23 17:49:00,915 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.75.
+2025-11-23 17:49:01,017 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.32 (confidence 0.68).
+2025-11-23 17:49:01,017 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.68.
+2025-11-23 17:49:01,107 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.37 (confidence 0.63).
+2025-11-23 17:49:01,107 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.63.
+2025-11-23 17:49:01,218 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.41 (confidence 0.59).
+2025-11-23 17:49:01,218 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.59.
+2025-11-23 17:49:01,349 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.44 (confidence 0.56).
+2025-11-23 17:49:01,414 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.56.
+2025-11-23 17:49:01,507 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.47 (confidence 0.53).
+2025-11-23 17:49:01,508 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.53.
+2025-11-23 17:49:01,509 [INFO] gaitguard.main: FPS=9.6 | tracks=2 | alerts=0
+2025-11-23 17:49:01,590 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.52 (confidence 0.48).
+2025-11-23 17:49:01,590 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.48.
+2025-11-23 17:49:01,674 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.59 (confidence 0.41).
+2025-11-23 17:49:01,675 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.41.
+2025-11-23 17:49:01,827 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.67 (confidence 0.33).
+2025-11-23 17:49:01,827 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.33.
+2025-11-23 17:49:01,910 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.74 (confidence 0.26).
+2025-11-23 17:49:01,910 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.26.
+2025-11-23 17:49:02,018 [INFO] gait.gait_gallery: Found weak gait match for person_002 (FAISS ID 0) with distance 0.81 (confidence 0.19).
+2025-11-23 17:49:02,019 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.19.
+2025-11-23 17:49:02,116 [INFO] gait.gait_gallery: Found weak gait match for person_002 (FAISS ID 0) with distance 0.88 (confidence 0.12).
+2025-11-23 17:49:02,116 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.12.
+2025-11-23 17:49:02,216 [INFO] gait.gait_gallery: Found weak gait match for person_002 (FAISS ID 0) with distance 0.95 (confidence 0.05).
+2025-11-23 17:49:02,216 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.05.
+2025-11-23 17:49:02,315 [INFO] gait.gait_gallery: No gait match found. Best distance was 1.00, above weak threshold 0.95.
+2025-11-23 17:49:02,414 [INFO] gait.gait_gallery: No gait match found. Best distance was 1.04, above weak threshold 0.95.
+2025-11-23 17:49:02,511 [INFO] gait.gait_gallery: No gait match found. Best distance was 1.06, above weak threshold 0.95.
+2025-11-23 17:49:02,609 [INFO] gait.gait_gallery: No gait match found. Best distance was 1.10, above weak threshold 0.95.
+2025-11-23 17:49:02,708 [INFO] gait.gait_gallery: No gait match found. Best distance was 1.14, above weak threshold 0.95.
+2025-11-23 17:49:02,814 [INFO] gait.gait_gallery: No gait match found. Best distance was 1.19, above weak threshold 0.95.
+2025-11-23 17:49:02,912 [INFO] gait.gait_gallery: No gait match found. Best distance was 1.23, above weak threshold 0.95.
+2025-11-23 17:49:03,012 [INFO] gait.gait_gallery: No gait match found. Best distance was 1.29, above weak threshold 0.95.
+2025-11-23 17:49:03,103 [INFO] gait.gait_gallery: No gait match found. Best distance was 1.33, above weak threshold 0.95.
+2025-11-23 17:49:04,511 [INFO] gaitguard.main: FPS=9.6 | tracks=1 | alerts=0
+2025-11-23 17:49:07,118 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.17 (confidence 0.83).
+2025-11-23 17:49:07,118 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.83.
+2025-11-23 17:49:07,222 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.12 (confidence 0.88).
+2025-11-23 17:49:07,222 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.88.
+2025-11-23 17:49:07,318 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.08 (confidence 0.92).
+2025-11-23 17:49:07,318 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.92.
+2025-11-23 17:49:07,424 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.06 (confidence 0.94).
+2025-11-23 17:49:07,424 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.94.
+2025-11-23 17:49:07,520 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.05 (confidence 0.95).
+2025-11-23 17:49:07,521 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.95.
+2025-11-23 17:49:07,617 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:49:07,618 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:49:07,619 [INFO] gaitguard.main: FPS=9.6 | tracks=1 | alerts=0
+2025-11-23 17:49:07,715 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:49:07,716 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:49:07,825 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:49:07,826 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:49:07,926 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:49:07,926 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:49:08,020 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:08,020 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:08,116 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:08,116 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:08,225 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:08,225 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:08,318 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:08,318 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:08,422 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:08,422 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:08,513 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:08,513 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:08,620 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:49:08,620 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:49:08,721 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:49:08,721 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:49:08,817 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:49:08,817 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:49:08,915 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:49:08,916 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:49:09,027 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:49:09,027 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:49:09,124 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:49:09,124 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:49:09,219 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:49:09,220 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:49:09,314 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:09,314 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:09,426 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:09,426 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:09,524 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:09,525 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:09,619 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:09,620 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:09,715 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:09,716 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:09,826 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:09,826 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:09,920 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:09,920 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:10,017 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:10,018 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:10,130 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:10,130 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:10,228 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:10,229 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:10,323 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:10,323 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:10,422 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:10,422 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:10,530 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:10,530 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:10,633 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:10,633 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:10,634 [INFO] gaitguard.main: FPS=9.6 | tracks=1 | alerts=0
+2025-11-23 17:49:10,726 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:10,727 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:10,819 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:10,820 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:10,933 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:10,933 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:11,030 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:11,030 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:11,128 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:11,128 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:11,222 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:11,222 [INFO] gait.gait_engine: Track 4: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:13,307 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:13,307 [INFO] gait.gait_engine: Track 11: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:13,404 [INFO] gaitguard.main: FPS=9.7 | tracks=3 | alerts=0
+2025-11-23 17:49:13,499 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:13,500 [INFO] gait.gait_engine: Track 11: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:13,596 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:13,596 [INFO] gait.gait_engine: Track 11: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:13,692 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:13,692 [INFO] gait.gait_engine: Track 11: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:13,792 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:13,793 [INFO] gait.gait_engine: Track 11: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:13,888 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:13,888 [INFO] gait.gait_engine: Track 11: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:13,988 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:13,988 [INFO] gait.gait_engine: Track 11: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:14,085 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:14,085 [INFO] gait.gait_engine: Track 11: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:14,178 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:14,178 [INFO] gait.gait_engine: Track 11: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:14,274 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:14,274 [INFO] gait.gait_engine: Track 11: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:14,447 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:14,447 [INFO] gait.gait_engine: Track 11: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:16,334 [INFO] gaitguard.main: FPS=9.7 | tracks=1 | alerts=0
+2025-11-23 17:49:16,688 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:16,689 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:16,809 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:16,810 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:16,912 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:16,912 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:17,016 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:17,016 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:17,113 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:17,113 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:17,208 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:17,208 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:17,303 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:17,304 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:17,396 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:17,396 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:17,492 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:17,492 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:17,591 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:17,591 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:17,689 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:17,689 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:17,782 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:17,782 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:17,877 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:17,877 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:17,969 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:17,969 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:18,064 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:18,064 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:18,165 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:18,165 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:18,261 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:18,261 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:18,355 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:18,356 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:18,444 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:18,444 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:18,532 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:18,532 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:18,661 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:18,726 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:18,827 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:18,827 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:18,921 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:49:18,922 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:49:19,011 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:49:19,012 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:49:19,104 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.03 (confidence 0.97).
+2025-11-23 17:49:19,105 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 0.97.
+2025-11-23 17:49:19,203 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.05 (confidence 0.95).
+2025-11-23 17:49:19,203 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 0.95.
+2025-11-23 17:49:19,299 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.08 (confidence 0.92).
+2025-11-23 17:49:19,299 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 0.92.
+2025-11-23 17:49:19,394 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.11 (confidence 0.89).
+2025-11-23 17:49:19,394 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 0.89.
+2025-11-23 17:49:19,395 [INFO] gaitguard.main: FPS=9.8 | tracks=1 | alerts=0
+2025-11-23 17:49:19,480 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.15 (confidence 0.85).
+2025-11-23 17:49:19,480 [INFO] gait.gait_engine: Track 16: Gait recognized as person_002 with confidence 0.85.
+2025-11-23 17:49:22,321 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:49:22,321 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:49:22,322 [INFO] gaitguard.main: FPS=9.8 | tracks=1 | alerts=0
+2025-11-23 17:49:22,419 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:22,419 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:22,547 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:22,547 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:22,649 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:22,649 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:22,755 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:22,755 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:22,866 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:22,866 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:22,973 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:22,975 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:23,080 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:23,080 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:23,178 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:23,179 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:23,263 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:23,264 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:23,345 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:23,346 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:23,427 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:23,427 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:23,524 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:23,524 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:23,623 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:23,623 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:23,732 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:23,733 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:23,820 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:23,821 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:23,906 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:23,906 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:23,986 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:23,987 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:24,071 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:24,071 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:24,156 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:24,157 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:24,239 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:24,239 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:24,324 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:24,325 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:24,405 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:24,405 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:24,483 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:24,484 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:24,569 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:24,569 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:24,649 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:24,649 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:24,731 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:24,731 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:24,814 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:24,814 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:24,896 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:24,896 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:24,976 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:24,976 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:25,057 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:25,058 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:25,059 [INFO] gaitguard.main: FPS=9.8 | tracks=1 | alerts=0
+2025-11-23 17:49:25,138 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:25,138 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:25,219 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:25,219 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:25,300 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:25,300 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:25,381 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:25,382 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:25,469 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:25,469 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:25,552 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:25,552 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:25,636 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:25,636 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:25,718 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:25,719 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:25,798 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:25,799 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:25,883 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:25,883 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:25,965 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:25,966 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:26,051 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:26,052 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:26,137 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:26,137 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:26,220 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:26,221 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:26,304 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:26,304 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:26,384 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:26,385 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:26,478 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:26,478 [INFO] gait.gait_engine: Track 21: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:27,417 [INFO] gaitguard.main: FPS=10.0 | tracks=1 | alerts=0
+2025-11-23 17:49:27,739 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:27,740 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:27,858 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:27,859 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:27,953 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:27,954 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:28,051 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:28,052 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:28,146 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:28,147 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:28,255 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:28,256 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:28,354 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:28,354 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:28,459 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:28,459 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:28,567 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:28,568 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:28,660 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:28,661 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:28,754 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:28,754 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:28,852 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:28,852 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:28,962 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:28,963 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:29,061 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.00 (confidence 1.00).
+2025-11-23 17:49:29,062 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 1.00.
+2025-11-23 17:49:29,159 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:29,160 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:29,252 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:29,252 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:29,360 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:29,361 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:29,461 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:29,461 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:29,554 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.01 (confidence 0.99).
+2025-11-23 17:49:29,554 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.99.
+2025-11-23 17:49:29,684 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.02 (confidence 0.98).
+2025-11-23 17:49:29,733 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.98.
+2025-11-23 17:49:29,836 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.04 (confidence 0.96).
+2025-11-23 17:49:29,836 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.96.
+2025-11-23 17:49:29,916 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.06 (confidence 0.94).
+2025-11-23 17:49:29,916 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.94.
+2025-11-23 17:49:29,995 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.09 (confidence 0.91).
+2025-11-23 17:49:29,996 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.91.
+2025-11-23 17:49:30,076 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.13 (confidence 0.87).
+2025-11-23 17:49:30,076 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.87.
+2025-11-23 17:49:30,166 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.18 (confidence 0.82).
+2025-11-23 17:49:30,166 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.82.
+2025-11-23 17:49:30,264 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.25 (confidence 0.75).
+2025-11-23 17:49:30,264 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.75.
+2025-11-23 17:49:30,358 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.32 (confidence 0.68).
+2025-11-23 17:49:30,358 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.68.
+2025-11-23 17:49:30,360 [INFO] gaitguard.main: FPS=10.0 | tracks=1 | alerts=0
+2025-11-23 17:49:30,457 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.39 (confidence 0.61).
+2025-11-23 17:49:30,457 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.61.
+2025-11-23 17:49:30,563 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.47 (confidence 0.53).
+2025-11-23 17:49:30,563 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.53.
+2025-11-23 17:49:30,659 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.54 (confidence 0.46).
+2025-11-23 17:49:30,659 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.46.
+2025-11-23 17:49:30,756 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.59 (confidence 0.41).
+2025-11-23 17:49:30,757 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.41.
+2025-11-23 17:49:30,852 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.62 (confidence 0.38).
+2025-11-23 17:49:30,852 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.38.
+2025-11-23 17:49:30,961 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.59 (confidence 0.41).
+2025-11-23 17:49:30,961 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.41.
+2025-11-23 17:49:31,063 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.53 (confidence 0.47).
+2025-11-23 17:49:31,064 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.47.
+2025-11-23 17:49:31,159 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.46 (confidence 0.54).
+2025-11-23 17:49:31,160 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.54.
+2025-11-23 17:49:31,252 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.38 (confidence 0.62).
+2025-11-23 17:49:31,252 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.62.
+2025-11-23 17:49:31,363 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.31 (confidence 0.69).
+2025-11-23 17:49:31,363 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.69.
+2025-11-23 17:49:31,462 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.24 (confidence 0.76).
+2025-11-23 17:49:31,462 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.76.
+2025-11-23 17:49:31,559 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.19 (confidence 0.81).
+2025-11-23 17:49:31,560 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.81.
+2025-11-23 17:49:31,663 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.15 (confidence 0.85).
+2025-11-23 17:49:31,664 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.85.
+2025-11-23 17:49:31,771 [INFO] gait.gait_gallery: Found strong gait match for person_002 (FAISS ID 0) with distance 0.12 (confidence 0.88).
+2025-11-23 17:49:31,771 [INFO] gait.gait_engine: Track 24: Gait recognized as person_002 with confidence 0.88.
+2025-11-23 17:49:32,089 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-11-23 19:11:49,645 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-11-23 19:11:49,645 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-11-23 19:11:49,645 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 19:11:49,880 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-11-23 19:11:49,880 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-11-23 19:11:49,880 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\data\gait_gallery.enc
+2025-11-23 19:11:49,889 [INFO] gait.gait_extractor: Gait embedding model loaded from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-11-23 19:11:49,890 [INFO] gait.gait_extractor: TemporalGaitEncoder initialized on device: cpu
+2025-11-23 19:11:49,891 [INFO] gait.gait_extractor: GaitExtractor initialized. Target embedding dimension:256
+2025-11-23 19:11:49,893 [INFO] gait.gait_gallery: FAISS index rebuilt with 1 embeddings.
+2025-11-23 19:11:49,893 [INFO] gait.gait_gallery: GaitGallery initialized with 1 unique identities.
+2025-11-23 19:11:49,893 [INFO] gait.gait_engine: GaitEngine initialized
+2025-11-23 19:11:51,482 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-11-23 19:11:54,795 [INFO] gaitguard.main: FPS=9.2 | tracks=1 | alerts=0
+2025-11-23 19:11:56,736 [INFO] gaitguard.main: FPS=11.6 | tracks=1 | alerts=0
+2025-11-23 19:11:58,523 [INFO] gaitguard.main: FPS=12.9 | tracks=1 | alerts=0
+2025-11-23 19:12:00,311 [INFO] gaitguard.main: GaitGuard pipeline stopped.

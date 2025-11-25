@@ -5,60 +5,100 @@ of poses into a walking (gait) embedding.
 import numpy as np
 from typing import List, Optional,Tuple
 import logging
+import torch
+from pathlib import Path
+import torch.nn as nn
+import torch.nn.functional as F
+import traceback
+import numpy as np
 
 from gait.config import GaitConfig
 
 logger=logging.getLogger(__name__)
 
+class TemporalGaitEncoder(nn.Module):
+    """
+    A simple GRU-based temporal encoder for gait embeddings from pose sequences.
+    This model takes a sequence of flattened pose keypoints and outputs a fixed-size embedding.
+
+    Input: (batch_size, sequence_length, input_dim)
+            where input_dim is 17 keypoints * 3 values (x,y,conf) = 51
+    Output: (batch_size, output_dim)
+    """
+    def __init__(self, input_dim: int, hidden_dim: int, output_dim: int, num_layers: int = 1):
+        super().__init__()
+        # Linear layer for mapping the flattened pose input to hidden_dim
+        self.input_linear = nn.Linear(input_dim, hidden_dim)
+        # GRU layer for processing the temporal sequence
+        self.gru = nn.GRU(hidden_dim, hidden_dim, num_layers, batch_first=True)
+        # Final linear layer mapping the GRU hidden state to the output embedding
+        self.output_linear = nn.Linear(hidden_dim, output_dim)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        # x is expected to have shape (batch_size, sequence_length, input_dim)
+
+        # Apply a linear transformation and ReLU activation to every timestep
+        x = torch.relu(self.input_linear(x))
+        
+        # Pass the sequence through the GRU
+        # output: output at each time step (not needed for final embedding)
+        # hn: final hidden state for the last GRU layer (used for embedding)
+        _, hn = self.gru(x)
+        
+        # hn has shape (num_layers, batch_size, hidden_dim)
+        # Use the hidden state from the last layer (-1) as input to the final layer
+        embedding = self.output_linear(hn[-1, :, :])
+        
+        return embedding
+
+
 class GaitExtractor:
     """
-    Extracts a gait embedding and an associated quality score from a sequence of pose keypoints.
-
-    How it works:
-    This class is designed to process a temporal sequence of smoothed poses
-    (provided by the perception engine) and convert them into a fixed-size
-    gait embedding suitable for identity recognition. It also calculates a
-    quality score for the gait sequence, which helps in determining the
-    reliability of the extracted embedding. The current implementation
-    uses a simulated temporal encoder, which is a placeholder for a real
-    deep learning model.
-
-    Attributes:
-    - config (GaitConfig): Configuration object containing parameters
-                           like embedding dimension, quality thresholds, etc.
+    Extracts a gait embedding and a quality score from a sequence of pose keypoints.
+    This implementation uses a temporal encoder (GRU) to process pose sequences.
+    It expects smoothed pose sequences from the perception engine.
     """
     def __init__(self,config: GaitConfig):
         self.config = config
+        self.device = torch.device(config.device.device)
+        self.model: Optional[TemporalGaitEncoder] = None # Will hold the model instance
+
+        # Initialize the Temporal Encoder Model
+        try:
+            # Each pose is (17 keypoints * 3 values (x,y,conf)) = 51
+            pose_input_dim = 17 * 3
+            hidden_dim = 128 # Can be tuned
+            output_dim = config.gallery.dim # 256
+            num_gru_layers = 1 # Can be tuned
+
+            self.model = TemporalGaitEncoder(pose_input_dim, hidden_dim, output_dim, num_gru_layers).to(self.device)
+            
+            # Load model weights if available
+            model_path = Path(config.models.gait_embedding_model_path)
+            if model_path.exists():
+                self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+                logger.info(f"Gait embedding model loaded from {model_path}")
+            else:
+                logger.warning(f"Gait embedding model not found at {model_path}. Using randomly initialized weights.")
+
+            self.model.eval() # Set model to evaluation mode
+            logger.info(f"TemporalGaitEncoder initialized on device: {self.device}")
+
+        except Exception as e:
+            logger.error(f"Error initializing GaitExtractor model: {e}\n{traceback.format_exc()}")
+            self.model = None # Ensure model is None if initialization fails
+
         logger.info(f"GaitExtractor initialized. Target embedding dimension:{self.config.gallery.dim}")
 
     def _calculate_pose_quality(self,pose_sequence: List[np.ndarray])->float:
         """
         Calculates a cumulative quality score for an entire sequence of poses.
-
-        How it works:
-        For each individual pose (a NumPy array of keypoints) within the
-        `pose_sequence`, it counts the number of keypoints whose confidence
-        score (the third value in the keypoint data, `pose[:,2]`) is above
-        `self.config.thresholds.min_visibility`. This count is then divided
-        by the total number of keypoints in a pose to get a per-pose quality.
-        These per-pose quality scores are averaged across the entire sequence
-        to yield a final gait quality score for the sequence. An empty
-        sequence results in a quality of 0.0.
-
-        Args:
-            pose_sequence (List[np.ndarray]): A list of NumPy arrays, where each array
-                                              represents a pose (keypoints and confidences).
-
-        Returns:
-            float: The average quality score (0-1) of the pose sequence.
         """
         if not pose_sequence:
             return 0.0
         total_quality = 0.0
         for pose in pose_sequence:
-            # np.sum counts True values (keypoints with confidence >= min_visibility)
             valid_keypoints = np.sum(pose[:,2]>=self.config.thresholds.min_visibility)
-            # pose.shape[0] is the total number of keypoints in a single pose
             pose_quality = valid_keypoints / pose.shape[0]
             total_quality += pose_quality
         return total_quality / len(pose_sequence)
@@ -66,69 +106,41 @@ class GaitExtractor:
     def extract_gait_embedding_and_quality(self,pose_sequence: List[np.ndarray]) -> Tuple[Optional[np.ndarray],float]:
         """
         Converts a sequence of poses into a single gait embedding and calculates its quality.
-
-        How it works:
-        1.  **Quality Calculation**: First, it calls `_calculate_pose_quality` to determine
-            the overall quality of the input `pose_sequence`.
-        2.  **Quality Thresholding**: If the calculated `gait_quality` falls below
-            `self.config.thresholds.min_gait_quality`, the function immediately returns
-            `None` for the embedding (indicating an invalid embedding) and the calculated quality.
-        3.  **Temporal Encoder Simulation (Placeholder)**: This is the critical point
-            where a real deep learning temporal encoder (e.g., a GRU or Transformer-based model)
-            would process the `pose_sequence` to generate a meaningful gait embedding.
-            In this simulated version, it calculates a mean of flattened pose values
-            to seed a random number generator, then produces a random NumPy array
-            of the specified `config.gallery.dim` (e.g., 256) as a placeholder embedding.
-        4.  **Normalization**: The generated embedding is normalized to have a unit L2 norm.
-            If the embedding is a zero vector, it remains a zero vector after normalization
-            to prevent division by zero errors.
-
-        The resulting embedding is a 1D NumPy array of `config.gallery.dim` elements.
-
-        Args:
-            pose_sequence (List[np.ndarray]): A list of NumPy arrays, where each array
-                                              represents a smoothed pose (keypoints and confidences).
-
-        Returns:
-            Tuple[Optional[np.ndarray], float]:
-                - Optional[np.ndarray]: The extracted gait embedding (1D NumPy array)
-                                        or `None` if quality is too low or sequence is empty.
-                - float: The quality score (0-1) of the gait sequence.
+        The resulting embedding is a 1D numpy array of `config.gallery.dim` (256) elements.
         """
-        if not pose_sequence:
-            logger.debug("Attempted to extract embedding from empty pose sequence.")
+        # If no pose sequence or model is not loaded
+        if not pose_sequence or self.model is None: 
+            logger.debug("Attempted to extract embedding from empty pose sequence or model not loaded.")
             return None,0.0
-        
-        #calculate the quality by the average quality of the poses in the sequence
+
         gait_quality = self._calculate_pose_quality(pose_sequence)
 
-        #if the quality is under the minimum treshold, do not produce a valid embedding
+        # If quality is too low, return only the quality score
         if gait_quality < self.config.thresholds.min_gait_quality:
             logger.debug(f"Gait quality {gait_quality:.2f} below threshold {self.config.thresholds.min_gait_quality:.2f}. Not returning valid embedding.")
             return None, gait_quality
        
-        # --- Temporal Encoder Simulation (Placeholder) ---
-        # This is the point where you would INTEGRATE YOUR REAL DEEP LEARNING MODEL.
-        # For now, we generate a random embedding of the specified dimension (e.g., 256).
+        # --- Temporal Encoder Integration ---
+        try:
+            flattened_poses = [pose.flatten() for pose in pose_sequence]
+            
+            pose_tensor = torch.tensor(np.array(flattened_poses), dtype=torch.float32).to(self.device)
+            pose_tensor = pose_tensor.unsqueeze(0) # Add batch dimension
 
-        # For a better simulation, we could use the average values of the flattened keypoints
-        # to "seed" the random generation, making the embedding less truly random.
-        # To simulate a "temporal encoder", you might flatten the sequence
-        # [pose1, pose2, ..., poseN] into a single vector (N*K*3) and then hash that.
 
-        # Using a fixed seed based on the first pose's values for deterministic simulation
-        
-        seed_val = int(np.sum(pose_sequence[0] * 1000)) % (2**32 - 1)
-        np.random.seed(seed_val)
-        embedding = np.random.rand(self.config.gallery.dim).astype(np.float32)
+            with torch.no_grad(): # No gradient computation for inference
+                raw_embedding = self.model(pose_tensor)
 
-        #Normalize the embedding
-        norm=np.linalg.norm(embedding)
-        if norm>0:
-            embedding = embedding/norm
-        else:
-            logger.warning("Simulated embedding is a zero vector, cannot normalize.")
-            embedding = np.zeros(self.config.gallery.dim, dtype=np.float32)
+            embedding = raw_embedding.squeeze(0).cpu().numpy()
 
-        logger.debug(f"Extracted simulated gait embedding of shape {embedding.shape} with quality {gait_quality:.2f}.")
-        return embedding, gait_quality
+            # L2 normalization of the embedding
+            # It's safer to normalize in PyTorch before converting to numpy
+            embedding = F.normalize(torch.tensor(embedding), p=2, dim=0).numpy()
+
+
+            logger.debug(f"Extracted gait embedding of shape {embedding.shape} with quality {gait_quality:.2f}.")
+            return embedding, gait_quality
+
+        except Exception as e:
+            logger.error(f"Error during gait embedding extraction: {e}\n{traceback.format_exc()}")
+            return None, gait_quality
