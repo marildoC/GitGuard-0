@@ -1,165 +1,214 @@
-"""
-enrollment_cli.py
-A script to register new gaits.
-"""
-import cv2
-import os
+# gait/enrollment_cli.py
+
+from __future__ import annotations
+import argparse
 import logging
-import numpy as np
+import sys
 from pathlib import Path
-import time
-import traceback
-from tqdm import tqdm
+from typing import List, Optional
+import cv2
+import numpy as np
+from ultralytics import YOLO
 
-
-from schemas import Frame, Tracklet
-from perception.perception_engine import Phase1PerceptionEngine
-from gait.gait_extractor import GaitExtractor
+from gait.config import default_gait_config
 from gait.gait_gallery import GaitGallery
-from gait.gait_engine import GaitEngine
-from gait.config import default_gait_config 
+from gait.gait_extractor import GaitExtractor
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-def enroll_from_video(
-    video_path: Path,
-    identity_id: str,
-    gait_engine: GaitEngine, 
-    min_sequence_length: int = 24,
-    max_lost_frames_in_sequence: int = 5 
-) -> bool:
+def _setup_logging(level: int = logging.INFO) -> None:
     """
-    Processes a video to extract poses, compute the gait embedding, and register it
-    in the gallery for a given identity_id.
+    Configures the root logger to output messages to the console.
+    Prevents duplicate handlers if logging is already set up.
     """
-    if not video_path.exists():
-        logger.error(f"Video file not found: {video_path}")
-        return False
+    root = logging.getLogger()
+    if root.handlers: return
+    root.setLevel(level)
+    fmt = logging.Formatter("%(asctime)s [%(levelname)s] %(name)s: %(message)s")
+    ch = logging.StreamHandler()
+    ch.setFormatter(fmt)
+    root.addHandler(ch)
 
-    logger.info(f"Starting enrollment for identity '{identity_id}' from video '{video_path.name}'...")
-
-    # Instantiate a new perception pipeline for this enrollment video,
-    # using the configs from the passed gait_engine for consistency.
-    # This extracts poses in the same way as the main_loop.
-    perception_engine = Phase1PerceptionEngine(
-        keypoint_ema_alpha=gait_engine.config.route.keypoint_ema_alpha,
-        keypoint_history_length=gait_engine.config.route.keypoint_history_length,
-        gait_config=gait_engine.config, 
-        max_lost_frames=max_lost_frames_in_sequence
-    )
+def extract_raw_sequences_from_video(video_path: Path, pose_model: YOLO, min_len: int = 24) -> List[List[np.ndarray]]:
+    """
+    Reads a video file frame by frame, runs the pose estimation model (YOLO),
+    and aggregates raw keypoints into sequences.
     
+    Args:
+        video_path: Path to the input video.
+        pose_model: Loaded YOLO model for pose estimation.
+        min_len: Minimum number of frames required to form a valid sequence.
+        
+    Returns:
+        A list of sequences, where each sequence is a list of numpy arrays (raw keypoints).
+    """
     cap = cv2.VideoCapture(str(video_path))
     if not cap.isOpened():
-        logger.error(f"Failed to open video {video_path}")
-        return False
+        logger.warning(f"Cannot open video {video_path}")
+        return []
 
-    frame_id = 0
-    # Reset tracker for the new video
-    perception_engine.tracker.reset() 
-    perception_engine._states = {} # Reset internal track states
-    
-    enrollment_sequence_data = None # Will contain the final sequence used for enrollment
-    found_track_id = -1
-
-    pbar = tqdm(desc="Processing video frames for pose extraction")
+    frames_buffer = []
+    sequences = []
+    conf_thresh = 0.5 
 
     while True:
-        ret, frame_img = cap.read()
-        if not ret:
-            break
+        ret, frame = cap.read()
+        if not ret: break
         
-        ts = time.perf_counter()
-        h, w = frame_img.shape[:2]
+        results = pose_model(frame, verbose=False, conf=conf_thresh)
+        kps_raw = None
+        
+        if results[0].keypoints is not None:
+            kps = results[0].keypoints
+            if hasattr(kps, 'data') and kps.data.shape[0] > 0:
+                kps_raw = kps.data[0].cpu().numpy() 
+        
+        if kps_raw is not None:
+            frames_buffer.append(kps_raw)
+        else:
+            if len(frames_buffer) >= min_len:
+                sequences.append(frames_buffer)
+            frames_buffer = []
 
-        frame = Frame(
-            frame_id=frame_id,
-            ts=ts,
-            camera_id="enrollment_cam",
-            size=(w, h),
-            image=frame_img,
-        )
+    if len(frames_buffer) >= min_len:
+        sequences.append(frames_buffer)
         
-        current_tracks = perception_engine.process_frame(frame)
-        
-        # Try to take the first track with a valid pose sequence
-        if current_tracks:
-            # Sort tracks by age, selecting the longest-lasting or the one with most frames
-            current_tracks.sort(key=lambda t: t.age_frames, reverse=True)
-            
-            # Choose the track with the longest valid sequence for enrollment
-            best_track_for_enrollment = None
-            for tracklet in current_tracks:
-                if len(tracklet.gait_sequence_data) >= min_sequence_length:
-                    best_track_for_enrollment = tracklet
-                    break
-            
-            if best_track_for_enrollment:
-                enrollment_sequence_data = best_track_for_enrollment.gait_sequence_data
-                found_track_id = best_track_for_enrollment.track_id
-            
-        frame_id += 1
-        pbar.update(1)
-
-    pbar.close()
     cap.release()
+    return sequences
+
+def cmd_enroll(args: argparse.Namespace) -> None:
+    """
+    Handles the 'enroll' command.
+    1. Initializes the GaitExtractor and GaitGallery.
+    2. Loads the Pose Estimation model.
+    3. Iterates through video files in the data directory.
+    4. Extracts gait embeddings and averages them per identity.
+    5. Saves the confirmed identities to the gallery.
+    """
+    _setup_logging()
+    cfg = default_gait_config()
     
-    if enrollment_sequence_data is None:
-        logger.error(f"Could not extract a valid pose sequence (min {min_sequence_length} frames) from video {video_path.name} for {identity_id}.")
-        return False
+    # Init Extractor (loads the .pth model)
+    extractor = GaitExtractor(cfg)
+    # Init Gallery (passes full config)
+    gallery = GaitGallery(cfg)
 
-    if len(enrollment_sequence_data) < min_sequence_length:
-        logger.error(f"Extracted sequence for {identity_id} is too short ({len(enrollment_sequence_data)} frames). Minimum required: {min_sequence_length}.")
-        return False
+    logger.info(f"Loading YOLO model: {cfg.models.pose_model_name}")
+    pose_model = YOLO(cfg.models.pose_model_name)
     
-    logger.info(f"Successfully extracted sequence of {len(enrollment_sequence_data)} frames for '{identity_id}' (Track ID: {found_track_id}).")
-
-    # Extract the embedding and quality using the GaitExtractor
-    gait_embedding, gait_quality = gait_engine.extractor.extract_gait_embedding_and_quality(enrollment_sequence_data)
-
-    if gait_embedding is None:
-        logger.error(f"Failed to extract gait embedding for '{identity_id}' (Quality: {gait_quality:.2f}). Check min_gait_quality threshold.")
-        return False
-
-    # Add embedding to the gallery. `confirmed=True` because this is an explicit enrollment.
-    gait_engine.gallery.add_gait_embedding(identity_id, gait_embedding, confirmed=True)
-    logger.info(f"Identity '{identity_id}' successfully enrolled with gait embedding (Quality: {gait_quality:.2f}).")
+    root_data_dir = Path("data/gait_videos")
     
-    return True
+    if args.name:
+        target_dir = root_data_dir / args.name
+        if not target_dir.exists():
+            logger.error(f"Directory not found: {target_dir}")
+            return
+        persons_to_process = [(args.name, target_dir)]
+    else:
+        if not root_data_dir.exists():
+            logger.error(f"Root directory not found: {root_data_dir}")
+            return
+        persons_to_process = [(p.name, p) for p in root_data_dir.iterdir() if p.is_dir()]
 
+    logger.info(f"Found {len(persons_to_process)} identities to process.")
+
+    for name, person_dir in persons_to_process:
+        logger.info(f"Processing identity: {name}")
+        
+        video_files = list(person_dir.glob("*.mp4")) + list(person_dir.glob("*.mov")) + list(person_dir.glob("*.avi"))
+        if not video_files:
+            logger.warning(f"No videos found for {name}")
+            continue
+            
+        valid_embeddings = []
+        for v_file in video_files:
+            logger.info(f"  - Extracting from {v_file.name}...")
+            raw_sequences = extract_raw_sequences_from_video(v_file, pose_model, min_len=cfg.route.min_sequence_length)
+            
+            for seq in raw_sequences:
+                emb, quality = extractor.extract_gait_embedding_and_quality(seq)
+                if emb is not None:
+                    valid_embeddings.append(emb)
+        
+        if not valid_embeddings:
+            logger.warning(f"No valid gait embeddings extracted for {name}")
+            continue
+            
+        embedding_matrix = np.stack(valid_embeddings)
+        avg_embedding = np.mean(embedding_matrix, axis=0)
+        norm = np.linalg.norm(avg_embedding)
+        if norm > 1e-6: avg_embedding /= norm
+
+        category = args.category if args.category else "resident"
+        
+        # USE CORRECT GAIT GALLERY METHODS
+        gallery.add_gait_embedding(
+            identity_id=name,
+            new_embedding=avg_embedding,
+            category=category,
+            confirmed=True
+        )
+        logger.info(f"✅ Enrolled {name}")
+
+    gallery.save_gallery()
+    logger.info("Gallery saved successfully.")
+
+def cmd_list(args: argparse.Namespace) -> None:
+    """
+    Handles the 'list' command.
+    Displays all identities currently stored in the gallery.
+    """
+    _setup_logging()
+    cfg = default_gait_config()
+    gallery = GaitGallery(cfg)
+    persons = gallery.list_persons()
+    
+    if not persons:
+        print("No persons enrolled.")
+        return
+    print(f"{'person_id':<36} {'category':<12} {'name':<20}")
+    print("-" * 70)
+    for p in persons:
+        print(f"{p.person_id:<36} {p.category:<12} {p.name:<20}")
+
+def cmd_delete(args: argparse.Namespace) -> None:
+    """
+    Handles the 'delete' command.
+    Removes a specific identity from the gallery based on person_id.
+    """
+    _setup_logging()
+    cfg = default_gait_config()
+    gallery = GaitGallery(cfg)
+
+    person_id = args.person_id or input("person_id: ").strip()
+    if gallery.delete_person(person_id):
+        print(f"Deleted {person_id}")
+    else:
+        print("Person not found")
+
+def main(argv: Optional[list[str]] = None) -> None:
+    """
+    Main entry point for the CLI tool.
+    Parses arguments and delegates execution to the appropriate command function (enroll, list, delete).
+    """
+    if argv is None: argv = sys.argv[1:]
+    parser = argparse.ArgumentParser(prog="gait-enroll")
+    sub = parser.add_subparsers(dest="command", required=True)
+
+    p_enroll = sub.add_parser("enroll")
+    p_enroll.add_argument("--name", type=str)
+    p_enroll.add_argument("--category", type=str, default="resident")
+
+    sub.add_parser("list")
+    
+    p_del = sub.add_parser("delete")
+    p_del.add_argument("person_id", nargs="?", help="Identity ID")
+
+    args = parser.parse_args(argv)
+    
+    if args.command == "enroll": cmd_enroll(args)
+    elif args.command == "list": cmd_list(args)
+    elif args.command == "delete": cmd_delete(args)
 
 if __name__ == "__main__":
-    from gait.gait_engine import GaitEngine 
-
-    # Initialize GaitEngine (this loads the model and gallery)
-    gait_engine = GaitEngine()
-
-    video_base_path = Path("data/gait_videos") # Your folder with person videos
-    
-    if not video_base_path.exists():
-        logger.error(f"Video root directory {video_base_path} does not exist. Please create it and add videos like data/gait_videos/person_001/walk_01.mp4.")
-        exit()
-
-    
-    successful_enrollments = 0
-    total_enrollments_attempted = 0
-
-    for identity_folder in video_base_path.iterdir():
-        if identity_folder.is_dir():
-            identity_id = identity_folder.name
-            
-            # Take the first available video for enrollment of this identity
-            videos_for_id = list(identity_folder.glob("*.mp4"))
-            if not videos_for_id:
-                logger.warning(f"No video found for identity '{identity_id}'. Skipping enrollment for this ID.")
-                continue
-
-            video_to_use = videos_for_id[0] # Use the first video found
-            total_enrollments_attempted += 1
-
-            if enroll_from_video(video_to_use, identity_id, gait_engine):
-                successful_enrollments += 1
-            else:
-                logger.error(f"Enrollment of '{identity_id}' failed for video {video_to_use.name}.")
-    
-    logger.info(f"Enrollment process finished. Successfully enrolled {successful_enrollments}/{total_enrollments_attempted} identities.")
+    main()

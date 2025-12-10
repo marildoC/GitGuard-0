@@ -107,15 +107,15 @@ class GaitThresholdConfig:
     """
 
     # Minimum visibility score of landmarks (0–1).
-    min_visibility: float = 0.25
+    min_visibility: float = 0.3
 
     # Minimum number of valid joints required to accept analysis.
     min_valid_joints: int = 10
 
     # Max distance allowed for a strong match (lower is better)
-    max_match_distance: float = 0.8
+    max_match_distance: float = 0.03
 
-    max_weak_match_distance: float = 0.95
+    max_weak_match_distance: float = 0.05
 
     #Minimum quality for a gait embedding to be considered usable (0-1)
     min_gait_quality: float = 0.5

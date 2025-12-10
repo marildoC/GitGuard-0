@@ -18,10 +18,10 @@ from ui.overlay import draw_overlay
 # Phase-1 perception engine (YOLO + OC-SORT + appearance + ring buffer)
 from perception.perception_engine import Phase1PerceptionEngine
 
-# Phase-2A: real face-based IdentityEngine
+# Phase-2A: real face-based IdentityEngine (Optional)
 from identity.identity_engine import FaceIdentityEngine
 
-#Phase -2B: GaitEngine
+# Phase-2B: GaitEngine
 from gait.gait_engine import GaitEngine
 from gait.config import GaitConfig, default_gait_config
 
@@ -77,6 +77,7 @@ def run() -> None:
 
     # ---- instantiate engines ----
     gait_config = default_gait_config()
+    
     # Phase-1: real perception engine (YOLO + OC-SORT + appearance + ring buffer).
     perception = Phase1PerceptionEngine(
         keypoint_ema_alpha=gait_config.route.keypoint_ema_alpha, # Passed from gait_config
@@ -89,7 +90,7 @@ def run() -> None:
     # identity = FaceIdentityEngine()
 
     # Phase-2B: Gait Engine for gait recognition.
-    gait_engine=GaitEngine() 
+    gait_engine = GaitEngine() 
 
     # Events / alerts still dummy for now.
     events_engine = DummyEventsEngine()
@@ -102,13 +103,6 @@ def run() -> None:
             perception.warmup()  # type: ignore[call-arg]
         except Exception:
             log.exception("Perception warmup failed")
-
-    #if hasattr(identity, "warmup"):
-    #    try:
-    #        log.info("Warming up identity engine (if supported)...")
-    #        identity.warmup()  # type: ignore[call-arg]
-    #    except Exception:
-    #        log.exception("Identity warmup failed")
 
     # ---- camera source ----
     src = CameraSource(

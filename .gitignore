@@ -13,3 +13,6 @@ __pycache__/
 # OS junk  
 Thumbs.db
 .DS_Store
+
+# Ignore gait videos
+data/gait_videos/
