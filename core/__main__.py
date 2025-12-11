@@ -18,7 +18,7 @@ from ui.overlay import draw_overlay
 # Phase-1 perception engine (YOLO + OC-SORT + appearance + ring buffer)
 from perception.perception_engine import Phase1PerceptionEngine
 
-# Phase-2A: real face-based IdentityEngine (Optional)
+# Phase-2A: real face-based IdentityEngine (Optional - currently disabled)
 from identity.identity_engine import FaceIdentityEngine
 
 # Phase-2B: GaitEngine
@@ -71,32 +71,32 @@ def run() -> None:
     # ---- decide device (GPU/CPU + FP16) ----
     # This is mainly for logging / future phases.
     # The Detector inside Phase1PerceptionEngine and the face route
-    # will auto-select CUDA if available.
+    # will auto-select CUDA if available based on their internal configs.
     device, use_half = select_device(prefer_gpu=cfg.runtime.use_gpu)
     log.info("Runtime device=%s | half=%s", device, use_half)
 
     # ---- instantiate engines ----
     gait_config = default_gait_config()
     
-    # Phase-1: real perception engine (YOLO + OC-SORT + appearance + ring buffer).
+    # Phase-1: Real perception engine (YOLO + OC-SORT + appearance + ring buffer).
     perception = Phase1PerceptionEngine(
         keypoint_ema_alpha=gait_config.route.keypoint_ema_alpha, # Passed from gait_config
         keypoint_history_length=gait_config.route.keypoint_history_length, # Passed from gait_config
         gait_config=gait_config, # The full gait config is passed for model loading and other parameters
     )
 
-    # Phase-2A: real face-based identity engine (FaceRoute + FaceGallery + temporal smoothing).
-    # Currently commented out as gait is the primary focus.
+    # Phase-2A: Real face-based identity engine (FaceRoute + FaceGallery + temporal smoothing).
+    # Currently commented out as gait is the primary focus of this phase.
     # identity = FaceIdentityEngine()
 
     # Phase-2B: Gait Engine for gait recognition.
     gait_engine = GaitEngine() 
 
-    # Events / alerts still dummy for now.
+    # Events / alerts are still dummy implementations for now.
     events_engine = DummyEventsEngine()
     alert_engine = DummyAlertEngine()
 
-    # Optional warmup hooks (if implemented on these classes).
+    # Optional warmup hooks (if implemented on these classes) to load models into VRAM.
     if hasattr(perception, "warmup"):
         try:
             log.info("Warming up perception engine (if supported)...")
@@ -147,15 +147,17 @@ def run() -> None:
             # Perception: detect + track (including pose estimation and history management)
             tracks = perception.process_frame(frame)
 
-            # Identity: Face route (commented out)
+            # Identity: Face route (currently disabled)
             # signals = identity.update_signals(frame, tracks)
             # decisions = identity.decide(signals)
 
             # Identity: Gait route -> IdSignals -> IdentityDecision
+            # 1. Update Signals: Extract embeddings and find raw matches
             gait_signals = gait_engine.update_signals(frame, tracks)
+            # 2. Decide: Consolidate signals into final identity decisions with categories
             gait_decisions = gait_engine.decide(gait_signals)
 
-            # Events / alerts (still dummy)
+            # Events / alerts (dummy logic)
             events = events_engine.update(frame, tracks, gait_decisions)
             alerts = alert_engine.update(frame, events, gait_decisions)
 

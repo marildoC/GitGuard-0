@@ -41537,3 +41537,1975 @@ RuntimeError: Error(s) in loading state_dict for TemporalGaitEncoder:
 2025-12-09 19:06:46,686 [INFO] gait.gait_gallery: ------------------------------------------
 
 2025-12-09 19:06:46,966 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-10 16:08:36,104 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-10 16:08:36,104 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-10 16:08:36,104 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-10 16:08:36,440 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-12-10 16:08:36,440 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-12-10 16:08:36,442 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-10 16:08:36,478 [INFO] gait.gait_extractor: Gait embedding model loaded from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\models\gait_temporal_encoder.pth
+2025-12-10 16:08:36,482 [INFO] gait.gait_gallery: FAISS index rebuilt with 3 embeddings.
+2025-12-10 16:08:36,483 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-10 16:08:38,368 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-10 16:08:42,962 [INFO] gaitguard.main: FPS=6.7 | tracks=1 | alerts=0
+2025-12-10 16:08:43,381 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:43,409 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9038 (Dist: 0.0962) | ❌ REJECTED
+2025-12-10 16:08:43,418 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8463 (Dist: 0.1537) | ❌ REJECTED
+2025-12-10 16:08:43,465 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6250 (Dist: 0.3750) | ❌ REJECTED
+2025-12-10 16:08:43,507 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:43,658 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:43,658 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9068 (Dist: 0.0932) | ❌ REJECTED
+2025-12-10 16:08:43,660 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8460 (Dist: 0.1540) | ❌ REJECTED
+2025-12-10 16:08:43,660 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6265 (Dist: 0.3735) | ❌ REJECTED
+2025-12-10 16:08:43,668 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:43,809 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:43,850 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9090 (Dist: 0.0910) | ❌ REJECTED
+2025-12-10 16:08:43,862 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8468 (Dist: 0.1532) | ❌ REJECTED
+2025-12-10 16:08:43,870 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6249 (Dist: 0.3751) | ❌ REJECTED
+2025-12-10 16:08:43,911 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:44,050 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:44,053 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9122 (Dist: 0.0878) | ❌ REJECTED
+2025-12-10 16:08:44,054 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8494 (Dist: 0.1506) | ❌ REJECTED
+2025-12-10 16:08:44,060 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6253 (Dist: 0.3747) | ❌ REJECTED
+2025-12-10 16:08:44,072 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:44,220 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:44,225 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9144 (Dist: 0.0856) | ❌ REJECTED
+2025-12-10 16:08:44,227 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8504 (Dist: 0.1496) | ❌ REJECTED
+2025-12-10 16:08:44,235 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6245 (Dist: 0.3755) | ❌ REJECTED
+2025-12-10 16:08:44,240 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:44,379 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:44,382 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9153 (Dist: 0.0847) | ❌ REJECTED
+2025-12-10 16:08:44,383 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8498 (Dist: 0.1502) | ❌ REJECTED
+2025-12-10 16:08:44,383 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6226 (Dist: 0.3774) | ❌ REJECTED
+2025-12-10 16:08:44,384 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:44,515 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:44,516 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9155 (Dist: 0.0845) | ❌ REJECTED
+2025-12-10 16:08:44,516 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8486 (Dist: 0.1514) | ❌ REJECTED
+2025-12-10 16:08:44,516 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6205 (Dist: 0.3795) | ❌ REJECTED
+2025-12-10 16:08:44,516 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:44,646 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:44,648 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9153 (Dist: 0.0847) | ❌ REJECTED
+2025-12-10 16:08:44,648 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8471 (Dist: 0.1529) | ❌ REJECTED
+2025-12-10 16:08:44,649 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6182 (Dist: 0.3818) | ❌ REJECTED
+2025-12-10 16:08:44,649 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:44,774 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:44,774 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9150 (Dist: 0.0850) | ❌ REJECTED
+2025-12-10 16:08:44,775 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8454 (Dist: 0.1546) | ❌ REJECTED
+2025-12-10 16:08:44,775 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6159 (Dist: 0.3841) | ❌ REJECTED
+2025-12-10 16:08:44,775 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:44,904 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:44,905 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9144 (Dist: 0.0856) | ❌ REJECTED
+2025-12-10 16:08:44,908 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8435 (Dist: 0.1565) | ❌ REJECTED
+2025-12-10 16:08:44,908 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6135 (Dist: 0.3865) | ❌ REJECTED
+2025-12-10 16:08:44,909 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:45,031 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:45,031 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9139 (Dist: 0.0861) | ❌ REJECTED
+2025-12-10 16:08:45,031 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8419 (Dist: 0.1581) | ❌ REJECTED
+2025-12-10 16:08:45,033 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6115 (Dist: 0.3885) | ❌ REJECTED
+2025-12-10 16:08:45,033 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:45,145 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:45,145 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9139 (Dist: 0.0861) | ❌ REJECTED
+2025-12-10 16:08:45,147 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8410 (Dist: 0.1590) | ❌ REJECTED
+2025-12-10 16:08:45,147 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6103 (Dist: 0.3897) | ❌ REJECTED
+2025-12-10 16:08:45,148 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:45,265 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:45,265 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9139 (Dist: 0.0861) | ❌ REJECTED
+2025-12-10 16:08:45,266 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8399 (Dist: 0.1601) | ❌ REJECTED
+2025-12-10 16:08:45,266 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6090 (Dist: 0.3910) | ❌ REJECTED
+2025-12-10 16:08:45,266 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:45,388 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:45,389 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9137 (Dist: 0.0863) | ❌ REJECTED
+2025-12-10 16:08:45,390 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8388 (Dist: 0.1612) | ❌ REJECTED
+2025-12-10 16:08:45,391 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6078 (Dist: 0.3922) | ❌ REJECTED
+2025-12-10 16:08:45,391 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:45,506 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:45,506 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9136 (Dist: 0.0864) | ❌ REJECTED
+2025-12-10 16:08:45,506 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8380 (Dist: 0.1620) | ❌ REJECTED
+2025-12-10 16:08:45,506 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6069 (Dist: 0.3931) | ❌ REJECTED
+2025-12-10 16:08:45,507 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:45,510 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:45,510 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.8929 (Dist: 0.1071) | ❌ REJECTED
+2025-12-10 16:08:45,510 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8275 (Dist: 0.1725) | ❌ REJECTED
+2025-12-10 16:08:45,510 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.5994 (Dist: 0.4006) | ❌ REJECTED
+2025-12-10 16:08:45,511 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:45,622 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:45,624 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9137 (Dist: 0.0863) | ❌ REJECTED
+2025-12-10 16:08:45,624 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8373 (Dist: 0.1627) | ❌ REJECTED
+2025-12-10 16:08:45,624 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6061 (Dist: 0.3939) | ❌ REJECTED
+2025-12-10 16:08:45,625 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:45,736 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:45,742 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9137 (Dist: 0.0863) | ❌ REJECTED
+2025-12-10 16:08:45,750 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8365 (Dist: 0.1635) | ❌ REJECTED
+2025-12-10 16:08:45,753 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6053 (Dist: 0.3947) | ❌ REJECTED
+2025-12-10 16:08:45,754 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:45,877 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:45,880 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9138 (Dist: 0.0862) | ❌ REJECTED
+2025-12-10 16:08:45,880 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8358 (Dist: 0.1642) | ❌ REJECTED
+2025-12-10 16:08:45,883 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6046 (Dist: 0.3954) | ❌ REJECTED
+2025-12-10 16:08:45,883 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:46,011 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:46,016 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9139 (Dist: 0.0861) | ❌ REJECTED
+2025-12-10 16:08:46,016 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8354 (Dist: 0.1646) | ❌ REJECTED
+2025-12-10 16:08:46,017 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6041 (Dist: 0.3959) | ❌ REJECTED
+2025-12-10 16:08:46,017 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:46,143 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:46,145 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9141 (Dist: 0.0859) | ❌ REJECTED
+2025-12-10 16:08:46,145 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8349 (Dist: 0.1651) | ❌ REJECTED
+2025-12-10 16:08:46,145 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6036 (Dist: 0.3964) | ❌ REJECTED
+2025-12-10 16:08:46,146 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:46,269 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:46,305 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9142 (Dist: 0.0858) | ❌ REJECTED
+2025-12-10 16:08:46,315 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8344 (Dist: 0.1656) | ❌ REJECTED
+2025-12-10 16:08:46,342 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6031 (Dist: 0.3969) | ❌ REJECTED
+2025-12-10 16:08:46,368 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:46,523 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:46,525 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9141 (Dist: 0.0859) | ❌ REJECTED
+2025-12-10 16:08:46,529 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8336 (Dist: 0.1664) | ❌ REJECTED
+2025-12-10 16:08:46,531 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6023 (Dist: 0.3977) | ❌ REJECTED
+2025-12-10 16:08:46,540 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:46,681 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:46,690 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9142 (Dist: 0.0858) | ❌ REJECTED
+2025-12-10 16:08:46,691 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8333 (Dist: 0.1667) | ❌ REJECTED
+2025-12-10 16:08:46,691 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6020 (Dist: 0.3980) | ❌ REJECTED
+2025-12-10 16:08:46,691 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:46,833 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:46,844 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9146 (Dist: 0.0854) | ❌ REJECTED
+2025-12-10 16:08:46,846 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8333 (Dist: 0.1667) | ❌ REJECTED
+2025-12-10 16:08:46,849 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6020 (Dist: 0.3980) | ❌ REJECTED
+2025-12-10 16:08:46,869 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:47,023 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:47,025 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9151 (Dist: 0.0849) | ❌ REJECTED
+2025-12-10 16:08:47,028 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8332 (Dist: 0.1668) | ❌ REJECTED
+2025-12-10 16:08:47,032 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6021 (Dist: 0.3979) | ❌ REJECTED
+2025-12-10 16:08:47,035 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:47,182 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:08:47,198 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9154 (Dist: 0.0846) | ❌ REJECTED
+2025-12-10 16:08:47,200 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8330 (Dist: 0.1670) | ❌ REJECTED
+2025-12-10 16:08:47,204 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6019 (Dist: 0.3981) | ❌ REJECTED
+2025-12-10 16:08:47,206 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:08:47,504 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-10 16:08:58,860 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-10 16:08:58,860 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-10 16:08:58,861 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-10 16:08:59,035 [INFO] perception.perception_engine: YOLOv8-pose model loaded on CPU.
+2025-12-10 16:08:59,035 [INFO] perception.perception_engine: Phase-1 PerceptionEngine initialized.
+2025-12-10 16:08:59,035 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-10 16:08:59,047 [INFO] gait.gait_extractor: Gait embedding model loaded from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\models\gait_temporal_encoder.pth
+2025-12-10 16:08:59,048 [INFO] gait.gait_gallery: FAISS index rebuilt with 3 embeddings.
+2025-12-10 16:08:59,048 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-10 16:09:00,652 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-10 16:09:04,473 [INFO] gaitguard.main: FPS=8.0 | tracks=1 | alerts=0
+2025-12-10 16:09:05,306 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:09:05,307 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9143 (Dist: 0.0857) | ❌ REJECTED
+2025-12-10 16:09:05,308 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8509 (Dist: 0.1491) | ❌ REJECTED
+2025-12-10 16:09:05,309 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6217 (Dist: 0.3783) | ❌ REJECTED
+2025-12-10 16:09:05,309 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:09:05,428 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:09:05,429 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9164 (Dist: 0.0836) | ❌ REJECTED
+2025-12-10 16:09:05,430 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8510 (Dist: 0.1490) | ❌ REJECTED
+2025-12-10 16:09:05,430 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6216 (Dist: 0.3784) | ❌ REJECTED
+2025-12-10 16:09:05,431 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:09:05,546 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:09:05,546 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9177 (Dist: 0.0823) | ❌ REJECTED
+2025-12-10 16:09:05,547 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8506 (Dist: 0.1494) | ❌ REJECTED
+2025-12-10 16:09:05,547 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6211 (Dist: 0.3789) | ❌ REJECTED
+2025-12-10 16:09:05,547 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:09:05,655 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:09:05,655 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9187 (Dist: 0.0813) | ❌ REJECTED
+2025-12-10 16:09:05,656 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8505 (Dist: 0.1495) | ❌ REJECTED
+2025-12-10 16:09:05,656 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6207 (Dist: 0.3793) | ❌ REJECTED
+2025-12-10 16:09:05,656 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:09:05,771 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:09:05,772 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9199 (Dist: 0.0801) | ❌ REJECTED
+2025-12-10 16:09:05,772 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8506 (Dist: 0.1494) | ❌ REJECTED
+2025-12-10 16:09:05,773 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6203 (Dist: 0.3797) | ❌ REJECTED
+2025-12-10 16:09:05,774 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:09:05,888 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-10 16:09:05,888 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9213 (Dist: 0.0787) | ❌ REJECTED
+2025-12-10 16:09:05,889 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.8504 (Dist: 0.1496) | ❌ REJECTED
+2025-12-10 16:09:05,889 [INFO] gait.gait_gallery: #3: unknown_008          | Conf: 0.6198 (Dist: 0.3802) | ❌ REJECTED
+2025-12-10 16:09:05,889 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-10 16:09:06,183 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-11 11:45:44,041 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-11 11:45:44,043 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-11 11:45:44,044 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-11 11:45:44,044 [INFO] perception.perception_engine: Loading Segmentation Model: yolov8n-seg.pt
+2025-12-11 11:45:44,194 [INFO] perception.perception_engine: Phase-1 PerceptionEngine (Silhouette Mode) initialized.
+2025-12-11 11:45:44,196 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-11 11:45:44,375 [ERROR] gait.gait_extractor: Error initializing GaitExtractor: Error(s) in loading state_dict for GaitSetLite:
+	Missing key(s) in state_dict: "layer1.conv.weight", "layer1.bn.weight", "layer1.bn.bias", "layer1.bn.running_mean", "layer1.bn.running_var", "layer2.conv.weight", "layer2.bn.weight", "layer2.bn.bias", "layer2.bn.running_mean", "layer2.bn.running_var", "layer3.conv.weight", "layer3.bn.weight", "layer3.bn.bias", "layer3.bn.running_mean", "layer3.bn.running_var", "layer4.conv.weight", "layer4.bn.weight", "layer4.bn.bias", "layer4.bn.running_mean", "layer4.bn.running_var", "fc_bin.weight", "fc_bin.bias". 
+	Unexpected key(s) in state_dict: "block1.conv.0.weight", "block1.conv.1.weight", "block1.conv.1.bias", "block1.conv.1.running_mean", "block1.conv.1.running_var", "block1.conv.1.num_batches_tracked", "block1.conv.3.weight", "block1.conv.4.weight", "block1.conv.4.bias", "block1.conv.4.running_mean", "block1.conv.4.running_var", "block1.conv.4.num_batches_tracked", "block2.conv.0.weight", "block2.conv.1.weight", "block2.conv.1.bias", "block2.conv.1.running_mean", "block2.conv.1.running_var", "block2.conv.1.num_batches_tracked", "block2.conv.3.weight", "block2.conv.4.weight", "block2.conv.4.bias", "block2.conv.4.running_mean", "block2.conv.4.running_var", "block2.conv.4.num_batches_tracked", "block3.conv.0.weight", "block3.conv.1.weight", "block3.conv.1.bias", "block3.conv.1.running_mean", "block3.conv.1.running_var", "block3.conv.1.num_batches_tracked", "block3.conv.3.weight", "block3.conv.4.weight", "block3.conv.4.bias", "block3.conv.4.running_mean", "block3.conv.4.running_var", "block3.conv.4.num_batches_tracked", "block4.conv.0.weight", "block4.conv.1.weight", "block4.conv.1.bias", "block4.conv.1.running_mean", "block4.conv.1.running_var", "block4.conv.1.num_batches_tracked", "block4.conv.3.weight", "block4.conv.4.weight", "block4.conv.4.bias", "block4.conv.4.running_mean", "block4.conv.4.running_var", "block4.conv.4.num_batches_tracked", "fc.weight", "fc.bias", "bn_head.weight", "bn_head.bias", "bn_head.running_mean", "bn_head.running_var", "bn_head.num_batches_tracked". 
+Traceback (most recent call last):
+  File "C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\gait\gait_extractor.py", line 104, in __init__
+    self.model.load_state_dict(state_dict)
+  File "C:\Users\tucci\anaconda4\envs\venvguard\lib\site-packages\torch\nn\modules\module.py", line 2629, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for GaitSetLite:
+	Missing key(s) in state_dict: "layer1.conv.weight", "layer1.bn.weight", "layer1.bn.bias", "layer1.bn.running_mean", "layer1.bn.running_var", "layer2.conv.weight", "layer2.bn.weight", "layer2.bn.bias", "layer2.bn.running_mean", "layer2.bn.running_var", "layer3.conv.weight", "layer3.bn.weight", "layer3.bn.bias", "layer3.bn.running_mean", "layer3.bn.running_var", "layer4.conv.weight", "layer4.bn.weight", "layer4.bn.bias", "layer4.bn.running_mean", "layer4.bn.running_var", "fc_bin.weight", "fc_bin.bias". 
+	Unexpected key(s) in state_dict: "block1.conv.0.weight", "block1.conv.1.weight", "block1.conv.1.bias", "block1.conv.1.running_mean", "block1.conv.1.running_var", "block1.conv.1.num_batches_tracked", "block1.conv.3.weight", "block1.conv.4.weight", "block1.conv.4.bias", "block1.conv.4.running_mean", "block1.conv.4.running_var", "block1.conv.4.num_batches_tracked", "block2.conv.0.weight", "block2.conv.1.weight", "block2.conv.1.bias", "block2.conv.1.running_mean", "block2.conv.1.running_var", "block2.conv.1.num_batches_tracked", "block2.conv.3.weight", "block2.conv.4.weight", "block2.conv.4.bias", "block2.conv.4.running_mean", "block2.conv.4.running_var", "block2.conv.4.num_batches_tracked", "block3.conv.0.weight", "block3.conv.1.weight", "block3.conv.1.bias", "block3.conv.1.running_mean", "block3.conv.1.running_var", "block3.conv.1.num_batches_tracked", "block3.conv.3.weight", "block3.conv.4.weight", "block3.conv.4.bias", "block3.conv.4.running_mean", "block3.conv.4.running_var", "block3.conv.4.num_batches_tracked", "block4.conv.0.weight", "block4.conv.1.weight", "block4.conv.1.bias", "block4.conv.1.running_mean", "block4.conv.1.running_var", "block4.conv.1.num_batches_tracked", "block4.conv.3.weight", "block4.conv.4.weight", "block4.conv.4.bias", "block4.conv.4.running_mean", "block4.conv.4.running_var", "block4.conv.4.num_batches_tracked", "fc.weight", "fc.bias", "bn_head.weight", "bn_head.bias", "bn_head.running_mean", "bn_head.running_var", "bn_head.num_batches_tracked". 
+
+2025-12-11 11:45:44,378 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-11 11:45:46,561 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-11 11:45:48,525 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-11 11:54:49,695 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-11 11:54:49,695 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-11 11:54:49,695 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-11 11:54:49,695 [INFO] perception.perception_engine: Loading Segmentation Model: yolov8n-seg.pt
+2025-12-11 11:54:49,820 [INFO] perception.perception_engine: Phase-1 PerceptionEngine (Silhouette Mode) initialized.
+2025-12-11 11:54:49,820 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-11 11:54:49,908 [INFO] gait.gait_extractor: GaitSet model loaded from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\models\gait_temporal_encoder.pth
+2025-12-11 11:54:49,927 [INFO] gait.gait_gallery: FAISS index rebuilt with 1 embeddings.
+2025-12-11 11:54:49,928 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-11 11:54:51,893 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-11 11:54:53,372 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 1) ---
+2025-12-11 11:54:53,373 [INFO] gait.gait_gallery: #1: distractor_003       | Conf: -0.8109 (Dist: 1.8109) | ❌ REJECTED
+2025-12-11 11:54:53,373 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 11:54:53,656 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-11 12:25:28,920 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-11 12:25:28,920 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-11 12:25:28,920 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-11 12:25:28,920 [INFO] perception.perception_engine: Loading Segmentation Model: yolov8n-seg.pt
+2025-12-11 12:25:29,105 [INFO] perception.perception_engine: Phase-1 PerceptionEngine (Silhouette Mode) initialized.
+2025-12-11 12:25:29,107 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-11 12:25:29,265 [INFO] gait.gait_extractor: GaitSet model loaded from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\models\gait_temporal_encoder.pth
+2025-12-11 12:25:29,288 [INFO] gait.gait_gallery: FAISS index rebuilt with 5 embeddings.
+2025-12-11 12:25:29,289 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-11 12:25:31,309 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-11 12:25:36,650 [INFO] gaitguard.main: FPS=5.8 | tracks=0 | alerts=0
+2025-12-11 12:25:40,223 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:40,223 [INFO] gait.gait_gallery: #1: distractor_003       | Conf: -0.4981 (Dist: 1.4981) | ❌ REJECTED
+2025-12-11 12:25:40,224 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: -0.5253 (Dist: 1.5253) | ❌ REJECTED
+2025-12-11 12:25:40,224 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.5666 (Dist: 1.5666) | ❌ REJECTED
+2025-12-11 12:25:40,224 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.6980 (Dist: 1.6980) | ❌ REJECTED
+2025-12-11 12:25:40,224 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.7029 (Dist: 1.7029) | ❌ REJECTED
+2025-12-11 12:25:40,225 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:40,422 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:40,422 [INFO] gait.gait_gallery: #1: distractor_003       | Conf: -0.3517 (Dist: 1.3517) | ❌ REJECTED
+2025-12-11 12:25:40,422 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: -0.3648 (Dist: 1.3648) | ❌ REJECTED
+2025-12-11 12:25:40,423 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.4164 (Dist: 1.4164) | ❌ REJECTED
+2025-12-11 12:25:40,423 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.5710 (Dist: 1.5710) | ❌ REJECTED
+2025-12-11 12:25:40,423 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.5860 (Dist: 1.5860) | ❌ REJECTED
+2025-12-11 12:25:40,423 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:40,604 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:40,605 [INFO] gait.gait_gallery: #1: distractor_003       | Conf: -0.2680 (Dist: 1.2680) | ❌ REJECTED
+2025-12-11 12:25:40,605 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: -0.2870 (Dist: 1.2870) | ❌ REJECTED
+2025-12-11 12:25:40,605 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.3500 (Dist: 1.3500) | ❌ REJECTED
+2025-12-11 12:25:40,607 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.5069 (Dist: 1.5069) | ❌ REJECTED
+2025-12-11 12:25:40,607 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.5262 (Dist: 1.5262) | ❌ REJECTED
+2025-12-11 12:25:40,607 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:40,797 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:40,797 [INFO] gait.gait_gallery: #1: distractor_003       | Conf: -0.1973 (Dist: 1.1973) | ❌ REJECTED
+2025-12-11 12:25:40,798 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: -0.2004 (Dist: 1.2004) | ❌ REJECTED
+2025-12-11 12:25:40,798 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.2735 (Dist: 1.2735) | ❌ REJECTED
+2025-12-11 12:25:40,798 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.4374 (Dist: 1.4374) | ❌ REJECTED
+2025-12-11 12:25:40,799 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.4762 (Dist: 1.4762) | ❌ REJECTED
+2025-12-11 12:25:40,799 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:41,002 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:41,002 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: -0.0896 (Dist: 1.0896) | ❌ REJECTED
+2025-12-11 12:25:41,002 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: -0.0931 (Dist: 1.0931) | ❌ REJECTED
+2025-12-11 12:25:41,003 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.1645 (Dist: 1.1645) | ❌ REJECTED
+2025-12-11 12:25:41,005 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.3333 (Dist: 1.3333) | ❌ REJECTED
+2025-12-11 12:25:41,005 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.3875 (Dist: 1.3875) | ❌ REJECTED
+2025-12-11 12:25:41,005 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:41,006 [INFO] gaitguard.main: FPS=6.3 | tracks=1 | alerts=0
+2025-12-11 12:25:41,204 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:41,204 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: -0.0034 (Dist: 1.0034) | ❌ REJECTED
+2025-12-11 12:25:41,205 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: -0.0069 (Dist: 1.0069) | ❌ REJECTED
+2025-12-11 12:25:41,205 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.0880 (Dist: 1.0880) | ❌ REJECTED
+2025-12-11 12:25:41,205 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.2563 (Dist: 1.2563) | ❌ REJECTED
+2025-12-11 12:25:41,207 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.3168 (Dist: 1.3168) | ❌ REJECTED
+2025-12-11 12:25:41,207 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:41,615 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:41,615 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: -0.7905 (Dist: 1.7905) | ❌ REJECTED
+2025-12-11 12:25:41,615 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: -0.7973 (Dist: 1.7973) | ❌ REJECTED
+2025-12-11 12:25:41,617 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.8178 (Dist: 1.8178) | ❌ REJECTED
+2025-12-11 12:25:41,617 [INFO] gait.gait_gallery: #4: identity_002         | Conf: -0.8666 (Dist: 1.8666) | ❌ REJECTED
+2025-12-11 12:25:41,617 [INFO] gait.gait_gallery: #5: identity_001         | Conf: -0.8725 (Dist: 1.8725) | ❌ REJECTED
+2025-12-11 12:25:41,618 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:41,780 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:41,781 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: -0.7289 (Dist: 1.7289) | ❌ REJECTED
+2025-12-11 12:25:41,781 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: -0.7409 (Dist: 1.7409) | ❌ REJECTED
+2025-12-11 12:25:41,781 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.7828 (Dist: 1.7828) | ❌ REJECTED
+2025-12-11 12:25:41,782 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.8440 (Dist: 1.8440) | ❌ REJECTED
+2025-12-11 12:25:41,782 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.8494 (Dist: 1.8494) | ❌ REJECTED
+2025-12-11 12:25:41,782 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:41,944 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:41,944 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: -0.6540 (Dist: 1.6540) | ❌ REJECTED
+2025-12-11 12:25:41,945 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: -0.6741 (Dist: 1.6741) | ❌ REJECTED
+2025-12-11 12:25:41,945 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.7052 (Dist: 1.7052) | ❌ REJECTED
+2025-12-11 12:25:41,945 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.7846 (Dist: 1.7846) | ❌ REJECTED
+2025-12-11 12:25:41,945 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.7975 (Dist: 1.7975) | ❌ REJECTED
+2025-12-11 12:25:41,946 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:42,129 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:42,129 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: -0.6371 (Dist: 1.6371) | ❌ REJECTED
+2025-12-11 12:25:42,130 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: -0.6707 (Dist: 1.6707) | ❌ REJECTED
+2025-12-11 12:25:42,130 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.6772 (Dist: 1.6772) | ❌ REJECTED
+2025-12-11 12:25:42,131 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.7553 (Dist: 1.7553) | ❌ REJECTED
+2025-12-11 12:25:42,131 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.7790 (Dist: 1.7790) | ❌ REJECTED
+2025-12-11 12:25:42,131 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:42,319 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:42,320 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: -0.6657 (Dist: 1.6657) | ❌ REJECTED
+2025-12-11 12:25:42,320 [INFO] gait.gait_gallery: #2: distractor_001       | Conf: -0.6857 (Dist: 1.6857) | ❌ REJECTED
+2025-12-11 12:25:42,320 [INFO] gait.gait_gallery: #3: distractor_003       | Conf: -0.7022 (Dist: 1.7022) | ❌ REJECTED
+2025-12-11 12:25:42,320 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.7459 (Dist: 1.7459) | ❌ REJECTED
+2025-12-11 12:25:42,320 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.7595 (Dist: 1.7595) | ❌ REJECTED
+2025-12-11 12:25:42,322 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:42,513 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:42,514 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: -0.6053 (Dist: 1.6053) | ❌ REJECTED
+2025-12-11 12:25:42,514 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: -0.6146 (Dist: 1.6146) | ❌ REJECTED
+2025-12-11 12:25:42,514 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.6485 (Dist: 1.6485) | ❌ REJECTED
+2025-12-11 12:25:42,515 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.7218 (Dist: 1.7218) | ❌ REJECTED
+2025-12-11 12:25:42,515 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.7424 (Dist: 1.7424) | ❌ REJECTED
+2025-12-11 12:25:42,516 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:42,714 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:42,714 [INFO] gait.gait_gallery: #1: distractor_003       | Conf: -0.5193 (Dist: 1.5193) | ❌ REJECTED
+2025-12-11 12:25:42,715 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: -0.6115 (Dist: 1.6115) | ❌ REJECTED
+2025-12-11 12:25:42,715 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.6382 (Dist: 1.6382) | ❌ REJECTED
+2025-12-11 12:25:42,715 [INFO] gait.gait_gallery: #4: identity_002         | Conf: -0.6457 (Dist: 1.6457) | ❌ REJECTED
+2025-12-11 12:25:42,716 [INFO] gait.gait_gallery: #5: identity_001         | Conf: -0.6616 (Dist: 1.6616) | ❌ REJECTED
+2025-12-11 12:25:42,716 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:45,010 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:45,012 [INFO] gait.gait_gallery: #1: distractor_003       | Conf: -0.6908 (Dist: 1.6908) | ❌ REJECTED
+2025-12-11 12:25:45,012 [INFO] gait.gait_gallery: #2: distractor_001       | Conf: -0.7587 (Dist: 1.7587) | ❌ REJECTED
+2025-12-11 12:25:45,012 [INFO] gait.gait_gallery: #3: distractor_002       | Conf: -0.7640 (Dist: 1.7640) | ❌ REJECTED
+2025-12-11 12:25:45,012 [INFO] gait.gait_gallery: #4: identity_002         | Conf: -0.7769 (Dist: 1.7769) | ❌ REJECTED
+2025-12-11 12:25:45,013 [INFO] gait.gait_gallery: #5: identity_001         | Conf: -0.7981 (Dist: 1.7981) | ❌ REJECTED
+2025-12-11 12:25:45,013 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:45,199 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:45,199 [INFO] gait.gait_gallery: #1: distractor_003       | Conf: -0.6744 (Dist: 1.6744) | ❌ REJECTED
+2025-12-11 12:25:45,199 [INFO] gait.gait_gallery: #2: distractor_001       | Conf: -0.7305 (Dist: 1.7305) | ❌ REJECTED
+2025-12-11 12:25:45,199 [INFO] gait.gait_gallery: #3: distractor_002       | Conf: -0.7386 (Dist: 1.7386) | ❌ REJECTED
+2025-12-11 12:25:45,201 [INFO] gait.gait_gallery: #4: identity_002         | Conf: -0.7562 (Dist: 1.7562) | ❌ REJECTED
+2025-12-11 12:25:45,201 [INFO] gait.gait_gallery: #5: identity_001         | Conf: -0.7774 (Dist: 1.7774) | ❌ REJECTED
+2025-12-11 12:25:45,201 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:45,380 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:45,380 [INFO] gait.gait_gallery: #1: distractor_003       | Conf: -0.6183 (Dist: 1.6183) | ❌ REJECTED
+2025-12-11 12:25:45,382 [INFO] gait.gait_gallery: #2: distractor_001       | Conf: -0.6888 (Dist: 1.6888) | ❌ REJECTED
+2025-12-11 12:25:45,382 [INFO] gait.gait_gallery: #3: distractor_002       | Conf: -0.6956 (Dist: 1.6956) | ❌ REJECTED
+2025-12-11 12:25:45,382 [INFO] gait.gait_gallery: #4: identity_002         | Conf: -0.7060 (Dist: 1.7060) | ❌ REJECTED
+2025-12-11 12:25:45,383 [INFO] gait.gait_gallery: #5: identity_001         | Conf: -0.7268 (Dist: 1.7268) | ❌ REJECTED
+2025-12-11 12:25:45,383 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:45,384 [INFO] gaitguard.main: FPS=6.5 | tracks=1 | alerts=0
+2025-12-11 12:25:45,557 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:45,557 [INFO] gait.gait_gallery: #1: distractor_003       | Conf: -0.6301 (Dist: 1.6301) | ❌ REJECTED
+2025-12-11 12:25:45,560 [INFO] gait.gait_gallery: #2: distractor_001       | Conf: -0.6855 (Dist: 1.6855) | ❌ REJECTED
+2025-12-11 12:25:45,560 [INFO] gait.gait_gallery: #3: distractor_002       | Conf: -0.6920 (Dist: 1.6920) | ❌ REJECTED
+2025-12-11 12:25:45,560 [INFO] gait.gait_gallery: #4: identity_002         | Conf: -0.7249 (Dist: 1.7249) | ❌ REJECTED
+2025-12-11 12:25:45,561 [INFO] gait.gait_gallery: #5: identity_001         | Conf: -0.7285 (Dist: 1.7285) | ❌ REJECTED
+2025-12-11 12:25:45,561 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:45,746 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:45,746 [INFO] gait.gait_gallery: #1: distractor_003       | Conf: -0.6176 (Dist: 1.6176) | ❌ REJECTED
+2025-12-11 12:25:45,747 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: -0.6753 (Dist: 1.6753) | ❌ REJECTED
+2025-12-11 12:25:45,747 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.6810 (Dist: 1.6810) | ❌ REJECTED
+2025-12-11 12:25:45,748 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.7154 (Dist: 1.7154) | ❌ REJECTED
+2025-12-11 12:25:45,748 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.7187 (Dist: 1.7187) | ❌ REJECTED
+2025-12-11 12:25:45,749 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:45,945 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:45,945 [INFO] gait.gait_gallery: #1: distractor_003       | Conf: -0.5385 (Dist: 1.5385) | ❌ REJECTED
+2025-12-11 12:25:45,946 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: -0.5905 (Dist: 1.5905) | ❌ REJECTED
+2025-12-11 12:25:45,946 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.6081 (Dist: 1.6081) | ❌ REJECTED
+2025-12-11 12:25:45,946 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.6737 (Dist: 1.6737) | ❌ REJECTED
+2025-12-11 12:25:45,946 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.6848 (Dist: 1.6848) | ❌ REJECTED
+2025-12-11 12:25:45,947 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:46,140 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:46,141 [INFO] gait.gait_gallery: #1: distractor_003       | Conf: -0.4467 (Dist: 1.4467) | ❌ REJECTED
+2025-12-11 12:25:46,141 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: -0.4965 (Dist: 1.4965) | ❌ REJECTED
+2025-12-11 12:25:46,141 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.5160 (Dist: 1.5160) | ❌ REJECTED
+2025-12-11 12:25:46,142 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.6011 (Dist: 1.6011) | ❌ REJECTED
+2025-12-11 12:25:46,142 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.6238 (Dist: 1.6238) | ❌ REJECTED
+2025-12-11 12:25:46,142 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:46,350 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:46,351 [INFO] gait.gait_gallery: #1: distractor_003       | Conf: -0.4075 (Dist: 1.4075) | ❌ REJECTED
+2025-12-11 12:25:46,351 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: -0.4599 (Dist: 1.4599) | ❌ REJECTED
+2025-12-11 12:25:46,351 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.4745 (Dist: 1.4745) | ❌ REJECTED
+2025-12-11 12:25:46,353 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.5629 (Dist: 1.5629) | ❌ REJECTED
+2025-12-11 12:25:46,353 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.5879 (Dist: 1.5879) | ❌ REJECTED
+2025-12-11 12:25:46,353 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:46,572 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:46,573 [INFO] gait.gait_gallery: #1: distractor_003       | Conf: -0.3278 (Dist: 1.3278) | ❌ REJECTED
+2025-12-11 12:25:46,573 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: -0.3845 (Dist: 1.3845) | ❌ REJECTED
+2025-12-11 12:25:46,573 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.3997 (Dist: 1.3997) | ❌ REJECTED
+2025-12-11 12:25:46,574 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.4921 (Dist: 1.4921) | ❌ REJECTED
+2025-12-11 12:25:46,574 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.5243 (Dist: 1.5243) | ❌ REJECTED
+2025-12-11 12:25:46,574 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:46,861 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:46,861 [INFO] gait.gait_gallery: #1: distractor_003       | Conf: -0.7220 (Dist: 1.7220) | ❌ REJECTED
+2025-12-11 12:25:46,861 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: -0.7391 (Dist: 1.7391) | ❌ REJECTED
+2025-12-11 12:25:46,863 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.7698 (Dist: 1.7698) | ❌ REJECTED
+2025-12-11 12:25:46,863 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.8456 (Dist: 1.8456) | ❌ REJECTED
+2025-12-11 12:25:46,863 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.8545 (Dist: 1.8545) | ❌ REJECTED
+2025-12-11 12:25:46,864 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:47,036 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:47,036 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: -0.6570 (Dist: 1.6570) | ❌ REJECTED
+2025-12-11 12:25:47,037 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: -0.6604 (Dist: 1.6604) | ❌ REJECTED
+2025-12-11 12:25:47,037 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.6949 (Dist: 1.6949) | ❌ REJECTED
+2025-12-11 12:25:47,037 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.7871 (Dist: 1.7871) | ❌ REJECTED
+2025-12-11 12:25:47,037 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.8049 (Dist: 1.8049) | ❌ REJECTED
+2025-12-11 12:25:47,038 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:47,209 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:47,209 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: -0.6187 (Dist: 1.6187) | ❌ REJECTED
+2025-12-11 12:25:47,210 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: -0.6210 (Dist: 1.6210) | ❌ REJECTED
+2025-12-11 12:25:47,211 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.6648 (Dist: 1.6648) | ❌ REJECTED
+2025-12-11 12:25:47,211 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.7552 (Dist: 1.7552) | ❌ REJECTED
+2025-12-11 12:25:47,211 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.7805 (Dist: 1.7805) | ❌ REJECTED
+2025-12-11 12:25:47,211 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:47,404 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:47,404 [INFO] gait.gait_gallery: #1: distractor_003       | Conf: -0.5643 (Dist: 1.5643) | ❌ REJECTED
+2025-12-11 12:25:47,404 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: -0.5660 (Dist: 1.5660) | ❌ REJECTED
+2025-12-11 12:25:47,406 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.6347 (Dist: 1.6347) | ❌ REJECTED
+2025-12-11 12:25:47,406 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.7280 (Dist: 1.7280) | ❌ REJECTED
+2025-12-11 12:25:47,406 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.7553 (Dist: 1.7553) | ❌ REJECTED
+2025-12-11 12:25:47,406 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:47,607 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:47,608 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: -0.4716 (Dist: 1.4716) | ❌ REJECTED
+2025-12-11 12:25:47,608 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: -0.4876 (Dist: 1.4876) | ❌ REJECTED
+2025-12-11 12:25:47,609 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.5487 (Dist: 1.5487) | ❌ REJECTED
+2025-12-11 12:25:47,609 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.6588 (Dist: 1.6588) | ❌ REJECTED
+2025-12-11 12:25:47,609 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.6988 (Dist: 1.6988) | ❌ REJECTED
+2025-12-11 12:25:47,610 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:47,812 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:47,812 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: -0.3823 (Dist: 1.3823) | ❌ REJECTED
+2025-12-11 12:25:47,814 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: -0.3938 (Dist: 1.3938) | ❌ REJECTED
+2025-12-11 12:25:47,815 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.4708 (Dist: 1.4708) | ❌ REJECTED
+2025-12-11 12:25:47,815 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.5766 (Dist: 1.5766) | ❌ REJECTED
+2025-12-11 12:25:47,816 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.6209 (Dist: 1.6209) | ❌ REJECTED
+2025-12-11 12:25:47,816 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:48,019 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:48,019 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: -0.1375 (Dist: 1.1375) | ❌ REJECTED
+2025-12-11 12:25:48,019 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: -0.1580 (Dist: 1.1580) | ❌ REJECTED
+2025-12-11 12:25:48,019 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.2431 (Dist: 1.2431) | ❌ REJECTED
+2025-12-11 12:25:48,021 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.3753 (Dist: 1.3753) | ❌ REJECTED
+2025-12-11 12:25:48,021 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.4315 (Dist: 1.4315) | ❌ REJECTED
+2025-12-11 12:25:48,021 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:48,225 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:48,226 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: -0.0486 (Dist: 1.0486) | ❌ REJECTED
+2025-12-11 12:25:48,227 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: -0.0725 (Dist: 1.0725) | ❌ REJECTED
+2025-12-11 12:25:48,227 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.1656 (Dist: 1.1656) | ❌ REJECTED
+2025-12-11 12:25:48,227 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.3038 (Dist: 1.3038) | ❌ REJECTED
+2025-12-11 12:25:48,228 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.3673 (Dist: 1.3673) | ❌ REJECTED
+2025-12-11 12:25:48,228 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:48,436 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:48,437 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: 0.0174 (Dist: 0.9826) | ❌ REJECTED
+2025-12-11 12:25:48,438 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: -0.0060 (Dist: 1.0060) | ❌ REJECTED
+2025-12-11 12:25:48,438 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.1106 (Dist: 1.1106) | ❌ REJECTED
+2025-12-11 12:25:48,438 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.2462 (Dist: 1.2462) | ❌ REJECTED
+2025-12-11 12:25:48,439 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.3136 (Dist: 1.3136) | ❌ REJECTED
+2025-12-11 12:25:48,439 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:48,670 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:48,671 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: 0.1219 (Dist: 0.8781) | ❌ REJECTED
+2025-12-11 12:25:48,671 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: 0.0899 (Dist: 0.9101) | ❌ REJECTED
+2025-12-11 12:25:48,672 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.0189 (Dist: 1.0189) | ❌ REJECTED
+2025-12-11 12:25:48,672 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.1421 (Dist: 1.1421) | ❌ REJECTED
+2025-12-11 12:25:48,672 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.2178 (Dist: 1.2178) | ❌ REJECTED
+2025-12-11 12:25:48,672 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:48,909 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:48,910 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: 0.2308 (Dist: 0.7692) | ❌ REJECTED
+2025-12-11 12:25:48,910 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: 0.1875 (Dist: 0.8125) | ❌ REJECTED
+2025-12-11 12:25:48,910 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: 0.0896 (Dist: 0.9104) | ❌ REJECTED
+2025-12-11 12:25:48,911 [INFO] gait.gait_gallery: #4: identity_001         | Conf: -0.0470 (Dist: 1.0470) | ❌ REJECTED
+2025-12-11 12:25:48,911 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.1317 (Dist: 1.1317) | ❌ REJECTED
+2025-12-11 12:25:48,911 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:49,197 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:49,200 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: 0.3140 (Dist: 0.6860) | ❌ REJECTED
+2025-12-11 12:25:49,201 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: 0.2643 (Dist: 0.7357) | ❌ REJECTED
+2025-12-11 12:25:49,201 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: 0.1708 (Dist: 0.8292) | ❌ REJECTED
+2025-12-11 12:25:49,202 [INFO] gait.gait_gallery: #4: identity_001         | Conf: 0.0302 (Dist: 0.9698) | ❌ REJECTED
+2025-12-11 12:25:49,202 [INFO] gait.gait_gallery: #5: identity_002         | Conf: -0.0592 (Dist: 1.0592) | ❌ REJECTED
+2025-12-11 12:25:49,202 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:49,451 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:49,453 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: 0.5961 (Dist: 0.4039) | ❌ REJECTED
+2025-12-11 12:25:49,453 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: 0.5509 (Dist: 0.4491) | ❌ REJECTED
+2025-12-11 12:25:49,454 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: 0.4582 (Dist: 0.5418) | ❌ REJECTED
+2025-12-11 12:25:49,454 [INFO] gait.gait_gallery: #4: identity_001         | Conf: 0.3391 (Dist: 0.6609) | ❌ REJECTED
+2025-12-11 12:25:49,456 [INFO] gait.gait_gallery: #5: identity_002         | Conf: 0.2531 (Dist: 0.7469) | ❌ REJECTED
+2025-12-11 12:25:49,456 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:49,714 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:49,716 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: 0.7387 (Dist: 0.2613) | ❌ REJECTED
+2025-12-11 12:25:49,716 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: 0.7056 (Dist: 0.2944) | ❌ REJECTED
+2025-12-11 12:25:49,717 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: 0.6283 (Dist: 0.3717) | ❌ REJECTED
+2025-12-11 12:25:49,717 [INFO] gait.gait_gallery: #4: identity_001         | Conf: 0.5325 (Dist: 0.4675) | ❌ REJECTED
+2025-12-11 12:25:49,718 [INFO] gait.gait_gallery: #5: identity_002         | Conf: 0.4520 (Dist: 0.5480) | ❌ REJECTED
+2025-12-11 12:25:49,718 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:49,971 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:49,972 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: 0.7960 (Dist: 0.2040) | ❌ REJECTED
+2025-12-11 12:25:49,972 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: 0.7703 (Dist: 0.2297) | ❌ REJECTED
+2025-12-11 12:25:49,973 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: 0.7131 (Dist: 0.2869) | ❌ REJECTED
+2025-12-11 12:25:49,973 [INFO] gait.gait_gallery: #4: identity_001         | Conf: 0.6212 (Dist: 0.3788) | ❌ REJECTED
+2025-12-11 12:25:49,973 [INFO] gait.gait_gallery: #5: identity_002         | Conf: 0.5463 (Dist: 0.4537) | ❌ REJECTED
+2025-12-11 12:25:49,973 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:50,220 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:50,221 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: 0.8647 (Dist: 0.1353) | ❌ REJECTED
+2025-12-11 12:25:50,222 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: 0.8334 (Dist: 0.1666) | ❌ REJECTED
+2025-12-11 12:25:50,222 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: 0.7978 (Dist: 0.2022) | ❌ REJECTED
+2025-12-11 12:25:50,222 [INFO] gait.gait_gallery: #4: identity_001         | Conf: 0.7290 (Dist: 0.2710) | ❌ REJECTED
+2025-12-11 12:25:50,222 [INFO] gait.gait_gallery: #5: identity_002         | Conf: 0.6504 (Dist: 0.3496) | ❌ REJECTED
+2025-12-11 12:25:50,222 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:50,489 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:50,489 [INFO] gait.gait_gallery: #1: distractor_002       | Conf: 0.9224 (Dist: 0.0776) | ❌ REJECTED
+2025-12-11 12:25:50,489 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: 0.8981 (Dist: 0.1019) | ❌ REJECTED
+2025-12-11 12:25:50,490 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: 0.8971 (Dist: 0.1029) | ❌ REJECTED
+2025-12-11 12:25:50,490 [INFO] gait.gait_gallery: #4: identity_001         | Conf: 0.8799 (Dist: 0.1201) | ❌ REJECTED
+2025-12-11 12:25:50,490 [INFO] gait.gait_gallery: #5: identity_002         | Conf: 0.8118 (Dist: 0.1882) | ❌ REJECTED
+2025-12-11 12:25:50,490 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:50,766 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:50,766 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9224 (Dist: 0.0776) | ❌ REJECTED
+2025-12-11 12:25:50,767 [INFO] gait.gait_gallery: #2: distractor_002       | Conf: 0.9174 (Dist: 0.0826) | ❌ REJECTED
+2025-12-11 12:25:50,767 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: 0.9076 (Dist: 0.0924) | ❌ REJECTED
+2025-12-11 12:25:50,768 [INFO] gait.gait_gallery: #4: distractor_003       | Conf: 0.8937 (Dist: 0.1063) | ❌ REJECTED
+2025-12-11 12:25:50,768 [INFO] gait.gait_gallery: #5: identity_002         | Conf: 0.8586 (Dist: 0.1414) | ❌ REJECTED
+2025-12-11 12:25:50,768 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:51,176 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:25:51,176 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.9479 (Dist: 0.0521) | ❌ REJECTED
+2025-12-11 12:25:51,177 [INFO] gait.gait_gallery: #2: distractor_001       | Conf: 0.9219 (Dist: 0.0781) | ❌ REJECTED
+2025-12-11 12:25:51,177 [INFO] gait.gait_gallery: #3: distractor_002       | Conf: 0.9190 (Dist: 0.0810) | ❌ REJECTED
+2025-12-11 12:25:51,177 [INFO] gait.gait_gallery: #4: distractor_003       | Conf: 0.9054 (Dist: 0.0946) | ❌ REJECTED
+2025-12-11 12:25:51,178 [INFO] gait.gait_gallery: #5: identity_002         | Conf: 0.8869 (Dist: 0.1131) | ❌ REJECTED
+2025-12-11 12:25:51,178 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:25:51,734 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-11 12:45:12,616 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-11 12:45:12,616 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-11 12:45:12,616 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-11 12:45:12,616 [INFO] perception.perception_engine: Loading Segmentation Model: yolov8n-seg.pt
+2025-12-11 12:45:12,711 [INFO] perception.perception_engine: Phase-1 PerceptionEngine (Silhouette Mode) initialized.
+2025-12-11 12:45:12,712 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-11 12:45:12,814 [INFO] gait.gait_extractor: GaitSet model loaded from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\models\gait_temporal_encoder.pth
+2025-12-11 12:45:12,819 [INFO] gait.gait_gallery: FAISS index rebuilt with 5 embeddings.
+2025-12-11 12:45:12,819 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-11 12:45:14,726 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-11 12:45:16,628 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:45:16,630 [INFO] gait.gait_gallery: #1: distractor_003       | Conf: -0.6909 (Dist: 1.6909) | ❌ REJECTED
+2025-12-11 12:45:16,637 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.7240 (Dist: 1.7240) | ❌ REJECTED
+2025-12-11 12:45:16,639 [INFO] gait.gait_gallery: #3: distractor_002       | Conf: -0.7358 (Dist: 1.7358) | ❌ REJECTED
+2025-12-11 12:45:16,639 [INFO] gait.gait_gallery: #4: identity_002         | Conf: -0.7387 (Dist: 1.7387) | ❌ REJECTED
+2025-12-11 12:45:16,639 [INFO] gait.gait_gallery: #5: distractor_001       | Conf: -0.7609 (Dist: 1.7609) | ❌ REJECTED
+2025-12-11 12:45:16,640 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:45:16,847 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:45:16,848 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.5248 (Dist: 1.5248) | ❌ REJECTED
+2025-12-11 12:45:16,849 [INFO] gait.gait_gallery: #2: distractor_003       | Conf: -0.5273 (Dist: 1.5273) | ❌ REJECTED
+2025-12-11 12:45:16,849 [INFO] gait.gait_gallery: #3: identity_002         | Conf: -0.5448 (Dist: 1.5448) | ❌ REJECTED
+2025-12-11 12:45:16,849 [INFO] gait.gait_gallery: #4: distractor_002       | Conf: -0.5966 (Dist: 1.5966) | ❌ REJECTED
+2025-12-11 12:45:16,850 [INFO] gait.gait_gallery: #5: distractor_001       | Conf: -0.6147 (Dist: 1.6147) | ❌ REJECTED
+2025-12-11 12:45:16,850 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:45:17,191 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:45:17,192 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.4372 (Dist: 1.4372) | ❌ REJECTED
+2025-12-11 12:45:17,218 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.4559 (Dist: 1.4559) | ❌ REJECTED
+2025-12-11 12:45:17,221 [INFO] gait.gait_gallery: #3: distractor_003       | Conf: -0.4623 (Dist: 1.4623) | ❌ REJECTED
+2025-12-11 12:45:17,232 [INFO] gait.gait_gallery: #4: distractor_002       | Conf: -0.5346 (Dist: 1.5346) | ❌ REJECTED
+2025-12-11 12:45:17,238 [INFO] gait.gait_gallery: #5: distractor_001       | Conf: -0.5436 (Dist: 1.5436) | ❌ REJECTED
+2025-12-11 12:45:17,239 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:45:17,678 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 5) ---
+2025-12-11 12:45:17,687 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.3833 (Dist: 1.3833) | ❌ REJECTED
+2025-12-11 12:45:17,696 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.4011 (Dist: 1.4011) | ❌ REJECTED
+2025-12-11 12:45:17,715 [INFO] gait.gait_gallery: #3: distractor_003       | Conf: -0.4162 (Dist: 1.4162) | ❌ REJECTED
+2025-12-11 12:45:17,725 [INFO] gait.gait_gallery: #4: distractor_002       | Conf: -0.4915 (Dist: 1.4915) | ❌ REJECTED
+2025-12-11 12:45:17,729 [INFO] gait.gait_gallery: #5: distractor_001       | Conf: -0.4977 (Dist: 1.4977) | ❌ REJECTED
+2025-12-11 12:45:17,731 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 12:45:18,053 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-11 17:56:55,279 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-11 17:56:55,279 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-11 17:56:55,279 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-11 17:56:55,285 [INFO] perception.perception_engine: Loading Segmentation Model: yolov8n-seg.pt
+2025-12-11 17:56:55,399 [INFO] perception.perception_engine: Phase-1 PerceptionEngine (Silhouette Mode) initialized.
+2025-12-11 17:56:55,401 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-11 17:56:55,622 [INFO] gait.gait_extractor: GaitSetPlus model loaded successfully from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\models\gait_temporal_encoder.pth
+2025-12-11 17:56:55,622 [INFO] gait.gait_gallery: FAISS index rebuilt with 3 embeddings.
+2025-12-11 17:56:55,622 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-11 17:56:57,603 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-11 17:56:59,285 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:56:59,286 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: -0.5151 (Dist: 1.5151) | ❌ REJECTED
+2025-12-11 17:56:59,286 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.6205 (Dist: 1.6205) | ❌ REJECTED
+2025-12-11 17:56:59,287 [INFO] gait.gait_gallery: #3: identity_002         | Conf: -0.6498 (Dist: 1.6498) | ❌ REJECTED
+2025-12-11 17:56:59,289 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:56:59,327 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:56:59,328 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.4548 (Dist: 1.4548) | ❌ REJECTED
+2025-12-11 17:56:59,329 [INFO] gait.gait_gallery: #2: distractor_001       | Conf: -0.4745 (Dist: 1.4745) | ❌ REJECTED
+2025-12-11 17:56:59,330 [INFO] gait.gait_gallery: #3: identity_002         | Conf: -0.4901 (Dist: 1.4901) | ❌ REJECTED
+2025-12-11 17:56:59,330 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:56:59,551 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:56:59,555 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: -0.2168 (Dist: 1.2168) | ❌ REJECTED
+2025-12-11 17:56:59,556 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.4160 (Dist: 1.4160) | ❌ REJECTED
+2025-12-11 17:56:59,556 [INFO] gait.gait_gallery: #3: identity_002         | Conf: -0.4546 (Dist: 1.4546) | ❌ REJECTED
+2025-12-11 17:56:59,556 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:56:59,606 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:56:59,608 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.1743 (Dist: 1.1743) | ❌ REJECTED
+2025-12-11 17:56:59,609 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.2489 (Dist: 1.2489) | ❌ REJECTED
+2025-12-11 17:56:59,609 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.3419 (Dist: 1.3419) | ❌ REJECTED
+2025-12-11 17:56:59,610 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:56:59,820 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:56:59,821 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: -0.0677 (Dist: 1.0677) | ❌ REJECTED
+2025-12-11 17:56:59,823 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.2967 (Dist: 1.2967) | ❌ REJECTED
+2025-12-11 17:56:59,826 [INFO] gait.gait_gallery: #3: identity_002         | Conf: -0.3260 (Dist: 1.3260) | ❌ REJECTED
+2025-12-11 17:56:59,827 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:56:59,893 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:56:59,894 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.0276 (Dist: 1.0276) | ❌ REJECTED
+2025-12-11 17:56:59,894 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.1602 (Dist: 1.1602) | ❌ REJECTED
+2025-12-11 17:56:59,895 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.2245 (Dist: 1.2245) | ❌ REJECTED
+2025-12-11 17:56:59,895 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:00,135 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:00,135 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.0712 (Dist: 0.9288) | ❌ REJECTED
+2025-12-11 17:57:00,136 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.1986 (Dist: 1.1986) | ❌ REJECTED
+2025-12-11 17:57:00,136 [INFO] gait.gait_gallery: #3: identity_002         | Conf: -0.2258 (Dist: 1.2258) | ❌ REJECTED
+2025-12-11 17:57:00,137 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:00,214 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:00,214 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.0242 (Dist: 0.9758) | ❌ REJECTED
+2025-12-11 17:57:00,215 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.1197 (Dist: 1.1197) | ❌ REJECTED
+2025-12-11 17:57:00,215 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.1895 (Dist: 1.1895) | ❌ REJECTED
+2025-12-11 17:57:00,215 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:00,455 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:00,456 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.1440 (Dist: 0.8560) | ❌ REJECTED
+2025-12-11 17:57:00,457 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.1542 (Dist: 1.1542) | ❌ REJECTED
+2025-12-11 17:57:00,458 [INFO] gait.gait_gallery: #3: identity_002         | Conf: -0.1873 (Dist: 1.1873) | ❌ REJECTED
+2025-12-11 17:57:00,459 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:00,561 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:00,562 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.0854 (Dist: 0.9146) | ❌ REJECTED
+2025-12-11 17:57:00,562 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.0556 (Dist: 1.0556) | ❌ REJECTED
+2025-12-11 17:57:00,563 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.1316 (Dist: 1.1316) | ❌ REJECTED
+2025-12-11 17:57:00,563 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:00,816 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:00,823 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.2337 (Dist: 0.7663) | ❌ REJECTED
+2025-12-11 17:57:00,823 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.0687 (Dist: 1.0687) | ❌ REJECTED
+2025-12-11 17:57:00,824 [INFO] gait.gait_gallery: #3: identity_002         | Conf: -0.0992 (Dist: 1.0992) | ❌ REJECTED
+2025-12-11 17:57:00,824 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:00,933 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:00,934 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.1324 (Dist: 0.8676) | ❌ REJECTED
+2025-12-11 17:57:00,934 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.0079 (Dist: 1.0079) | ❌ REJECTED
+2025-12-11 17:57:00,934 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.0909 (Dist: 1.0909) | ❌ REJECTED
+2025-12-11 17:57:00,935 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:01,187 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:01,188 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.3037 (Dist: 0.6963) | ❌ REJECTED
+2025-12-11 17:57:01,188 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.0062 (Dist: 0.9938) | ❌ REJECTED
+2025-12-11 17:57:01,189 [INFO] gait.gait_gallery: #3: identity_002         | Conf: -0.0154 (Dist: 1.0154) | ❌ REJECTED
+2025-12-11 17:57:01,191 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:01,330 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:01,332 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.1666 (Dist: 0.8334) | ❌ REJECTED
+2025-12-11 17:57:01,332 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.0215 (Dist: 0.9785) | ❌ REJECTED
+2025-12-11 17:57:01,332 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.0647 (Dist: 1.0647) | ❌ REJECTED
+2025-12-11 17:57:01,334 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:01,614 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:01,615 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.3495 (Dist: 0.6505) | ❌ REJECTED
+2025-12-11 17:57:01,615 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.0436 (Dist: 0.9564) | ❌ REJECTED
+2025-12-11 17:57:01,615 [INFO] gait.gait_gallery: #3: identity_002         | Conf: 0.0230 (Dist: 0.9770) | ❌ REJECTED
+2025-12-11 17:57:01,615 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:01,748 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:01,749 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.1969 (Dist: 0.8031) | ❌ REJECTED
+2025-12-11 17:57:01,749 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.0397 (Dist: 0.9603) | ❌ REJECTED
+2025-12-11 17:57:01,750 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.0336 (Dist: 1.0336) | ❌ REJECTED
+2025-12-11 17:57:01,750 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:02,048 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:02,049 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.3961 (Dist: 0.6039) | ❌ REJECTED
+2025-12-11 17:57:02,049 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.0859 (Dist: 0.9141) | ❌ REJECTED
+2025-12-11 17:57:02,050 [INFO] gait.gait_gallery: #3: identity_002         | Conf: 0.0651 (Dist: 0.9349) | ❌ REJECTED
+2025-12-11 17:57:02,050 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:02,217 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:02,218 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.2414 (Dist: 0.7586) | ❌ REJECTED
+2025-12-11 17:57:02,218 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.0777 (Dist: 0.9223) | ❌ REJECTED
+2025-12-11 17:57:02,218 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: -0.0049 (Dist: 1.0049) | ❌ REJECTED
+2025-12-11 17:57:02,219 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:02,533 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:02,534 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.4603 (Dist: 0.5397) | ❌ REJECTED
+2025-12-11 17:57:02,534 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.1475 (Dist: 0.8525) | ❌ REJECTED
+2025-12-11 17:57:02,534 [INFO] gait.gait_gallery: #3: identity_002         | Conf: 0.1416 (Dist: 0.8584) | ❌ REJECTED
+2025-12-11 17:57:02,535 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:02,701 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:02,701 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.2564 (Dist: 0.7436) | ❌ REJECTED
+2025-12-11 17:57:02,701 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.0924 (Dist: 0.9076) | ❌ REJECTED
+2025-12-11 17:57:02,702 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: 0.0025 (Dist: 0.9975) | ❌ REJECTED
+2025-12-11 17:57:02,702 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:03,022 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:03,023 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.4760 (Dist: 0.5240) | ❌ REJECTED
+2025-12-11 17:57:03,023 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.1674 (Dist: 0.8326) | ❌ REJECTED
+2025-12-11 17:57:03,023 [INFO] gait.gait_gallery: #3: identity_002         | Conf: 0.1619 (Dist: 0.8381) | ❌ REJECTED
+2025-12-11 17:57:03,024 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:03,202 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:03,207 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.2822 (Dist: 0.7178) | ❌ REJECTED
+2025-12-11 17:57:03,208 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.1153 (Dist: 0.8847) | ❌ REJECTED
+2025-12-11 17:57:03,208 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: 0.0300 (Dist: 0.9700) | ❌ REJECTED
+2025-12-11 17:57:03,209 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:03,560 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:03,560 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.5431 (Dist: 0.4569) | ❌ REJECTED
+2025-12-11 17:57:03,561 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.2452 (Dist: 0.7548) | ❌ REJECTED
+2025-12-11 17:57:03,561 [INFO] gait.gait_gallery: #3: identity_002         | Conf: 0.2420 (Dist: 0.7580) | ❌ REJECTED
+2025-12-11 17:57:03,561 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:03,766 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:03,767 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.4835 (Dist: 0.5165) | ❌ REJECTED
+2025-12-11 17:57:03,767 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.3169 (Dist: 0.6831) | ❌ REJECTED
+2025-12-11 17:57:03,768 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: 0.1606 (Dist: 0.8394) | ❌ REJECTED
+2025-12-11 17:57:03,768 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:04,110 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:04,111 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.6249 (Dist: 0.3751) | ❌ REJECTED
+2025-12-11 17:57:04,112 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.3279 (Dist: 0.6721) | ❌ REJECTED
+2025-12-11 17:57:04,112 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.3157 (Dist: 0.6843) | ❌ REJECTED
+2025-12-11 17:57:04,112 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:04,480 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:04,481 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.6675 (Dist: 0.3325) | ❌ REJECTED
+2025-12-11 17:57:04,481 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.3553 (Dist: 0.6447) | ❌ REJECTED
+2025-12-11 17:57:04,481 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.3448 (Dist: 0.6552) | ❌ REJECTED
+2025-12-11 17:57:04,481 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:04,696 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:04,697 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.5002 (Dist: 0.4998) | ❌ REJECTED
+2025-12-11 17:57:04,697 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.3307 (Dist: 0.6693) | ❌ REJECTED
+2025-12-11 17:57:04,697 [INFO] gait.gait_gallery: #3: distractor_001       | Conf: 0.1676 (Dist: 0.8324) | ❌ REJECTED
+2025-12-11 17:57:04,698 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:05,069 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:05,069 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.7378 (Dist: 0.2622) | ❌ REJECTED
+2025-12-11 17:57:05,070 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.5587 (Dist: 0.4413) | ❌ REJECTED
+2025-12-11 17:57:05,071 [INFO] gait.gait_gallery: #3: identity_002         | Conf: 0.5277 (Dist: 0.4723) | ❌ REJECTED
+2025-12-11 17:57:05,071 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:05,446 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:05,447 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.8019 (Dist: 0.1981) | ❌ REJECTED
+2025-12-11 17:57:05,447 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.6202 (Dist: 0.3798) | ❌ REJECTED
+2025-12-11 17:57:05,447 [INFO] gait.gait_gallery: #3: identity_002         | Conf: 0.5778 (Dist: 0.4222) | ❌ REJECTED
+2025-12-11 17:57:05,448 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:05,936 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:05,936 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.8412 (Dist: 0.1588) | ❌ REJECTED
+2025-12-11 17:57:05,937 [INFO] gait.gait_gallery: #2: distractor_001       | Conf: 0.7546 (Dist: 0.2454) | ❌ REJECTED
+2025-12-11 17:57:05,937 [INFO] gait.gait_gallery: #3: identity_002         | Conf: 0.7465 (Dist: 0.2535) | ❌ REJECTED
+2025-12-11 17:57:05,937 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:06,703 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:06,704 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: -0.4283 (Dist: 1.4283) | ❌ REJECTED
+2025-12-11 17:57:06,704 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.5107 (Dist: 1.5107) | ❌ REJECTED
+2025-12-11 17:57:06,705 [INFO] gait.gait_gallery: #3: identity_002         | Conf: -0.5964 (Dist: 1.5964) | ❌ REJECTED
+2025-12-11 17:57:06,705 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:06,897 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:57:06,897 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.1034 (Dist: 1.1034) | ❌ REJECTED
+2025-12-11 17:57:06,898 [INFO] gait.gait_gallery: #2: distractor_001       | Conf: -0.2533 (Dist: 1.2533) | ❌ REJECTED
+2025-12-11 17:57:06,898 [INFO] gait.gait_gallery: #3: identity_002         | Conf: -0.2889 (Dist: 1.2889) | ❌ REJECTED
+2025-12-11 17:57:06,899 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:57:07,461 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-11 17:58:30,124 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-11 17:58:30,124 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-11 17:58:30,126 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-11 17:58:30,127 [INFO] perception.perception_engine: Loading Segmentation Model: yolov8n-seg.pt
+2025-12-11 17:58:30,218 [INFO] perception.perception_engine: Phase-1 PerceptionEngine (Silhouette Mode) initialized.
+2025-12-11 17:58:30,220 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-11 17:58:30,409 [INFO] gait.gait_extractor: GaitSetPlus model loaded successfully from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\models\gait_temporal_encoder.pth
+2025-12-11 17:58:30,411 [INFO] gait.gait_gallery: FAISS index rebuilt with 3 embeddings.
+2025-12-11 17:58:30,411 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-11 17:58:32,179 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-11 17:58:33,575 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:33,577 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: -0.4227 (Dist: 1.4227) | ❌ REJECTED
+2025-12-11 17:58:33,578 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.5894 (Dist: 1.5894) | ❌ REJECTED
+2025-12-11 17:58:33,579 [INFO] gait.gait_gallery: #3: identity_001         | Conf: -0.5920 (Dist: 1.5920) | ❌ REJECTED
+2025-12-11 17:58:33,579 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:33,767 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:33,767 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: -0.2985 (Dist: 1.2985) | ❌ REJECTED
+2025-12-11 17:58:33,768 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.5027 (Dist: 1.5027) | ❌ REJECTED
+2025-12-11 17:58:33,768 [INFO] gait.gait_gallery: #3: identity_001         | Conf: -0.5063 (Dist: 1.5063) | ❌ REJECTED
+2025-12-11 17:58:33,768 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:33,957 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:33,959 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: -0.2003 (Dist: 1.2003) | ❌ REJECTED
+2025-12-11 17:58:33,960 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.4349 (Dist: 1.4349) | ❌ REJECTED
+2025-12-11 17:58:33,960 [INFO] gait.gait_gallery: #3: identity_001         | Conf: -0.4520 (Dist: 1.4520) | ❌ REJECTED
+2025-12-11 17:58:33,960 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:34,178 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:34,178 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: -0.0789 (Dist: 1.0789) | ❌ REJECTED
+2025-12-11 17:58:34,179 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.3466 (Dist: 1.3466) | ❌ REJECTED
+2025-12-11 17:58:34,179 [INFO] gait.gait_gallery: #3: identity_001         | Conf: -0.3738 (Dist: 1.3738) | ❌ REJECTED
+2025-12-11 17:58:34,179 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:34,421 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:34,424 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: -0.0264 (Dist: 1.0264) | ❌ REJECTED
+2025-12-11 17:58:34,426 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.2897 (Dist: 1.2897) | ❌ REJECTED
+2025-12-11 17:58:34,426 [INFO] gait.gait_gallery: #3: identity_001         | Conf: -0.3143 (Dist: 1.3143) | ❌ REJECTED
+2025-12-11 17:58:34,427 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:34,672 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:34,672 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: -0.0025 (Dist: 1.0025) | ❌ REJECTED
+2025-12-11 17:58:34,677 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.2735 (Dist: 1.2735) | ❌ REJECTED
+2025-12-11 17:58:34,677 [INFO] gait.gait_gallery: #3: identity_001         | Conf: -0.2994 (Dist: 1.2994) | ❌ REJECTED
+2025-12-11 17:58:34,677 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:34,928 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:34,928 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.0411 (Dist: 0.9589) | ❌ REJECTED
+2025-12-11 17:58:34,929 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.2407 (Dist: 1.2407) | ❌ REJECTED
+2025-12-11 17:58:34,929 [INFO] gait.gait_gallery: #3: identity_001         | Conf: -0.2704 (Dist: 1.2704) | ❌ REJECTED
+2025-12-11 17:58:34,930 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:35,214 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:35,214 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.0733 (Dist: 0.9267) | ❌ REJECTED
+2025-12-11 17:58:35,216 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.2204 (Dist: 1.2204) | ❌ REJECTED
+2025-12-11 17:58:35,216 [INFO] gait.gait_gallery: #3: identity_001         | Conf: -0.2585 (Dist: 1.2585) | ❌ REJECTED
+2025-12-11 17:58:35,217 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:35,505 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:35,505 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.1094 (Dist: 0.8906) | ❌ REJECTED
+2025-12-11 17:58:35,506 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.1944 (Dist: 1.1944) | ❌ REJECTED
+2025-12-11 17:58:35,507 [INFO] gait.gait_gallery: #3: identity_001         | Conf: -0.2319 (Dist: 1.2319) | ❌ REJECTED
+2025-12-11 17:58:35,507 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:35,820 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:35,823 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.1890 (Dist: 0.8110) | ❌ REJECTED
+2025-12-11 17:58:35,823 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.1411 (Dist: 1.1411) | ❌ REJECTED
+2025-12-11 17:58:35,824 [INFO] gait.gait_gallery: #3: identity_001         | Conf: -0.1849 (Dist: 1.1849) | ❌ REJECTED
+2025-12-11 17:58:35,824 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:36,163 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:36,165 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.2493 (Dist: 0.7507) | ❌ REJECTED
+2025-12-11 17:58:36,166 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.0811 (Dist: 1.0811) | ❌ REJECTED
+2025-12-11 17:58:36,167 [INFO] gait.gait_gallery: #3: identity_001         | Conf: -0.1366 (Dist: 1.1366) | ❌ REJECTED
+2025-12-11 17:58:36,167 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:36,505 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:36,505 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.2874 (Dist: 0.7126) | ❌ REJECTED
+2025-12-11 17:58:36,506 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.0538 (Dist: 1.0538) | ❌ REJECTED
+2025-12-11 17:58:36,508 [INFO] gait.gait_gallery: #3: identity_001         | Conf: -0.1121 (Dist: 1.1121) | ❌ REJECTED
+2025-12-11 17:58:36,510 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:36,885 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:36,886 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.3636 (Dist: 0.6364) | ❌ REJECTED
+2025-12-11 17:58:36,886 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.0366 (Dist: 0.9634) | ❌ REJECTED
+2025-12-11 17:58:36,892 [INFO] gait.gait_gallery: #3: identity_001         | Conf: -0.0414 (Dist: 1.0414) | ❌ REJECTED
+2025-12-11 17:58:36,892 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:37,278 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:37,279 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.4077 (Dist: 0.5923) | ❌ REJECTED
+2025-12-11 17:58:37,279 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.0913 (Dist: 0.9087) | ❌ REJECTED
+2025-12-11 17:58:37,284 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.0034 (Dist: 0.9966) | ❌ REJECTED
+2025-12-11 17:58:37,285 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:37,664 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:37,664 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.4425 (Dist: 0.5575) | ❌ REJECTED
+2025-12-11 17:58:37,666 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.1315 (Dist: 0.8685) | ❌ REJECTED
+2025-12-11 17:58:37,666 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.0367 (Dist: 0.9633) | ❌ REJECTED
+2025-12-11 17:58:37,667 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:38,041 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:38,041 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.5059 (Dist: 0.4941) | ❌ REJECTED
+2025-12-11 17:58:38,042 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.2118 (Dist: 0.7882) | ❌ REJECTED
+2025-12-11 17:58:38,043 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.1081 (Dist: 0.8919) | ❌ REJECTED
+2025-12-11 17:58:38,043 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:38,434 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:38,434 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.5248 (Dist: 0.4752) | ❌ REJECTED
+2025-12-11 17:58:38,435 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.2223 (Dist: 0.7777) | ❌ REJECTED
+2025-12-11 17:58:38,435 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.1191 (Dist: 0.8809) | ❌ REJECTED
+2025-12-11 17:58:38,437 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:38,838 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:38,839 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.5340 (Dist: 0.4660) | ❌ REJECTED
+2025-12-11 17:58:38,839 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.2449 (Dist: 0.7551) | ❌ REJECTED
+2025-12-11 17:58:38,839 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.1367 (Dist: 0.8633) | ❌ REJECTED
+2025-12-11 17:58:38,840 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:39,283 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:39,284 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.5787 (Dist: 0.4213) | ❌ REJECTED
+2025-12-11 17:58:39,285 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.3168 (Dist: 0.6832) | ❌ REJECTED
+2025-12-11 17:58:39,285 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.1975 (Dist: 0.8025) | ❌ REJECTED
+2025-12-11 17:58:39,286 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:39,788 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:39,790 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.6068 (Dist: 0.3932) | ❌ REJECTED
+2025-12-11 17:58:39,790 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.3354 (Dist: 0.6646) | ❌ REJECTED
+2025-12-11 17:58:39,790 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.2176 (Dist: 0.7824) | ❌ REJECTED
+2025-12-11 17:58:39,791 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:40,319 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:40,320 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.6340 (Dist: 0.3660) | ❌ REJECTED
+2025-12-11 17:58:40,320 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.3595 (Dist: 0.6405) | ❌ REJECTED
+2025-12-11 17:58:40,320 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.2384 (Dist: 0.7616) | ❌ REJECTED
+2025-12-11 17:58:40,320 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:40,833 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:40,834 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.6538 (Dist: 0.3462) | ❌ REJECTED
+2025-12-11 17:58:40,834 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.3804 (Dist: 0.6196) | ❌ REJECTED
+2025-12-11 17:58:40,835 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.2627 (Dist: 0.7373) | ❌ REJECTED
+2025-12-11 17:58:40,835 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:41,370 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:41,370 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.6756 (Dist: 0.3244) | ❌ REJECTED
+2025-12-11 17:58:41,370 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.4034 (Dist: 0.5966) | ❌ REJECTED
+2025-12-11 17:58:41,371 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.2852 (Dist: 0.7148) | ❌ REJECTED
+2025-12-11 17:58:41,371 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:41,857 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:41,858 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.7013 (Dist: 0.2987) | ❌ REJECTED
+2025-12-11 17:58:41,859 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.4183 (Dist: 0.5817) | ❌ REJECTED
+2025-12-11 17:58:41,859 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.2986 (Dist: 0.7014) | ❌ REJECTED
+2025-12-11 17:58:41,859 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:42,361 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:42,361 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.7086 (Dist: 0.2914) | ❌ REJECTED
+2025-12-11 17:58:42,363 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.4139 (Dist: 0.5861) | ❌ REJECTED
+2025-12-11 17:58:42,363 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.2943 (Dist: 0.7057) | ❌ REJECTED
+2025-12-11 17:58:42,364 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:42,890 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:42,890 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.7173 (Dist: 0.2827) | ❌ REJECTED
+2025-12-11 17:58:42,891 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.4171 (Dist: 0.5829) | ❌ REJECTED
+2025-12-11 17:58:42,891 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.2965 (Dist: 0.7035) | ❌ REJECTED
+2025-12-11 17:58:42,895 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:43,466 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:43,467 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.7298 (Dist: 0.2702) | ❌ REJECTED
+2025-12-11 17:58:43,467 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.4283 (Dist: 0.5717) | ❌ REJECTED
+2025-12-11 17:58:43,467 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.3067 (Dist: 0.6933) | ❌ REJECTED
+2025-12-11 17:58:43,468 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:44,016 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:44,017 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.7518 (Dist: 0.2482) | ❌ REJECTED
+2025-12-11 17:58:44,019 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.4434 (Dist: 0.5566) | ❌ REJECTED
+2025-12-11 17:58:44,019 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.3237 (Dist: 0.6763) | ❌ REJECTED
+2025-12-11 17:58:44,019 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:44,020 [INFO] gaitguard.main: FPS=2.7 | tracks=1 | alerts=0
+2025-12-11 17:58:44,579 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:44,580 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.7673 (Dist: 0.2327) | ❌ REJECTED
+2025-12-11 17:58:44,580 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.4653 (Dist: 0.5347) | ❌ REJECTED
+2025-12-11 17:58:44,581 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.3458 (Dist: 0.6542) | ❌ REJECTED
+2025-12-11 17:58:44,581 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:45,199 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:45,200 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.7781 (Dist: 0.2219) | ❌ REJECTED
+2025-12-11 17:58:45,200 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.5430 (Dist: 0.4570) | ❌ REJECTED
+2025-12-11 17:58:45,201 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.4277 (Dist: 0.5723) | ❌ REJECTED
+2025-12-11 17:58:45,201 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:45,822 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:45,823 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.8129 (Dist: 0.1871) | ❌ REJECTED
+2025-12-11 17:58:45,823 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.5929 (Dist: 0.4071) | ❌ REJECTED
+2025-12-11 17:58:45,825 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.4782 (Dist: 0.5218) | ❌ REJECTED
+2025-12-11 17:58:45,826 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:46,472 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:46,472 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.8214 (Dist: 0.1786) | ❌ REJECTED
+2025-12-11 17:58:46,474 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.6086 (Dist: 0.3914) | ❌ REJECTED
+2025-12-11 17:58:46,475 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.4937 (Dist: 0.5063) | ❌ REJECTED
+2025-12-11 17:58:46,475 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:47,153 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 3) ---
+2025-12-11 17:58:47,154 [INFO] gait.gait_gallery: #1: distractor_001       | Conf: 0.8242 (Dist: 0.1758) | ❌ REJECTED
+2025-12-11 17:58:47,158 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.6056 (Dist: 0.3944) | ❌ REJECTED
+2025-12-11 17:58:47,160 [INFO] gait.gait_gallery: #3: identity_001         | Conf: 0.4890 (Dist: 0.5110) | ❌ REJECTED
+2025-12-11 17:58:47,161 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 17:58:47,484 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-11 18:10:49,177 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-11 18:10:49,177 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-11 18:10:49,180 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-11 18:10:49,180 [INFO] perception.perception_engine: Loading Segmentation Model: yolov8n-seg.pt
+2025-12-11 18:10:49,361 [INFO] perception.perception_engine: Phase-1 PerceptionEngine (Silhouette Mode) initialized.
+2025-12-11 18:10:49,362 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-11 18:10:49,643 [INFO] gait.gait_extractor: GaitSetPlus model loaded successfully from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\models\gait_temporal_encoder.pth
+2025-12-11 18:10:49,676 [INFO] gait.gait_gallery: FAISS index rebuilt with 2 embeddings.
+2025-12-11 18:10:49,676 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-11 18:10:51,733 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-11 18:10:53,321 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:53,322 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.6326 (Dist: 1.6326) | ❌ REJECTED
+2025-12-11 18:10:53,323 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.6635 (Dist: 1.6635) | ❌ REJECTED
+2025-12-11 18:10:53,323 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:53,360 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:53,362 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.4437 (Dist: 1.4437) | ❌ REJECTED
+2025-12-11 18:10:53,362 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.4957 (Dist: 1.4957) | ❌ REJECTED
+2025-12-11 18:10:53,363 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:53,598 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:53,599 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.4875 (Dist: 1.4875) | ❌ REJECTED
+2025-12-11 18:10:53,600 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.5390 (Dist: 1.5390) | ❌ REJECTED
+2025-12-11 18:10:53,600 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:53,654 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:53,658 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.3011 (Dist: 1.3011) | ❌ REJECTED
+2025-12-11 18:10:53,658 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.3758 (Dist: 1.3758) | ❌ REJECTED
+2025-12-11 18:10:53,658 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:53,878 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:53,880 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.1637 (Dist: 1.1637) | ❌ REJECTED
+2025-12-11 18:10:53,880 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.1833 (Dist: 1.1833) | ❌ REJECTED
+2025-12-11 18:10:53,881 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:53,950 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:53,952 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.1082 (Dist: 1.1082) | ❌ REJECTED
+2025-12-11 18:10:53,952 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.2007 (Dist: 1.2007) | ❌ REJECTED
+2025-12-11 18:10:53,952 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:54,183 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:54,184 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.0350 (Dist: 1.0350) | ❌ REJECTED
+2025-12-11 18:10:54,184 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.0369 (Dist: 1.0369) | ❌ REJECTED
+2025-12-11 18:10:54,185 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:54,275 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:54,280 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.0376 (Dist: 1.0376) | ❌ REJECTED
+2025-12-11 18:10:54,283 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.1436 (Dist: 1.1436) | ❌ REJECTED
+2025-12-11 18:10:54,283 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:54,544 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:54,544 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.0675 (Dist: 0.9325) | ❌ REJECTED
+2025-12-11 18:10:54,544 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.0654 (Dist: 0.9346) | ❌ REJECTED
+2025-12-11 18:10:54,546 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:54,633 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:54,634 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.0165 (Dist: 0.9835) | ❌ REJECTED
+2025-12-11 18:10:54,635 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.0996 (Dist: 1.0996) | ❌ REJECTED
+2025-12-11 18:10:54,636 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:54,907 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:54,907 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.1614 (Dist: 0.8386) | ❌ REJECTED
+2025-12-11 18:10:54,908 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.1558 (Dist: 0.8442) | ❌ REJECTED
+2025-12-11 18:10:54,908 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:55,019 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:55,020 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.0379 (Dist: 0.9621) | ❌ REJECTED
+2025-12-11 18:10:55,020 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.0807 (Dist: 1.0807) | ❌ REJECTED
+2025-12-11 18:10:55,023 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:55,299 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:55,301 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.1856 (Dist: 0.8144) | ❌ REJECTED
+2025-12-11 18:10:55,301 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.1822 (Dist: 0.8178) | ❌ REJECTED
+2025-12-11 18:10:55,302 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:55,615 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:55,615 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.2231 (Dist: 0.7769) | ❌ REJECTED
+2025-12-11 18:10:55,617 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.2166 (Dist: 0.7834) | ❌ REJECTED
+2025-12-11 18:10:55,617 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:55,651 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:55,652 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.4161 (Dist: 1.4161) | ❌ REJECTED
+2025-12-11 18:10:55,653 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.4658 (Dist: 1.4658) | ❌ REJECTED
+2025-12-11 18:10:55,654 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:55,962 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:55,964 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.2665 (Dist: 0.7335) | ❌ REJECTED
+2025-12-11 18:10:55,964 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.2549 (Dist: 0.7451) | ❌ REJECTED
+2025-12-11 18:10:55,965 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:56,016 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:56,017 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.0802 (Dist: 1.0802) | ❌ REJECTED
+2025-12-11 18:10:56,018 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.1750 (Dist: 1.1750) | ❌ REJECTED
+2025-12-11 18:10:56,018 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:56,350 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:56,351 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.3228 (Dist: 0.6772) | ❌ REJECTED
+2025-12-11 18:10:56,356 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.3135 (Dist: 0.6865) | ❌ REJECTED
+2025-12-11 18:10:56,357 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:56,502 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:56,507 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.3755 (Dist: 0.6245) | ❌ REJECTED
+2025-12-11 18:10:56,507 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.2172 (Dist: 0.7828) | ❌ REJECTED
+2025-12-11 18:10:56,508 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:56,573 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:56,574 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.0383 (Dist: 0.9617) | ❌ REJECTED
+2025-12-11 18:10:56,574 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.0702 (Dist: 1.0702) | ❌ REJECTED
+2025-12-11 18:10:56,574 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:56,922 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:56,927 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.3792 (Dist: 0.6208) | ❌ REJECTED
+2025-12-11 18:10:56,929 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.3763 (Dist: 0.6237) | ❌ REJECTED
+2025-12-11 18:10:56,930 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:57,019 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:57,020 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.1295 (Dist: 0.8705) | ❌ REJECTED
+2025-12-11 18:10:57,021 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.0057 (Dist: 0.9943) | ❌ REJECTED
+2025-12-11 18:10:57,021 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:57,391 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:57,392 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.4295 (Dist: 0.5705) | ⚠️ WEAK MATCH
+2025-12-11 18:10:57,395 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.4233 (Dist: 0.5767) | ⚠️ WEAK MATCH
+2025-12-11 18:10:57,403 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:57,567 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:57,567 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.4264 (Dist: 0.5736) | ⚠️ WEAK MATCH
+2025-12-11 18:10:57,568 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.2665 (Dist: 0.7335) | ❌ REJECTED
+2025-12-11 18:10:57,568 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:57,672 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:57,673 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.1770 (Dist: 0.8230) | ❌ REJECTED
+2025-12-11 18:10:57,675 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.0458 (Dist: 0.9542) | ❌ REJECTED
+2025-12-11 18:10:57,675 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:58,071 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:58,074 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.5305 (Dist: 0.4695) | ⚠️ WEAK MATCH
+2025-12-11 18:10:58,079 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.5056 (Dist: 0.4944) | ⚠️ WEAK MATCH
+2025-12-11 18:10:58,080 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:58,509 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:58,509 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.5664 (Dist: 0.4336) | ✅ STRONG MATCH
+2025-12-11 18:10:58,510 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.5394 (Dist: 0.4606) | ⚠️ WEAK MATCH
+2025-12-11 18:10:58,510 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:58,637 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:58,641 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.2389 (Dist: 0.7611) | ❌ REJECTED
+2025-12-11 18:10:58,641 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.1061 (Dist: 0.8939) | ❌ REJECTED
+2025-12-11 18:10:58,642 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:59,065 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:59,065 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.6583 (Dist: 0.3417) | ✅ STRONG MATCH
+2025-12-11 18:10:59,065 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.6032 (Dist: 0.3968) | ✅ STRONG MATCH
+2025-12-11 18:10:59,065 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:59,188 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:59,189 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.4104 (Dist: 0.5896) | ⚠️ WEAK MATCH
+2025-12-11 18:10:59,189 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.2108 (Dist: 0.7892) | ❌ REJECTED
+2025-12-11 18:10:59,189 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:59,590 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:59,591 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.6683 (Dist: 0.3317) | ✅ STRONG MATCH
+2025-12-11 18:10:59,591 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.6244 (Dist: 0.3756) | ✅ STRONG MATCH
+2025-12-11 18:10:59,593 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:10:59,983 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:10:59,984 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.7698 (Dist: 0.2302) | ✅ STRONG MATCH
+2025-12-11 18:10:59,984 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.6607 (Dist: 0.3393) | ✅ STRONG MATCH
+2025-12-11 18:10:59,984 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:00,437 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:00,439 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.8509 (Dist: 0.1491) | ✅ STRONG MATCH
+2025-12-11 18:11:00,439 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.6867 (Dist: 0.3133) | ✅ STRONG MATCH
+2025-12-11 18:11:00,440 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:00,733 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-11 18:11:33,174 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-11 18:11:33,174 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-11 18:11:33,177 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-11 18:11:33,177 [INFO] perception.perception_engine: Loading Segmentation Model: yolov8n-seg.pt
+2025-12-11 18:11:33,265 [INFO] perception.perception_engine: Phase-1 PerceptionEngine (Silhouette Mode) initialized.
+2025-12-11 18:11:33,267 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-11 18:11:33,468 [INFO] gait.gait_extractor: GaitSetPlus model loaded successfully from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\models\gait_temporal_encoder.pth
+2025-12-11 18:11:33,471 [INFO] gait.gait_gallery: FAISS index rebuilt with 2 embeddings.
+2025-12-11 18:11:33,471 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-11 18:11:35,158 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-11 18:11:36,481 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:36,484 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.5381 (Dist: 1.5381) | ❌ REJECTED
+2025-12-11 18:11:36,484 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.5487 (Dist: 1.5487) | ❌ REJECTED
+2025-12-11 18:11:36,485 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:36,520 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:36,521 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.3878 (Dist: 1.3878) | ❌ REJECTED
+2025-12-11 18:11:36,523 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.4149 (Dist: 1.4149) | ❌ REJECTED
+2025-12-11 18:11:36,524 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:36,722 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:36,723 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.4270 (Dist: 1.4270) | ❌ REJECTED
+2025-12-11 18:11:36,723 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.4362 (Dist: 1.4362) | ❌ REJECTED
+2025-12-11 18:11:36,723 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:36,775 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:36,779 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.2551 (Dist: 1.2551) | ❌ REJECTED
+2025-12-11 18:11:36,781 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.3026 (Dist: 1.3026) | ❌ REJECTED
+2025-12-11 18:11:36,782 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:36,982 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:36,985 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.3328 (Dist: 1.3328) | ❌ REJECTED
+2025-12-11 18:11:36,985 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.3537 (Dist: 1.3537) | ❌ REJECTED
+2025-12-11 18:11:36,986 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:37,048 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:37,048 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.1387 (Dist: 1.1387) | ❌ REJECTED
+2025-12-11 18:11:37,049 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.2032 (Dist: 1.2032) | ❌ REJECTED
+2025-12-11 18:11:37,049 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:37,268 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:37,268 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.3013 (Dist: 1.3013) | ❌ REJECTED
+2025-12-11 18:11:37,269 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.3232 (Dist: 1.3232) | ❌ REJECTED
+2025-12-11 18:11:37,269 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:37,339 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:37,339 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.0959 (Dist: 1.0959) | ❌ REJECTED
+2025-12-11 18:11:37,340 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.1665 (Dist: 1.1665) | ❌ REJECTED
+2025-12-11 18:11:37,340 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:37,569 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:37,570 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.2104 (Dist: 1.2104) | ❌ REJECTED
+2025-12-11 18:11:37,570 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.2558 (Dist: 1.2558) | ❌ REJECTED
+2025-12-11 18:11:37,570 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:37,665 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:37,667 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.0185 (Dist: 0.9815) | ❌ REJECTED
+2025-12-11 18:11:37,667 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.0616 (Dist: 1.0616) | ❌ REJECTED
+2025-12-11 18:11:37,668 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:37,908 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:37,909 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.1731 (Dist: 1.1731) | ❌ REJECTED
+2025-12-11 18:11:37,909 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.2266 (Dist: 1.2266) | ❌ REJECTED
+2025-12-11 18:11:37,910 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:38,014 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:38,014 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.1525 (Dist: 0.8475) | ❌ REJECTED
+2025-12-11 18:11:38,015 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.0442 (Dist: 0.9558) | ❌ REJECTED
+2025-12-11 18:11:38,015 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:38,273 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:38,273 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.0909 (Dist: 1.0909) | ❌ REJECTED
+2025-12-11 18:11:38,274 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.1646 (Dist: 1.1646) | ❌ REJECTED
+2025-12-11 18:11:38,274 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:38,387 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:38,388 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.1992 (Dist: 0.8008) | ❌ REJECTED
+2025-12-11 18:11:38,388 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.0844 (Dist: 0.9156) | ❌ REJECTED
+2025-12-11 18:11:38,390 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:38,675 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:38,676 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.0233 (Dist: 1.0233) | ❌ REJECTED
+2025-12-11 18:11:38,676 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.1112 (Dist: 1.1112) | ❌ REJECTED
+2025-12-11 18:11:38,676 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:38,816 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:38,816 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.2230 (Dist: 0.7770) | ❌ REJECTED
+2025-12-11 18:11:38,818 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.1061 (Dist: 0.8939) | ❌ REJECTED
+2025-12-11 18:11:38,818 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:39,115 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:39,115 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.0048 (Dist: 0.9952) | ❌ REJECTED
+2025-12-11 18:11:39,116 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.0860 (Dist: 1.0860) | ❌ REJECTED
+2025-12-11 18:11:39,116 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:39,280 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:39,281 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.2623 (Dist: 0.7377) | ❌ REJECTED
+2025-12-11 18:11:39,281 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.1434 (Dist: 0.8566) | ❌ REJECTED
+2025-12-11 18:11:39,281 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:39,592 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:39,594 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.0374 (Dist: 0.9626) | ❌ REJECTED
+2025-12-11 18:11:39,594 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.0682 (Dist: 1.0682) | ❌ REJECTED
+2025-12-11 18:11:39,594 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:39,793 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:39,794 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.2837 (Dist: 0.7163) | ❌ REJECTED
+2025-12-11 18:11:39,795 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.1635 (Dist: 0.8365) | ❌ REJECTED
+2025-12-11 18:11:39,795 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:40,153 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:40,155 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.0647 (Dist: 0.9353) | ❌ REJECTED
+2025-12-11 18:11:40,156 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.0424 (Dist: 1.0424) | ❌ REJECTED
+2025-12-11 18:11:40,156 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:40,519 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:40,519 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.1043 (Dist: 0.8957) | ❌ REJECTED
+2025-12-11 18:11:40,519 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.0078 (Dist: 1.0078) | ❌ REJECTED
+2025-12-11 18:11:40,521 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:40,902 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:40,906 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.1513 (Dist: 0.8487) | ❌ REJECTED
+2025-12-11 18:11:40,907 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.0328 (Dist: 0.9672) | ❌ REJECTED
+2025-12-11 18:11:40,908 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:41,113 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:41,113 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.3498 (Dist: 0.6502) | ❌ REJECTED
+2025-12-11 18:11:41,114 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.2376 (Dist: 0.7624) | ❌ REJECTED
+2025-12-11 18:11:41,114 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:41,537 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:41,538 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.1708 (Dist: 0.8292) | ❌ REJECTED
+2025-12-11 18:11:41,538 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.0515 (Dist: 0.9485) | ❌ REJECTED
+2025-12-11 18:11:41,538 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:41,763 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:41,763 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.3908 (Dist: 0.6092) | ❌ REJECTED
+2025-12-11 18:11:41,764 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.2729 (Dist: 0.7271) | ❌ REJECTED
+2025-12-11 18:11:41,764 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:42,172 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:42,174 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.2071 (Dist: 0.7929) | ❌ REJECTED
+2025-12-11 18:11:42,174 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.0847 (Dist: 0.9153) | ❌ REJECTED
+2025-12-11 18:11:42,174 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:42,428 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:42,429 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.4196 (Dist: 0.5804) | ⚠️ WEAK MATCH
+2025-12-11 18:11:42,430 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.3083 (Dist: 0.6917) | ❌ REJECTED
+2025-12-11 18:11:42,430 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:42,895 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:42,897 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.2235 (Dist: 0.7765) | ❌ REJECTED
+2025-12-11 18:11:42,897 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.0990 (Dist: 0.9010) | ❌ REJECTED
+2025-12-11 18:11:42,897 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:43,133 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:43,133 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.4468 (Dist: 0.5532) | ⚠️ WEAK MATCH
+2025-12-11 18:11:43,134 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.3335 (Dist: 0.6665) | ❌ REJECTED
+2025-12-11 18:11:43,134 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:43,558 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:43,559 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.2401 (Dist: 0.7599) | ❌ REJECTED
+2025-12-11 18:11:43,561 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.1171 (Dist: 0.8829) | ❌ REJECTED
+2025-12-11 18:11:43,563 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:43,978 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:43,978 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.3144 (Dist: 0.6856) | ❌ REJECTED
+2025-12-11 18:11:43,980 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.2051 (Dist: 0.7949) | ❌ REJECTED
+2025-12-11 18:11:43,980 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:44,279 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:44,280 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.4663 (Dist: 0.5337) | ⚠️ WEAK MATCH
+2025-12-11 18:11:44,280 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.3523 (Dist: 0.6477) | ❌ REJECTED
+2025-12-11 18:11:44,282 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:44,776 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:44,778 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.3515 (Dist: 0.6485) | ❌ REJECTED
+2025-12-11 18:11:44,778 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.2390 (Dist: 0.7610) | ❌ REJECTED
+2025-12-11 18:11:44,779 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:45,068 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:45,069 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.4773 (Dist: 0.5227) | ⚠️ WEAK MATCH
+2025-12-11 18:11:45,071 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.3641 (Dist: 0.6359) | ❌ REJECTED
+2025-12-11 18:11:45,071 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:45,537 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:45,537 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.4264 (Dist: 0.5736) | ⚠️ WEAK MATCH
+2025-12-11 18:11:45,538 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.3324 (Dist: 0.6676) | ❌ REJECTED
+2025-12-11 18:11:45,538 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:46,014 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:46,016 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.5038 (Dist: 0.4962) | ⚠️ WEAK MATCH
+2025-12-11 18:11:46,017 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.4225 (Dist: 0.5775) | ⚠️ WEAK MATCH
+2025-12-11 18:11:46,017 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:46,304 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:46,305 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.4921 (Dist: 0.5079) | ⚠️ WEAK MATCH
+2025-12-11 18:11:46,306 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.3788 (Dist: 0.6212) | ❌ REJECTED
+2025-12-11 18:11:46,306 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:46,817 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:46,820 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.5852 (Dist: 0.4148) | ✅ STRONG MATCH
+2025-12-11 18:11:46,821 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.5198 (Dist: 0.4802) | ⚠️ WEAK MATCH
+2025-12-11 18:11:46,823 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:47,116 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:47,117 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.5092 (Dist: 0.4908) | ⚠️ WEAK MATCH
+2025-12-11 18:11:47,117 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.3961 (Dist: 0.6039) | ❌ REJECTED
+2025-12-11 18:11:47,118 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:47,660 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:47,661 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.6098 (Dist: 0.3902) | ✅ STRONG MATCH
+2025-12-11 18:11:47,661 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.5486 (Dist: 0.4514) | ⚠️ WEAK MATCH
+2025-12-11 18:11:47,661 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:48,010 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:48,019 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.5340 (Dist: 0.4660) | ⚠️ WEAK MATCH
+2025-12-11 18:11:48,020 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.4193 (Dist: 0.5807) | ⚠️ WEAK MATCH
+2025-12-11 18:11:48,020 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:48,567 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:48,567 [INFO] gait.gait_gallery: #1: identity_002         | Conf: 0.6160 (Dist: 0.3840) | ✅ STRONG MATCH
+2025-12-11 18:11:48,568 [INFO] gait.gait_gallery: #2: identity_001         | Conf: 0.5551 (Dist: 0.4449) | ✅ STRONG MATCH
+2025-12-11 18:11:48,568 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:48,906 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:11:48,907 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.5501 (Dist: 0.4499) | ✅ STRONG MATCH
+2025-12-11 18:11:48,907 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.4363 (Dist: 0.5637) | ⚠️ WEAK MATCH
+2025-12-11 18:11:48,907 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:11:49,192 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-11 18:47:58,665 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-11 18:47:58,667 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-11 18:47:58,669 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-11 18:47:58,669 [INFO] perception.perception_engine: Loading Segmentation Model: yolov8n-seg.pt
+2025-12-11 18:47:58,824 [INFO] perception.perception_engine: Phase-1 PerceptionEngine (Silhouette Mode) initialized.
+2025-12-11 18:47:58,824 [INFO] gait.config: GaitConfig initialised | device=cpu half=False | gallery=C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\data\gait_gallery.enc
+2025-12-11 18:47:59,053 [INFO] gait.gait_extractor: GaitSetPlus model loaded successfully from C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-Silhouette\models\gait_temporal_encoder.pth
+2025-12-11 18:47:59,055 [INFO] gait.gait_gallery: FAISS index rebuilt with 2 embeddings.
+2025-12-11 18:47:59,055 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-11 18:48:01,003 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-11 18:48:04,015 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:04,016 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.6003 (Dist: 1.6003) | ❌ REJECTED
+2025-12-11 18:48:04,016 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.6308 (Dist: 1.6308) | ❌ REJECTED
+2025-12-11 18:48:04,016 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:04,547 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:04,547 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.5741 (Dist: 1.5741) | ❌ REJECTED
+2025-12-11 18:48:04,549 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.6114 (Dist: 1.6114) | ❌ REJECTED
+2025-12-11 18:48:04,549 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:05,239 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:05,239 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.5635 (Dist: 1.5635) | ❌ REJECTED
+2025-12-11 18:48:05,239 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.6042 (Dist: 1.6042) | ❌ REJECTED
+2025-12-11 18:48:05,239 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:05,829 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:05,831 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.5577 (Dist: 1.5577) | ❌ REJECTED
+2025-12-11 18:48:05,831 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.5917 (Dist: 1.5917) | ❌ REJECTED
+2025-12-11 18:48:05,832 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:06,412 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:06,414 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.5470 (Dist: 1.5470) | ❌ REJECTED
+2025-12-11 18:48:06,416 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.5840 (Dist: 1.5840) | ❌ REJECTED
+2025-12-11 18:48:06,418 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:07,533 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:07,539 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.5376 (Dist: 1.5376) | ❌ REJECTED
+2025-12-11 18:48:07,547 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.5746 (Dist: 1.5746) | ❌ REJECTED
+2025-12-11 18:48:07,559 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:08,514 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:08,514 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.5270 (Dist: 1.5270) | ❌ REJECTED
+2025-12-11 18:48:08,514 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.5656 (Dist: 1.5656) | ❌ REJECTED
+2025-12-11 18:48:08,514 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:09,328 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:09,328 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.5250 (Dist: 1.5250) | ❌ REJECTED
+2025-12-11 18:48:09,330 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.5641 (Dist: 1.5641) | ❌ REJECTED
+2025-12-11 18:48:09,332 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:10,388 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:10,390 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.2951 (Dist: 1.2951) | ❌ REJECTED
+2025-12-11 18:48:10,395 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.3859 (Dist: 1.3859) | ❌ REJECTED
+2025-12-11 18:48:10,400 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:12,066 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:12,068 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.2233 (Dist: 0.7767) | ❌ REJECTED
+2025-12-11 18:48:12,068 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.0279 (Dist: 0.9721) | ❌ REJECTED
+2025-12-11 18:48:12,068 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:12,998 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:12,998 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.4098 (Dist: 0.5902) | ⚠️ WEAK MATCH
+2025-12-11 18:48:12,999 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.2012 (Dist: 0.7988) | ❌ REJECTED
+2025-12-11 18:48:13,000 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:13,471 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:13,471 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.4583 (Dist: 0.5417) | ⚠️ WEAK MATCH
+2025-12-11 18:48:13,473 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.2430 (Dist: 0.7570) | ❌ REJECTED
+2025-12-11 18:48:13,473 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:13,866 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:13,871 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.5495 (Dist: 0.4505) | ⚠️ WEAK MATCH
+2025-12-11 18:48:13,875 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.3444 (Dist: 0.6556) | ❌ REJECTED
+2025-12-11 18:48:13,880 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:14,274 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:14,319 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.6238 (Dist: 0.3762) | ✅ STRONG MATCH
+2025-12-11 18:48:14,350 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.3990 (Dist: 0.6010) | ❌ REJECTED
+2025-12-11 18:48:14,360 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:14,757 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:14,762 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.6748 (Dist: 0.3252) | ✅ STRONG MATCH
+2025-12-11 18:48:14,766 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.4576 (Dist: 0.5424) | ⚠️ WEAK MATCH
+2025-12-11 18:48:14,827 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:15,285 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:15,286 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.6994 (Dist: 0.3006) | ✅ STRONG MATCH
+2025-12-11 18:48:15,287 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.4823 (Dist: 0.5177) | ⚠️ WEAK MATCH
+2025-12-11 18:48:15,287 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:15,709 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:15,710 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.7302 (Dist: 0.2698) | ✅ STRONG MATCH
+2025-12-11 18:48:15,713 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.5161 (Dist: 0.4839) | ⚠️ WEAK MATCH
+2025-12-11 18:48:15,717 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:16,234 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:16,235 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.7417 (Dist: 0.2583) | ✅ STRONG MATCH
+2025-12-11 18:48:16,240 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.5309 (Dist: 0.4691) | ⚠️ WEAK MATCH
+2025-12-11 18:48:16,252 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:16,740 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:16,740 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.7470 (Dist: 0.2530) | ✅ STRONG MATCH
+2025-12-11 18:48:16,742 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.5379 (Dist: 0.4621) | ⚠️ WEAK MATCH
+2025-12-11 18:48:16,742 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:17,273 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:17,276 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.7524 (Dist: 0.2476) | ✅ STRONG MATCH
+2025-12-11 18:48:17,279 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.5434 (Dist: 0.4566) | ⚠️ WEAK MATCH
+2025-12-11 18:48:17,282 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:17,802 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:17,804 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.7851 (Dist: 0.2149) | ✅ STRONG MATCH
+2025-12-11 18:48:17,807 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.5830 (Dist: 0.4170) | ✅ STRONG MATCH
+2025-12-11 18:48:17,807 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:18,350 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:18,368 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.7960 (Dist: 0.2040) | ✅ STRONG MATCH
+2025-12-11 18:48:18,383 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.5972 (Dist: 0.4028) | ✅ STRONG MATCH
+2025-12-11 18:48:18,398 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:18,936 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:18,962 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.8105 (Dist: 0.1895) | ✅ STRONG MATCH
+2025-12-11 18:48:18,972 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.6173 (Dist: 0.3827) | ✅ STRONG MATCH
+2025-12-11 18:48:18,980 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:19,549 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:19,585 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.8231 (Dist: 0.1769) | ✅ STRONG MATCH
+2025-12-11 18:48:19,594 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.6333 (Dist: 0.3667) | ✅ STRONG MATCH
+2025-12-11 18:48:19,655 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:20,234 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:20,237 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.8346 (Dist: 0.1654) | ✅ STRONG MATCH
+2025-12-11 18:48:20,241 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.6453 (Dist: 0.3547) | ✅ STRONG MATCH
+2025-12-11 18:48:20,246 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:20,797 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:20,804 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.8361 (Dist: 0.1639) | ✅ STRONG MATCH
+2025-12-11 18:48:20,813 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.6394 (Dist: 0.3606) | ✅ STRONG MATCH
+2025-12-11 18:48:20,817 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:21,479 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:21,485 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.8522 (Dist: 0.1478) | ✅ STRONG MATCH
+2025-12-11 18:48:21,487 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.6416 (Dist: 0.3584) | ✅ STRONG MATCH
+2025-12-11 18:48:21,487 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:21,794 [INFO] gaitguard.main: FPS=1.5 | tracks=0 | alerts=0
+2025-12-11 18:48:21,973 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:21,975 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.6295 (Dist: 1.6295) | ❌ REJECTED
+2025-12-11 18:48:21,979 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.6379 (Dist: 1.6379) | ❌ REJECTED
+2025-12-11 18:48:21,985 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:22,177 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:22,179 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.5458 (Dist: 1.5458) | ❌ REJECTED
+2025-12-11 18:48:22,179 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.5558 (Dist: 1.5558) | ❌ REJECTED
+2025-12-11 18:48:22,180 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:22,386 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:22,386 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.5059 (Dist: 1.5059) | ❌ REJECTED
+2025-12-11 18:48:22,386 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.5238 (Dist: 1.5238) | ❌ REJECTED
+2025-12-11 18:48:22,387 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:22,609 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:22,613 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.4808 (Dist: 1.4808) | ❌ REJECTED
+2025-12-11 18:48:22,614 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.5033 (Dist: 1.5033) | ❌ REJECTED
+2025-12-11 18:48:22,615 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:22,846 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:22,852 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.4480 (Dist: 1.4480) | ❌ REJECTED
+2025-12-11 18:48:22,871 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.4781 (Dist: 1.4781) | ❌ REJECTED
+2025-12-11 18:48:22,878 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:23,145 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:23,149 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.4333 (Dist: 1.4333) | ❌ REJECTED
+2025-12-11 18:48:23,152 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.4692 (Dist: 1.4692) | ❌ REJECTED
+2025-12-11 18:48:23,156 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:23,414 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:23,415 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.4281 (Dist: 1.4281) | ❌ REJECTED
+2025-12-11 18:48:23,419 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.4646 (Dist: 1.4646) | ❌ REJECTED
+2025-12-11 18:48:23,421 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:23,689 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:23,693 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.4026 (Dist: 1.4026) | ❌ REJECTED
+2025-12-11 18:48:23,693 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.4416 (Dist: 1.4416) | ❌ REJECTED
+2025-12-11 18:48:23,693 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:23,978 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:23,980 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.3944 (Dist: 1.3944) | ❌ REJECTED
+2025-12-11 18:48:23,980 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.4296 (Dist: 1.4296) | ❌ REJECTED
+2025-12-11 18:48:23,980 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:24,365 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:24,368 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.3656 (Dist: 1.3656) | ❌ REJECTED
+2025-12-11 18:48:24,370 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.3993 (Dist: 1.3993) | ❌ REJECTED
+2025-12-11 18:48:24,370 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:24,755 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:24,765 [INFO] gait.gait_gallery: #1: identity_002         | Conf: -0.3491 (Dist: 1.3491) | ❌ REJECTED
+2025-12-11 18:48:24,772 [INFO] gait.gait_gallery: #2: identity_001         | Conf: -0.3826 (Dist: 1.3826) | ❌ REJECTED
+2025-12-11 18:48:24,779 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:25,451 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:25,453 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.8562 (Dist: 0.1438) | ✅ STRONG MATCH
+2025-12-11 18:48:25,458 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.6486 (Dist: 0.3514) | ✅ STRONG MATCH
+2025-12-11 18:48:25,467 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:26,291 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:26,296 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.8596 (Dist: 0.1404) | ✅ STRONG MATCH
+2025-12-11 18:48:26,303 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.6530 (Dist: 0.3470) | ✅ STRONG MATCH
+2025-12-11 18:48:26,313 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:27,022 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:27,024 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.8660 (Dist: 0.1340) | ✅ STRONG MATCH
+2025-12-11 18:48:27,025 [INFO] gait.gait_gallery: #2: identity_002         | Conf: 0.6633 (Dist: 0.3367) | ✅ STRONG MATCH
+2025-12-11 18:48:27,025 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:27,570 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:27,573 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.6135 (Dist: 1.6135) | ❌ REJECTED
+2025-12-11 18:48:27,575 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.6182 (Dist: 1.6182) | ❌ REJECTED
+2025-12-11 18:48:27,575 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:27,795 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:27,796 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.4446 (Dist: 1.4446) | ❌ REJECTED
+2025-12-11 18:48:27,798 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.5141 (Dist: 1.5141) | ❌ REJECTED
+2025-12-11 18:48:27,799 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:28,022 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:28,026 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.2818 (Dist: 1.2818) | ❌ REJECTED
+2025-12-11 18:48:28,027 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.4460 (Dist: 1.4460) | ❌ REJECTED
+2025-12-11 18:48:28,028 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:28,267 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:28,274 [INFO] gait.gait_gallery: #1: identity_001         | Conf: -0.1876 (Dist: 1.1876) | ❌ REJECTED
+2025-12-11 18:48:28,276 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.3817 (Dist: 1.3817) | ❌ REJECTED
+2025-12-11 18:48:28,279 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:28,543 [INFO] gait.gait_gallery: 
+--- 📊 GAIT RANKING (Top 2) ---
+2025-12-11 18:48:28,545 [INFO] gait.gait_gallery: #1: identity_001         | Conf: 0.0092 (Dist: 0.9908) | ❌ REJECTED
+2025-12-11 18:48:28,547 [INFO] gait.gait_gallery: #2: identity_002         | Conf: -0.1990 (Dist: 1.1990) | ❌ REJECTED
+2025-12-11 18:48:28,550 [INFO] gait.gait_gallery: ------------------------------------------
+
+2025-12-11 18:48:28,870 [INFO] gaitguard.main: GaitGuard pipeline stopped.

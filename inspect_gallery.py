@@ -23,7 +23,7 @@ print(f"[INFO] Shape embeddings: {embeddings.shape}")
 sim_matrix = cosine_similarity(embeddings)
 
 # Mostra le coppie con similarità maggiore di una soglia (es. 0.95)
-threshold = 0.80
+threshold = 0.20
 print(f"\n[INFO] Coppie con similarità > {threshold}:")
 for i in range(len(names)):
     for j in range(i+1, len(names)):

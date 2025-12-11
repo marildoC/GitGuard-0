@@ -128,6 +128,10 @@ class GaitGallery:
                 self.faiss_index.current_faiss_id_counter = state["faiss_id_counter"]
             
             if self._identities:
+                # Debug logging to verify loaded data
+                for id_str, data in self._identities.items():
+                    logger.debug(f"Loaded ID: {id_str} | First 10 val: {data.ema_embedding[:10]} | Norm: {np.linalg.norm(data.ema_embedding)}")
+                
                 self.faiss_index.index.reset() # Reset index before rebuilding
                 for identity_data in self._identities.values():
                     self.faiss_index.add(identity_data.ema_embedding, identity_data.faiss_id)
@@ -140,7 +144,8 @@ class GaitGallery:
     def _update_ema_embedding(self, current_ema: np.ndarray, new_embedding: np.ndarray) -> np.ndarray:
         """
         Updates the stored embedding using Exponential Moving Average.
-        This allows the model to adapt to slight changes in gait over time.
+        This allows the model to adapt to slight changes in gait over time without
+        discarding historical data completely.
         """
         alpha = self.config.gallery.ema_alpha
         updated_ema = (1 - alpha) * current_ema + alpha * new_embedding
@@ -155,7 +160,7 @@ class GaitGallery:
             identity_id: The unique name/ID of the person.
             new_embedding: The gait vector extracted from the video.
             category: 'resident', 'visitor', etc.
-            confirmed: If True, updates the EMA model.
+            confirmed: If True, updates the EMA model for existing users.
         """
         if identity_id not in self._identities:
             # NEW USER
@@ -178,6 +183,7 @@ class GaitGallery:
             identity_data.category = category 
             
             if confirmed:
+                # Remove old vector from FAISS, calculate EMA, add new vector
                 self.faiss_index.remove([identity_data.faiss_id])
                 updated_ema = self._update_ema_embedding(identity_data.ema_embedding, new_embedding)
                 identity_data.ema_embedding = updated_ema
@@ -191,7 +197,7 @@ class GaitGallery:
     def search(self, query_embedding: np.ndarray) -> Tuple[Optional[str], Optional[float]]:
         """
         Searches for the closest identity in the gallery.
-        Logs a ranking of the top-k matches for debugging purposes.
+        Logs a ranking of the top-k matches for debugging and tuning thresholds.
         
         Returns:
             (identity_id, confidence) if a valid match is found within thresholds.
@@ -212,7 +218,7 @@ class GaitGallery:
         best_confidence = 0.0
         match_found = False
 
-        # Iterate through the results
+        # Iterate through the results to map FAISS IDs back to Identity IDs
         for rank, (sim, fid) in enumerate(zip(sims, fids)):
             if fid == -1: continue
 
@@ -233,7 +239,7 @@ class GaitGallery:
 
             confidence = 1.0 - min_distance
             
-            # 3. Check Thresholds for logging
+            # 3. Check Thresholds for logging visuals
             status_icon = "❌"
             status_msg = "REJECTED"
             
@@ -247,7 +253,7 @@ class GaitGallery:
             # 4. Print ranking log
             logger.info(f"#{rank+1}: {match_id_str:<20} | Conf: {confidence:.4f} (Dist: {min_distance:.4f}) | {status_icon} {status_msg}")
 
-            # 5. Return Logic (Only rank 1 counts for decision)
+            # 5. Return Logic (Only rank 1 counts for the final decision)
             if rank == 0:
                 if min_distance <= self.config.thresholds.max_weak_match_distance:
                     best_match_id = match_id_str

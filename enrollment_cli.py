@@ -17,10 +17,6 @@ from gait.gait_extractor import GaitExtractor
 logger = logging.getLogger(__name__)
 
 def _setup_logging(level: int = logging.INFO) -> None:
-    """
-    Configures the root logger to output messages to the console.
-    Prevents duplicate handlers if logging is already set up.
-    """
     root = logging.getLogger()
     if root.handlers: return
     root.setLevel(level)
@@ -29,18 +25,47 @@ def _setup_logging(level: int = logging.INFO) -> None:
     ch.setFormatter(fmt)
     root.addHandler(ch)
 
-def extract_raw_sequences_from_video(video_path: Path, pose_model: YOLO, min_len: int = 24) -> List[List[np.ndarray]]:
+def get_smart_crop(mask: np.ndarray, box: List[float], target_size=(64, 64)) -> np.ndarray:
     """
-    Reads a video file frame by frame, runs the pose estimation model (YOLO),
-    and aggregates raw keypoints into sequences.
+    Cropping and resizing logic identical to training/perception engine.
     
-    Args:
-        video_path: Path to the input video.
-        pose_model: Loaded YOLO model for pose estimation.
-        min_len: Minimum number of frames required to form a valid sequence.
+    1. Crops the mask using the bounding box.
+    2. Resizes to target_size (64x64) maintaining aspect ratio.
+    3. Pads with black to center the silhouette.
+    """
+    x1, y1, x2, y2 = map(int, box)
+    h_img, w_img = mask.shape
+    x1, y1 = max(0, x1), max(0, y1)
+    x2, y2 = min(w_img, x2), min(h_img, y2)
+    
+    if x2 <= x1 or y2 <= y1: 
+        return np.zeros(target_size, dtype=np.uint8)
+    
+    crop = mask[y1:y2, x1:x2]
+    h, w = crop.shape
+    
+    # Resize keeping aspect ratio
+    scale = min(target_size[0]/w, target_size[1]/h)
+    nw, nh = int(w*scale), int(h*scale)
+    
+    resized = cv2.resize(crop, (nw, nh), interpolation=cv2.INTER_NEAREST)
+    canvas = np.zeros(target_size, dtype=np.uint8)
+    
+    # Calculate centering offsets
+    dx = (target_size[0] - nw) // 2
+    dy = (target_size[1] - nh) // 2
+    canvas[dy:dy+nh, dx:dx+nw] = resized
+    
+    # Normalize to 0-255 uint8
+    if canvas.max() <= 1:
+        canvas = (canvas * 255).astype(np.uint8)
         
-    Returns:
-        A list of sequences, where each sequence is a list of numpy arrays (raw keypoints).
+    return canvas
+
+def extract_silhouettes_from_video(video_path: Path, seg_model: YOLO, min_len: int = 30) -> List[List[np.ndarray]]:
+    """
+    Extracts silhouette sequences (64x64) from a video using YOLO-Seg.
+    Uses batch processing for efficiency.
     """
     cap = cv2.VideoCapture(str(video_path))
     if not cap.isOpened():
@@ -49,26 +74,67 @@ def extract_raw_sequences_from_video(video_path: Path, pose_model: YOLO, min_len
 
     frames_buffer = []
     sequences = []
-    conf_thresh = 0.5 
-
+    
+    # Buffer for batch inference
+    batch_frames = []
+    saved_debug_img= False
     while True:
         ret, frame = cap.read()
         if not ret: break
         
-        results = pose_model(frame, verbose=False, conf=conf_thresh)
-        kps_raw = None
+        batch_frames.append(frame)
         
-        if results[0].keypoints is not None:
-            kps = results[0].keypoints
-            if hasattr(kps, 'data') and kps.data.shape[0] > 0:
-                kps_raw = kps.data[0].cpu().numpy() 
-        
-        if kps_raw is not None:
-            frames_buffer.append(kps_raw)
-        else:
-            if len(frames_buffer) >= min_len:
-                sequences.append(frames_buffer)
-            frames_buffer = []
+        # Process every 16 frames to avoid memory saturation
+        if len(batch_frames) == 16:
+            results = seg_model.predict(batch_frames, verbose=False, classes=[0], retina_masks=True, conf=0.3)
+            
+            for res in results:
+                silhouette = None
+                if res.masks is not None:
+                    # Pick the person with the highest confidence in the frame
+                    # (Assumes enrollment video contains only the target subject)
+                    best_idx = np.argmax(res.boxes.conf.cpu().numpy())
+                    mask = res.masks.data[best_idx].cpu().numpy()
+                    box = res.boxes.xyxy[best_idx].cpu().numpy()
+                    
+                    silhouette = get_smart_crop(mask, box)
+
+                    # --- DEBUG SNIPPET ---
+                    if not saved_debug_img and silhouette is not None:
+                        # Save the first found silhouette to check extraction quality
+                        debug_path = "DEBUG_silhouette.png"
+                        cv2.imwrite(debug_path, silhouette)
+                        logger.info(f"📸 [DEBUG] Saved test silhouette to: {debug_path}")
+                        saved_debug_img = True
+                    # --- END DEBUG ---
+
+                if silhouette is not None:
+                    frames_buffer.append(silhouette)
+                else:
+                    # If tracking is lost, close current sequence and start a new one
+                    if len(frames_buffer) >= min_len:
+                        sequences.append(frames_buffer)
+                    frames_buffer = []
+            
+            batch_frames = []
+
+    # Process remaining frames in buffer
+    if batch_frames:
+        results = seg_model.predict(batch_frames, verbose=False, classes=[0], retina_masks=True, conf=0.3)
+        for res in results:
+            silhouette = None
+            if res.masks is not None:
+                best_idx = np.argmax(res.boxes.conf.cpu().numpy())
+                mask = res.masks.data[best_idx].cpu().numpy()
+                box = res.boxes.xyxy[best_idx].cpu().numpy()
+                silhouette = get_smart_crop(mask, box)
+            
+            if silhouette is not None:
+                frames_buffer.append(silhouette)
+            else:
+                if len(frames_buffer) >= min_len:
+                    sequences.append(frames_buffer)
+                frames_buffer = []
 
     if len(frames_buffer) >= min_len:
         sequences.append(frames_buffer)
@@ -77,24 +143,18 @@ def extract_raw_sequences_from_video(video_path: Path, pose_model: YOLO, min_len
     return sequences
 
 def cmd_enroll(args: argparse.Namespace) -> None:
-    """
-    Handles the 'enroll' command.
-    1. Initializes the GaitExtractor and GaitGallery.
-    2. Loads the Pose Estimation model.
-    3. Iterates through video files in the data directory.
-    4. Extracts gait embeddings and averages them per identity.
-    5. Saves the confirmed identities to the gallery.
-    """
+    """Command to enroll a person from video files."""
     _setup_logging()
     cfg = default_gait_config()
     
-    # Init Extractor (loads the .pth model)
+    # Init Extractor (loads GaitSetPlus) and Gallery
     extractor = GaitExtractor(cfg)
-    # Init Gallery (passes full config)
     gallery = GaitGallery(cfg)
 
-    logger.info(f"Loading YOLO model: {cfg.models.pose_model_name}")
-    pose_model = YOLO(cfg.models.pose_model_name)
+    # Load Segmentation Model
+    seg_model_name = "yolov8n-seg.pt" 
+    logger.info(f"Loading Segmentation model: {seg_model_name}")
+    seg_model = YOLO(seg_model_name)
     
     root_data_dir = Path("data/gait_videos")
     
@@ -116,14 +176,12 @@ def cmd_enroll(args: argparse.Namespace) -> None:
         logger.info(f"Processing identity: {name}")
         
         video_files = list(person_dir.glob("*.mp4")) + list(person_dir.glob("*.mov")) + list(person_dir.glob("*.avi"))
-        if not video_files:
-            logger.warning(f"No videos found for {name}")
-            continue
-            
+        
         valid_embeddings = []
         for v_file in video_files:
-            logger.info(f"  - Extracting from {v_file.name}...")
-            raw_sequences = extract_raw_sequences_from_video(v_file, pose_model, min_len=cfg.route.min_sequence_length)
+            logger.info(f"  - Extracting silhouettes from {v_file.name}...")
+            # Extraction based on Silhouette sequences
+            raw_sequences = extract_silhouettes_from_video(v_file, seg_model, min_len=cfg.route.min_sequence_length)
             
             for seq in raw_sequences:
                 emb, quality = extractor.extract_gait_embedding_and_quality(seq)
@@ -134,6 +192,7 @@ def cmd_enroll(args: argparse.Namespace) -> None:
             logger.warning(f"No valid gait embeddings extracted for {name}")
             continue
             
+        # Average the embeddings for a stable template
         embedding_matrix = np.stack(valid_embeddings)
         avg_embedding = np.mean(embedding_matrix, axis=0)
         norm = np.linalg.norm(avg_embedding)
@@ -141,28 +200,23 @@ def cmd_enroll(args: argparse.Namespace) -> None:
 
         category = args.category if args.category else "resident"
         
-        # USE CORRECT GAIT GALLERY METHODS
         gallery.add_gait_embedding(
             identity_id=name,
             new_embedding=avg_embedding,
             category=category,
             confirmed=True
         )
-        logger.info(f"✅ Enrolled {name}")
+        logger.info(f" Enrolled {name}")
 
     gallery.save_gallery()
     logger.info("Gallery saved successfully.")
 
 def cmd_list(args: argparse.Namespace) -> None:
-    """
-    Handles the 'list' command.
-    Displays all identities currently stored in the gallery.
-    """
+    """Command to list all enrolled identities."""
     _setup_logging()
     cfg = default_gait_config()
     gallery = GaitGallery(cfg)
     persons = gallery.list_persons()
-    
     if not persons:
         print("No persons enrolled.")
         return
@@ -172,14 +226,10 @@ def cmd_list(args: argparse.Namespace) -> None:
         print(f"{p.person_id:<36} {p.category:<12} {p.name:<20}")
 
 def cmd_delete(args: argparse.Namespace) -> None:
-    """
-    Handles the 'delete' command.
-    Removes a specific identity from the gallery based on person_id.
-    """
+    """Command to delete an identity."""
     _setup_logging()
     cfg = default_gait_config()
     gallery = GaitGallery(cfg)
-
     person_id = args.person_id or input("person_id: ").strip()
     if gallery.delete_person(person_id):
         print(f"Deleted {person_id}")
@@ -187,23 +237,19 @@ def cmd_delete(args: argparse.Namespace) -> None:
         print("Person not found")
 
 def main(argv: Optional[list[str]] = None) -> None:
-    """
-    Main entry point for the CLI tool.
-    Parses arguments and delegates execution to the appropriate command function (enroll, list, delete).
-    """
     if argv is None: argv = sys.argv[1:]
     parser = argparse.ArgumentParser(prog="gait-enroll")
     sub = parser.add_subparsers(dest="command", required=True)
-
-    p_enroll = sub.add_parser("enroll")
-    p_enroll.add_argument("--name", type=str)
-    p_enroll.add_argument("--category", type=str, default="resident")
-
-    sub.add_parser("list")
     
-    p_del = sub.add_parser("delete")
-    p_del.add_argument("person_id", nargs="?", help="Identity ID")
-
+    p_enroll = sub.add_parser("enroll", help="Enroll a person from videos in data/gait_videos/")
+    p_enroll.add_argument("--name", type=str, help="Specific folder name to enroll (optional)")
+    p_enroll.add_argument("--category", type=str, default="resident", help="Category: resident, visitor, etc.")
+    
+    sub.add_parser("list", help="List enrolled persons")
+    
+    p_del = sub.add_parser("delete", help="Delete a person from gallery")
+    p_del.add_argument("person_id", nargs="?", help="Identity ID to delete")
+    
     args = parser.parse_args(argv)
     
     if args.command == "enroll": cmd_enroll(args)
