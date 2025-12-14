@@ -9,6 +9,7 @@ from typing import List, Optional
 import cv2
 import numpy as np
 from ultralytics import YOLO
+import random
 
 from gait.config import default_gait_config
 from gait.gait_gallery import GaitGallery
@@ -27,16 +28,26 @@ def _setup_logging(level: int = logging.INFO) -> None:
 
 def get_smart_crop(mask: np.ndarray, box: List[float], target_size=(64, 64)) -> np.ndarray:
     """
-    Cropping and resizing logic identical to training/perception engine.
-    
-    1. Crops the mask using the bounding box.
-    2. Resizes to target_size (64x64) maintaining aspect ratio.
-    3. Pads with black to center the silhouette.
+    Ritaglio intelligente con PADDING per evitare di tagliare testa e piedi.
     """
     x1, y1, x2, y2 = map(int, box)
     h_img, w_img = mask.shape
-    x1, y1 = max(0, x1), max(0, y1)
-    x2, y2 = min(w_img, x2), min(h_img, y2)
+    
+    # --- MODIFICA: AGGIUNTA PADDING ---
+    # Calcoliamo larghezza e altezza del box originale
+    w_box = x2 - x1
+    h_box = y2 - y1
+    
+    # Aggiungiamo un margine del 15% in altezza (testa/piedi) e 10% in larghezza
+    pad_h = int(h_box * 0.15)
+    pad_w = int(w_box * 0.10)
+    
+    # Applichiamo il padding controllando di non uscire dall'immagine
+    x1 = max(0, x1 - pad_w)
+    y1 = max(0, y1 - pad_h)
+    x2 = min(w_img, x2 + pad_w)
+    y2 = min(h_img, y2 + pad_h)
+    # ----------------------------------
     
     if x2 <= x1 or y2 <= y1: 
         return np.zeros(target_size, dtype=np.uint8)
@@ -44,19 +55,18 @@ def get_smart_crop(mask: np.ndarray, box: List[float], target_size=(64, 64)) -> 
     crop = mask[y1:y2, x1:x2]
     h, w = crop.shape
     
-    # Resize keeping aspect ratio
+    # Resize mantenendo aspect ratio e padding
     scale = min(target_size[0]/w, target_size[1]/h)
     nw, nh = int(w*scale), int(h*scale)
     
     resized = cv2.resize(crop, (nw, nh), interpolation=cv2.INTER_NEAREST)
     canvas = np.zeros(target_size, dtype=np.uint8)
     
-    # Calculate centering offsets
     dx = (target_size[0] - nw) // 2
     dy = (target_size[1] - nh) // 2
     canvas[dy:dy+nh, dx:dx+nw] = resized
     
-    # Normalize to 0-255 uint8
+    # Normalizza a 0-255 uint8 robusto
     if canvas.max() <= 1:
         canvas = (canvas * 255).astype(np.uint8)
         
@@ -99,14 +109,9 @@ def extract_silhouettes_from_video(video_path: Path, seg_model: YOLO, min_len: i
                     
                     silhouette = get_smart_crop(mask, box)
 
-                    # --- DEBUG SNIPPET ---
-                    if not saved_debug_img and silhouette is not None:
-                        # Save the first found silhouette to check extraction quality
-                        debug_path = "DEBUG_silhouette.png"
-                        cv2.imwrite(debug_path, silhouette)
-                        logger.info(f"📸 [DEBUG] Saved test silhouette to: {debug_path}")
-                        saved_debug_img = True
-                    # --- END DEBUG ---
+                    silhouette = get_smart_crop(mask, box)
+
+                   
 
                 if silhouette is not None:
                     frames_buffer.append(silhouette)

@@ -7,133 +7,106 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from pathlib import Path
-import traceback
-
+from torchvision import models
 from gait.config import GaitConfig
 
 logger = logging.getLogger(__name__)
 
 # ============================================================
-#  GAITSET PLUS (RESNET-BASED) ARCHITECTURE
-#  Must match the training script exactly!
+#  GAIT RESNET-18 ARCHITECTURE (TRANSFER LEARNING)
+#  This MUST match the architecture used in the Kaggle training script!
 # ============================================================
 
-class BasicConv2d(nn.Module):
+class GaitResNet18(nn.Module):
     """
-    Standard 2D Convolution block with Batch Normalization and ReLU.
-    """
-    def __init__(self, in_c, out_c, kernel_size, stride=1, padding=0):
-        super(BasicConv2d, self).__init__()
-        self.conv = nn.Conv2d(in_c, out_c, kernel_size, stride, padding, bias=False)
-        self.bn = nn.BatchNorm2d(out_c)
-        self.relu = nn.ReLU(inplace=True)
-
-    def forward(self, x): 
-        return self.relu(self.bn(self.conv(x)))
-
-class ResBlock(nn.Module):
-    """
-    Residual Block standard for ResNet architectures.
-    Includes a shortcut connection to allow gradient flow through deep networks.
-    """
-    def __init__(self, in_c, out_c):
-        super(ResBlock, self).__init__()
-        self.conv1 = BasicConv2d(in_c, out_c, 3, 1, 1)
-        self.conv2 = nn.Sequential(
-            nn.Conv2d(out_c, out_c, 3, 1, 1, bias=False), 
-            nn.BatchNorm2d(out_c)
-        )
-        self.shortcut = nn.Sequential()
-        if in_c != out_c: 
-            self.shortcut = nn.Sequential(
-                nn.Conv2d(in_c, out_c, 1, 1, 0, bias=False), 
-                nn.BatchNorm2d(out_c)
-            )
-        self.relu = nn.ReLU(inplace=True)
-
-    def forward(self, x): 
-        return self.relu(self.conv1(x) + self.shortcut(x))
-
-class GaitSetPlus(nn.Module):
-    """
-    A lightweight Neural Network for Gait Recognition.
-    
-    Architecture:
-    1. Treats the input (Batch, Time, Height, Width) as independent 2D frames initially.
-    2. Passes frames through a ResNet-like backbone to extract features.
-    3. Uses Max Pooling over the temporal dimension (Set Pooling) to aggregate
-       features across time, making the model invariant to the number of frames.
-    4. Produces a normalized embedding vector.
+    Modified ResNet-18 architecture for Gait Recognition.
+    Adapted from ImageNet pre-trained weights to handle grayscale silhouettes.
     """
     def __init__(self, emb_dim=256):
-        super(GaitSetPlus, self).__init__()
-        self.conv1 = BasicConv2d(1, 64, 3, 1, 1)
+        super(GaitResNet18, self).__init__()
         
-        self.layer1 = ResBlock(64, 64)
-        self.pool1 = nn.MaxPool2d(2, 2)
+        # 1. Load base ResNet18 structure (weights=None because we load custom weights later)
+        # Note: In training we use weights=IMAGENET1K_V1, but here we load our own .pth
+        base = models.resnet18(weights=None) 
         
-        self.layer2 = ResBlock(64, 128)
-        self.pool2 = nn.MaxPool2d(2, 2)
+        # 2. Adapt the first convolutional layer (RGB 3 channels -> Grayscale 1 channel)
+        # Standard ResNet expects 3 channels, our silhouettes have 1.
+        self.conv1 = nn.Conv2d(1, 64, kernel_size=7, stride=2, padding=3, bias=False)
         
-        self.layer3 = ResBlock(128, 256)
-        self.pool3 = nn.MaxPool2d(2, 2)
+        # Copy standard ResNet layers
+        self.bn1 = base.bn1
+        self.relu = base.relu
+        self.maxpool = base.maxpool
+        self.layer1 = base.layer1
+        self.layer2 = base.layer2
+        self.layer3 = base.layer3
+        self.layer4 = base.layer4
         
-        self.layer4 = ResBlock(256, 512)
-        
-        self.fc = nn.Linear(512 * 8 * 8, emb_dim)
-        self.bn_head = nn.BatchNorm1d(emb_dim)
-        
+        # 3. Custom Head for Gait Embedding
+        # track_running_stats=False is CRUCIAL to avoid "Model Collapse" during single-person inference.
+        # It forces the Batch Norm to calculate stats on the fly or behave statically.
+        self.bn_head = nn.BatchNorm1d(emb_dim, affine=False, track_running_stats=False) 
+        self.fc = nn.Linear(512, emb_dim) # ResNet18 output feature map depth is 512
+
     def forward(self, x):
-        # x shape: [Batch, Time, Height, Width] (Grayscale masks)
+        # Input Tensor Shape: [Batch, Time, Height, Width] (Grayscale)
         b, t, h, w = x.size()
         
-        # Merge Batch and Time for 2D CNN processing
+        # Merge Batch and Time dimensions to process every frame as a 2D image
+        # New Shape: [Batch * Time, 1, Height, Width]
         x = x.view(-1, 1, h, w) 
+
+        # Pass through ResNet Backbone
+        x = self.conv1(x); x = self.bn1(x); x = self.relu(x); x = self.maxpool(x)
+        x = self.layer1(x); x = self.layer2(x); x = self.layer3(x); x = self.layer4(x)
         
-        x = self.conv1(x)
-        x = self.pool1(self.layer1(x))
-        x = self.pool2(self.layer2(x))
-        x = self.pool3(self.layer3(x))
-        x = self.layer4(x)
+        # Temporal Pooling (Max Pooling over time)
+        # ResNet18 output is [B*T, 512, H', W']. We want a single vector per sequence.
+        x = F.adaptive_max_pool2d(x, 1) # Spatial pooling -> [B*T, 512, 1, 1]
+        x = x.view(b, t, 512)           # Restore Time dimension -> [Batch, Time, 512]
+        x = x.max(dim=1)[0]             # Max Pool over Time -> [Batch, 512]
         
-        # Restore time dimension
-        _, c, h2, w2 = x.size()
-        x = x.view(b, t, c, h2, w2)
+        # Embedding Projection Head
+        x = self.fc(x) # -> [Batch, 256]
         
-        # Set Pooling (Max): Aggregate temporal information
-        x = x.max(dim=1)[0] 
+        # Final Batch Normalization
+        # Only applied if batch size > 1 to prevent crashes during single inference
+        if x.size(0) > 1: 
+            x = self.bn_head(x)
         
-        x = x.view(b, -1)
-        # Fully Connected + Batch Norm + L2 Normalization
-        return F.normalize(self.bn_head(self.fc(x)), p=2, dim=1)
+        # L2 Normalization (Essential for Cosine Distance)
+        return F.normalize(x, p=2, dim=1)
 
 # ============================================================
-#  EXTRACTOR CLASS (RUNTIME WRAPPER)
+#  EXTRACTOR WRAPPER CLASS
 # ============================================================
 
 class GaitExtractor:
+    """
+    High-level wrapper to handle model initialization, loading weights,
+    preprocessing input sequences, and extracting embeddings.
+    """
     def __init__(self, config: GaitConfig):
-        """
-        Wrapper to handle model initialization, weight loading, and inference.
-        """
         self.config = config
         self.device = torch.device(config.device.device)
-        self.model: Optional[GaitSetPlus] = None 
+        self.model: Optional[GaitResNet18] = None 
 
         try:
-            # 1. Instantiate the architecture
-            self.model = GaitSetPlus(emb_dim=config.gallery.dim).to(self.device)
+            # 1. Instantiate the correct model architecture
+            self.model = GaitResNet18(emb_dim=config.gallery.dim).to(self.device)
             
-            # 2. Load weights
+            # 2. Load the trained weights (.pth file)
             model_path = Path(config.models.gait_embedding_model_path)
+            
             if model_path.exists():
+                # strict=False helps ignore minor mismatch issues (e.g., internal torchvision layer names)
                 state_dict = torch.load(model_path, map_location=self.device)
-                self.model.load_state_dict(state_dict)
-                logger.info(f"GaitSetPlus model loaded successfully from {model_path}")
+                self.model.load_state_dict(state_dict, strict=False)
+                logger.info(f"✅ GaitResNet18 weights loaded from {model_path}")
             else:
-                logger.warning(f"GaitSetPlus model NOT found at {model_path}. Recognition will not work.")
+                logger.warning(f"❌ Model file NOT found at {model_path}. Using random weights (Model will fail)!")
 
-            self.model.eval() 
+            self.model.eval() # Set to evaluation mode
             
         except Exception as e:
             logger.error(f"Error initializing GaitExtractor: {e}")
@@ -143,12 +116,8 @@ class GaitExtractor:
 
     def _calculate_quality(self, silhouettes: List[np.ndarray]) -> float:
         """
-        Calculates a quality score based on silhouette integrity.
-        
-        Criteria:
-        - A silhouette is valid if the foreground (white pixels) occupies 
-          between 2% and 90% of the bounding box area.
-        - Returns the percentage of valid frames in the sequence.
+        Calculates a simple quality score based on silhouette integrity.
+        Checks if the silhouette is too small (empty) or too full (artifacts).
         """
         if not silhouettes: return 0.0
         scores = []
@@ -156,7 +125,7 @@ class GaitExtractor:
             area = np.sum(sil > 0)
             total = sil.size
             ratio = area / total
-            # Check if ratio is reasonable (not empty, not full block)
+            # A person should occupy between 2% and 90% of the bounding box area
             if 0.02 < ratio < 0.9: 
                 scores.append(1.0)
             else:
@@ -165,46 +134,30 @@ class GaitExtractor:
 
     def extract_gait_embedding_and_quality(self, sequence: List[np.ndarray]) -> Tuple[Optional[np.ndarray], float]:
         """
-        Converts a sequence of binary silhouettes into a gait embedding vector.
-        
-        Args:
-            sequence: List of np.ndarray (64x64 uint8). 0=bg, 255=fg.
-            
-        Returns:
-            Tuple(embedding, quality): 
-                - embedding: (256,) float array or None if failed.
-                - quality: float 0.0 to 1.0.
+        Main inference method.
+        Input: sequence List[np.ndarray] (64x64 uint8 images, 0=bg, 255=fg)
+        Output: embedding (256,), quality (0-1)
         """
         if not sequence or self.model is None: 
             return None, 0.0
 
-        # 1. Quality Filter
+        # Quality Filter
         quality = self._calculate_quality(sequence)
         if quality < self.config.thresholds.min_gait_quality:
             return None, quality
        
         try:
-            # 2. Preprocessing: [0, 255] uint8 -> [0.0, 1.0] float32
+            # Preprocessing: Convert [0, 255] uint8 -> [0.0, 1.0] float32
             frames = np.array(sequence, dtype=np.float32) / 255.0
             
-            # Create Tensor: (1, T, 64, 64) -> Batch size 1
+            # Convert to Tensor: [1, Time, 64, 64] (Batch=1, Time, Height, Width)
             tensor = torch.from_numpy(frames).unsqueeze(0).to(self.device)
 
             with torch.no_grad():
-                # 3. Forward Pass
-                emb = self.model(tensor)
-                
-                # 4. Test Time Augmentation (Horizontal Flip)
-                # Helps invariance to direction of walking
-                tensor_flipped = torch.flip(tensor, dims=[-1])
-                emb_flipped = self.model(tensor_flipped)
-                
-                # Average the embeddings
-                final_emb = (emb + emb_flipped) / 2.0
-                
-                # 5. Final L2 Normalization
-                final_emb = F.normalize(final_emb, p=2, dim=1)
+                # Forward Pass through the network
+                final_emb = self.model(tensor)
 
+            # Return as 1D numpy array (256,)
             return final_emb.cpu().numpy()[0], quality
 
         except Exception as e:
