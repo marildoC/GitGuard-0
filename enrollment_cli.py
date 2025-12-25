@@ -1,4 +1,7 @@
-# gait/enrollment_cli.py
+"""
+CLI tool for Gait Identity Management.
+Supports batch enrollment from video files, identity listing, and deletion.
+"""
 
 from __future__ import annotations
 import argparse
@@ -17,10 +20,7 @@ from gait.gait_extractor import GaitExtractor
 logger = logging.getLogger(__name__)
 
 def _setup_logging(level: int = logging.INFO) -> None:
-    """
-    Configures the root logger to output messages to the console.
-    Prevents duplicate handlers if logging is already set up.
-    """
+    """Configures the console logger if not already initialized."""
     root = logging.getLogger()
     if root.handlers: return
     root.setLevel(level)
@@ -31,20 +31,12 @@ def _setup_logging(level: int = logging.INFO) -> None:
 
 def extract_raw_sequences_from_video(video_path: Path, pose_model: YOLO, min_len: int = 24) -> List[List[np.ndarray]]:
     """
-    Reads a video file frame by frame, runs the pose estimation model (YOLO),
-    and aggregates raw keypoints into sequences.
-    
-    Args:
-        video_path: Path to the input video.
-        pose_model: Loaded YOLO model for pose estimation.
-        min_len: Minimum number of frames required to form a valid sequence.
-        
-    Returns:
-        A list of sequences, where each sequence is a list of numpy arrays (raw keypoints).
+    Processes a video file to extract continuous sequences of skeleton keypoints.
+    Returns a list of sequences, where each sequence is a list of (17, 3) keypoint arrays.
     """
     cap = cv2.VideoCapture(str(video_path))
     if not cap.isOpened():
-        logger.warning(f"Cannot open video {video_path}")
+        logger.warning(f"Unable to open video: {video_path}")
         return []
 
     frames_buffer = []
@@ -58,11 +50,19 @@ def extract_raw_sequences_from_video(video_path: Path, pose_model: YOLO, min_len
         results = pose_model(frame, verbose=False, conf=conf_thresh)
         kps_raw = None
         
-        if results[0].keypoints is not None:
+        # Check for valid keypoint detections
+        if (len(results) > 0 and 
+            results[0].keypoints is not None and 
+            results[0].keypoints.xyn.shape[0] > 0):
+            
             kps = results[0].keypoints
-            if hasattr(kps, 'data') and kps.data.shape[0] > 0:
-                kps_raw = kps.data[0].cpu().numpy() 
+            # Extract first detected person using normalized [0, 1] coordinates
+            xy = kps.xyn[0].cpu().numpy()
+            conf = kps.conf[0].cpu().numpy()[:, None] if kps.conf is not None else np.ones((xy.shape[0], 1))
+            kps_raw = np.hstack([xy, conf])
         
+        # Accumulate frames into continuous sequences. 
+        # Breaks the sequence if tracking is lost.
         if kps_raw is not None:
             frames_buffer.append(kps_raw)
         else:
@@ -78,26 +78,21 @@ def extract_raw_sequences_from_video(video_path: Path, pose_model: YOLO, min_len
 
 def cmd_enroll(args: argparse.Namespace) -> None:
     """
-    Handles the 'enroll' command.
-    1. Initializes the GaitExtractor and GaitGallery.
-    2. Loads the Pose Estimation model.
-    3. Iterates through video files in the data directory.
-    4. Extracts gait embeddings and averages them per identity.
-    5. Saves the confirmed identities to the gallery.
+    'enroll' command logic:
+    1. Scans 'data/gait_videos' for subdirectories (each folder = one identity).
+    2. Extracts all valid gait sequences from video files within those folders.
+    3. Computes a mean normalized embedding for each person.
+    4. Updates the persistent gait gallery.
     """
     _setup_logging()
     cfg = default_gait_config()
-    
-    # Init Extractor (loads the .pth model)
     extractor = GaitExtractor(cfg)
-    # Init Gallery (passes full config)
     gallery = GaitGallery(cfg)
-
-    logger.info(f"Loading YOLO model: {cfg.models.pose_model_name}")
     pose_model = YOLO(cfg.models.pose_model_name)
     
     root_data_dir = Path("data/gait_videos")
     
+    # Filter by specific name if provided, otherwise process all subdirectories
     if args.name:
         target_dir = root_data_dir / args.name
         if not target_dir.exists():
@@ -106,65 +101,45 @@ def cmd_enroll(args: argparse.Namespace) -> None:
         persons_to_process = [(args.name, target_dir)]
     else:
         if not root_data_dir.exists():
-            logger.error(f"Root directory not found: {root_data_dir}")
+            logger.error("Root gait_videos directory not found.")
             return
         persons_to_process = [(p.name, p) for p in root_data_dir.iterdir() if p.is_dir()]
 
-    logger.info(f"Found {len(persons_to_process)} identities to process.")
-
     for name, person_dir in persons_to_process:
         logger.info(f"Processing identity: {name}")
-        
-        video_files = list(person_dir.glob("*.mp4")) + list(person_dir.glob("*.mov")) + list(person_dir.glob("*.avi"))
-        if not video_files:
-            logger.warning(f"No videos found for {name}")
-            continue
+        video_files = [f for f in person_dir.iterdir() if f.suffix.lower() in [".mp4", ".mov", ".avi"]]
             
         valid_embeddings = []
         for v_file in video_files:
-            logger.info(f"  - Extracting from {v_file.name}...")
             raw_sequences = extract_raw_sequences_from_video(v_file, pose_model, min_len=cfg.route.min_sequence_length)
-            
             for seq in raw_sequences:
-                emb, quality = extractor.extract_gait_embedding_and_quality(seq)
+                emb, _ = extractor.extract_gait_embedding_and_quality(seq)
                 if emb is not None:
                     valid_embeddings.append(emb)
         
         if not valid_embeddings:
-            logger.warning(f"No valid gait embeddings extracted for {name}")
+            logger.warning(f"No valid embeddings for {name}")
             continue
             
-        embedding_matrix = np.stack(valid_embeddings)
-        avg_embedding = np.mean(embedding_matrix, axis=0)
+        # Average multiple embeddings to create a robust identity template
+        avg_embedding = np.mean(np.stack(valid_embeddings), axis=0)
         norm = np.linalg.norm(avg_embedding)
-        if norm > 1e-6: avg_embedding /= norm
-
-        category = args.category if args.category else "resident"
-        
-        # USE CORRECT GAIT GALLERY METHODS
-        gallery.add_gait_embedding(
-            identity_id=name,
-            new_embedding=avg_embedding,
-            category=category,
-            confirmed=True
-        )
-        logger.info(f"✅ Enrolled {name}")
+        if norm > 1e-6: 
+            avg_embedding /= norm
+            gallery.add_gait_embedding(identity_id=name, new_embedding=avg_embedding, 
+                                       category=args.category or "resident", confirmed=True)
+            logger.info(f"✅ Successfully enrolled {name}")
 
     gallery.save_gallery()
-    logger.info("Gallery saved successfully.")
 
 def cmd_list(args: argparse.Namespace) -> None:
-    """
-    Handles the 'list' command.
-    Displays all identities currently stored in the gallery.
-    """
+    """Displays all enrolled identities in the gallery."""
     _setup_logging()
-    cfg = default_gait_config()
-    gallery = GaitGallery(cfg)
+    gallery = GaitGallery(default_gait_config())
     persons = gallery.list_persons()
     
     if not persons:
-        print("No persons enrolled.")
+        print("Gallery is empty.")
         return
     print(f"{'person_id':<36} {'category':<12} {'name':<20}")
     print("-" * 70)
@@ -172,31 +147,23 @@ def cmd_list(args: argparse.Namespace) -> None:
         print(f"{p.person_id:<36} {p.category:<12} {p.name:<20}")
 
 def cmd_delete(args: argparse.Namespace) -> None:
-    """
-    Handles the 'delete' command.
-    Removes a specific identity from the gallery based on person_id.
-    """
+    """Removes a person from the database by ID."""
     _setup_logging()
-    cfg = default_gait_config()
-    gallery = GaitGallery(cfg)
-
-    person_id = args.person_id or input("person_id: ").strip()
+    gallery = GaitGallery(default_gait_config())
+    person_id = args.person_id or input("Enter person_id to delete: ").strip()
     if gallery.delete_person(person_id):
         print(f"Deleted {person_id}")
     else:
-        print("Person not found")
+        print("Identity not found.")
 
 def main(argv: Optional[list[str]] = None) -> None:
-    """
-    Main entry point for the CLI tool.
-    Parses arguments and delegates execution to the appropriate command function (enroll, list, delete).
-    """
+    """Main entry point for gait database administration."""
     if argv is None: argv = sys.argv[1:]
     parser = argparse.ArgumentParser(prog="gait-enroll")
     sub = parser.add_subparsers(dest="command", required=True)
 
     p_enroll = sub.add_parser("enroll")
-    p_enroll.add_argument("--name", type=str)
+    p_enroll.add_argument("--name", type=str, help="Specific folder name to process")
     p_enroll.add_argument("--category", type=str, default="resident")
 
     sub.add_parser("list")
@@ -205,7 +172,6 @@ def main(argv: Optional[list[str]] = None) -> None:
     p_del.add_argument("person_id", nargs="?", help="Identity ID")
 
     args = parser.parse_args(argv)
-    
     if args.command == "enroll": cmd_enroll(args)
     elif args.command == "list": cmd_list(args)
     elif args.command == "delete": cmd_delete(args)

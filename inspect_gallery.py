@@ -1,32 +1,68 @@
-import pickle
+from __future__ import annotations
 import numpy as np
-from sklearn.metrics.pairwise import cosine_similarity
+import sys
+from gait.config import default_gait_config
+from gait.gait_gallery import GaitGallery
 
-# Carica la gallery
-with open("data/gait_gallery.enc", "rb") as f:
-    gallery = pickle.load(f)
+def main():
+    # Carica la configurazione e la galleria
+    cfg = default_gait_config()
+    gallery = GaitGallery(cfg)
+    
+    # Recupera tutte le identità
+    identities = list(gallery._identities.values())
+    
+    if not identities:
+        print("❌ La galleria è vuota. Fai prima l'enrollment.")
+        return
 
-identities = gallery['identities']
+    print(f"\n📊 MATRICE DI SIMILARITÀ ({len(identities)} persone)")
+    print("Valori vicini a 1.0 = Identici")
+    print("Valori vicini a 0.0 = Diversi")
+    print(f"Soglia Match Sicuro: {cfg.thresholds.max_match_distance} (Distanza) -> Similarità > {1.0 - cfg.thresholds.max_match_distance:.2f}")
+    print("-" * 80)
 
-# Estrai gli embeddings EMA
-names = []
-embeddings = []
-for name, data in identities.items():
-    if hasattr(data, 'ema_embedding'):
-        names.append(name)
-        embeddings.append(data.ema_embedding)
+    # Intestazione tabella
+    ids = [d.identity_id for d in identities]
+    print(f"{'ID':<15} |", end="")
+    for pid in ids:
+        print(f" {pid[:6]:<7}", end="")
+    print("\n" + "-" * (15 + 8 * len(ids) + 2))
 
-embeddings = np.vstack(embeddings)
-print(f"[INFO] Shape embeddings: {embeddings.shape}")
+    # Calcolo matrice
+    for i, p1 in enumerate(identities):
+        print(f"{p1.identity_id:<15} |", end="")
+        
+        emb1 = p1.ema_embedding
+        # Normalizza per sicurezza (dovrebbe già esserlo)
+        emb1 = emb1 / np.linalg.norm(emb1)
 
-# Calcola la cosine similarity
-sim_matrix = cosine_similarity(embeddings)
+        for j, p2 in enumerate(identities):
+            emb2 = p2.ema_embedding
+            emb2 = emb2 / np.linalg.norm(emb2)
 
-# Mostra le coppie con similarità maggiore di una soglia (es. 0.95)
-threshold = 0.80
-print(f"\n[INFO] Coppie con similarità > {threshold}:")
-for i in range(len(names)):
-    for j in range(i+1, len(names)):
-        sim = sim_matrix[i, j]
-        if sim > threshold:
-            print(f"{names[i]} <> {names[j]} : similarity = {sim:.4f}")
+            # Cosine Similarity = dot product tra vettori normalizzati
+            similarity = np.dot(emb1, emb2)
+            
+            # Formattazione condizionale per leggibilità
+            val_str = f"{similarity:.3f}"
+            if i == j:
+                print(f"\033[94m {val_str:<7}\033[0m", end="") # Blu (stessa persona)
+            elif similarity > (1.0 - cfg.thresholds.max_match_distance):
+                print(f"\033[91m {val_str:<7}\033[0m", end="") # Rosso (Falso positivo pericolo!)
+            elif similarity > (1.0 - cfg.thresholds.max_weak_match_distance):
+                print(f"\033[93m {val_str:<7}\033[0m", end="") # Giallo (Vicini)
+            else:
+                print(f"\033[92m {val_str:<7}\033[0m", end="") # Verde (Ben distinti)
+        
+        print(f"") # Nuova riga
+
+    print("-" * 80)
+    print("LEGENDA:")
+    print("\033[94mBLU\033[0m   = Stessa persona (deve essere 1.000)")
+    print("\033[92mVERDE\033[0m = Ben distinti (Ottimo)")
+    print("\033[93mGIALLO\033[0m= Simili ma distinguibili (Warning)")
+    print("\033[91mROSSO\033[0m  = Troppo simili, rischio confusione (Conflict)")
+
+if __name__ == "__main__":
+    main()
