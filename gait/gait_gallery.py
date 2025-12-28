@@ -1,156 +1,251 @@
+"""
+gait/gait_gallery.py - FAISS GALLERY & MATCHING LOGIC
+"""
 import numpy as np
+from typing import Dict, Optional, Tuple, List
 import logging
 import pickle
-import faiss
-from typing import Dict, Optional, Tuple, List
 from dataclasses import dataclass
 from gait.config import GaitConfig
+import faiss
 
 logger = logging.getLogger(__name__)
 
 @dataclass
 class GaitIdentityData:
-    """Storage structure for an enrolled individual's gait data."""
+    """
+    Data structure representing a unique identity in the gallery.
+    
+    Attributes:
+        identity_id: The unique string ID (e.g., "Francesco").
+        faiss_id: The integer ID used internally by FAISS.
+        ema_embedding: The representative embedding vector (averaged over time).
+        raw_embeddings: List of recent raw embeddings (optional history).
+        num_updates: How many times this identity has been updated/seen.
+        category: User category (e.g., "resident", "guest").
+    """
     identity_id: str
     faiss_id: int
-    ema_embedding: np.ndarray       # Moving average template
-    raw_embeddings: List[np.ndarray] # Historical signatures
+    ema_embedding: np.ndarray       
+    raw_embeddings: List[np.ndarray] 
     num_updates: int = 0
     category: str = "resident"
 
 @dataclass
 class PersonSummary:
-    """DTO for identity management via CLI."""
     person_id: str
     name: str
     category: str
     num_templates: int
 
 class FaissIndexWrapper:
-    """Utility wrapper for FAISS vector operations (L2 or Cosine)."""
-    def __init__(self, dim: int, metric: str = "cosine"):
+    """
+    Wrapper around the FAISS library to handle vector indexing and searching.
+    
+    Technical Note:
+    We use 'IndexFlatIP' (Inner Product). 
+    Since the embeddings are L2-normalized (length = 1), the Inner Product 
+    is mathematically equivalent to Cosine Similarity.
+    
+    Distance = 1.0 - CosineSimilarity.
+    """
+    def __init__(self, dim: int):
         self.dim = dim
-        self.metric = metric
-        if metric == "cosine":
-            self.index = faiss.IndexIDMap(faiss.IndexFlatIP(dim))
-            self.normalize = True
-        else:
-            self.index = faiss.IndexIDMap(faiss.IndexFlatL2(dim))
-            self.normalize = False
+        self.index = faiss.IndexIDMap(faiss.IndexFlatIP(dim))
         self.current_faiss_id_counter = 0
 
-    def _get_next_faiss_id(self) -> int:
-        new_id = self.current_faiss_id_counter
-        self.current_faiss_id_counter += 1
-        return new_id
-    
-    def add(self, embeddings: np.ndarray, faiss_id: int):
-        """Inserts a vector into the index; normalizes for cosine similarity if required."""
-        if embeddings.ndim == 1: embeddings = embeddings[np.newaxis, :]
-        if self.normalize: faiss.normalize_L2(embeddings)
-        ids = np.array([faiss_id] * embeddings.shape[0], dtype=np.int64)
-        self.index.add_with_ids(embeddings, ids)
+    def add(self, emb, fid):
+        """Adds a normalized vector to the FAISS index with a specific ID."""
+        if emb.ndim == 1:
+            emb = emb[np.newaxis, :]
         
-    def remove(self, faiss_ids: List[int]):
-        """Removes specific IDs from the index."""
-        if faiss_ids: self.index.remove_ids(np.array(faiss_ids, dtype=np.int64))
+        # Copy to avoid modifying the original array reference
+        emb_copy = emb.astype('float32').copy()
         
-    def search(self, query: np.ndarray, k: int = 1) -> Tuple[np.ndarray, np.ndarray]:
-        """Performs a vector search and returns distances and FAISS IDs."""
-        if query.ndim == 1: query = query[np.newaxis, :]
-        if self.normalize: faiss.normalize_L2(query)
-        D, I = self.index.search(query, k)
-        return D[0], I[0]
+        # Ensure L2 Normalization (Critical for Cosine Similarity via IP)
+        faiss.normalize_L2(emb_copy)
+        self.index.add_with_ids(emb_copy, np.array([fid], dtype=np.int64))
+        
+    def search(self, query, k=1):
+        """Searches for the k-nearest neighbors."""
+        if query.ndim == 1:
+            query = query[np.newaxis, :]
+            
+        query_copy = query.astype('float32').copy()
+        faiss.normalize_L2(query_copy)
+        
+        # Returns (distances/similarities, indices)
+        return self.index.search(query_copy, k)
 
 class GaitGallery:
-    """High-level manager for identity enrollment and recognition."""
+    """
+    Manages the database of known gait identities.
+    Handles loading/saving, updating embeddings via EMA (Exponential Moving Average),
+    and searching for matches.
+    """
     def __init__(self, config: GaitConfig):
         self.config = config
         self._identities: Dict[str, GaitIdentityData] = {}
-        self.faiss_index = FaissIndexWrapper(dim=config.gallery.dim, metric=config.gallery.metric)
-        self.load_gallery()
+        self.faiss_index = FaissIndexWrapper(config.gallery.dim)
+        
+        if config.gallery.gallery_path.exists():
+            self.load_gallery()
 
     def save_gallery(self):
-        """Serializes the identity database to disk."""
+        """Persists the gallery state to disk using Pickle."""
         try:
-            self.config.gallery.gallery_path.parent.mkdir(parents=True, exist_ok=True)
-            state = {"identities": self._identities, "faiss_id_counter": self.faiss_index.current_faiss_id_counter}
+            state = {
+                "identities": self._identities, 
+                "cnt": self.faiss_index.current_faiss_id_counter
+            }
             with open(self.config.gallery.gallery_path, "wb") as f:
                 pickle.dump(state, f)
+            logger.debug("Gallery saved successfully.")
         except Exception as e:
-            logger.error(f"Failed to save gallery: {e}")
+            logger.error(f"Error saving gallery: {e}")
 
     def load_gallery(self):
-        """Loads identity data and rebuilds the FAISS index."""
-        if not self.config.gallery.gallery_path.exists(): return
+        """Loads the gallery state and reconstructs the FAISS index."""
         try:
             with open(self.config.gallery.gallery_path, "rb") as f:
                 state = pickle.load(f)
                 self._identities = state["identities"]
-                self.faiss_index.current_faiss_id_counter = state["faiss_id_counter"]
+                self.faiss_index.current_faiss_id_counter = state["cnt"]
             
-            for data in self._identities.values():
-                self.faiss_index.add(data.ema_embedding, data.faiss_id)
-        except Exception as e:
-            logger.error(f"Failed to load gallery: {e}")
+            # Rebuild FAISS index from stored embeddings
+            self.faiss_index.index.reset()
+            for d in self._identities.values():
+                self.faiss_index.add(d.ema_embedding, d.faiss_id)
+            logger.info(f"Gallery loaded: {len(self._identities)} identities found.")
+        except Exception:
+            logger.warning("No existing gallery found or file corrupted. Starting fresh.")
 
-    def _update_ema_embedding(self, current: np.ndarray, new_emb: np.ndarray) -> np.ndarray:
-        """Applies Exponential Moving Average to update the person's signature template."""
-        alpha = self.config.gallery.ema_alpha
-        updated = (1 - alpha) * current + alpha * new_emb
-        norm = np.linalg.norm(updated)
-        return updated / norm if norm > 0 else np.zeros_like(updated)
+    def _normalize_numpy(self, x):
+        """Helper to normalize a numpy array to unit length (L2 norm)."""
+        norm = np.linalg.norm(x)
+        if norm > 1e-6:
+            return x / norm
+        return x
 
-    def add_gait_embedding(self, identity_id: str, embedding: np.ndarray, category: str = "resident", confirmed: bool = True):
-        """Enrolls a new person or updates an existing identity template."""
+    def add_gait_embedding(self, identity_id, new_embedding, category="resident", confirmed=True):
+        """
+        Adds or Updates an identity.
+        
+        If the identity exists and 'confirmed' is True, it updates the stored embedding
+        using Exponential Moving Average (EMA). This allows the system to adapt
+        to slight changes in a person's gait over time (e.g., different shoes).
+        """
         if identity_id not in self._identities:
-            fid = self.faiss_index._get_next_faiss_id()
-            data = GaitIdentityData(identity_id, fid, embedding, [embedding], 1, category)
-            self._identities[identity_id] = data
-            self.faiss_index.add(embedding, fid)
-        elif confirmed:
-            data = self._identities[identity_id]
-            self.faiss_index.remove([data.faiss_id])
-            data.ema_embedding = self._update_ema_embedding(data.ema_embedding, embedding)
-            data.raw_embeddings.append(embedding)
-            data.num_updates += 1
-            self.faiss_index.add(data.ema_embedding, data.faiss_id)
+            # New Identity
+            fid = self.faiss_index.current_faiss_id_counter
+            self.faiss_index.current_faiss_id_counter += 1
+            
+            # Normalize before storing
+            new_embedding = self._normalize_numpy(new_embedding)
+            
+            self._identities[identity_id] = GaitIdentityData(
+                identity_id=identity_id, 
+                faiss_id=fid, 
+                ema_embedding=new_embedding, 
+                raw_embeddings=[new_embedding], 
+                num_updates=1, 
+                category=category
+            )
+            self.faiss_index.add(new_embedding, fid)
+        else:
+            # Update Existing Identity
+            d = self._identities[identity_id]
+            d.category = category
+            if confirmed:
+                alpha = self.config.gallery.ema_alpha
+                
+                # EMA Update: (1 - alpha) * Old + alpha * New
+                updated = (1 - alpha) * d.ema_embedding + alpha * new_embedding
+                d.ema_embedding = self._normalize_numpy(updated)
+                
+                d.num_updates += 1
+                
+                # Update FAISS: Remove old vector, add new vector
+                self.faiss_index.index.remove_ids(np.array([d.faiss_id], dtype=np.int64))
+                self.faiss_index.add(d.ema_embedding, d.faiss_id)
         
         self.save_gallery()
 
     def search(self, query_embedding: np.ndarray) -> Tuple[Optional[str], Optional[float]]:
-        """Identifies the closest match in the database and prints a live ranking."""
-        if self.faiss_index.index.ntotal == 0: return None, None
+        """
+        Cerca nella galleria.
+        Restituisce (nome, confidence) SOLO se supera la soglia.
+        Altrimenti restituisce (None, 0.0).
+        """
+        total_people = self.faiss_index.index.ntotal
+        if total_people == 0:
+            return None, 0.0
 
-        k_search = min(3, self.faiss_index.index.ntotal)
+        # Cerca i Top 3
+        k_search = min(3, total_people)
         sims, fids = self.faiss_index.search(query_embedding, k=k_search)
+        
+        sims_row = sims[0]
+        fids_row = fids[0]
 
-        print(f"\n🔍 LIVE RANKING:")
-        match_id, match_conf = None, 0.0
+        if fids_row[0] == -1:
+            return None, 0.0
 
-        for rank, (sim, fid) in enumerate(zip(sims, fids)):
-            if fid == -1: continue
+        # --- RECUPERO CANDIDATI ---
+        best_pid = "Unknown"
+        best_dist = 1.0
+        best_sim = 0.0
+        
+        print("\n🔍 --- RISULTATI RICERCA ---")
+        for i in range(len(fids_row)):
+            fid = fids_row[i]
+            similarity = sims_row[i]
+            distance = 1.0 - similarity
             
-            # Map FAISS ID back to identity string
-            id_str = next((k for k, v in self._identities.items() if v.faiss_id == fid), None)
-            if not id_str: continue
+            # Recupera ID stringa
+            pid = next((k for k, v in self._identities.items() if v.faiss_id == fid), "Unknown")
+            
+            print(f"   #{i+1}: {pid:<15} | Sim: {similarity:.4f} | Dist: {distance:.4f}")
+            
+            if i == 0:
+                best_pid = pid
+                best_dist = distance
+                best_sim = similarity
+            
+            if i == 1:
+                second_dist = distance
 
-            distance = 1.0 - sim if self.faiss_index.normalize else sim
-            status = "✅ MATCH" if distance <= self.config.thresholds.max_match_distance else "❌ NO   "
-            print(f"   #{rank+1}: {id_str:<15} | Dist: {distance:.4f} | {status}")
+        # --- LOGICA DI DECISIONE (FILTRO) ---
+        
+        # 1. Controllo Soglia (Deve essere < 0.20 se vuoi > 0.80)
+        limit = self.config.thresholds.max_match_distance
+        if best_dist > limit:
+            print(f"❌ RIFIUTATO: {best_pid} (Sim {best_sim:.2f} è troppo bassa. Minimo richiesto: {1.0-limit:.2f})")
+            return None, 0.0  # <--- Ritorna 0.0 così la UI capisce che è Unknown
 
-            if rank == 0 and distance <= self.config.thresholds.max_weak_match_distance:
-                match_id, match_conf = id_str, 1.0 - distance
+        # 2. Controllo Margine (Opzionale)
+        margin = 1.0
+        if k_search > 1:
+            margin = second_dist - best_dist
+            
+        if margin < self.config.thresholds.min_match_margin:
+            print(f"⚠️ AMBIGUO: Margine troppo basso ({margin:.3f}) tra {best_pid} e il secondo.")
+            return None, 0.0
 
-        return match_id, match_conf
+        # Se arriva qui, è confermato
+        print(f"✅ CONFERMATO: {best_pid} (Sim: {best_sim:.4f})")
+        return best_pid, best_sim
 
     def list_persons(self) -> List[PersonSummary]:
-        return [PersonSummary(pid, pid, d.category, d.num_updates) for pid, d in self._identities.items()]
+        return [PersonSummary(k, k, v.category, v.num_updates) for k, v in self._identities.items()]
 
-    def delete_person(self, identity_id: str) -> bool:
-        if identity_id in self._identities:
-            self.faiss_index.remove([self._identities[identity_id].faiss_id])
-            del self._identities[identity_id]
+    def delete_person(self, pid: str) -> bool:
+        if pid in self._identities:
+            self.faiss_index.index.remove_ids(np.array([self._identities[pid].faiss_id], dtype=np.int64))
+            del self._identities[pid]
             self.save_gallery()
             return True
         return False
+
+    def get_category(self, pid: str) -> str:
+        return self._identities[pid].category if pid in self._identities else "unknown"

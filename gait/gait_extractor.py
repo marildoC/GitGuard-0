@@ -1,137 +1,259 @@
+"""
+gait/gait_extractor.py - POWER NORM VERSION
+"""
 import numpy as np
+from typing import List, Optional, Tuple
+import logging
 import torch
 import torch.nn as nn
-import logging
-import traceback
+import torch.nn.functional as F
 from pathlib import Path
-from typing import List, Optional, Tuple
+
 from gait.config import GaitConfig
 
 logger = logging.getLogger(__name__)
 
-class GaitModel(nn.Module):
+# =======================
+# 1. MODEL ARCHITECTURE
+# =======================
+
+class GeM(nn.Module):
     """
-    Angle-Invariant Architecture combining CNN for local spatial features 
-    and GRU for temporal sequence modeling.
+    Generalized Mean Pooling (GeM).
+    Unlike standard Max or Average pooling, GeM uses a learnable parameter 'p'.
+    - If p -> infinity, it acts like Max Pooling.
+    - If p -> 1, it acts like Average Pooling.
+    This allows the network to learn which temporal features are most significant
+    for identification automatically.
     """
-    def __init__(self, input_dim=64, hidden_dim=256, embedding_dim=256, dropout=0.5):
+    def __init__(self, p=3, eps=1e-6):
+        super(GeM, self).__init__()
+        self.p = nn.Parameter(torch.ones(1) * p)
+        self.eps = eps
+
+    def forward(self, x):
+        # Clamping avoids numerical instability with the power function
+        return F.avg_pool1d(x.clamp(min=self.eps).pow(self.p), (x.size(-1))).pow(1./self.p)
+
+
+class BasicBlock(nn.Module):
+    """
+    Standard Residual Block adapted for Gait Recognition.
+    Crucially, it uses Instance Normalization (InstanceNorm2d) instead of Batch Normalization.
+    
+    Why InstanceNorm?
+    Gait videos have high variance in 'style' (clothing, camera angle, contrast).
+    InstanceNorm normalizes each sample independently, removing style information
+    while preserving the structural biometric content.
+    """
+    def __init__(self, in_c, out_c):
         super().__init__()
-        # Spatial feature extraction
-        self.cnn = nn.Sequential(
-            nn.Conv1d(input_dim, 128, kernel_size=3, padding=1),
-            nn.BatchNorm1d(128),
-            nn.ReLU(),
-            nn.Conv1d(128, 128, kernel_size=3, padding=1),
-            nn.BatchNorm1d(128),
-            nn.ReLU()
-        )
-        # Temporal sequence modeling
-        self.gru = nn.GRU(128, hidden_dim, num_layers=2, batch_first=True,
-                          bidirectional=True, dropout=dropout)
-        # Feature reduction and normalization neck
-        self.bottleneck = nn.Sequential(
-            nn.Linear(hidden_dim * 2, 512),
-            nn.BatchNorm1d(512),
-            nn.ReLU(),
-            nn.Dropout(dropout),
-            nn.Linear(512, embedding_dim)
-        )
-        self.bn_neck = nn.BatchNorm1d(embedding_dim)
-        self.bn_neck.bias.requires_grad_(False)
+        self.bn1 = nn.InstanceNorm2d(out_c, affine=True) 
+        self.conv1 = nn.Conv2d(in_c, out_c, kernel_size=(3, 1), padding=(1, 0), bias=False)
+        self.bn2 = nn.InstanceNorm2d(out_c, affine=True)
+        self.conv2 = nn.Conv2d(out_c, out_c, kernel_size=(3, 1), padding=(1, 0), bias=False)
+        self.shortcut = nn.Sequential()
+        if in_c != out_c:
+            self.shortcut = nn.Sequential(
+                nn.Conv2d(in_c, out_c, kernel_size=1, bias=False),
+                nn.InstanceNorm2d(out_c, affine=True)
+            )
 
-    def forward(self, x, return_feature=False):
-        x = x.transpose(1, 2)
-        x = self.cnn(x).transpose(1, 2)
-        out, _ = self.gru(x)
-        # Global pooling (Mean + Max) to capture sequence statistics
-        global_feat = out.mean(dim=1) + out.max(dim=1)[0]
-        feat = self.bottleneck(global_feat)
-        return feat if return_feature else self.bn_neck(feat)
+    def forward(self, x):
+        return F.relu(self.bn2(self.conv2(F.relu(self.bn1(self.conv1(x))))) + self.shortcut(x))
 
+
+class GaitResNet(nn.Module):
+    """
+    The main Backbone Network.
+    Structure:
+    1. Input: 4 Channels (Pos X, Pos Y, Vel X, Vel Y).
+    2. ResNet Layers: Extract spatial-temporal features.
+    3. GeM Pooling: Aggregates temporal frames into a single vector.
+    4. FC Head: Projects features into the 256-dim embedding space.
+    """
+    def __init__(self, in_channels=4, embedding_dim=256):
+        super().__init__()
+        self.conv1 = nn.Conv2d(in_channels, 64, kernel_size=(3, 3), padding=(1, 1), bias=False)
+        self.bn1 = nn.InstanceNorm2d(64, affine=True)
+        self.layer1 = BasicBlock(64, 64)
+        self.layer2 = BasicBlock(64, 128)
+        self.layer3 = BasicBlock(128, 256)
+        
+        # Temporal Aggregation
+        self.gem = GeM()
+        
+        # Classification/Embedding Head
+        self.bn_head = nn.BatchNorm1d(256 * 17)
+        self.dropout = nn.Dropout(0.5) 
+        self.fc = nn.Linear(256 * 17, embedding_dim, bias=False)
+        self.bn_out = nn.BatchNorm1d(embedding_dim)
+
+    def forward(self, x):
+        # Feature Extraction
+        x = F.relu(self.bn1(self.conv1(x)))
+        x = self.layer1(x)
+        x = self.layer2(x)
+        x = self.layer3(x)
+        
+        # Reshape for Temporal Pooling
+        B, C, T, V = x.shape
+        x = x.permute(0, 1, 3, 2).contiguous().view(B, C*V, T) 
+        
+        # Apply GeM Pooling
+        x = self.gem(x).view(B, -1)
+        
+        # Project to Embedding
+        x = self.bn_head(x)
+        feat = self.fc(x)
+        return self.bn_out(feat)
+
+
+# =======================
+# 2. GAIT EXTRACTOR
+# =======================
 
 class GaitExtractor:
     """
-    Handles pose sequence preprocessing and embedding extraction.
+    Wrapper class responsible for:
+    1. Loading the model weights.
+    2. Preprocessing raw keypoints (Cleaning, Interpolation, Normalization).
+    3. Performing inference with TTA (Test Time Augmentation).
     """
     def __init__(self, config: GaitConfig):
         self.config = config
         self.device = torch.device(config.device.device)
-        # Target COCO indices: Shoulders (5,6), Hips (11,12), Knees (13,14), Ankles (15,16)
-        self.target_indices = [5, 6, 11, 12, 13, 14, 15, 16]
-
+        self.target_len = 60
+        self.embedding_dim = 256
+        self.model = GaitResNet(in_channels=4, embedding_dim=self.embedding_dim).to(self.device)
+        
         try:
-            self.model = GaitModel(input_dim=64, embedding_dim=config.gallery.dim).to(self.device)
             model_path = Path(config.models.gait_embedding_model_path)
             if model_path.exists():
-                self.model.load_state_dict(torch.load(model_path, map_location=self.device))
-                self.model.eval()
-                logger.info(f"Gait model loaded from {model_path}")
+                state_dict = torch.load(model_path, map_location=self.device)
+                self.model.load_state_dict(state_dict)
+                logger.info(f"✅ Gait Model Loaded: {model_path}")
             else:
-                logger.error("Gait model weights not found!")
-        except Exception as e:
-            logger.error(f"Initialization error: {e}")
-            self.model = None
+                logger.warning(f"⚠️ Model not found: {model_path}")
+            
+            # Set to Eval mode.
+            # Crucial because the preprocessing now handles normalization correctly,
+            # so we use the learned statistics from training.
+            self.model.eval()
 
-    def _calculate_pose_quality(self, pose_sequence: List[np.ndarray]) -> float:
-        """Computes the average confidence score of target joints across the sequence."""
-        if not pose_sequence: return 0.0
-        confs = [np.mean(pose[self.target_indices, 2]) for pose in pose_sequence]
-        return float(np.mean(confs))
+        except Exception as e: 
+            logger.error(f"❌ Error loading model: {e}")
 
     def _preprocess_sequence(self, raw_sequence: List[np.ndarray]) -> torch.Tensor:
         """
-        Engineers 64-dimensional feature vectors from raw keypoints:
-        - Position (16), Velocity (16), Pairwise Distances (28), and Joint Angles (4).
-        Includes height normalization and centering.
+        Converts a list of raw YOLO keypoints into a normalized tensor.
+        
+        Key Steps:
+        1. Zero Cleaning: Fills missing detection gaps.
+        2. Interpolation: Resamples to fixed 60 frames.
+        3. Hybrid Normalization: Solves the 'Fixed Camera' vs 'Tracking Camera' domain shift.
         """
-        seq_np = np.array(raw_sequence)
-        kp = seq_np[:, self.target_indices, :2] 
+        kp_all = np.array(raw_sequence).astype(np.float32)
         
-        # Height normalization (centered on hips)
-        centers = (kp[:, 2] + kp[:, 3]) / 2.0
-        top = np.mean(kp[:, 0:2, 1], axis=1) 
-        bot = np.mean(kp[:, 6:8, 1], axis=1) 
-        h = np.mean(np.abs(bot - top)) + 1e-6
-        kp = (kp - centers[:, None, :]) / h
+        # --- Step 1: Cleaning Zeros ---
+        # YOLO might lose tracking for a frame, returning (0,0). 
+        # We replace these zeros with the coordinates from the previous frame to avoid data corruption.
+        for t in range(1, kp_all.shape[0]):
+            mask_zeros = (kp_all[t, :, 0] == 0) & (kp_all[t, :, 1] == 0)
+            if np.any(mask_zeros):
+                kp_all[t, mask_zeros] = kp_all[t-1, mask_zeros]
 
-        T, K, _ = kp.shape
-        pos = kp.reshape(T, K * 2)
-        vel = np.diff(pos, axis=0, prepend=pos[:1]) * 5.0
+        # --- Step 2: Temporal Interpolation ---
+        # Resamples the video to exactly 60 frames to match the training input size.
+        # This ensures the temporal dynamics (velocity) remain consistent with the model's knowledge.
+        T_orig = kp_all.shape[0]
+        idxs = np.linspace(0, T_orig-1, self.target_len)
+        kp_interp = np.zeros((self.target_len, 17, 3), dtype=np.float32)
+        for k in range(17):
+            for c in range(3):
+                kp_interp[:, k, c] = np.interp(idxs, np.arange(T_orig), kp_all[:, k, c])
         
-        # Euclidean distances between all target joint pairs
-        dists = [np.linalg.norm(kp[:, i] - kp[:, j], axis=-1, keepdims=True) 
-                 for i in range(8) for j in range(i + 1, 8)]
-        dist_feat = np.concatenate(dists, axis=1)
+        kp_final = kp_interp[:, :, :2] # Discard confidence score
+
+        # --- Step 3: Hybrid Normalization ---
+        # We calculate body centers to normalize positions.
+        hips = (kp_final[:, 11, :2] + kp_final[:, 12, :2]) / 2.0
+        ankles = (kp_final[:, 15, :2] + kp_final[:, 16, :2]) / 2.0
         
-        # Joint angle calculations (Hip-Knee-Ankle and Shoulder-Hip-Knee)
-        def ang(p1, p2, p3):
-            v1, v2 = p1 - p2, p3 - p2
-            cos = np.sum(v1 * v2, axis=-1, keepdims=True) / (
-                np.linalg.norm(v1, axis=-1, keepdims=True) * np.linalg.norm(v2, axis=-1, keepdims=True) + 1e-6)
-            return np.arccos(np.clip(cos, -1, 1))
-            
-        angles = [ang(kp[:, 2], kp[:, 4], kp[:, 6]), ang(kp[:, 3], kp[:, 5], kp[:, 7]),
-                  ang(kp[:, 0], kp[:, 2], kp[:, 4]), ang(kp[:, 1], kp[:, 3], kp[:, 5])]
+        # Calculate Height (using Median to be robust against outliers/detection errors)
+        heights = np.linalg.norm(kp_final[:, 0, :2] - ankles, axis=1)
+        valid_heights = heights[heights > 10]
+        if len(valid_heights) > 0:
+            avg_height = np.median(valid_heights)
+        else:
+            avg_height = 1.0
+
+        # CRITICAL: Hybrid Centering
+        # X-Axis: Centered Frame-by-Frame.
+        #    Reason: In fixed camera footage, the subject moves across the screen. 
+        #    We must remove this global translation to match training data (which is centered).
+        center_x_per_frame = hips[:, 0]
         
-        features = np.concatenate([pos, vel, dist_feat] + angles, axis=1)
+        # Y-Axis: Centered Globally (Video Mean).
+        #    Reason: We want to preserve the vertical bobbing/bounce of the gait cycle.
+        #    Centering frame-by-frame on Y would remove this specific biometric feature.
+        center_y_global = np.mean(hips[:, 1])
+        
+        # Stack centers
+        centers = np.stack([center_x_per_frame, np.full(self.target_len, center_y_global)], axis=1)
+        
+        # Apply Normalization
+        kp_xy = (kp_final - centers[:, None, :]) / (avg_height + 1e-6)
+        
+        # Calculate Velocity (First derivative of position)
+        vel = np.diff(kp_xy, axis=0, prepend=kp_xy[:1])
+
+        # Stack into final tensor: (Channels, Time, Joints) -> (4, 60, 17)
+        features = np.concatenate([kp_xy, vel], axis=2).transpose(2, 0, 1)
         return torch.from_numpy(features).float()
 
     def extract_gait_embedding_and_quality(self, pose_sequence: List[np.ndarray]) -> Tuple[Optional[np.ndarray], float]:
         """
-        Main API: Validates sequence quality and extracts a normalized gait signature.
+        Runs the full inference pipeline.
+        
+        Includes:
+        - Input validation.
+        - TTA (Test Time Augmentation) via Mirroring.
+        - Power Normalization (Signed Square Root).
+        - L2 Normalization.
         """
-        if not pose_sequence or self.model is None: 
+        # Minimum length check to ensure valid velocity calculation
+        if not pose_sequence or len(pose_sequence) < 20: 
             return None, 0.0
-
-        quality = self._calculate_pose_quality(pose_sequence)
-        if quality < self.config.thresholds.min_gait_quality or len(pose_sequence) < self.config.route.min_sequence_length:
-            return None, quality
-
+            
         try:
-            features = self._preprocess_sequence(pose_sequence).unsqueeze(0).to(self.device)
-            with torch.no_grad():
-                embedding = self.model(features, return_feature=False)
-            return embedding.cpu().numpy().flatten(), quality
+            # Prepare Input Tensor
+            tensor = self._preprocess_sequence(pose_sequence).unsqueeze(0).to(self.device)
+            
+            # --- Test Time Augmentation (TTA) ---
+            # We create a mirrored version of the input (Horizontal Flip).
+            # This helps the model recognize side-views (90/45 deg) regardless of walking direction (Left->Right vs Right->Left).
+            tensor_flipped = tensor.clone()
+            tensor_flipped[:, 0, :, :] *= -1 # Invert X Position
+            tensor_flipped[:, 2, :, :] *= -1 # Invert X Velocity
+            
+            with torch.no_grad(): 
+                emb_1 = self.model(tensor)
+                emb_2 = self.model(tensor_flipped)
+                
+                # Average the embeddings from normal and flipped views
+                emb_avg = (emb_1 + emb_2) / 2.0
+                
+                # --- Power Normalization (Signed Square Root) ---
+                # This mathematical trick spreads the distribution of embeddings.
+                # It helps separate very similar vectors (e.g., distinguishing similar gaits).
+                emb_pow = torch.sign(emb_avg) * torch.sqrt(torch.abs(emb_avg) + 1e-12)
+                
+                # Final L2 Normalization (Spherical Embedding)
+                emb_final = F.normalize(emb_pow, p=2, dim=1)
+            
+            return emb_final.cpu().numpy().flatten(), 1.0
+            
         except Exception as e:
-            logger.error(f"Extraction failed: {e}")
-            return None, quality
+            logger.error(f"Gait Inference Error: {e}")
+            return None, 0.0

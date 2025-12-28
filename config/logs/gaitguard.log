@@ -45071,3 +45071,519 @@ RuntimeError: Error(s) in loading state_dict for TemporalGaitEncoder:
 2025-12-24 15:54:19,339 [INFO] gaitguard.main: FPS=17.8 | tracks=1 | alerts=0
 2025-12-24 15:54:20,349 [INFO] gaitguard.main: FPS=19.8 | tracks=1 | alerts=0
 2025-12-24 15:54:21,137 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-28 09:55:55,830 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 09:55:55,832 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-28 09:55:55,832 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 09:55:55,842 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 09:55:55,938 [INFO] gait.gait_extractor: ✅ Gait Model Loaded: C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-12-28 09:55:55,951 [INFO] gait.gait_gallery: Galleria caricata: 3 identità trovate.
+2025-12-28 09:55:55,957 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-28 09:55:57,911 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-28 09:56:02,531 [INFO] gaitguard.main: FPS=6.6 | tracks=1 | alerts=0
+2025-12-28 09:56:04,338 [INFO] gaitguard.main: FPS=9.4 | tracks=1 | alerts=0
+2025-12-28 09:56:04,958 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-28 09:59:49,655 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 09:59:49,655 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-28 09:59:49,655 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 09:59:49,666 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 09:59:49,712 [INFO] gait.gait_extractor: ✅ Gait Model Loaded: C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-12-28 09:59:49,712 [INFO] gait.gait_gallery: Galleria caricata: 3 identità trovate.
+2025-12-28 09:59:49,717 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-28 09:59:51,771 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-28 09:59:54,430 [INFO] gaitguard.main: FPS=11.4 | tracks=0 | alerts=0
+2025-12-28 09:59:55,439 [INFO] gaitguard.main: FPS=16.5 | tracks=0 | alerts=0
+2025-12-28 09:59:56,430 [INFO] gaitguard.main: FPS=19.4 | tracks=0 | alerts=0
+2025-12-28 09:59:57,438 [INFO] gaitguard.main: FPS=21.3 | tracks=0 | alerts=0
+2025-12-28 09:59:58,431 [INFO] gaitguard.main: FPS=22.6 | tracks=0 | alerts=0
+2025-12-28 09:59:59,423 [INFO] gaitguard.main: FPS=23.6 | tracks=0 | alerts=0
+2025-12-28 10:00:00,430 [INFO] gaitguard.main: FPS=24.3 | tracks=0 | alerts=0
+2025-12-28 10:00:01,422 [INFO] gaitguard.main: FPS=24.9 | tracks=0 | alerts=0
+2025-12-28 10:00:02,417 [INFO] gaitguard.main: FPS=25.4 | tracks=0 | alerts=0
+2025-12-28 10:00:03,423 [INFO] gaitguard.main: FPS=25.8 | tracks=0 | alerts=0
+2025-12-28 10:00:04,415 [INFO] gaitguard.main: FPS=26.1 | tracks=0 | alerts=0
+2025-12-28 10:00:05,406 [INFO] gaitguard.main: FPS=26.4 | tracks=0 | alerts=0
+2025-12-28 10:00:06,415 [INFO] gaitguard.main: FPS=26.7 | tracks=0 | alerts=0
+2025-12-28 10:00:07,407 [INFO] gaitguard.main: FPS=26.9 | tracks=0 | alerts=0
+2025-12-28 10:00:08,399 [INFO] gaitguard.main: FPS=27.1 | tracks=0 | alerts=0
+2025-12-28 10:00:09,407 [INFO] gaitguard.main: FPS=27.3 | tracks=0 | alerts=0
+2025-12-28 10:00:10,399 [INFO] gaitguard.main: FPS=27.4 | tracks=0 | alerts=0
+2025-12-28 10:00:11,392 [INFO] gaitguard.main: FPS=27.6 | tracks=0 | alerts=0
+2025-12-28 10:00:12,399 [INFO] gaitguard.main: FPS=27.7 | tracks=0 | alerts=0
+2025-12-28 10:00:13,391 [INFO] gaitguard.main: FPS=27.8 | tracks=0 | alerts=0
+2025-12-28 10:00:14,399 [INFO] gaitguard.main: FPS=27.9 | tracks=0 | alerts=0
+2025-12-28 10:00:15,390 [INFO] gaitguard.main: FPS=28.0 | tracks=0 | alerts=0
+2025-12-28 10:00:16,383 [INFO] gaitguard.main: FPS=28.1 | tracks=0 | alerts=0
+2025-12-28 10:00:17,393 [INFO] gaitguard.main: FPS=28.1 | tracks=1 | alerts=0
+2025-12-28 10:00:18,676 [INFO] gaitguard.main: FPS=27.9 | tracks=1 | alerts=0
+2025-12-28 10:00:20,202 [INFO] gaitguard.main: FPS=27.5 | tracks=1 | alerts=0
+2025-12-28 10:00:21,699 [INFO] gaitguard.main: FPS=27.1 | tracks=1 | alerts=0
+2025-12-28 10:00:22,944 [INFO] gaitguard.main: FPS=27.0 | tracks=0 | alerts=0
+2025-12-28 10:00:23,935 [INFO] gaitguard.main: FPS=27.1 | tracks=0 | alerts=0
+2025-12-28 10:00:24,928 [INFO] gaitguard.main: FPS=27.2 | tracks=0 | alerts=0
+2025-12-28 10:00:25,934 [INFO] gaitguard.main: FPS=27.2 | tracks=0 | alerts=0
+2025-12-28 10:00:26,929 [INFO] gaitguard.main: FPS=27.3 | tracks=1 | alerts=0
+2025-12-28 10:00:28,168 [INFO] gaitguard.main: FPS=27.2 | tracks=1 | alerts=0
+2025-12-28 10:00:29,662 [INFO] gaitguard.main: FPS=26.9 | tracks=1 | alerts=0
+2025-12-28 10:00:31,159 [INFO] gaitguard.main: FPS=26.7 | tracks=1 | alerts=0
+2025-12-28 10:00:32,575 [INFO] gaitguard.main: FPS=26.5 | tracks=0 | alerts=0
+2025-12-28 10:00:33,582 [INFO] gaitguard.main: FPS=26.6 | tracks=0 | alerts=0
+2025-12-28 10:00:34,576 [INFO] gaitguard.main: FPS=26.6 | tracks=0 | alerts=0
+2025-12-28 10:00:35,565 [INFO] gaitguard.main: FPS=26.7 | tracks=0 | alerts=0
+2025-12-28 10:00:36,576 [INFO] gaitguard.main: FPS=26.8 | tracks=0 | alerts=0
+2025-12-28 10:00:36,907 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-28 10:01:24,467 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:01:24,467 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-28 10:01:24,467 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:01:24,471 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:01:24,518 [INFO] gait.gait_extractor: ✅ Gait Model Loaded: C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-12-28 10:01:24,520 [INFO] gait.gait_gallery: Galleria caricata: 3 identità trovate.
+2025-12-28 10:01:24,520 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-28 10:01:26,465 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-28 10:01:29,122 [INFO] gaitguard.main: FPS=11.4 | tracks=0 | alerts=0
+2025-12-28 10:01:30,130 [INFO] gaitguard.main: FPS=16.5 | tracks=0 | alerts=0
+2025-12-28 10:01:31,122 [INFO] gaitguard.main: FPS=19.4 | tracks=0 | alerts=0
+2025-12-28 10:01:32,114 [INFO] gaitguard.main: FPS=21.3 | tracks=0 | alerts=0
+2025-12-28 10:01:33,121 [INFO] gaitguard.main: FPS=22.6 | tracks=0 | alerts=0
+2025-12-28 10:01:34,114 [INFO] gaitguard.main: FPS=23.6 | tracks=0 | alerts=0
+2025-12-28 10:01:35,120 [INFO] gaitguard.main: FPS=24.3 | tracks=0 | alerts=0
+2025-12-28 10:01:36,113 [INFO] gaitguard.main: FPS=24.9 | tracks=0 | alerts=0
+2025-12-28 10:01:37,104 [INFO] gaitguard.main: FPS=25.4 | tracks=0 | alerts=0
+2025-12-28 10:01:38,113 [INFO] gaitguard.main: FPS=25.8 | tracks=0 | alerts=0
+2025-12-28 10:01:39,104 [INFO] gaitguard.main: FPS=26.2 | tracks=0 | alerts=0
+2025-12-28 10:01:40,097 [INFO] gaitguard.main: FPS=26.5 | tracks=0 | alerts=0
+2025-12-28 10:01:41,106 [INFO] gaitguard.main: FPS=26.7 | tracks=1 | alerts=0
+2025-12-28 10:01:42,096 [INFO] gaitguard.main: FPS=26.9 | tracks=0 | alerts=0
+2025-12-28 10:01:43,088 [INFO] gaitguard.main: FPS=27.1 | tracks=0 | alerts=0
+2025-12-28 10:01:44,098 [INFO] gaitguard.main: FPS=27.3 | tracks=1 | alerts=0
+2025-12-28 10:01:45,305 [INFO] gaitguard.main: FPS=27.1 | tracks=1 | alerts=0
+2025-12-28 10:01:46,786 [INFO] gaitguard.main: FPS=26.6 | tracks=1 | alerts=0
+2025-12-28 10:01:48,302 [INFO] gaitguard.main: FPS=26.2 | tracks=1 | alerts=0
+2025-12-28 10:01:49,281 [INFO] gaitguard.main: FPS=26.3 | tracks=0 | alerts=0
+2025-12-28 10:01:50,273 [INFO] gaitguard.main: FPS=26.5 | tracks=1 | alerts=0
+2025-12-28 10:01:51,670 [INFO] gaitguard.main: FPS=26.2 | tracks=1 | alerts=0
+2025-12-28 10:01:53,180 [INFO] gaitguard.main: FPS=25.9 | tracks=1 | alerts=0
+2025-12-28 10:01:54,662 [INFO] gaitguard.main: FPS=25.6 | tracks=1 | alerts=0
+2025-12-28 10:01:55,729 [INFO] gaitguard.main: FPS=25.6 | tracks=0 | alerts=0
+2025-12-28 10:01:56,736 [INFO] gaitguard.main: FPS=25.8 | tracks=0 | alerts=0
+2025-12-28 10:01:57,749 [INFO] gaitguard.main: FPS=25.9 | tracks=0 | alerts=0
+2025-12-28 10:01:58,557 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-28 10:02:37,588 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:02:37,588 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-28 10:02:37,588 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:02:37,606 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:02:37,676 [INFO] gait.gait_extractor: ✅ Gait Model Loaded: C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-12-28 10:02:37,683 [INFO] gait.gait_gallery: Galleria caricata: 3 identità trovate.
+2025-12-28 10:02:37,685 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-28 10:02:39,704 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-28 10:02:42,298 [INFO] gaitguard.main: FPS=11.7 | tracks=1 | alerts=0
+2025-12-28 10:02:43,750 [INFO] gaitguard.main: FPS=15.0 | tracks=1 | alerts=0
+2025-12-28 10:02:45,265 [INFO] gaitguard.main: FPS=16.3 | tracks=1 | alerts=0
+2025-12-28 10:02:46,361 [INFO] gaitguard.main: FPS=18.1 | tracks=1 | alerts=0
+2025-12-28 10:02:47,353 [INFO] gaitguard.main: FPS=19.7 | tracks=0 | alerts=0
+2025-12-28 10:02:48,360 [INFO] gaitguard.main: FPS=20.8 | tracks=0 | alerts=0
+2025-12-28 10:02:49,352 [INFO] gaitguard.main: FPS=21.8 | tracks=0 | alerts=0
+2025-12-28 10:02:50,426 [INFO] gaitguard.main: FPS=22.5 | tracks=1 | alerts=0
+2025-12-28 10:02:51,949 [INFO] gaitguard.main: FPS=22.1 | tracks=2 | alerts=0
+2025-12-28 10:02:53,501 [INFO] gaitguard.main: FPS=21.8 | tracks=2 | alerts=0
+2025-12-28 10:02:54,497 [INFO] gaitguard.main: FPS=22.4 | tracks=1 | alerts=0
+2025-12-28 10:02:56,021 [INFO] gaitguard.main: FPS=22.1 | tracks=1 | alerts=0
+2025-12-28 10:02:56,884 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-28 10:11:48,776 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:11:48,776 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-28 10:11:48,776 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:11:48,790 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:11:48,877 [INFO] gait.gait_extractor: ✅ Gait Model Loaded: C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-12-28 10:11:48,881 [INFO] gait.gait_gallery: Gallery loaded: 3 identities found.
+2025-12-28 10:11:48,881 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-28 10:11:50,806 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-28 10:11:54,813 [INFO] gaitguard.main: FPS=7.5 | tracks=0 | alerts=0
+2025-12-28 10:11:55,804 [INFO] gaitguard.main: FPS=12.1 | tracks=0 | alerts=0
+2025-12-28 10:11:56,794 [INFO] gaitguard.main: FPS=15.1 | tracks=0 | alerts=0
+2025-12-28 10:11:57,806 [INFO] gaitguard.main: FPS=17.2 | tracks=0 | alerts=0
+2025-12-28 10:11:58,797 [INFO] gaitguard.main: FPS=18.8 | tracks=0 | alerts=0
+2025-12-28 10:11:59,790 [INFO] gaitguard.main: FPS=20.1 | tracks=0 | alerts=0
+2025-12-28 10:12:00,798 [INFO] gaitguard.main: FPS=21.1 | tracks=0 | alerts=0
+2025-12-28 10:12:01,791 [INFO] gaitguard.main: FPS=21.9 | tracks=0 | alerts=0
+2025-12-28 10:12:02,781 [INFO] gaitguard.main: FPS=22.6 | tracks=0 | alerts=0
+2025-12-28 10:12:03,789 [INFO] gaitguard.main: FPS=23.2 | tracks=0 | alerts=0
+2025-12-28 10:12:04,779 [INFO] gaitguard.main: FPS=23.7 | tracks=0 | alerts=0
+2025-12-28 10:12:05,771 [INFO] gaitguard.main: FPS=24.1 | tracks=0 | alerts=0
+2025-12-28 10:12:06,781 [INFO] gaitguard.main: FPS=24.5 | tracks=1 | alerts=0
+2025-12-28 10:12:08,832 [INFO] gaitguard.main: FPS=23.4 | tracks=1 | alerts=0
+2025-12-28 10:12:10,480 [INFO] gaitguard.main: FPS=22.9 | tracks=1 | alerts=0
+2025-12-28 10:12:12,106 [INFO] gaitguard.main: FPS=22.6 | tracks=0 | alerts=0
+2025-12-28 10:12:13,101 [INFO] gaitguard.main: FPS=22.9 | tracks=0 | alerts=0
+2025-12-28 10:12:14,092 [INFO] gaitguard.main: FPS=23.2 | tracks=0 | alerts=0
+2025-12-28 10:12:15,084 [INFO] gaitguard.main: FPS=23.5 | tracks=0 | alerts=0
+2025-12-28 10:12:16,091 [INFO] gaitguard.main: FPS=23.8 | tracks=0 | alerts=0
+2025-12-28 10:12:17,085 [INFO] gaitguard.main: FPS=24.0 | tracks=0 | alerts=0
+2025-12-28 10:12:18,093 [INFO] gaitguard.main: FPS=24.2 | tracks=1 | alerts=0
+2025-12-28 10:12:19,628 [INFO] gaitguard.main: FPS=24.0 | tracks=1 | alerts=0
+2025-12-28 10:12:21,433 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-12-28 10:12:23,044 [INFO] gaitguard.main: FPS=23.3 | tracks=0 | alerts=0
+2025-12-28 10:12:24,042 [INFO] gaitguard.main: FPS=23.5 | tracks=0 | alerts=0
+2025-12-28 10:12:25,035 [INFO] gaitguard.main: FPS=23.7 | tracks=0 | alerts=0
+2025-12-28 10:12:26,027 [INFO] gaitguard.main: FPS=23.9 | tracks=0 | alerts=0
+2025-12-28 10:12:27,035 [INFO] gaitguard.main: FPS=24.0 | tracks=0 | alerts=0
+2025-12-28 10:12:27,886 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-28 10:14:03,346 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:14:03,347 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-28 10:14:03,347 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:14:03,347 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:14:03,426 [INFO] gait.gait_extractor: ✅ Gait Model Loaded: C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-12-28 10:14:03,434 [INFO] gait.gait_gallery: Gallery loaded: 3 identities found.
+2025-12-28 10:14:03,434 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-28 10:14:05,480 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-28 10:14:08,109 [INFO] gaitguard.main: FPS=11.5 | tracks=0 | alerts=0
+2025-12-28 10:14:09,115 [INFO] gaitguard.main: FPS=16.6 | tracks=0 | alerts=0
+2025-12-28 10:14:10,108 [INFO] gaitguard.main: FPS=19.5 | tracks=0 | alerts=0
+2025-12-28 10:14:11,100 [INFO] gaitguard.main: FPS=21.4 | tracks=0 | alerts=0
+2025-12-28 10:14:12,108 [INFO] gaitguard.main: FPS=22.7 | tracks=0 | alerts=0
+2025-12-28 10:14:13,201 [INFO] gaitguard.main: FPS=23.5 | tracks=1 | alerts=0
+2025-12-28 10:14:14,892 [INFO] gaitguard.main: FPS=22.4 | tracks=1 | alerts=0
+2025-12-28 10:14:16,465 [INFO] gaitguard.main: FPS=21.9 | tracks=0 | alerts=0
+2025-12-28 10:14:17,598 [INFO] gaitguard.main: FPS=22.3 | tracks=1 | alerts=0
+2025-12-28 10:14:19,234 [INFO] gaitguard.main: FPS=21.9 | tracks=1 | alerts=0
+2025-12-28 10:14:20,879 [INFO] gaitguard.main: FPS=21.5 | tracks=1 | alerts=0
+2025-12-28 10:14:22,705 [INFO] gaitguard.main: FPS=21.0 | tracks=1 | alerts=0
+2025-12-28 10:14:24,141 [INFO] gaitguard.main: FPS=20.9 | tracks=0 | alerts=0
+2025-12-28 10:14:25,151 [INFO] gaitguard.main: FPS=21.4 | tracks=0 | alerts=0
+2025-12-28 10:14:26,141 [INFO] gaitguard.main: FPS=21.8 | tracks=1 | alerts=0
+2025-12-28 10:14:27,063 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-28 10:18:49,265 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:18:49,267 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-28 10:18:49,267 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:18:49,267 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:18:49,321 [INFO] gait.gait_extractor: ✅ Gait Model Loaded: C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-12-28 10:18:49,321 [INFO] gait.gait_gallery: Gallery loaded: 3 identities found.
+2025-12-28 10:18:49,321 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-28 10:18:51,248 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-28 10:18:53,910 [INFO] gaitguard.main: FPS=11.4 | tracks=0 | alerts=0
+2025-12-28 10:18:54,920 [INFO] gaitguard.main: FPS=16.4 | tracks=0 | alerts=0
+2025-12-28 10:18:55,911 [INFO] gaitguard.main: FPS=19.4 | tracks=0 | alerts=0
+2025-12-28 10:18:56,904 [INFO] gaitguard.main: FPS=21.3 | tracks=0 | alerts=0
+2025-12-28 10:18:57,911 [INFO] gaitguard.main: FPS=22.6 | tracks=0 | alerts=0
+2025-12-28 10:18:58,902 [INFO] gaitguard.main: FPS=23.6 | tracks=0 | alerts=0
+2025-12-28 10:18:59,910 [INFO] gaitguard.main: FPS=24.3 | tracks=0 | alerts=0
+2025-12-28 10:19:00,903 [INFO] gaitguard.main: FPS=24.9 | tracks=0 | alerts=0
+2025-12-28 10:19:01,895 [INFO] gaitguard.main: FPS=25.4 | tracks=0 | alerts=0
+2025-12-28 10:19:02,904 [INFO] gaitguard.main: FPS=25.8 | tracks=0 | alerts=0
+2025-12-28 10:19:03,896 [INFO] gaitguard.main: FPS=26.1 | tracks=0 | alerts=0
+2025-12-28 10:19:04,887 [INFO] gaitguard.main: FPS=26.4 | tracks=0 | alerts=0
+2025-12-28 10:19:05,895 [INFO] gaitguard.main: FPS=26.7 | tracks=0 | alerts=0
+2025-12-28 10:19:06,887 [INFO] gaitguard.main: FPS=26.9 | tracks=0 | alerts=0
+2025-12-28 10:19:07,880 [INFO] gaitguard.main: FPS=27.1 | tracks=0 | alerts=0
+2025-12-28 10:19:08,889 [INFO] gaitguard.main: FPS=27.2 | tracks=1 | alerts=0
+2025-12-28 10:19:09,880 [INFO] gaitguard.main: FPS=27.4 | tracks=1 | alerts=0
+2025-12-28 10:19:11,163 [INFO] gaitguard.main: FPS=27.1 | tracks=0 | alerts=0
+2025-12-28 10:19:12,167 [INFO] gaitguard.main: FPS=27.3 | tracks=0 | alerts=0
+2025-12-28 10:19:13,174 [INFO] gaitguard.main: FPS=27.4 | tracks=0 | alerts=0
+2025-12-28 10:19:14,166 [INFO] gaitguard.main: FPS=27.5 | tracks=0 | alerts=0
+2025-12-28 10:19:15,174 [INFO] gaitguard.main: FPS=27.6 | tracks=0 | alerts=0
+2025-12-28 10:19:16,169 [INFO] gaitguard.main: FPS=27.7 | tracks=1 | alerts=0
+2025-12-28 10:19:17,487 [INFO] gaitguard.main: FPS=27.5 | tracks=1 | alerts=0
+2025-12-28 10:19:19,119 [INFO] gaitguard.main: FPS=27.0 | tracks=1 | alerts=0
+2025-12-28 10:19:20,726 [INFO] gaitguard.main: FPS=26.5 | tracks=1 | alerts=0
+2025-12-28 10:19:21,879 [INFO] gaitguard.main: FPS=26.5 | tracks=0 | alerts=0
+2025-12-28 10:19:22,885 [INFO] gaitguard.main: FPS=26.6 | tracks=0 | alerts=0
+2025-12-28 10:19:23,878 [INFO] gaitguard.main: FPS=26.7 | tracks=0 | alerts=0
+2025-12-28 10:19:24,870 [INFO] gaitguard.main: FPS=26.8 | tracks=0 | alerts=0
+2025-12-28 10:19:25,878 [INFO] gaitguard.main: FPS=26.9 | tracks=0 | alerts=0
+2025-12-28 10:19:26,871 [INFO] gaitguard.main: FPS=27.0 | tracks=1 | alerts=0
+2025-12-28 10:19:28,528 [INFO] gaitguard.main: FPS=26.6 | tracks=1 | alerts=0
+2025-12-28 10:19:30,144 [INFO] gaitguard.main: FPS=26.3 | tracks=1 | alerts=0
+2025-12-28 10:19:31,431 [INFO] gaitguard.main: FPS=26.1 | tracks=0 | alerts=0
+2025-12-28 10:19:32,421 [INFO] gaitguard.main: FPS=26.2 | tracks=0 | alerts=0
+2025-12-28 10:19:33,430 [INFO] gaitguard.main: FPS=26.3 | tracks=0 | alerts=0
+2025-12-28 10:19:34,422 [INFO] gaitguard.main: FPS=26.4 | tracks=0 | alerts=0
+2025-12-28 10:19:35,558 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-28 10:21:48,331 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:21:48,331 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-28 10:21:48,346 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:21:48,346 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:21:48,422 [INFO] gait.gait_extractor: ✅ Gait Model Loaded: C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-12-28 10:21:48,425 [INFO] gait.gait_gallery: Gallery loaded: 3 identities found.
+2025-12-28 10:21:48,426 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-28 10:21:50,357 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-28 10:21:52,981 [INFO] gaitguard.main: FPS=11.5 | tracks=0 | alerts=0
+2025-12-28 10:21:53,990 [INFO] gaitguard.main: FPS=16.6 | tracks=0 | alerts=0
+2025-12-28 10:21:54,983 [INFO] gaitguard.main: FPS=19.6 | tracks=1 | alerts=0
+2025-12-28 10:21:55,973 [INFO] gaitguard.main: FPS=21.5 | tracks=0 | alerts=0
+2025-12-28 10:21:56,984 [INFO] gaitguard.main: FPS=22.7 | tracks=1 | alerts=0
+2025-12-28 10:21:58,418 [INFO] gaitguard.main: FPS=22.5 | tracks=1 | alerts=0
+2025-12-28 10:22:00,188 [INFO] gaitguard.main: FPS=21.5 | tracks=1 | alerts=0
+2025-12-28 10:22:01,337 [INFO] gaitguard.main: FPS=21.9 | tracks=1 | alerts=0
+2025-12-28 10:22:02,634 [INFO] gaitguard.main: FPS=22.1 | tracks=1 | alerts=0
+2025-12-28 10:22:04,278 [INFO] gaitguard.main: FPS=21.6 | tracks=1 | alerts=0
+2025-12-28 10:22:05,289 [INFO] gaitguard.main: FPS=22.1 | tracks=2 | alerts=0
+2025-12-28 10:22:06,967 [INFO] gaitguard.main: FPS=21.7 | tracks=2 | alerts=0
+2025-12-28 10:22:08,520 [INFO] gaitguard.main: FPS=21.5 | tracks=1 | alerts=0
+2025-12-28 10:22:09,489 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-28 10:23:21,110 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:23:21,110 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-28 10:23:21,110 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:23:21,128 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:23:21,174 [INFO] gait.gait_extractor: ✅ Gait Model Loaded: C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-12-28 10:23:21,174 [INFO] gait.gait_gallery: Gallery loaded: 3 identities found.
+2025-12-28 10:23:21,174 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-28 10:23:23,098 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-28 10:23:25,893 [INFO] gaitguard.main: FPS=10.9 | tracks=1 | alerts=0
+2025-12-28 10:23:27,372 [INFO] gaitguard.main: FPS=14.1 | tracks=0 | alerts=0
+2025-12-28 10:23:29,096 [INFO] gaitguard.main: FPS=15.1 | tracks=1 | alerts=0
+2025-12-28 10:23:30,643 [INFO] gaitguard.main: FPS=16.0 | tracks=0 | alerts=0
+2025-12-28 10:23:31,817 [INFO] gaitguard.main: FPS=17.2 | tracks=1 | alerts=0
+2025-12-28 10:23:32,808 [INFO] gaitguard.main: FPS=18.6 | tracks=0 | alerts=0
+2025-12-28 10:23:33,799 [INFO] gaitguard.main: FPS=19.7 | tracks=0 | alerts=0
+2025-12-28 10:23:34,807 [INFO] gaitguard.main: FPS=20.5 | tracks=0 | alerts=0
+2025-12-28 10:23:35,801 [INFO] gaitguard.main: FPS=21.3 | tracks=0 | alerts=0
+2025-12-28 10:23:36,808 [INFO] gaitguard.main: FPS=21.9 | tracks=0 | alerts=0
+2025-12-28 10:23:37,800 [INFO] gaitguard.main: FPS=22.5 | tracks=0 | alerts=0
+2025-12-28 10:23:38,792 [INFO] gaitguard.main: FPS=23.0 | tracks=0 | alerts=0
+2025-12-28 10:23:40,017 [INFO] gaitguard.main: FPS=23.1 | tracks=1 | alerts=0
+2025-12-28 10:23:41,697 [INFO] gaitguard.main: FPS=22.6 | tracks=0 | alerts=0
+2025-12-28 10:23:42,680 [INFO] gaitguard.main: FPS=23.0 | tracks=0 | alerts=0
+2025-12-28 10:23:43,689 [INFO] gaitguard.main: FPS=23.3 | tracks=1 | alerts=0
+2025-12-28 10:23:44,991 [INFO] gaitguard.main: FPS=23.3 | tracks=1 | alerts=0
+2025-12-28 10:23:46,345 [INFO] gaitguard.main: FPS=23.3 | tracks=1 | alerts=0
+2025-12-28 10:23:47,335 [INFO] gaitguard.main: FPS=23.5 | tracks=0 | alerts=0
+2025-12-28 10:23:48,501 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-28 10:25:22,457 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:25:22,457 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-28 10:25:22,457 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:25:22,467 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:25:22,528 [INFO] gait.gait_extractor: ✅ Gait Model Loaded: C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-12-28 10:25:22,528 [INFO] gait.gait_gallery: Gallery loaded: 3 identities found.
+2025-12-28 10:25:22,532 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-28 10:25:24,577 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-28 10:25:27,234 [INFO] gaitguard.main: FPS=11.4 | tracks=0 | alerts=0
+2025-12-28 10:25:28,241 [INFO] gaitguard.main: FPS=16.5 | tracks=0 | alerts=0
+2025-12-28 10:25:29,234 [INFO] gaitguard.main: FPS=19.4 | tracks=0 | alerts=0
+2025-12-28 10:25:30,224 [INFO] gaitguard.main: FPS=21.3 | tracks=0 | alerts=0
+2025-12-28 10:25:31,234 [INFO] gaitguard.main: FPS=22.6 | tracks=0 | alerts=0
+2025-12-28 10:25:32,227 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-12-28 10:25:33,612 [INFO] gaitguard.main: FPS=23.4 | tracks=1 | alerts=0
+2025-12-28 10:25:35,357 [INFO] gaitguard.main: FPS=22.4 | tracks=1 | alerts=0
+2025-12-28 10:25:37,007 [INFO] gaitguard.main: FPS=21.8 | tracks=1 | alerts=0
+2025-12-28 10:25:38,663 [INFO] gaitguard.main: FPS=21.4 | tracks=1 | alerts=0
+2025-12-28 10:25:40,017 [INFO] gaitguard.main: FPS=21.4 | tracks=0 | alerts=0
+2025-12-28 10:25:40,672 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-28 10:26:57,551 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:26:57,551 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-28 10:26:57,551 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:26:57,559 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:26:57,603 [INFO] gait.gait_extractor: ✅ Gait Model Loaded: C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-12-28 10:26:57,605 [INFO] gait.gait_gallery: Gallery loaded: 3 identities found.
+2025-12-28 10:26:57,605 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-28 10:26:59,557 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-28 10:27:02,212 [INFO] gaitguard.main: FPS=11.4 | tracks=0 | alerts=0
+2025-12-28 10:27:03,218 [INFO] gaitguard.main: FPS=16.5 | tracks=0 | alerts=0
+2025-12-28 10:27:04,211 [INFO] gaitguard.main: FPS=19.4 | tracks=0 | alerts=0
+2025-12-28 10:27:05,204 [INFO] gaitguard.main: FPS=21.3 | tracks=0 | alerts=0
+2025-12-28 10:27:06,212 [INFO] gaitguard.main: FPS=22.6 | tracks=0 | alerts=0
+2025-12-28 10:27:07,207 [INFO] gaitguard.main: FPS=23.6 | tracks=0 | alerts=0
+2025-12-28 10:27:08,211 [INFO] gaitguard.main: FPS=24.3 | tracks=0 | alerts=0
+2025-12-28 10:27:09,204 [INFO] gaitguard.main: FPS=24.9 | tracks=0 | alerts=0
+2025-12-28 10:27:10,194 [INFO] gaitguard.main: FPS=25.4 | tracks=0 | alerts=0
+2025-12-28 10:27:11,204 [INFO] gaitguard.main: FPS=25.8 | tracks=0 | alerts=0
+2025-12-28 10:27:12,196 [INFO] gaitguard.main: FPS=26.2 | tracks=0 | alerts=0
+2025-12-28 10:27:13,188 [INFO] gaitguard.main: FPS=26.5 | tracks=0 | alerts=0
+2025-12-28 10:27:14,197 [INFO] gaitguard.main: FPS=26.7 | tracks=0 | alerts=0
+2025-12-28 10:27:15,189 [INFO] gaitguard.main: FPS=26.9 | tracks=0 | alerts=0
+2025-12-28 10:27:16,180 [INFO] gaitguard.main: FPS=27.1 | tracks=0 | alerts=0
+2025-12-28 10:27:17,190 [INFO] gaitguard.main: FPS=27.3 | tracks=1 | alerts=0
+2025-12-28 10:27:18,650 [INFO] gaitguard.main: FPS=26.8 | tracks=1 | alerts=0
+2025-12-28 10:27:20,683 [INFO] gaitguard.main: FPS=25.6 | tracks=1 | alerts=0
+2025-12-28 10:27:21,669 [INFO] gaitguard.main: FPS=25.8 | tracks=0 | alerts=0
+2025-12-28 10:27:22,677 [INFO] gaitguard.main: FPS=26.0 | tracks=0 | alerts=0
+2025-12-28 10:27:23,668 [INFO] gaitguard.main: FPS=26.2 | tracks=0 | alerts=0
+2025-12-28 10:27:24,724 [INFO] gaitguard.main: FPS=26.3 | tracks=1 | alerts=0
+2025-12-28 10:27:26,422 [INFO] gaitguard.main: FPS=25.7 | tracks=1 | alerts=0
+2025-12-28 10:27:27,891 [INFO] gaitguard.main: FPS=25.4 | tracks=0 | alerts=0
+2025-12-28 10:27:28,884 [INFO] gaitguard.main: FPS=25.6 | tracks=0 | alerts=0
+2025-12-28 10:27:29,890 [INFO] gaitguard.main: FPS=25.7 | tracks=0 | alerts=0
+2025-12-28 10:27:30,891 [INFO] gaitguard.main: FPS=25.9 | tracks=0 | alerts=0
+2025-12-28 10:27:31,395 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-28 10:28:45,026 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:28:45,026 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-28 10:28:45,027 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:28:45,030 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:28:45,080 [INFO] gait.gait_extractor: ✅ Gait Model Loaded: C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-12-28 10:28:45,080 [INFO] gait.gait_gallery: Gallery loaded: 3 identities found.
+2025-12-28 10:28:45,080 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-28 10:28:47,061 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-28 10:28:49,686 [INFO] gaitguard.main: FPS=11.5 | tracks=0 | alerts=0
+2025-12-28 10:28:50,694 [INFO] gaitguard.main: FPS=16.6 | tracks=0 | alerts=0
+2025-12-28 10:28:51,687 [INFO] gaitguard.main: FPS=19.6 | tracks=0 | alerts=0
+2025-12-28 10:28:52,933 [INFO] gaitguard.main: FPS=20.6 | tracks=1 | alerts=0
+2025-12-28 10:28:54,585 [INFO] gaitguard.main: FPS=20.1 | tracks=1 | alerts=0
+2025-12-28 10:28:56,342 [INFO] gaitguard.main: FPS=19.5 | tracks=1 | alerts=0
+2025-12-28 10:28:57,949 [INFO] gaitguard.main: FPS=19.4 | tracks=1 | alerts=0
+2025-12-28 10:28:59,064 [INFO] gaitguard.main: FPS=20.0 | tracks=1 | alerts=0
+2025-12-28 10:29:00,680 [INFO] gaitguard.main: FPS=19.9 | tracks=0 | alerts=0
+2025-12-28 10:29:01,673 [INFO] gaitguard.main: FPS=20.6 | tracks=1 | alerts=0
+2025-12-28 10:29:02,728 [INFO] gaitguard.main: FPS=21.1 | tracks=1 | alerts=0
+2025-12-28 10:29:04,211 [INFO] gaitguard.main: FPS=21.1 | tracks=1 | alerts=0
+2025-12-28 10:29:05,813 [INFO] gaitguard.main: FPS=20.9 | tracks=1 | alerts=0
+2025-12-28 10:29:07,567 [INFO] gaitguard.main: FPS=20.5 | tracks=1 | alerts=0
+2025-12-28 10:29:08,645 [INFO] gaitguard.main: FPS=20.9 | tracks=0 | alerts=0
+2025-12-28 10:29:09,638 [INFO] gaitguard.main: FPS=21.3 | tracks=0 | alerts=0
+2025-12-28 10:29:10,848 [INFO] gaitguard.main: FPS=21.5 | tracks=1 | alerts=0
+2025-12-28 10:29:12,458 [INFO] gaitguard.main: FPS=21.3 | tracks=1 | alerts=0
+2025-12-28 10:29:14,216 [INFO] gaitguard.main: FPS=21.0 | tracks=1 | alerts=0
+2025-12-28 10:29:15,672 [INFO] gaitguard.main: FPS=21.0 | tracks=0 | alerts=0
+2025-12-28 10:29:16,814 [INFO] gaitguard.main: FPS=21.2 | tracks=2 | alerts=0
+2025-12-28 10:29:17,414 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-28 10:30:24,130 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:30:24,145 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-28 10:30:24,145 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:30:24,145 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 10:30:24,196 [INFO] gait.gait_extractor: ✅ Gait Model Loaded: C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-12-28 10:30:24,196 [INFO] gait.gait_gallery: Gallery loaded: 3 identities found.
+2025-12-28 10:30:24,196 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-28 10:30:26,128 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-28 10:30:28,752 [INFO] gaitguard.main: FPS=11.5 | tracks=0 | alerts=0
+2025-12-28 10:30:29,762 [INFO] gaitguard.main: FPS=16.6 | tracks=0 | alerts=0
+2025-12-28 10:30:30,831 [INFO] gaitguard.main: FPS=19.4 | tracks=1 | alerts=0
+2025-12-28 10:30:32,503 [INFO] gaitguard.main: FPS=19.0 | tracks=1 | alerts=0
+2025-12-28 10:30:34,188 [INFO] gaitguard.main: FPS=18.7 | tracks=1 | alerts=0
+2025-12-28 10:30:35,472 [INFO] gaitguard.main: FPS=19.3 | tracks=0 | alerts=0
+2025-12-28 10:30:36,481 [INFO] gaitguard.main: FPS=20.3 | tracks=0 | alerts=0
+2025-12-28 10:30:37,748 [INFO] gaitguard.main: FPS=20.7 | tracks=1 | alerts=0
+2025-12-28 10:30:39,432 [INFO] gaitguard.main: FPS=20.4 | tracks=1 | alerts=0
+2025-12-28 10:30:41,071 [INFO] gaitguard.main: FPS=20.1 | tracks=1 | alerts=0
+2025-12-28 10:30:42,193 [INFO] gaitguard.main: FPS=20.6 | tracks=0 | alerts=0
+2025-12-28 10:30:43,184 [INFO] gaitguard.main: FPS=21.1 | tracks=0 | alerts=0
+2025-12-28 10:30:44,193 [INFO] gaitguard.main: FPS=21.6 | tracks=0 | alerts=0
+2025-12-28 10:30:45,184 [INFO] gaitguard.main: FPS=22.1 | tracks=0 | alerts=0
+2025-12-28 10:30:46,177 [INFO] gaitguard.main: FPS=22.5 | tracks=0 | alerts=0
+2025-12-28 10:30:47,127 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-28 11:13:09,443 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 11:13:09,443 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-28 11:13:09,443 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 11:13:09,455 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 11:13:09,557 [INFO] gait.gait_extractor: ✅ Gait Model Loaded: C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-12-28 11:13:09,563 [INFO] gait.gait_gallery: Gallery loaded: 3 identities found.
+2025-12-28 11:13:09,563 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-28 11:13:11,581 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-28 11:13:15,472 [INFO] gaitguard.main: FPS=7.8 | tracks=0 | alerts=0
+2025-12-28 11:13:16,480 [INFO] gaitguard.main: FPS=12.3 | tracks=0 | alerts=0
+2025-12-28 11:13:17,472 [INFO] gaitguard.main: FPS=15.3 | tracks=0 | alerts=0
+2025-12-28 11:13:18,463 [INFO] gaitguard.main: FPS=17.5 | tracks=0 | alerts=0
+2025-12-28 11:13:19,472 [INFO] gaitguard.main: FPS=19.1 | tracks=0 | alerts=0
+2025-12-28 11:13:20,463 [INFO] gaitguard.main: FPS=20.3 | tracks=0 | alerts=0
+2025-12-28 11:13:21,456 [INFO] gaitguard.main: FPS=21.3 | tracks=0 | alerts=0
+2025-12-28 11:13:22,463 [INFO] gaitguard.main: FPS=22.1 | tracks=0 | alerts=0
+2025-12-28 11:13:23,456 [INFO] gaitguard.main: FPS=22.8 | tracks=0 | alerts=0
+2025-12-28 11:13:24,463 [INFO] gaitguard.main: FPS=23.3 | tracks=0 | alerts=0
+2025-12-28 11:13:25,573 [INFO] gaitguard.main: FPS=23.7 | tracks=1 | alerts=0
+2025-12-28 11:13:27,352 [INFO] gaitguard.main: FPS=22.9 | tracks=1 | alerts=0
+2025-12-28 11:13:28,956 [INFO] gaitguard.main: FPS=22.5 | tracks=0 | alerts=0
+2025-12-28 11:13:29,935 [INFO] gaitguard.main: FPS=22.9 | tracks=0 | alerts=0
+2025-12-28 11:13:30,944 [INFO] gaitguard.main: FPS=23.3 | tracks=0 | alerts=0
+2025-12-28 11:13:31,936 [INFO] gaitguard.main: FPS=23.6 | tracks=1 | alerts=0
+2025-12-28 11:13:33,469 [INFO] gaitguard.main: FPS=23.4 | tracks=1 | alerts=0
+2025-12-28 11:13:35,204 [INFO] gaitguard.main: FPS=22.9 | tracks=0 | alerts=0
+2025-12-28 11:13:36,192 [INFO] gaitguard.main: FPS=23.2 | tracks=0 | alerts=0
+2025-12-28 11:13:36,551 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-28 11:15:48,406 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 11:15:48,406 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-28 11:15:48,407 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 11:15:48,412 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 11:15:48,466 [INFO] gait.gait_extractor: ✅ Gait Model Loaded: C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-12-28 11:15:48,469 [INFO] gait.gait_gallery: Gallery loaded: 3 identities found.
+2025-12-28 11:15:48,470 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-28 11:15:50,327 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-28 11:15:53,099 [INFO] gaitguard.main: FPS=10.9 | tracks=0 | alerts=0
+2025-12-28 11:15:54,088 [INFO] gaitguard.main: FPS=16.0 | tracks=0 | alerts=0
+2025-12-28 11:15:55,080 [INFO] gaitguard.main: FPS=19.0 | tracks=0 | alerts=0
+2025-12-28 11:15:56,092 [INFO] gaitguard.main: FPS=20.9 | tracks=0 | alerts=0
+2025-12-28 11:15:57,114 [INFO] gaitguard.main: FPS=22.2 | tracks=0 | alerts=0
+2025-12-28 11:15:58,120 [INFO] gaitguard.main: FPS=23.2 | tracks=0 | alerts=0
+2025-12-28 11:15:59,112 [INFO] gaitguard.main: FPS=24.0 | tracks=0 | alerts=0
+2025-12-28 11:16:00,104 [INFO] gaitguard.main: FPS=24.6 | tracks=0 | alerts=0
+2025-12-28 11:16:01,237 [INFO] gaitguard.main: FPS=24.9 | tracks=1 | alerts=0
+2025-12-28 11:16:02,898 [INFO] gaitguard.main: FPS=24.0 | tracks=1 | alerts=0
+2025-12-28 11:16:04,673 [INFO] gaitguard.main: FPS=23.1 | tracks=1 | alerts=0
+2025-12-28 11:16:06,322 [INFO] gaitguard.main: FPS=22.6 | tracks=1 | alerts=0
+2025-12-28 11:16:07,969 [INFO] gaitguard.main: FPS=22.2 | tracks=1 | alerts=0
+2025-12-28 11:16:09,383 [INFO] gaitguard.main: FPS=22.1 | tracks=0 | alerts=0
+2025-12-28 11:16:10,467 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-28 11:17:22,857 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 11:17:22,857 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-28 11:17:22,857 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 11:17:22,857 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 11:17:22,903 [INFO] gait.gait_extractor: ✅ Gait Model Loaded: C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-12-28 11:17:22,905 [INFO] gait.gait_gallery: Gallery loaded: 3 identities found.
+2025-12-28 11:17:22,905 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-28 11:17:24,685 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-28 11:17:27,427 [INFO] gaitguard.main: FPS=11.0 | tracks=0 | alerts=0
+2025-12-28 11:17:28,420 [INFO] gaitguard.main: FPS=16.2 | tracks=0 | alerts=0
+2025-12-28 11:17:29,412 [INFO] gaitguard.main: FPS=19.1 | tracks=0 | alerts=0
+2025-12-28 11:17:30,572 [INFO] gaitguard.main: FPS=20.6 | tracks=1 | alerts=0
+2025-12-28 11:17:32,287 [INFO] gaitguard.main: FPS=19.9 | tracks=1 | alerts=0
+2025-12-28 11:17:34,065 [INFO] gaitguard.main: FPS=19.3 | tracks=1 | alerts=0
+2025-12-28 11:17:35,715 [INFO] gaitguard.main: FPS=19.1 | tracks=1 | alerts=0
+2025-12-28 11:17:37,483 [INFO] gaitguard.main: FPS=18.8 | tracks=1 | alerts=0
+2025-12-28 11:17:39,147 [INFO] gaitguard.main: FPS=18.7 | tracks=1 | alerts=0
+2025-12-28 11:17:40,798 [INFO] gaitguard.main: FPS=18.7 | tracks=1 | alerts=0
+2025-12-28 11:17:41,828 [INFO] gaitguard.main: FPS=19.3 | tracks=0 | alerts=0
+2025-12-28 11:17:42,819 [INFO] gaitguard.main: FPS=19.9 | tracks=0 | alerts=0
+2025-12-28 11:17:43,674 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-28 11:18:52,654 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 11:18:52,654 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-28 11:18:52,654 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 11:18:52,654 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 11:18:52,704 [INFO] gait.gait_extractor: ✅ Gait Model Loaded: C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-12-28 11:18:52,705 [INFO] gait.gait_gallery: Gallery loaded: 3 identities found.
+2025-12-28 11:18:52,705 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-28 11:18:54,643 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-28 11:18:57,594 [INFO] gaitguard.main: FPS=10.3 | tracks=1 | alerts=0
+2025-12-28 11:18:59,260 [INFO] gaitguard.main: FPS=13.1 | tracks=1 | alerts=0
+2025-12-28 11:19:01,037 [INFO] gaitguard.main: FPS=14.2 | tracks=1 | alerts=0
+2025-12-28 11:19:02,754 [INFO] gaitguard.main: FPS=14.9 | tracks=2 | alerts=0
+2025-12-28 11:19:04,464 [INFO] gaitguard.main: FPS=15.4 | tracks=2 | alerts=0
+2025-12-28 11:19:06,291 [INFO] gaitguard.main: FPS=15.5 | tracks=1 | alerts=0
+2025-12-28 11:19:08,018 [INFO] gaitguard.main: FPS=15.8 | tracks=2 | alerts=0
+2025-12-28 11:19:10,407 [INFO] gaitguard.main: FPS=15.3 | tracks=2 | alerts=0
+2025-12-28 11:19:10,785 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-28 11:20:44,149 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 11:20:44,149 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-28 11:20:44,149 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 11:20:44,149 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 11:20:44,203 [INFO] gait.gait_extractor: ✅ Gait Model Loaded: C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-12-28 11:20:44,205 [INFO] gait.gait_gallery: Gallery loaded: 3 identities found.
+2025-12-28 11:20:44,207 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-28 11:20:46,135 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-28 11:20:49,019 [INFO] gaitguard.main: FPS=10.6 | tracks=1 | alerts=0
+2025-12-28 11:20:50,680 [INFO] gaitguard.main: FPS=13.3 | tracks=1 | alerts=0
+2025-12-28 11:20:52,423 [INFO] gaitguard.main: FPS=14.4 | tracks=1 | alerts=0
+2025-12-28 11:20:54,127 [INFO] gaitguard.main: FPS=15.1 | tracks=2 | alerts=0
+2025-12-28 11:20:55,913 [INFO] gaitguard.main: FPS=15.4 | tracks=1 | alerts=0
+2025-12-28 11:20:57,554 [INFO] gaitguard.main: FPS=15.8 | tracks=1 | alerts=0
+2025-12-28 11:20:59,215 [INFO] gaitguard.main: FPS=16.1 | tracks=1 | alerts=0
+2025-12-28 11:21:01,028 [INFO] gaitguard.main: FPS=16.2 | tracks=1 | alerts=0
+2025-12-28 11:21:02,673 [INFO] gaitguard.main: FPS=16.4 | tracks=1 | alerts=0
+2025-12-28 11:21:03,796 [INFO] gaitguard.main: GaitGuard pipeline stopped.
+2025-12-28 11:22:09,446 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 11:22:09,446 [INFO] gaitguard.main: Runtime device=cpu | half=False
+2025-12-28 11:22:09,446 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 11:22:09,462 [WARNING] gaitguard.device: CUDA requested but not available. Falling back to CPU.
+2025-12-28 11:22:09,506 [INFO] gait.gait_extractor: ✅ Gait Model Loaded: C:\Users\tucci\OneDrive\Desktop\Project\GitGuard-1.0\models\gait_temporal_encoder.pth
+2025-12-28 11:22:09,506 [INFO] gait.gait_gallery: Gallery loaded: 3 identities found.
+2025-12-28 11:22:09,506 [INFO] gait.gait_engine: GaitEngine initialized
+2025-12-28 11:22:11,482 [INFO] gaitguard.main: GaitGuard pipeline (Phase-1 + Gait 1.3) started. Press ESC to exit.
+2025-12-28 11:22:14,140 [INFO] gaitguard.main: FPS=11.4 | tracks=0 | alerts=0
+2025-12-28 11:22:15,150 [INFO] gaitguard.main: FPS=16.5 | tracks=1 | alerts=0
+2025-12-28 11:22:16,906 [INFO] gaitguard.main: FPS=16.8 | tracks=1 | alerts=0
+2025-12-28 11:22:18,660 [INFO] gaitguard.main: FPS=16.8 | tracks=1 | alerts=0
+2025-12-28 11:22:20,253 [INFO] gaitguard.main: FPS=17.1 | tracks=0 | alerts=0
+2025-12-28 11:22:21,228 [INFO] gaitguard.main: FPS=18.5 | tracks=0 | alerts=0
+2025-12-28 11:22:22,238 [INFO] gaitguard.main: FPS=19.6 | tracks=1 | alerts=0
+2025-12-28 11:22:23,689 [INFO] gaitguard.main: FPS=19.7 | tracks=1 | alerts=0
+2025-12-28 11:22:25,475 [INFO] gaitguard.main: FPS=19.4 | tracks=1 | alerts=0
+2025-12-28 11:22:27,229 [INFO] gaitguard.main: FPS=19.1 | tracks=0 | alerts=0
+2025-12-28 11:22:28,219 [INFO] gaitguard.main: FPS=19.7 | tracks=0 | alerts=0
+2025-12-28 11:22:29,210 [INFO] gaitguard.main: FPS=20.3 | tracks=0 | alerts=0
+2025-12-28 11:22:30,204 [INFO] gaitguard.main: FPS=20.9 | tracks=0 | alerts=0
+2025-12-28 11:22:31,211 [INFO] gaitguard.main: FPS=21.3 | tracks=0 | alerts=0
+2025-12-28 11:22:31,926 [INFO] gaitguard.main: GaitGuard pipeline stopped.
