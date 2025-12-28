@@ -80,7 +80,8 @@ class GaitEngine:
                 confidence = signal.confidence
                 
                 # Retrieve category from gallery
-                category = self.gallery.get_category(identity_id)
+                if self.gallery.get_category(identity_id):
+                    category = self.gallery.get_category(identity_id)
             
             # Create final decision for overlay
             decision = IdentityDecision(

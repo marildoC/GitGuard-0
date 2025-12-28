@@ -32,6 +32,7 @@ class FaissIndexWrapper:
         self.dim = dim
         self.metric = metric
         if metric == "cosine":
+            # Inner Product su vettori normalizzati = Cosine Similarity
             self.index = faiss.IndexIDMap(faiss.IndexFlatIP(dim))
             self.normalize = True
         else:
@@ -47,9 +48,15 @@ class FaissIndexWrapper:
     def add(self, embeddings: np.ndarray, faiss_id: int):
         """Inserts a vector into the index; normalizes for cosine similarity if required."""
         if embeddings.ndim == 1: embeddings = embeddings[np.newaxis, :]
-        if self.normalize: faiss.normalize_L2(embeddings)
-        ids = np.array([faiss_id] * embeddings.shape[0], dtype=np.int64)
-        self.index.add_with_ids(embeddings, ids)
+        
+        # Copia e converti in float32 per FAISS
+        emb_copy = embeddings.astype('float32').copy()
+        
+        if self.normalize: 
+            faiss.normalize_L2(emb_copy)
+            
+        ids = np.array([faiss_id] * emb_copy.shape[0], dtype=np.int64)
+        self.index.add_with_ids(emb_copy, ids)
         
     def remove(self, faiss_ids: List[int]):
         """Removes specific IDs from the index."""
@@ -58,8 +65,13 @@ class FaissIndexWrapper:
     def search(self, query: np.ndarray, k: int = 1) -> Tuple[np.ndarray, np.ndarray]:
         """Performs a vector search and returns distances and FAISS IDs."""
         if query.ndim == 1: query = query[np.newaxis, :]
-        if self.normalize: faiss.normalize_L2(query)
-        D, I = self.index.search(query, k)
+        
+        query_copy = query.astype('float32').copy()
+        
+        if self.normalize: 
+            faiss.normalize_L2(query_copy)
+            
+        D, I = self.index.search(query_copy, k)
         return D[0], I[0]
 
 class GaitGallery:
@@ -89,8 +101,11 @@ class GaitGallery:
                 self._identities = state["identities"]
                 self.faiss_index.current_faiss_id_counter = state["faiss_id_counter"]
             
+            # Ricostruisce l'indice FAISS
+            self.faiss_index.index.reset()
             for data in self._identities.values():
                 self.faiss_index.add(data.ema_embedding, data.faiss_id)
+            logger.info(f"Gallery loaded: {len(self._identities)} identities found.")
         except Exception as e:
             logger.error(f"Failed to load gallery: {e}")
 
@@ -110,17 +125,22 @@ class GaitGallery:
             self.faiss_index.add(embedding, fid)
         elif confirmed:
             data = self._identities[identity_id]
+            # Rimuovi vecchio vettore
             self.faiss_index.remove([data.faiss_id])
+            
+            # Aggiorna EMA
             data.ema_embedding = self._update_ema_embedding(data.ema_embedding, embedding)
             data.raw_embeddings.append(embedding)
             data.num_updates += 1
+            
+            # Aggiungi nuovo vettore aggiornato
             self.faiss_index.add(data.ema_embedding, data.faiss_id)
         
         self.save_gallery()
 
     def search(self, query_embedding: np.ndarray) -> Tuple[Optional[str], Optional[float]]:
         """Identifies the closest match in the database and prints a live ranking."""
-        if self.faiss_index.index.ntotal == 0: return None, None
+        if self.faiss_index.index.ntotal == 0: return None, 0.0
 
         k_search = min(3, self.faiss_index.index.ntotal)
         sims, fids = self.faiss_index.search(query_embedding, k=k_search)
@@ -136,11 +156,19 @@ class GaitGallery:
             if not id_str: continue
 
             distance = 1.0 - sim if self.faiss_index.normalize else sim
+            
+            # Visualizzazione stato
             status = "✅ MATCH" if distance <= self.config.thresholds.max_match_distance else "❌ NO   "
             print(f"   #{rank+1}: {id_str:<15} | Dist: {distance:.4f} | {status}")
 
-            if rank == 0 and distance <= self.config.thresholds.max_weak_match_distance:
-                match_id, match_conf = id_str, 1.0 - distance
+            # Logica di selezione del migliore
+            if rank == 0:
+                if distance <= self.config.thresholds.max_match_distance:
+                    match_id = id_str
+                    match_conf = 1.0 - distance
+                else:
+                    # Se il primo non passa la soglia, è sconosciuto
+                    pass
 
         return match_id, match_conf
 
@@ -154,3 +182,10 @@ class GaitGallery:
             self.save_gallery()
             return True
         return False
+
+    # === METODO CHE MANCAVA ===
+    def get_category(self, identity_id: str) -> str:
+        """Returns the category (e.g., 'resident', 'visitor') of an enrolled identity."""
+        if identity_id in self._identities:
+            return self._identities[identity_id].category
+        return "unknown"
