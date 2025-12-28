@@ -30,8 +30,8 @@ class GaitThresholdConfig:
     """Numeric thresholds for filtering and identity matching."""
     min_visibility: float = 0.4        # Min confidence for individual keypoints
     min_valid_joints: int = 10         # Min joints required per frame
-    max_match_distance: float = 0.80   # Cutoff for strong matches (Cosine Distance)
-    max_weak_match_distance: float = 0.75 
+    max_match_distance: float = 0.20   # Cutoff for strong matches (Cosine Distance)
+    max_weak_match_distance: float = 0.25 
     min_gait_quality: float = 0.5      # Min average confidence for a sequence
     min_match_margin: float = 0.15
 

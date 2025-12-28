@@ -33,6 +33,7 @@ class GaitIdentityData:
 
 @dataclass
 class PersonSummary:
+    """DTO for listing persons via CLI."""
     person_id: str
     name: str
     category: str
@@ -74,14 +75,14 @@ class FaissIndexWrapper:
         query_copy = query.astype('float32').copy()
         faiss.normalize_L2(query_copy)
         
-        # Returns (distances/similarities, indices)
+        # Returns (similarities, indices)
         return self.index.search(query_copy, k)
 
 class GaitGallery:
     """
     Manages the database of known gait identities.
     Handles loading/saving, updating embeddings via EMA (Exponential Moving Average),
-    and searching for matches.
+    and searching for matches with strict thresholding.
     """
     def __init__(self, config: GaitConfig):
         self.config = config
@@ -133,7 +134,7 @@ class GaitGallery:
         
         If the identity exists and 'confirmed' is True, it updates the stored embedding
         using Exponential Moving Average (EMA). This allows the system to adapt
-        to slight changes in a person's gait over time (e.g., different shoes).
+        to slight changes in a person's gait over time.
         """
         if identity_id not in self._identities:
             # New Identity
@@ -173,15 +174,17 @@ class GaitGallery:
 
     def search(self, query_embedding: np.ndarray) -> Tuple[Optional[str], Optional[float]]:
         """
-        Cerca nella galleria.
-        Restituisce (nome, confidence) SOLO se supera la soglia.
-        Altrimenti restituisce (None, 0.0).
+        Searches the gallery for a match.
+        
+        STRICT RULES:
+        - Returns (name, confidence) ONLY if similarity >= 0.80 (Distance <= 0.20).
+        - Otherwise, it explicitly returns (None, 0.0).
         """
         total_people = self.faiss_index.index.ntotal
         if total_people == 0:
             return None, 0.0
 
-        # Cerca i Top 3
+        # Search for Top 3 candidates
         k_search = min(3, total_people)
         sims, fids = self.faiss_index.search(query_embedding, k=k_search)
         
@@ -191,18 +194,19 @@ class GaitGallery:
         if fids_row[0] == -1:
             return None, 0.0
 
-        # --- RECUPERO CANDIDATI ---
+        # --- CANDIDATE RETRIEVAL ---
         best_pid = "Unknown"
         best_dist = 1.0
         best_sim = 0.0
+        second_dist = 1.0
         
-        print("\n🔍 --- RISULTATI RICERCA ---")
+        print("\n🔍 --- LIVE SEARCH RANKING ---")
         for i in range(len(fids_row)):
             fid = fids_row[i]
             similarity = sims_row[i]
             distance = 1.0 - similarity
             
-            # Recupera ID stringa
+            # Retrieve String ID
             pid = next((k for k, v in self._identities.items() if v.faiss_id == fid), "Unknown")
             
             print(f"   #{i+1}: {pid:<15} | Sim: {similarity:.4f} | Dist: {distance:.4f}")
@@ -215,25 +219,30 @@ class GaitGallery:
             if i == 1:
                 second_dist = distance
 
-        # --- LOGICA DI DECISIONE (FILTRO) ---
+        # --- DECISION LOGIC (STRICT FILTER) ---
         
-        # 1. Controllo Soglia (Deve essere < 0.20 se vuoi > 0.80)
+        # 1. Threshold Check
+        # Example: if max_match_distance is 0.20, then Similarity must be > 0.80
         limit = self.config.thresholds.max_match_distance
+        
         if best_dist > limit:
-            print(f"❌ RIFIUTATO: {best_pid} (Sim {best_sim:.2f} è troppo bassa. Minimo richiesto: {1.0-limit:.2f})")
-            return None, 0.0  # <--- Ritorna 0.0 così la UI capisce che è Unknown
+            # Explicit Rejection Logic
+            required_sim = 1.0 - limit
+            print(f"❌ REJECTED: {best_pid} (Sim {best_sim:.4f} is too low. Required: > {required_sim:.2f})")
+            return None, 0.0  # <--- Forces UI to show "Unknown"
 
-        # 2. Controllo Margine (Opzionale)
+        # 2. Margin Check (Optional)
+        # Prevents ambiguity if the top 2 candidates are too close
         margin = 1.0
         if k_search > 1:
             margin = second_dist - best_dist
             
         if margin < self.config.thresholds.min_match_margin:
-            print(f"⚠️ AMBIGUO: Margine troppo basso ({margin:.3f}) tra {best_pid} e il secondo.")
+            print(f"⚠️ AMBIGUOUS: Margin too low ({margin:.3f}) between {best_pid} and 2nd place.")
             return None, 0.0
 
-        # Se arriva qui, è confermato
-        print(f"✅ CONFERMATO: {best_pid} (Sim: {best_sim:.4f})")
+        # If we reach here, the match is valid
+        print(f"✅ CONFIRMED: {best_pid} (Sim: {best_sim:.4f})")
         return best_pid, best_sim
 
     def list_persons(self) -> List[PersonSummary]:
@@ -248,4 +257,7 @@ class GaitGallery:
         return False
 
     def get_category(self, pid: str) -> str:
-        return self._identities[pid].category if pid in self._identities else "unknown"
+        """Returns the category (e.g., 'resident', 'visitor') of an enrolled identity."""
+        if pid in self._identities:
+            return self._identities[pid].category
+        return "unknown"
