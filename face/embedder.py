@@ -49,6 +49,7 @@ class FaceEmbedder:
 
     def __init__(self, cfg: Optional[FaceConfig] = None) -> None:
         self.cfg = cfg or default_face_config()
+        # The "canonical" expected embedding dim (e.g. 512 for ArcFace).
         self._dim = int(self.cfg.gallery.dim)
 
         logger.info(
@@ -65,6 +66,10 @@ class FaceEmbedder:
     def dim(self) -> int:
         """
         Current expected embedding dimensionality.
+
+        Note: This may be updated at runtime if we observe a different
+        dimension in incoming vectors. This mirrors how the rest of the
+        system is tolerant to model swaps (e.g. different ArcFace variants).
         """
         return self._dim
 
@@ -78,6 +83,32 @@ class FaceEmbedder:
         """
         return
 
+    def _handle_dim_mismatch(self, observed_dim: int) -> None:
+        """
+        Handle the case where an incoming embedding has a different
+        dimensionality than currently expected.
+
+        For robustness, we:
+          - log a warning,
+          - update internal _dim to the new observed dimension.
+
+        This avoids hard crashes if the embedding backend is changed
+        (e.g. to a 256-D model) while keeping the rest of the system
+        able to adapt.
+        """
+        if observed_dim == self._dim:
+            return
+
+        logger.warning(
+            "FaceEmbedder received embedding with dim=%d, expected %d. "
+            "Updating internal dim to %d. Make sure gallery/config are "
+            "consistent with the embedding backend.",
+            observed_dim,
+            self._dim,
+            observed_dim,
+        )
+        self._dim = observed_dim
+
     def _ensure_embedding_1d(self, vector: np.ndarray) -> np.ndarray:
         """
         Ensure vector is a 1-D float32 embedding, L2-normalised.
@@ -88,19 +119,13 @@ class FaceEmbedder:
         emb = np.asarray(vector, dtype=np.float32).reshape(-1)
 
         if emb.size != self._dim:
-            logger.warning(
-                "FaceEmbedder received embedding with dim=%d, expected %d. "
-                "Updating internal dim to %d.",
-                emb.size,
-                self._dim,
-                emb.size,
-            )
-            self._dim = emb.size
+            self._handle_dim_mismatch(emb.size)
 
         norm = float(np.linalg.norm(emb))
         if norm > 1e-6:
             emb /= norm
         else:
+            # Avoid NaNs and keep a safe sentinel when norm is ~0.
             emb[:] = 0.0
 
         return emb
@@ -158,12 +183,14 @@ class FaceEmbedder:
         """
         embs: List[np.ndarray] = []
 
-        for v in vectors:
+        for idx, v in enumerate(vectors):
             try:
                 embs.append(self.embed(v))
             except Exception as exc:
                 logger.warning(
-                    "Failed to normalise one embedding in embed_many: %s", exc
+                    "Failed to normalise one embedding in embed_many (index=%d): %s",
+                    idx,
+                    exc,
                 )
                 # Fill with zeros as a safe fallback for that position.
                 embs.append(np.zeros(self._dim, dtype=np.float32))
@@ -172,3 +199,19 @@ class FaceEmbedder:
             return np.zeros((0, self._dim), dtype=np.float32)
 
         return np.stack(embs, axis=0)
+
+    # ------------------------------------------------------------------ #
+    # Optional utility (not required by rest of system, but safe)        #
+    # ------------------------------------------------------------------ #
+
+    def is_compatible_dim(self, vector: np.ndarray) -> bool:
+        """
+        Quick check: does this vector have the same dimensionality as
+        the current embedder?
+
+        This is a non-critical helper that can be used by other parts
+        of the system (e.g. diagnostics) to verify that stored gallery
+        embeddings and runtime embeddings agree on dim.
+        """
+        arr = np.asarray(vector).reshape(-1)
+        return int(arr.size) == int(self._dim)

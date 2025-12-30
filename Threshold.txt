@@ -1,0 +1,248 @@
+================================================================================
+  GAITGUARD COMPREHENSIVE THRESHOLD MAP - DEEP SYSTEM ANALYSIS
+================================================================================
+
+PART 1: ALL FACE ACCEPTANCE / REJECTION THRESHOLDS
+================================================================================
+
+If the system is ACCEPTING faces too easily (not strict enough):
+→ INCREASE these thresholds to make stricter
+If the system is REJECTING too many faces:
+→ DECREASE these thresholds to make more lenient
+
+─────────────────────────────────────────────────────────────────────────────────
+FACE QUALITY GATES (FaceConfig - face/config.py)
+─────────────────────────────────────────────────────────────────────────────────
+FILE: face/config.py
+
+Line 115: min_det_score = 0.6
+          → Raw detector confidence. Higher = stricter face detection.
+          
+Line 118: min_quality_enroll = 0.60
+          → Enrollment quality gate. Affects gallery building.
+          
+Line 122: min_quality_for_embed = 0.60
+          → Runtime embedding quality. Higher = fewer embeddings stored.
+          
+Line 125: min_quality_runtime = 0.55  
+          → Runtime identity gate. MOST IMPORTANT for live usage.
+          
+Line 128: max_yaw_deg = 40.0
+          → Maximum face rotation left/right. Lower = stricter frontal.
+          
+Line 129: max_pitch_deg = 30.0
+          → Maximum face tilt up/down. Lower = stricter frontal.
+
+─────────────────────────────────────────────────────────────────────────────────
+EVIDENCE GATE (EvidenceGate - identity/evidence_gate.py)
+─────────────────────────────────────────────────────────────────────────────────
+FILE: identity/evidence_gate.py
+
+Line 328-330: unknown_min_quality = 0.55 (ACTIVE GATE)
+          → Quality threshold for UNKNOWN/PENDING tracks.
+          → Higher = fewer faces pass to binding manager.
+          → CURRENTLY ALIGNED TO 0.55 across all sources.
+          
+Line 342: confirmed_min_quality = 0.55
+          → Quality for CONFIRMED tracks (maintenance mode).
+          
+Line 350: stale_min_quality = 0.45
+          → Quality for STALE tracks (last-chance recovery).
+          
+Line 545: (fallback defaults in DefaultThresholds class)
+          → unknown_min_quality = 0.55
+          → confirmed_min_quality = 0.55
+          → stale_min_quality = 0.45
+
+─────────────────────────────────────────────────────────────────────────────────
+MULTIVIEW MATCHER (identity/multiview_matcher.py)
+─────────────────────────────────────────────────────────────────────────────────
+FILE: identity/multiview_matcher.py
+
+Line 182: min_quality_for_match = 0.3
+          → Minimum quality to attempt matching at all.
+          
+Line 193: strong_distance = 0.35
+          → Cosine distance threshold for STRONG match.
+          → Lower = stricter identity matching.
+          
+Line 199: weak_distance = 0.55
+          → Cosine distance threshold for WEAK match.
+          → Between strong_dist and weak_dist = "weak" match.
+          → Above weak_dist = NO MATCH (unknown).
+
+─────────────────────────────────────────────────────────────────────────────────
+BINDING MANAGER (identity/binding.py)
+─────────────────────────────────────────────────────────────────────────────────
+FILE: identity/binding.py
+
+Line 945-950 (ConfirmationConfig defaults):
+          min_samples_strong = 3
+          → Number of STRONG samples needed to confirm identity.
+          → Higher = more evidence required.
+          
+          min_samples_weak = 5
+          → Fallback: weak samples needed if not enough strong.
+          
+          min_avg_score = 0.75
+          → Average match score required for confirmation.
+          
+          min_quality_for_strong = 0.60
+          → Quality needed for a sample to count as "strong".
+
+─────────────────────────────────────────────────────────────────────────────────
+CONFIG FILES (core/config.py + config/default.yaml)
+─────────────────────────────────────────────────────────────────────────────────
+FILE: core/config.py (Line 78)
+FILE: config/default.yaml (Line 142)
+
+EvidenceGateThresholds:
+  unknown_min_quality: 0.55   ← MAIN GATE FOR NEW FACES
+
+FILE: config/default.yaml (Lines 140-160)
+  thresholds section with all quality gates mirrored from above.
+
+
+================================================================================
+PART 2: SOURCEAUTH DEEP ANALYSIS - WHY IT'S UNRELIABLE
+================================================================================
+
+OBSERVATION FROM USER TEST:
+- sa_states REAL=0.0 L_REAL=0.0 SPOOF=0.0 UNC=1.0 (100% UNCERTAIN)
+- This is for a REAL face in live video!
+- Overlay shows score=0.50 (neutral) throughout
+
+─────────────────────────────────────────────────────────────────────────────────
+ROOT CAUSE ANALYSIS
+─────────────────────────────────────────────────────────────────────────────────
+
+SourceAuth uses 3 cues to determine if face is real:
+  1. Motion Cue (3D vs planar) - source_auth/motion.py
+  2. Screen Cue (phone/display detection) - source_auth/screen_artifacts.py
+  3. Background Cue (environment consistency) - source_auth/background.py
+
+THE CRITICAL FLAW (source_auth/fusion.py Line 101-121):
+
+  if not (has_motion or has_background):
+      return UNCERTAIN  # ← THIS IS THE PROBLEM
+
+If BOTH motion AND background cues are "unreliable", fusion returns UNCERTAIN.
+For YOUR use case (stationary user in front of camera), BOTH cues fail:
+
+─────────────────────────────────────────────────────────────────────────────────
+MOTION CUE FAILURE (source_auth/motion.py)
+─────────────────────────────────────────────────────────────────────────────────
+FILE: source_auth/motion.py
+
+The motion cue returns reliable=False if ANY of these conditions fail:
+
+Line 334: if n_frames < 2:
+          → Need at least 2 frames in history
+          
+Line 350: if span_sec < min_span_sec (0.75s by default):
+          → Need 0.75+ seconds of landmark history
+          
+Line 362: if n_landmarks < min_landmarks (3):
+          → Need 3+ landmarks per frame
+          
+Line 454: if global_motion_mag < min_motion_pixels:
+          → CRITICAL: User must PHYSICALLY MOVE THEIR HEAD
+          → min_motion_pixels ≈ max(2.0, face_size * 0.01)
+          → A stationary user produces ~0 pixels of motion
+          → This returns reliable=False ALWAYS for stationary users
+
+Line 450: if residual_energy <= 0.0:
+          → No parallax detected (user not rotating head)
+          → Returns reliable=False
+
+CONCLUSION: For a stationary user who doesn't move their head,
+motion cue ALWAYS returns reliable=False, score=0.5 (neutral).
+
+─────────────────────────────────────────────────────────────────────────────────
+BACKGROUND CUE FAILURE (source_auth/background.py)
+─────────────────────────────────────────────────────────────────────────────────
+FILE: source_auth/background.py
+
+Line 133: min_frames = 3
+          → Need 3 valid frames in history window
+          
+Line 262: reliable = valid_frames >= min_frames
+          → If fewer than 3 valid frames, reliable=False
+          
+Frame validity requires (per frame):
+  - Face size >= 40px (Line 181)
+  - Inner region >= 500px (Line 201)
+  - Outer region >= 500px (Line 201)
+
+CONCLUSION: Background cue can return reliable=False if:
+  - Window hasn't accumulated 3 frames yet
+  - Face is too small or near edge of frame
+  - Camera just started (insufficient history)
+
+─────────────────────────────────────────────────────────────────────────────────
+THE FUNDAMENTAL DESIGN FLAW
+─────────────────────────────────────────────────────────────────────────────────
+
+SourceAuth was designed for ACTIVE SURVEILLANCE scenarios:
+  - People walking past a camera (lots of motion)
+  - Potential attackers holding up phones (screen artifacts visible)
+  - Dynamic environments with background changes
+
+YOUR USE CASE is STATIONARY VIDEO CONFERENCING:
+  - User sits still in front of camera
+  - No significant head motion = motion cue fails
+  - No phone/screen = screen cue returns 0 (no screen detected)
+  - Consistent background = background cue returns ~0.5
+
+RESULT: Both reliable flags are False → fusion returns UNCERTAIN.
+
+─────────────────────────────────────────────────────────────────────────────────
+RECOMMENDED FIXES FOR STATIONARY USE CASE
+─────────────────────────────────────────────────────────────────────────────────
+
+OPTION A: Disable SourceAuth (Quick Fix)
+  FILE: config/default.yaml
+  Line 240: source_auth.enabled: false
+  → This already exists in your config! Check if it's true.
+
+OPTION B: Modify fusion.py to default to LIKELY_REAL when no cues reliable
+  FILE: source_auth/fusion.py
+  Line 105-121: Change logic to:
+    if not (has_motion or has_background):
+        # For stationary use: assume real if no counter-evidence
+        return score=0.65, state="LIKELY_REAL"
+
+OPTION C: Lower motion requirements dramatically
+  FILE: source_auth/config.py or motion.py
+  Line 454: Change min_motion_pixels check:
+    if global_motion_mag < min_motion_pixels:
+        # Instead of returning unreliable, return neutral but reliable
+        return neutral, True, debug  # Mark as reliable=True
+
+OPTION D: Add frame-based temporal assumption
+  If a track has been visible for N seconds without any SPOOF evidence,
+  automatically transition to LIKELY_REAL.
+
+
+================================================================================
+PART 3: QUICK REFERENCE - STRICTNESS ADJUSTMENT
+================================================================================
+
+TO MAKE SYSTEM STRICTER (more rejections, fewer false accepts):
+  1. INCREASE quality thresholds: 0.55 → 0.65 or higher
+  2. LOWER distance thresholds: 0.35 → 0.30 for strong_dist
+  3. INCREASE min_samples_strong: 3 → 5
+  
+TO MAKE SYSTEM MORE LENIENT (more accepts, fewer rejections):
+  1. DECREASE quality thresholds: 0.55 → 0.45
+  2. INCREASE distance thresholds: 0.35 → 0.40 for strong_dist
+  3. DECREASE min_samples_strong: 3 → 2
+
+KEY FILES TO MODIFY:
+  1. identity/evidence_gate.py (Lines 328, 342, 350, 540-542)
+  2. face/config.py (Lines 115-141)
+  3. identity/multiview_matcher.py (Lines 182, 193, 199)
+  4. identity/binding.py (Lines 945-950)
+  5. config/default.yaml (Lines 140-160)
+
+================================================================================

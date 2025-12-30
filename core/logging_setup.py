@@ -9,11 +9,24 @@ from __future__ import annotations
 
 import logging
 from pathlib import Path
+from typing import Union
 
 
-def setup_logging(logs_dir: Path, level: int = logging.INFO) -> None:
-    logs_dir.mkdir(parents=True, exist_ok=True)
-    log_file = logs_dir / "gaitguard.log"
+def setup_logging(logs_dir: Union[str, Path], level: int = logging.INFO) -> None:
+    """
+    Initialise root logging for GaitGuard.
+
+    Parameters
+    ----------
+    logs_dir : str or Path
+        Directory where the main gaitguard.log file will be written.
+        Accepts both plain strings (from YAML) and Path objects.
+    level : int
+        Logging level for the root logger (default: INFO).
+    """
+    logs_path = Path(logs_dir)
+    logs_path.mkdir(parents=True, exist_ok=True)
+    log_file = logs_path / "gaitguard.log"
 
     # Clear any existing handlers (if run multiple times in same process)
     root = logging.getLogger()

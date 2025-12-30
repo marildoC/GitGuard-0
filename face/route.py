@@ -1,11 +1,32 @@
 # face/route.py
-# High-level face route: per-track face history, detect+embed, best evidence.
+# Wave-3 robust implementation of the FaceRoute.
+#
+# Responsibilities:
+#   - For each track, decide when to run face detection (frame-throttled + time-throttled)
+#   - Crop head region using robust geometric logic
+#   - Detect + align face (FaceDetectorAligner)
+#   - Compute q_face using full-phase quality model
+#   - Keep per-track short buffer of evidence
+#   - Emit *only new* FaceEvidence for IdentityEngine
+#
+# 3D / multiview note:
+#   - Each FaceEvidence carries yaw / pitch / roll for the face pose.
+#   - This is directly usable by Wave-3 multiview / pseudo-3D engines.
+#
+# SourceAuth note:
+#   - FaceEvidence now also carries landmarks_2d (5x2 array when available),
+#     so higher-level modules (SourceAuthEngine etc.) can analyse 3D vs planar
+#     motion and background consistency without touching the detector directly.
+#
+# Fully config-driven:
+#   - Uses cfg.thresholds (quality gates, size limits)
+#   - Uses cfg.route (lookback window, max_entries, n-frames, min interval MS)
+#   - Compatible with Wave-3 IdentityEngine stability logic
 
 from __future__ import annotations
 
 import logging
 from collections import deque
-from dataclasses import dataclass
 from typing import Deque, Dict, List, Optional, Tuple
 
 import numpy as np
@@ -14,93 +35,167 @@ from schemas import Frame, Tracklet
 from .config import FaceConfig, default_face_config
 from .detector_align import FaceDetectorAligner, FaceCandidate
 from .quality import compute_full_quality
+from identity.evidence_gate import EvidenceGate, GateDecision
 
 logger = logging.getLogger(__name__)
 
 
-@dataclass
+# --------------------------------------------------------------------------- #
+# Data structure                                                              #
+# --------------------------------------------------------------------------- #
+
+
 class FaceEvidence:
     """
-    Best recent face evidence for a given track over a short time window.
+    One single high-quality observation for a track.
 
-    Attributes
-    ----------
-    track_id : int
-        ID of the tracked person (from Phase-1 tracker).
-    ts : float
-        Timestamp of the frame where this evidence was captured.
-    frame_id : int
-        Frame index (monotonically increasing).
-    quality : float
-        Scalar quality score in [0, 1]; higher is better.
-    embedding : np.ndarray
-        512-D L2-normalised face embedding (float32).
-    bbox_in_frame : (x1, y1, x2, y2)
-        Region in the original frame used as the "head" crop.
-    yaw/pitch/roll : Optional[float]
-        Rough pose estimates in degrees (if available).
+    IdentityEngine performs temporal smoothing / multi-sample stability.
+    FaceRoute only generates per-frame evidence when available.
+
+    Fields:
+      - track_id       : person track identifier (Tracklet.track_id)
+      - ts             : timestamp of the frame (monotonic / Frame.ts)
+      - frame_id       : sequential frame index
+      - quality        : scalar 0–1 face quality (full model)
+      - embedding      : 1D L2-normalised face descriptor (e.g. 512-D)
+      - bbox_in_frame  : (x1, y1, x2, y2) of head crop in full frame coords
+      - yaw, pitch, roll:
+            approximate pose angles in degrees; used by 3D/multiview
+            identity engines to select appropriate prototypes.
+      - det_score      : raw detector confidence for the chosen face (optional)
+      - landmarks_2d   : (5, 2) 2D landmarks in head-crop coordinates, if
+                         available. This is used by SourceAuth / 3D logic
+                         to analyse motion and background.
     """
 
-    track_id: int
-    ts: float
-    frame_id: int
-    quality: float
-    embedding: np.ndarray
-    bbox_in_frame: Tuple[float, float, float, float]
-    yaw: Optional[float] = None
-    pitch: Optional[float] = None
-    roll: Optional[float] = None
+    __slots__ = (
+        "track_id",
+        "ts",
+        "frame_id",
+        "quality",
+        "embedding",
+        "bbox_in_frame",
+        "yaw",
+        "pitch",
+        "roll",
+        "det_score",
+        "landmarks_2d",
+    )
+
+    def __init__(
+        self,
+        track_id: int,
+        ts: float,
+        frame_id: int,
+        quality: float,
+        embedding: np.ndarray,
+        bbox_in_frame: Tuple[float, float, float, float],
+        yaw: Optional[float] = None,
+        pitch: Optional[float] = None,
+        roll: Optional[float] = None,
+        det_score: Optional[float] = None,
+        landmarks_2d: Optional[np.ndarray] = None,
+    ) -> None:
+        self.track_id = track_id
+        self.ts = ts
+        self.frame_id = frame_id
+        self.quality = quality
+        self.embedding = embedding
+        self.bbox_in_frame = bbox_in_frame
+        self.yaw = yaw
+        self.pitch = pitch
+        self.roll = roll
+        self.det_score = det_score
+        # New field for SourceAuth / multiview motion logic.
+        # Expected shape (5, 2) float32 when present.
+        self.landmarks_2d = landmarks_2d
+
+    def __repr__(self) -> str:
+        lm_flag = "lm" if self.landmarks_2d is not None else "no-lm"
+        return (
+            f"FaceEvidence(track_id={self.track_id}, frame_id={self.frame_id}, "
+            f"q={self.quality:.3f}, yaw={self.yaw}, pitch={self.pitch}, "
+            f"roll={self.roll}, det_score={self.det_score}, {lm_flag})"
+        )
+
+
+# --------------------------------------------------------------------------- #
+# FaceRoute Wave-3                                                            #
+# --------------------------------------------------------------------------- #
 
 
 class FaceRoute:
     """
-    FaceRoute connects Phase-1 tracks with the face engine (buffalo_l).
+    Wave-3 FaceRoute:
+      - Multi-throttled (N frames + min_interval_ms)
+      - Strong geometric filtering
+      - Robust head crop logic
+      - Full quality model (size, blur, pose penalties)
+      - Per-track evidence buffer with pruning
+      - Emits evidence only when q_face >= runtime gate
 
-    Per frame:
-      - For each Tracklet, decide whether to run face detection (throttled).
-      - Crop an approximate head-region from the frame.
-      - Run FaceDetectorAligner (buffalo_l) on that crop.
-      - Compute a quality score for each detected face and keep the best one.
-      - Store best face as FaceEvidence in a short per-track buffer.
-
-    On query (run / get_best_evidence):
-      - For each track, return the best-quality FaceEvidence within a
-        configurable lookback window (seconds).
-
-    This route does *not* talk to the gallery; it is purely about
-    converting tracks → high-quality face embeddings over time.
+    It is 3D-ready:
+      - Each FaceEvidence carries yaw / pitch / roll (+ det_score)
+      - Higher layers (IdentityEngine / multiview engine / SourceAuth) can query
+        recent evidence via get_best_evidence() / get_all_best() /
+        get_last_evidence() / get_latest_landmarks().
     """
 
     def __init__(
         self,
         cfg: Optional[FaceConfig] = None,
         detector: Optional[FaceDetectorAligner] = None,
+        evidence_gate: Optional[EvidenceGate] = None,
     ) -> None:
-        self.cfg = cfg or default_face_config()
+        self.cfg: FaceConfig = cfg or default_face_config()
         self.detector = detector or FaceDetectorAligner(self.cfg)
+        
+        # Phase B: Evidence Gate for quality filtering
+        self.evidence_gate = evidence_gate
+        if self.evidence_gate is None:
+            # Try to initialize from config (if governance_metrics available)
+            try:
+                from core.config import load_config
+                from core.governance_metrics import get_metrics_collector
+                cfg_loaded = load_config()
+                metrics_coll = get_metrics_collector()
+                self.evidence_gate = EvidenceGate(cfg_loaded, metrics_coll)
+            except Exception:
+                # Fallback: create minimal gate that disables itself
+                self.evidence_gate = EvidenceGate(cfg, None)
 
-        # Per-track buffer of FaceEvidence (short history).
+        # FaceEvidence buffers per track_id
         self._buffers: Dict[int, Deque[FaceEvidence]] = {}
-        # Per-track last frame index where we ran heavy face processing.
+
+        # Frame-throttle state: last frame id processed per track
         self._last_processed_frame: Dict[int, int] = {}
 
+        # Time-throttle state: last timestamp processed per track
+        self._last_processed_ts: Dict[int, float] = {}
+
+        route_cfg = self.cfg.route
         logger.info(
-            "FaceRoute initialised | lookback=%.1fs max_entries=%d every_n_frames=%d",
-            self.cfg.route.max_seconds_lookback,
-            self.cfg.route.max_entries_per_track,
-            self.cfg.route.process_every_n_frames,
+            "FaceRoute initialised | lookback=%.1fs | max_entries=%d | "
+            "every_n_frames=%d | min_interval_ms=%d",
+            getattr(
+                route_cfg,
+                "lookback_seconds",
+                getattr(route_cfg, "max_seconds_lookback", 2.0),
+            ),
+            route_cfg.max_entries_per_track,
+            route_cfg.process_every_n_frames,
+            getattr(route_cfg, "min_interval_ms", 0),
         )
 
     # ------------------------------------------------------------------ #
-    # Public API                                                         #
+    # PUBLIC API                                                         #
     # ------------------------------------------------------------------ #
 
     def reset(self) -> None:
-        """
-        Clear all per-track buffers and state.
-        """
+        """Clear all track buffers + throttle state."""
         self._buffers.clear()
         self._last_processed_frame.clear()
+        self._last_processed_ts.clear()
 
     def run(
         self,
@@ -108,10 +203,13 @@ class FaceRoute:
         tracklets: List[Tracklet],
     ) -> Dict[int, FaceEvidence]:
         """
-        Process a frame + list of Tracklets and update per-track face buffers.
+        Main entry point. Called once per frame.
 
-        Returns a dictionary mapping track_id → best FaceEvidence in the
-        current lookback window (if any).
+        Returns
+        -------
+        Dict[int, FaceEvidence]
+            Mapping track_id → *new* FaceEvidence captured in this frame
+            and passing the runtime quality gate.
         """
         if frame.image is None or frame.image.size == 0:
             return {}
@@ -119,81 +217,216 @@ class FaceRoute:
         img = frame.image
         th = self.cfg.thresholds
         route_cfg = self.cfg.route
+        ts_now = float(frame.ts)
 
+        # Runtime quality gate (fallback to min_quality_for_embed for older configs).
+        min_q_runtime = float(
+            getattr(th, "min_quality_runtime", th.min_quality_for_embed)
+        )
+
+        # Lookback name can be max_seconds_lookback (older) or lookback_seconds (Wave-3)
+        lookback_seconds = float(
+            getattr(
+                route_cfg,
+                "lookback_seconds",
+                getattr(route_cfg, "max_seconds_lookback", 2.0),
+            )
+        )
+        max_entries = int(route_cfg.max_entries_per_track)
+        process_every_n_frames = int(route_cfg.process_every_n_frames)
+        min_interval_ms = int(getattr(route_cfg, "min_interval_ms", 0))
+
+        new_evidences: Dict[int, FaceEvidence] = {}
+
+        # Process each track
         for trk in tracklets:
-            # 1. Basic geometric filter: person bbox must be tall enough.
-            x1, y1, x2, y2 = trk.last_box
-            box_h = float(y2 - y1)
-            if box_h < th.min_box_height_for_face_px:
+            tid = int(getattr(trk, "track_id", -1))
+
+            # ---------------------------------------------------------- #
+            # (1) Geometric filter                                      #
+            # ---------------------------------------------------------- #
+            try:
+                x1, y1, x2, y2 = trk.last_box
+            except Exception:
+                # If Tracklet doesn't have last_box, skip robustly.
                 continue
 
-            # 2. Per-track frame throttling: don't run face detection on
-            #    every single frame to save compute.
-            last_fid = self._last_processed_frame.get(trk.track_id, -1)
+            box_h = float(y2 - y1)
+            if box_h < float(th.min_box_height_for_face_px):
+                # Person too small → skip face processing.
+                continue
+
+            # ---------------------------------------------------------- #
+            # (2) Frame-throttle: check N-frame interval                 #
+            # ---------------------------------------------------------- #
+            last_fid = self._last_processed_frame.get(tid)
             if (
-                last_fid >= 0
-                and frame.frame_id - last_fid < route_cfg.process_every_n_frames
+                last_fid is not None
+                and frame.frame_id - last_fid < process_every_n_frames
             ):
                 continue
 
-            # 3. Crop a generous head/upper-body region.
-            head_crop, head_box = self._crop_head_region(img, trk.last_box)
+            # ---------------------------------------------------------- #
+            # (3) Time-throttle: check minimum MS interval               #
+            # ---------------------------------------------------------- #
+            last_ts = self._last_processed_ts.get(tid)
+            if (
+                last_ts is not None
+                and min_interval_ms > 0
+                and (ts_now - last_ts) * 1000.0 < float(min_interval_ms)
+            ):
+                continue
+
+            # ---------------------------------------------------------- #
+            # (4) Crop head region                                      #
+            # ---------------------------------------------------------- #
+            head_crop, head_box = self._crop_head_region(img, (x1, y1, x2, y2))
             if head_crop is None:
+                self._last_processed_frame[tid] = frame.frame_id
+                self._last_processed_ts[tid] = ts_now
                 continue
 
-            # 4. Run face engine (buffalo_l) on the head crop.
-            candidates = self.detector.detect_and_align(head_crop)
+            # ---------------------------------------------------------- #
+            # (5) Detect + align faces                                  #
+            # ---------------------------------------------------------- #
+            try:
+                candidates = self.detector.detect_and_align(head_crop)
+            except Exception:
+                logger.exception(
+                    "FaceRoute: detect_and_align failed for track_id=%d", tid
+                )
+                self._last_processed_frame[tid] = frame.frame_id
+                self._last_processed_ts[tid] = ts_now
+                continue
+
             if not candidates:
-                self._last_processed_frame[trk.track_id] = frame.frame_id
+                self._last_processed_frame[tid] = frame.frame_id
+                self._last_processed_ts[tid] = ts_now
                 continue
 
-            # 5. Among candidates, pick the one with best quality.
-            best_cand, best_q = self._select_best_candidate(
-                head_crop, head_box, candidates
-            )
+            # ---------------------------------------------------------- #
+            # (6) Select best candidate using quality model             #
+            # ---------------------------------------------------------- #
+            best_cand, best_q = self._select_best_candidate(head_crop, candidates)
 
             if best_cand is None:
-                self._last_processed_frame[trk.track_id] = frame.frame_id
+                self._last_processed_frame[tid] = frame.frame_id
+                self._last_processed_ts[tid] = ts_now
                 continue
 
-            # 6. Only keep evidence above the "embed-worthy" quality threshold.
-            if best_q < th.min_quality_for_embed:
-                self._last_processed_frame[trk.track_id] = frame.frame_id
+            # Extra robustness: ensure we actually have an embedding
+            if best_cand.embedding is None:
+                logger.warning(
+                    "FaceRoute: best candidate for track_id=%d has no embedding; "
+                    "skipping.",
+                    tid,
+                )
+                self._last_processed_frame[tid] = frame.frame_id
+                self._last_processed_ts[tid] = ts_now
                 continue
 
-            # 7. Use embedding directly from candidate (buffalo_l).
+            # ---------------------------------------------------------- #
+            # (7) Strict runtime quality gate                           #
+            # ---------------------------------------------------------- #
+            if best_q < min_q_runtime:
+                self._last_processed_frame[tid] = frame.frame_id
+                self._last_processed_ts[tid] = ts_now
+                logger.debug(
+                    "FaceRoute: track=%d frame=%d rejected q=%.3f < min_q_runtime=%.3f",
+                    tid,
+                    frame.frame_id,
+                    best_q,
+                    min_q_runtime,
+                )
+                continue
+
+            # ---------------------------------------------------------- #
+            # (8) Build embedding and evidence                          #
+            # ---------------------------------------------------------- #
             emb = self._ensure_embedding(best_cand.embedding)
 
+            # Landmarks for SourceAuth / motion analysis.
+            lm_2d = getattr(best_cand, "landmarks_2d", None)
+            if lm_2d is not None:
+                lm_2d = np.asarray(lm_2d, dtype=np.float32).reshape(-1, 2)
+
             ev = FaceEvidence(
-                track_id=trk.track_id,
+                track_id=tid,
                 ts=frame.ts,
                 frame_id=frame.frame_id,
-                quality=best_q,
+                quality=float(best_q),
                 embedding=emb,
                 bbox_in_frame=head_box,
                 yaw=best_cand.yaw,
                 pitch=best_cand.pitch,
                 roll=best_cand.roll,
+                det_score=getattr(best_cand, "det_score", None),
+                landmarks_2d=lm_2d,
             )
 
-            # 8. Update per-track buffer.
-            buf = self._buffers.setdefault(trk.track_id, deque())
-            buf.append(ev)
-            self._prune_buffer(trk.track_id, frame.ts)
+            # ---------------------------------------------------------- #
+            # (9) PHASE B: Evidence Gate - filter low-quality samples  #
+            # ---------------------------------------------------------- #
+            if self.evidence_gate and self.evidence_gate.enabled:
+                # Determine binding state hint for state-aware thresholds
+                # (will be properly set in Phase C, for now assume UNKNOWN)
+                track_context = {
+                    'track_id': tid,
+                    'binding_state': 'UNKNOWN',  # Phase C will update this
+                    'track_age_sec': frame.ts - trk.create_ts if hasattr(trk, 'create_ts') else 0.0,
+                }
+                
+                gate_decision, gate_reason = self.evidence_gate.decide(
+                    face_sample=ev,
+                    track_context=track_context
+                )
+                
+                if gate_decision == GateDecision.REJECT:
+                    # Do not forward to identity engine
+                    logger.debug(
+                        "FaceRoute: track=%d rejected by gate (reason=%s)",
+                        tid, gate_reason
+                    )
+                    self._last_processed_frame[tid] = frame.frame_id
+                    self._last_processed_ts[tid] = ts_now
+                    continue
+                
+                elif gate_decision == GateDecision.HOLD:
+                    # Keep track alive but don't forward this sample
+                    # (Phase D scheduler may retry later)
+                    logger.debug(
+                        "FaceRoute: track=%d held by gate (reason=%s)",
+                        tid, gate_reason
+                    )
+                    self._last_processed_frame[tid] = frame.frame_id
+                    self._last_processed_ts[tid] = ts_now
+                    continue
+                
+                # else: gate_decision == GateDecision.ACCEPT → proceed
 
-            if len(buf) > route_cfg.max_entries_per_track:
+            # ---------------------------------------------------------- #
+            # (10) Update buffer (short history for diagnostics /       #
+            #      stability)                                          #
+            # ---------------------------------------------------------- #
+            buf = self._buffers.setdefault(tid, deque())
+            buf.append(ev)
+            self._prune_buffer(tid, frame.ts, lookback_seconds)
+
+            if len(buf) > max_entries:
                 buf.popleft()
 
-            self._last_processed_frame[trk.track_id] = frame.frame_id
+            # Record throttles
+            self._last_processed_frame[tid] = frame.frame_id
+            self._last_processed_ts[tid] = ts_now
 
-        # 9. For each track, expose only the best evidence in current window.
-        best: Dict[int, FaceEvidence] = {}
-        for trk in tracklets:
-            ev = self.get_best_evidence(trk.track_id, frame.ts)
-            if ev is not None:
-                best[trk.track_id] = ev
+            # Expose this new evidence to caller (ONLY if ACCEPT-rated)
+            new_evidences[tid] = ev
 
-        return best
+        return new_evidences
+
+    # ------------------------------------------------------------------ #
+    # Best evidence fetchers (diagnostics / optional modules)            #
+    # ------------------------------------------------------------------ #
 
     def get_best_evidence(
         self,
@@ -209,10 +442,19 @@ class FaceRoute:
             return None
 
         route_cfg = self.cfg.route
+        lookback_seconds = float(
+            getattr(
+                route_cfg,
+                "lookback_seconds",
+                getattr(route_cfg, "max_seconds_lookback", 2.0),
+            )
+        )
+
         if current_ts is None:
             current_ts = buf[-1].ts
 
-        min_ts = current_ts - route_cfg.max_seconds_lookback
+        min_ts = float(current_ts) - lookback_seconds
+
         best_ev: Optional[FaceEvidence] = None
         best_q = -1.0
 
@@ -231,31 +473,80 @@ class FaceRoute:
     ) -> Dict[int, FaceEvidence]:
         """
         Return best FaceEvidence for all tracks that have any evidence
-        in their buffer within the lookback window.
+        within the lookback window.
         """
         out: Dict[int, FaceEvidence] = {}
         for tid, buf in self._buffers.items():
             if not buf:
                 continue
+
             ts = current_ts if current_ts is not None else buf[-1].ts
             ev = self.get_best_evidence(tid, ts)
             if ev is not None:
                 out[tid] = ev
+
         return out
 
+    def get_last_evidence(self, track_id: int) -> Optional[FaceEvidence]:
+        """
+        Lightweight helper: return the *most recent* FaceEvidence for
+        a track (if any), without applying lookback or quality logic.
+
+        This is useful for debugging and for components that only care
+        about the latest pose / embedding snapshot.
+        """
+        buf = self._buffers.get(track_id)
+        if not buf:
+            return None
+        return buf[-1]
+
+    def get_latest_landmarks(
+        self,
+        track_id: int,
+    ) -> Optional[Tuple[Tuple[float, float, float, float], np.ndarray, float]]:
+        """
+        Convenience accessor for SourceAuth and other motion-based modules.
+
+        Returns
+        -------
+        Optional[Tuple[bbox_in_frame, landmarks_2d, quality]]
+
+        Where:
+          - bbox_in_frame : (x1, y1, x2, y2) head crop in frame coordinates
+          - landmarks_2d  : (5, 2) numpy array in head-crop coordinates
+          - quality       : scalar 0–1 face quality for this evidence
+
+        If there is no evidence for this track, or landmarks_2d is missing,
+        returns None.
+        """
+        buf = self._buffers.get(track_id)
+        if not buf:
+            return None
+
+        ev = buf[-1]
+        if ev.landmarks_2d is None:
+            return None
+
+        return ev.bbox_in_frame, ev.landmarks_2d, ev.quality
+
     # ------------------------------------------------------------------ #
-    # Internal helpers                                                   #
+    # INTERNAL HELPERS                                                   #
     # ------------------------------------------------------------------ #
 
-    def _prune_buffer(self, track_id: int, current_ts: float) -> None:
+    def _prune_buffer(
+        self,
+        track_id: int,
+        current_ts: float,
+        lookback_seconds: float,
+    ) -> None:
         """
-        Drop entries older than max_seconds_lookback from a track buffer.
+        Drop entries older than lookback_seconds from a track buffer.
         """
         buf = self._buffers.get(track_id)
         if not buf:
             return
 
-        max_age = self.cfg.route.max_seconds_lookback
+        max_age = float(lookback_seconds)
         while buf and (current_ts - buf[0].ts) > max_age:
             buf.popleft()
 
@@ -265,14 +556,15 @@ class FaceRoute:
         box: Tuple[float, float, float, float],
     ) -> Tuple[Optional[np.ndarray], Tuple[float, float, float, float]]:
         """
-        Crop a region around the upper part of the person bbox.
+        Crop a robust head+shoulders region from a person box.
 
-        We assume the detector bbox is roughly "full person" or upper body.
-        We bias the crop towards the top (head/shoulders) to reduce
-        background and make face detection easier.
+        We bias towards the top of the person box:
+          - extend a bit above y1
+          - include down to ~60% of the body height
         """
         h, w = image.shape[:2]
         x1, y1, x2, y2 = box
+
         x1 = float(x1)
         y1 = float(y1)
         x2 = float(x2)
@@ -283,9 +575,9 @@ class FaceRoute:
         if bw <= 1.0 or bh <= 1.0:
             return None, (0.0, 0.0, 0.0, 0.0)
 
-        # Extend slightly above head and capture upper body.
+        # Robust head box: slightly above-head down to chest
         head_top = y1 - 0.15 * bh
-        head_bottom = y1 + 0.6 * bh
+        head_bottom = y1 + 0.60 * bh
 
         hx1 = max(0, int(np.floor(x1)))
         hx2 = min(w, int(np.ceil(x2)))
@@ -296,26 +588,25 @@ class FaceRoute:
             return None, (0.0, 0.0, 0.0, 0.0)
 
         crop = image[hy1:hy2, hx1:hx2]
-
         bbox_in_frame = (float(hx1), float(hy1), float(hx2), float(hy2))
         return crop, bbox_in_frame
 
     def _select_best_candidate(
         self,
         head_crop: np.ndarray,
-        head_box_in_frame: Tuple[float, float, float, float],
         candidates: List[FaceCandidate],
     ) -> Tuple[Optional[FaceCandidate], float]:
         """
         Among detected faces in the head crop, choose the one with the
         highest quality score according to compute_full_quality().
+
+        No thresholding is applied here; the caller enforces the runtime gate.
         """
         if not candidates:
             return None, 0.0
 
-        th = self.cfg.thresholds
         best_cand: Optional[FaceCandidate] = None
-        best_q = 0.0
+        best_q = -1.0
 
         for cand in candidates:
             q = compute_full_quality(
@@ -327,23 +618,32 @@ class FaceRoute:
                 cfg=self.cfg,
             )
 
-            if q >= best_q:
+            if q > best_q:
                 best_q = q
                 best_cand = cand
 
-        if best_cand is None or best_q < th.min_quality_for_embed:
-            return None, best_q
-
-        return best_cand, best_q
+        return best_cand, float(best_q)
 
     def _ensure_embedding(self, emb: np.ndarray) -> np.ndarray:
         """
-        Ensure embedding is float32, 1-D and (re)normalized.
+        Ensure embedding is float32, 1-D and L2-normalised.
 
         buffalo_l usually already outputs L2-normalised 512-D vectors,
         but we enforce normalisation once more for safety.
         """
         e = np.asarray(emb, dtype=np.float32).reshape(-1)
+
+        # Optional dim sanity check against FaceConfig.gallery.dim
+        gallery = getattr(self.cfg, "gallery", None)
+        dim_attr = getattr(gallery, "dim", None) if gallery is not None else None
+        if isinstance(dim_attr, (int, float)) and dim_attr > 0:
+            if e.size != int(dim_attr):
+                logger.warning(
+                    "FaceRoute: embedding dim mismatch (got %d, expected %d).",
+                    e.size,
+                    int(dim_attr),
+                )
+
         norm = float(np.linalg.norm(e))
         if norm > 1e-6:
             e /= norm

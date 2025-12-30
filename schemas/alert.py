@@ -1,3 +1,7 @@
+# schemas/alert.py
+#
+# Alert object that can be logged and/or shown in the UI.
+
 from dataclasses import dataclass, field
 from typing import List, Optional
 
@@ -7,17 +11,34 @@ class Alert:
     """
     Alert raised by the system that the operator / log should see.
 
-    - alert_id          : unique ID (can be incremental integer)
-    - created_at        : timestamp in seconds (time.time())
-    - camera_id         : camera where this happened
-    - track_ids         : tracks involved in the alert
-    - type              : e.g. "weapon", "fallen", "suspicious_identity"
-    - severity          : 1–5 (5 = critical)
-    - message           : short human-readable text
-    - evidence_clip_path: optional path to saved video clip
-    - snapshot_path     : optional path to snapshot image
-    - resolved          : whether operator has handled this alert
+    Attributes
+    ----------
+    alert_id          : int
+        Unique ID (can be incremental integer).
+    created_at        : float
+        Timestamp in seconds (time.time()) when the alert was created.
+    camera_id         : str
+        Camera where this happened.
+    track_ids         : list[int]
+        IDs of tracks involved in the alert.
+
+    type              : str
+        Short code for the alert type (e.g. "weapon", "fallen",
+        "suspicious_identity", "system").
+    severity          : int
+        1–5 (5 = critical).
+    message           : str
+        Short human-readable message for logs/UI.
+
+    evidence_clip_path: Optional[str]
+        Optional path to a saved video clip related to this alert.
+    snapshot_path     : Optional[str]
+        Optional path to a snapshot image.
+
+    resolved          : bool
+        Whether an operator has handled / acknowledged this alert.
     """
+
     alert_id: int
     created_at: float
     camera_id: str

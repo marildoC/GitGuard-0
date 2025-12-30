@@ -1,3 +1,4 @@
+#scripts/gpu_check.py
 import torch, onnxruntime as ort
 print("Torch version:", torch.__version__)
 print("Torch CUDA available:", torch.cuda.is_available())

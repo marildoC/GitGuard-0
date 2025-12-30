@@ -1,4 +1,6 @@
-# identity/crypto.py - AES-GCM encryption helpers for face gallery and other sensitive data.
+# identity/crypto.py
+# AES-GCM helpers for encrypting the face gallery and other sensitive data.
+# Wave 2.1 – hardened key handling, clearer errors, and safer decryption.
 
 from __future__ import annotations
 
@@ -19,11 +21,43 @@ else:
 
 logger = logging.getLogger(__name__)
 
-
+# Header format: MAGIC | VERSION (1 byte) | NONCE (12 bytes) | CIPHERTEXT+TAG
 _MAGIC = b"GGFG"  # GaitGuard Face Gallery
 _VERSION = 1
 _NONCE_LEN = 12
 _KEY_LEN = 32  # AES-256
+
+_HEADER_LEN = len(_MAGIC) + 1 + _NONCE_LEN  # convenience
+
+
+# ---------------------------------------------------------------------------
+# Error types
+# ---------------------------------------------------------------------------
+
+
+class CryptoError(Exception):
+    """Base class for GaitGuard crypto errors."""
+
+
+class CryptoBackendError(CryptoError):
+    """cryptography / AESGCM backend not available."""
+
+
+class CryptoKeyError(CryptoError):
+    """Problems with loading/decoding the AES key (missing / invalid)."""
+
+
+class CryptoCiphertextError(CryptoError):
+    """Problems with ciphertext integrity (wrong key, corruption, etc.)."""
+
+
+class CryptoVersionError(CryptoCiphertextError):
+    """Ciphertext version / header incompatible with this code."""
+
+
+# ---------------------------------------------------------------------------
+# Config and key cache
+# ---------------------------------------------------------------------------
 
 
 @dataclass(frozen=True)
@@ -32,37 +66,78 @@ class CryptoConfig:
 
 
 _key_cache: Dict[str, bytes] = {}
+_key_fingerprints: Dict[str, str] = {}
 
 
 def _ensure_backend_available() -> None:
     if AESGCM is None:
-        raise RuntimeError(
+        raise CryptoBackendError(
             "cryptography AESGCM backend not available. "
             "Install the 'cryptography' package. "
             f"Original error: {_import_error}"
         )
 
 
-def _decode_key(raw: str) -> bytes:
-    s = raw.strip()
+def _key_fingerprint(key: bytes) -> str:
+    """
+    Short, non-sensitive fingerprint for logging (first 8 hex chars of SHA256).
+    """
+    import hashlib
 
-    # Hex (64 hex chars for 32 bytes)
-    if all(c in "0123456789abcdefABCDEF" for c in s) and len(s) in (32, 48, 64):
-        key = bytes.fromhex(s)
+    h = hashlib.sha256(key).hexdigest()
+    return h[:8]
+
+
+def get_cached_key_fingerprint(env_var: str = CryptoConfig.env_var) -> Optional[str]:
+    """
+    Return the cached fingerprint for the given env var, if any.
+    Useful for diagnostics without exposing the key.
+    """
+    return _key_fingerprints.get(env_var)
+
+
+# ---------------------------------------------------------------------------
+# Key decoding / loading
+# ---------------------------------------------------------------------------
+
+
+def _decode_key(raw: str) -> bytes:
+    """
+    Decode an AES key from a string.
+
+    Accepts:
+      - hex (32/48/64 hex chars)
+      - base64 (strict)
+      - raw UTF-8 bytes
+    Normalises to 32-byte (AES-256) using SHA256 if needed.
+    """
+    s = raw.strip()
+    key: bytes
+
+    # Try hex if length and charset look plausible.
+    if len(s) in (32, 48, 64) and all(c in "0123456789abcdefABCDEF" for c in s):
+        try:
+            key = bytes.fromhex(s)
+        except ValueError:
+            key = b""  # fall through to other modes
     else:
-        # Try base64; if it fails, treat as UTF-8 bytes directly.
+        key = b""
+
+    if not key:
+        # Try base64
         try:
             key = base64.b64decode(s, validate=True)
         except Exception:
-            key = s.encode("utf-8")
+            # Fallback: treat as UTF-8
+            key = s.encode("utf-8", errors="strict")
 
     if len(key) not in (16, 24, 32):
-        raise ValueError(
+        # We reject obviously wrong lengths here – better fail fast.
+        raise CryptoKeyError(
             f"Invalid AES key length {len(key)} bytes; expected 16/24/32."
         )
 
-    # We standardise on 32 bytes; shorter keys are padded via HKDF-style expansion
-    # here we just rehash via SHA256 on the raw key if needed to keep logic simple.
+    # Standardise on 32 bytes for AES-256 using SHA256, to keep internal code simple.
     if len(key) != _KEY_LEN:
         import hashlib
 
@@ -72,12 +147,17 @@ def _decode_key(raw: str) -> bytes:
 
 
 def load_key_from_env(env_var: str = CryptoConfig.env_var) -> bytes:
+    """
+    Load and cache the AES key from an environment variable.
+
+    Raises CryptoKeyError if the variable is missing or cannot be decoded.
+    """
     if env_var in _key_cache:
         return _key_cache[env_var]
 
     raw = os.getenv(env_var)
     if not raw:
-        raise RuntimeError(
+        raise CryptoKeyError(
             f"Encryption key environment variable '{env_var}' is not set. "
             "Generate a strong random key and set it, e.g.:\n"
             "  export GAITGUARD_FACE_KEY=\"$(openssl rand -hex 32)\""
@@ -85,14 +165,29 @@ def load_key_from_env(env_var: str = CryptoConfig.env_var) -> bytes:
 
     try:
         key = _decode_key(raw)
+    except CryptoKeyError:
+        # Re-raise unchanged.
+        raise
     except Exception as exc:
-        raise RuntimeError(
+        raise CryptoKeyError(
             f"Failed to decode AES key from env var '{env_var}': {exc}"
         ) from exc
 
     _key_cache[env_var] = key
-    logger.info("Loaded AES key from env var '%s' (length=%d bytes).", env_var, len(key))
+    fp = _key_fingerprint(key)
+    _key_fingerprints[env_var] = fp
+    logger.info(
+        "Loaded AES key from env var '%s' (length=%d bytes, fp=%s).",
+        env_var,
+        len(key),
+        fp,
+    )
     return key
+
+
+# ---------------------------------------------------------------------------
+# Core encrypt/decrypt bytes
+# ---------------------------------------------------------------------------
 
 
 def encrypt_bytes(
@@ -102,6 +197,11 @@ def encrypt_bytes(
     env_var: str = CryptoConfig.env_var,
     aad: Optional[bytes] = None,
 ) -> bytes:
+    """
+    Encrypt raw bytes with AES-GCM, adding a custom header.
+
+    Header: MAGIC | VERSION | NONCE
+    """
     _ensure_backend_available()
 
     if not isinstance(plaintext, (bytes, bytearray)):
@@ -128,13 +228,21 @@ def decrypt_bytes(
     env_var: str = CryptoConfig.env_var,
     aad: Optional[bytes] = None,
 ) -> bytes:
+    """
+    Decrypt raw bytes produced by encrypt_bytes.
+
+    Raises:
+      - CryptoKeyError           : if key cannot be loaded.
+      - CryptoVersionError       : if header/version is incompatible.
+      - CryptoCiphertextError    : if authentication fails or ciphertext is invalid.
+    """
     _ensure_backend_available()
 
     if not isinstance(blob, (bytes, bytearray)):
         raise TypeError("decrypt_bytes expects 'bytes' blob.")
 
-    if len(blob) < len(_MAGIC) + 1 + _NONCE_LEN + 16:
-        raise ValueError("Ciphertext too short to be valid.")
+    if len(blob) < _HEADER_LEN + 16:  # 16 = minimum GCM tag size
+        raise CryptoCiphertextError("Ciphertext too short to be valid.")
 
     if key is None:
         key = load_key_from_env(env_var)
@@ -142,12 +250,16 @@ def decrypt_bytes(
     if aad is None:
         aad = b""
 
+    # Header checks
     if blob[: len(_MAGIC)] != _MAGIC:
-        raise ValueError("Invalid ciphertext magic header.")
+        raise CryptoVersionError("Invalid ciphertext magic header.")
 
     version = blob[len(_MAGIC)]
     if version != _VERSION:
-        raise ValueError(f"Unsupported ciphertext version {version}.")
+        raise CryptoVersionError(
+            f"Unsupported ciphertext version {version}; "
+            f"this code expects version={_VERSION}."
+        )
 
     offset = len(_MAGIC) + 1
     nonce = blob[offset : offset + _NONCE_LEN]
@@ -157,7 +269,18 @@ def decrypt_bytes(
     try:
         return aesgcm.decrypt(nonce, ct, aad)
     except Exception as exc:
-        raise RuntimeError(f"Decryption failed or authentication tag invalid: {exc}") from exc
+        # From the outside we cannot distinguish “wrong key” vs “modified file”,
+        # but we make it explicit that integrity/authentication failed.
+        fp = _key_fingerprint(key)
+        raise CryptoCiphertextError(
+            f"Decryption failed or authentication tag invalid "
+            f"(possible key mismatch or corrupted file; key_fp={fp}): {exc}"
+        ) from exc
+
+
+# ---------------------------------------------------------------------------
+# JSON helpers
+# ---------------------------------------------------------------------------
 
 
 def encrypt_json(
@@ -168,7 +291,14 @@ def encrypt_json(
     aad: Optional[bytes] = None,
     ensure_ascii: bool = False,
 ) -> bytes:
-    data = json.dumps(obj, ensure_ascii=ensure_ascii, separators=(",", ":")).encode("utf-8")
+    """
+    Serialize an object as JSON, then encrypt it.
+    """
+    data = json.dumps(
+        obj,
+        ensure_ascii=ensure_ascii,
+        separators=(",", ":"),
+    ).encode("utf-8")
     return encrypt_bytes(data, key=key, env_var=env_var, aad=aad)
 
 
@@ -179,5 +309,17 @@ def decrypt_json(
     env_var: str = CryptoConfig.env_var,
     aad: Optional[bytes] = None,
 ) -> Any:
+    """
+    Decrypt an AES-GCM blob and parse JSON.
+
+    Raises CryptoCiphertextError if decryption or JSON decoding fails.
+    """
     data = decrypt_bytes(blob, key=key, env_var=env_var, aad=aad)
-    return json.loads(data.decode("utf-8"))
+    try:
+        return json.loads(data.decode("utf-8"))
+    except Exception as exc:
+        # At this point, AES-GCM authenticity passed, but the contents are not
+        # valid JSON. Treat it as a corrupted gallery / incompatible format.
+        raise CryptoCiphertextError(
+            f"Decrypted data is not valid JSON: {exc}"
+        ) from exc

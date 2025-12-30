@@ -1,6 +1,6 @@
-
-#face/quality.py
-# Face quality utilities: sharpness, pose, size, combined q_face.
+# face/quality.py
+# Robust full-face quality module for runtime gating and enrollment gating.
+# Produces stable q_face ∈ [0,1] using sharpness, size, pose, brightness, det-score.
 
 from __future__ import annotations
 
@@ -14,13 +14,15 @@ from .config import FaceConfig, FaceThresholdConfig, default_face_config
 
 logger = logging.getLogger(__name__)
 
-# Weights for combining quality components
-_W_DET = 0.4
-_W_SHARP = 0.25
-_W_POSE = 0.2
-_W_SIZE = 0.15
+# ---------------------- Weights for multi-factor fusion ---------------------- #
+_W_DET    = 0.35   # detector confidence
+_W_SHARP  = 0.25   # Laplacian variance (focus)
+_W_POSE   = 0.20   # yaw/pitch frontalness
+_W_SIZE   = 0.15   # face height ratio
+_W_BRIGHT = 0.05   # exposure / brightness sanity check
 
 
+# ------------------------------- utils --------------------------------------- #
 def _clamp01(x: float) -> float:
     if x < 0.0:
         return 0.0
@@ -29,111 +31,172 @@ def _clamp01(x: float) -> float:
     return x
 
 
-def estimate_sharpness(image: np.ndarray) -> float:
+def _to_gray(image: np.ndarray) -> Optional[np.ndarray]:
     """
-    Estimate sharpness using Laplacian-of-variance, mapped to [0, 1].
-    0 → very blurry, 1 → very sharp.
+    Convert image to single-channel uint8 grayscale, or return None if invalid.
     """
     if image is None or image.size == 0:
+        return None
+
+    img = np.asarray(image)
+    if img.ndim == 2:
+        gray = img
+    elif img.ndim == 3 and img.shape[2] == 3:
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    else:
+        logger.warning("Unexpected image shape in quality module: %s", img.shape)
+        return None
+
+    if gray.dtype != np.uint8:
+        gray = np.clip(gray, 0, 255).astype(np.uint8)
+
+    return gray
+
+
+# --------------------------- brightness score -------------------------------- #
+def estimate_brightness_score(image: np.ndarray) -> float:
+    """
+    Simple normalized brightness check.
+    Returns 0 (too dark/too bright) → 1 (ideal brightness).
+    """
+    gray = _to_gray(image)
+    if gray is None:
         return 0.0
 
-    if image.ndim == 3:
-        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    else:
-        gray = image
+    mean = float(np.mean(gray))
+
+    # Target range for "healthy" exposure.
+    # We keep the same spirit as before but ensure it behaves smoothly.
+    ideal_low, ideal_high = 80.0, 170.0
+
+    if mean <= ideal_low:
+        # Too dark → scale 0 → 1 as we approach ideal_low.
+        return _clamp01(mean / max(ideal_low, 1e-6))
+
+    if mean >= ideal_high:
+        # Too bright → scale down from 1 → 0 as we move away from ideal_high.
+        return _clamp01((255.0 - mean) / max(255.0 - ideal_high, 1e-6))
+
+    # Nicely exposed.
+    return 1.0
+
+
+# ------------------------------ sharpness ------------------------------------ #
+def estimate_sharpness(image: np.ndarray) -> float:
+    """
+    Laplacian-of-variance → mapped softly into [0,1].
+
+    High-variance edges → close to 1.
+    Flat / blurred images → close to 0.
+    """
+    gray = _to_gray(image)
+    if gray is None:
+        return 0.0
 
     lap = cv2.Laplacian(gray, cv2.CV_64F)
     var = float(lap.var())
 
-    # Map variance to [0,1] with a soft knee so extremely large values saturate.
-    # The denominator controls how fast we saturate; tuned empirically later.
-    k = 200.0
+    # Soft knee: avoids saturating too quickly. This is not a hard threshold; it
+    # just compresses very large variances so extreme sharpness doesn't dominate.
+    k = 250.0
     sharp = var / (var + k)
     return _clamp01(sharp)
 
 
+# ------------------------------- size score ---------------------------------- #
 def compute_size_score(
     bbox: Tuple[float, float, float, float],
     img_shape: Tuple[int, int, int],
     th: FaceThresholdConfig,
 ) -> float:
     """
-    Size score based on face height relative to image height.
-    0 → too small to be useful, 1 → comfortably large.
+    Score based on face height relative to image height.
+
+    - Faces below min_face_height_px → 0.
+    - Around 25% of the image height → ideal.
+    - Very large faces up to ~60% of image height → still good (slightly boosted).
     """
     x1, y1, x2, y2 = bbox
-    face_h = max(0.0, float(y2 - y1))
+    face_h = float(max(0.0, y2 - y1))
     img_h = float(img_shape[0])
 
     if face_h <= 0.0 or img_h <= 0.0:
         return 0.0
-
     if face_h < th.min_face_height_px:
         return 0.0
 
-    # Ideal: face occupies ~1/6–1/3 of the image height. Above that, saturate.
     ratio = face_h / img_h
     ideal = 0.25
-    max_ratio = 0.6
+    max_ratio = 0.60
 
     if ratio >= max_ratio:
         return 1.0
 
-    # Simple linear scaling up to ideal, then gentle plateau.
     if ratio <= ideal:
-        return _clamp01(ratio / ideal)
-    else:
-        # Between ideal and max_ratio, keep score close to 1 but slightly lower
-        # so extremely zoomed faces don't dominate everything.
-        extra = (ratio - ideal) / max(max_ratio - ideal, 1e-6)
-        return _clamp01(0.9 + 0.1 * extra)
+        return _clamp01(ratio / max(ideal, 1e-6))
+
+    # Slight bonus for larger-but-not-too-large faces.
+    extra = (ratio - ideal) / max(max_ratio - ideal, 1e-6)
+    return _clamp01(0.90 + 0.10 * extra)
 
 
+# ------------------------------- pose score ---------------------------------- #
 def compute_pose_score(
     yaw: Optional[float],
     pitch: Optional[float],
     th: FaceThresholdConfig,
 ) -> float:
     """
-    Pose score in [0,1] where 1 is frontal and 0 is extreme angles.
-    Uses simple clamped linear penalties based on yaw and pitch.
+    Score for head pose based on yaw and pitch.
+
+    - 1.0 for perfectly frontal faces.
+    - Gradual decay as we approach max_yaw_deg / max_pitch_deg.
+    - 0.0 for poses beyond those maximums.
+
+    This is used both:
+      - for runtime gating (q_runtime),
+      - and as a signal for 3D: we still keep side views if they are within
+        configured limits; we just score them lower quality.
     """
     if yaw is None or pitch is None:
-        # If we can't estimate pose, be conservative but not too harsh.
-        return 0.6
+        # No pose info: neutral but slightly conservative.
+        return 0.55
 
     ay = abs(float(yaw))
     ap = abs(float(pitch))
 
-    # Yaw penalty
+    # Yaw
     if ay >= th.max_yaw_deg:
         sy = 0.0
     else:
         sy = 1.0 - ay / max(th.max_yaw_deg, 1e-6)
 
-    # Pitch penalty
+    # Pitch
     if ap >= th.max_pitch_deg:
         sp = 0.0
     else:
         sp = 1.0 - ap / max(th.max_pitch_deg, 1e-6)
 
-    # Slightly more weight to yaw (side turns are more problematic than small nods).
+    # Yaw is more important than pitch for face recognition robustness.
     score = 0.6 * sy + 0.4 * sp
     return _clamp01(score)
 
 
+# ---------------------------- combine factors -------------------------------- #
 def combine_face_quality(
     det_score: float,
     sharpness: float,
     pose_score: float,
     size_score: float,
+    brightness: float,
     th: Optional[FaceThresholdConfig] = None,
 ) -> float:
     """
-    Combine detector confidence, sharpness, pose and size into q_face ∈ [0,1].
+    Fuse all quality factors into a single q ∈ [0,1].
 
-    This does not itself apply MIN_QUALITY_FOR_EMBED; callers can compare the
-    returned value against FaceThresholdConfig.min_quality_for_embed.
+    This is the central gate used by:
+      - enrollment (q_enroll, q_embed),
+      - runtime identity (q_runtime).
     """
     th = th or default_face_config().thresholds
 
@@ -141,21 +204,25 @@ def combine_face_quality(
     sh = _clamp01(sharpness)
     ps = _clamp01(pose_score)
     sz = _clamp01(size_score)
+    br = _clamp01(brightness)
 
-    # If detector score is below minimum, strongly penalise everything.
+    # Hard-filter: if detection confidence too low → total failure.
     if ds < th.min_det_score:
         return 0.0
 
+    # Weighted sum of all factors.
     q = (
-        _W_DET * ds
-        + _W_SHARP * sh
-        + _W_POSE * ps
-        + _W_SIZE * sz
+        _W_DET    * ds +
+        _W_SHARP  * sh +
+        _W_POSE   * ps +
+        _W_SIZE   * sz +
+        _W_BRIGHT * br
     )
 
     return _clamp01(q)
 
 
+# --------------------------- full quality API -------------------------------- #
 def compute_full_quality(
     image: np.ndarray,
     bbox: Tuple[float, float, float, float],
@@ -165,8 +232,16 @@ def compute_full_quality(
     cfg: Optional[FaceConfig] = None,
 ) -> float:
     """
-    Convenience helper: from raw inputs (image, bbox, det score, pose)
-    compute full q_face in one call.
+    Full face-quality pipeline:
+      sharpness + pose + size + brightness fused with detector score.
+
+    Returns
+    -------
+    q : float
+        Quality in [0,1].
+
+    This function is used both at enrollment and at runtime, so it defines the
+    common "language" for quality in the whole system (2D + 3D).
     """
     cfg = cfg or default_face_config()
     th = cfg.thresholds
@@ -174,11 +249,41 @@ def compute_full_quality(
     sharp = estimate_sharpness(image)
     size = compute_size_score(bbox, image.shape, th)
     pose = compute_pose_score(yaw, pitch, th)
+    bright = estimate_brightness_score(image)
 
     return combine_face_quality(
         det_score=det_score,
         sharpness=sharp,
         pose_score=pose,
         size_score=size,
+        brightness=bright,
         th=th,
+    )
+
+
+# ---------- convenience helper for FaceCandidate (enrollment + runtime) ----- #
+def compute_quality_from_candidate(
+    full_frame_bgr: np.ndarray,
+    bbox: Tuple[float, float, float, float],
+    det_score: float,
+    yaw: Optional[float],
+    pitch: Optional[float],
+    cfg: Optional[FaceConfig] = None,
+) -> float:
+    """
+    Convenience wrapper to compute quality from the same ingredients that a
+    FaceCandidate carries.
+
+    This keeps enrollment and runtime usage consistent:
+      - both use the same q_face logic,
+      - 3D logic can later reuse q_face for deciding which samples are allowed
+        to update multi-view head models.
+    """
+    return compute_full_quality(
+        image=full_frame_bgr,
+        bbox=bbox,
+        det_score=det_score,
+        yaw=yaw,
+        pitch=pitch,
+        cfg=cfg,
     )
