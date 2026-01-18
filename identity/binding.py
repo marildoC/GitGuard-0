@@ -378,21 +378,21 @@ class BindingManager:
                 
                 is_connected = False
                 
-                # Tier 1: Strong absolute match
-                if (e.score >= self._get_threshold('confirmation.min_avg_score', 0.60) and 
-                    e.margin >= self._get_threshold('confirmation.min_avg_margin', 0.05)):
+                # Tier 1: Strong absolute match (RELAXED for faster recognition)
+                if (e.score >= self._get_threshold('confirmation.min_avg_score', 0.45) and 
+                    e.margin >= self._get_threshold('confirmation.min_avg_margin', 0.02)):
                     is_connected = True
                     
                 # Tier 2: Weaker match but highly distinct (High Margin)
                 # This handles poor lighting/angles where score drops but it's clearly NOT anyone else
-                elif (e.score >= 0.50 and e.margin >= 0.20):
+                elif (e.score >= 0.45 and e.margin >= 0.10):
                     is_connected = True
                 
-                # Check quality gate for any strong sample
-                if is_connected and e.quality >= self._get_threshold('confirmation.min_quality_for_strong', 0.50):
+                # Check quality gate for any strong sample (RELAXED for instant recognition)
+                if is_connected and e.quality >= self._get_threshold('confirmation.min_quality_for_strong', 0.40):
                      strong_samples.append(e)
             
-            min_samples = self._get_threshold('confirmation.min_samples_strong', 3)
+            min_samples = self._get_threshold('confirmation.min_samples_strong', 1)
             window_sec = self._get_threshold('confirmation.window_seconds', 3.0)
             
             # Check if all strong samples are recent and same person

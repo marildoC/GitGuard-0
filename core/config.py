@@ -104,7 +104,7 @@ class EvidenceGateConfig:
 @dataclass
 class BindingConfirmationRules:
     """Rules for confirming identity (Phase C)"""
-    min_samples_strong: int = 3
+    min_samples_strong: int = 1
     min_samples_weak: int = 5
     window_seconds: float = 3.0
     min_avg_score: float = 0.75

@@ -177,10 +177,12 @@ governance:
     
     # Confirmation rules (first time locking onto a person)
     confirmation:
-      min_samples_strong: 3               # 3 strong samples (dist < 0.75) to confirm
-      min_samples_weak: 5                 # 5 weak samples (dist < 0.88) to confirm
+      min_samples_strong: 1               # 1 strong sample to confirm (instant recognition)
+      min_samples_weak: 3                 # 3 weak samples to confirm
       window_seconds: 3.0                 # All samples within 3 seconds
-      min_avg_score: 0.75                 # Average distance must be < 0.75
+      min_avg_score: 0.45                 # Score must be >= 0.45 (relaxed for quick recognition)
+      min_avg_margin: 0.02                # Margin must be >= 0.02 (very relaxed)
+      min_quality_for_strong: 0.40        # Quality threshold for strong sample
     
     # Switching rules (changing to a different person)
     switching:
