@@ -1,169 +1,195 @@
 # GaitGuard
 
-GaitGuard is a real-time identity and risk intelligence system designed for public-space security use cases.  
-It aims to detect and track people in crowds, identify them reliably using face and gait, and raise tiered alerts for high-risk events (e.g., weapons, fights, fallen person) while prioritizing low false-alarm behavior.
+GaitGuard is a research-oriented identity and risk intelligence system designed for public-space security scenarios.
 
-This repository represents an evolving implementation and design of that concept. The focus is on building a system that is operationally useful: conservative decisions, clear categories, and real-time feedback.
+The project explores how **face recognition, gait-based identity cues, and behavioral analysis** can be combined to improve identity reliability and reduce false alarms in crowded environments. The system is designed with a conservative, evidence-driven philosophy: identity and risk decisions should only be produced when sufficient confidence is available.
 
----
-
-## What GaitGuard Is
-
-GaitGuard has two primary missions:
-
-1. **Real-time identification** of people in video streams (single camera first, scalable later).
-2. **Real-time understanding of risk events** around those people, with actionable alerts.
-
-GaitGuard is **identity-centric**: it does not only detect “events” in video; it tries to answer:
-- **Who is this person (if known)?**
-- **What is happening right now (if risky)?**
-- **How confident is the system, and should it alert or stay conservative?**
+This repository represents an **evolving implementation and system design**, developed incrementally with a strong focus on real-time feasibility and operational clarity.
 
 ---
 
-## Core Idea: Identity in Crowds
+## Project Vision
 
-GaitGuard operates in scenes with multiple people, not just one subject.  
-The system continuously:
+GaitGuard is built around two long-term objectives:
 
-- Detects people
-- Tracks them across frames (stable track IDs)
-- Extracts identity signals per track
-- Fuses the signals into a decision (or refuses to decide when uncertain)
+1. **Identity awareness in crowds**  
+   Associating observed individuals with known identities when possible, and explicitly rejecting or deferring decisions when confidence is insufficient.
 
-A key design rule is:
+2. **Risk understanding around individuals**  
+   Detecting potentially dangerous situations (e.g., weapons, violence, fallen persons) while minimizing false alarms through temporal reasoning.
 
-> If confidence is weak, the system should avoid forcing an identity decision.  
-> It is better to remain “unchecked/unknown” than to generate a false alarm.
+Rather than reacting to single frames, the system reasons over **time, identity continuity, and confidence stability**.
 
 ---
 
-## Enrollment Concept (Passport-Style)
+## Core Principle
 
-GaitGuard assumes a concept of **enrollment**, where identities are added to the system in a controlled way.
+> When confidence is weak, the system should not force a decision.
 
-A typical enrollment session can include:
+GaitGuard prioritizes **conservative behavior**:
+- remaining unknown when biometric evidence is insufficient
+- requiring multi-frame confirmation
+- favoring delayed but reliable decisions over fast incorrect ones
 
-- **Face captures** under multiple variations (neutral/expression, with/without glasses, with/without cap, slight yaw/pitch)
-- **A short walking capture** (5–10 seconds) to seed a gait/motion identity
-- **Basic profile metadata** (e.g., internal ID, approximate height)
-
-The enrollment produces compact biometric templates that the live pipeline can match against later.
-
----
-
-## Live Pipeline (High-Level)
-
-At runtime, every camera frame is processed with this logic:
-
-1. **Detect & Track People**
-   - Every visible person becomes a tracked “tracklet” with short history.
-
-2. **Face Route (when face is visible)**
-   - Extract face features and attempt identification against the enrolled face gallery.
-
-3. **Gait / Motion Route (when face is weak/occluded)**
-   - Use body pose / movement patterns over a short window to attempt identity matching.
-
-4. **Evidence Fusion**
-   - Combine multiple signals (face, gait/motion, appearance) into a single confidence decision.
-   - If confidence is not sufficient, the system stays conservative.
-
-5. **Category Overlay**
-   - Each tracked person is labeled with a category color in real time.
-
-6. **Risk Event Understanding (parallel)**
-   - Detect weapons / fights / fallen-person conditions using multi-frame confirmation logic.
-
-7. **Alert + Evidence**
-   - When thresholds are met, generate alerts with context (clip, time, location/camera).
+This philosophy guides all identity and event modules.
 
 ---
 
-## Categories (Operational Semantics)
+## Identity-Centric Design
 
-GaitGuard uses clear, operator-friendly categories:
+GaitGuard is not purely event-driven.  
+Instead, it is **identity-centric**.
 
-- **Green** — enrolled resident / known safe identity
-- **Blue** — enrolled visitor/tourist identity (registered when entering the country/system)
-- **Red / Dark-Red** — watch-list subject (severity encoded)
-- **White** — unknown identity (no match when sufficient biometric signal exists)
+For each tracked person in the scene, the system attempts to answer:
 
-Important note:
+- Who is this person (if enrolled)?
+- How confident is the identity hypothesis?
+- What is happening around this person?
+- Should an alert be raised or suppressed?
 
-- **“White” is not the same as “uncertain.”**  
-  If the system cannot see enough signal (face/gait not visible), it should remain conservative rather than automatically labeling “White”.
-
----
-
-## Continuous Learning (System Improves Over Time)
-
-When an identity is confirmed (by internal high confidence or by an operator), the system can update templates over time.  
-This supports real-world variation:
-
-- different clothes, shoes, bags
-- different speeds and walking styles
-- different camera viewpoints (front/side/behind)
-
-The goal is gradual adaptation while still controlling false positives.
+Each person is treated as a persistent entity rather than a sequence of unrelated detections.
 
 ---
 
-## Risk Events (Weapons, Fights, Fallen Person)
+## High-Level System Flow
 
-Risk detection runs **in parallel** with identity recognition.
+At runtime, video streams are processed as follows:
 
-Key principle:
+1. **Person Detection and Tracking**
+   - Individuals are detected and assigned persistent track IDs.
+   - Each track maintains short temporal history.
 
-> Event decisions must be multi-frame and conservative to avoid false alarms.
+2. **Identity Signal Extraction (when available)**
+   - Face information is analyzed when visible.
+   - Body motion and gait cues are analyzed when facial information is weak or absent.
 
-Examples:
-- **Weapon detection** requires repeated confirmation across frames.
-- **Fight/violence detection** should rely on short temporal windows, not single images.
-- **Fallen person detection** should use posture + stillness duration (to distinguish from sitting/resting).
+3. **Evidence Accumulation**
+   - Identity hypotheses are accumulated over time.
+   - Weak or conflicting evidence is filtered conservatively.
 
-Alerts are tiered based on:
-- category (e.g., watch-list severity)
-- identity confidence
-- event type and confirmation strength
+4. **Decision Stabilization**
+   - Identity changes require stronger evidence than initial confirmation.
+   - Identity flickering is avoided through temporal hysteresis.
 
----
+5. **Category Assignment**
+   - Tracks are labeled using intuitive operator-facing categories.
 
-## Current Status (Practical Milestone)
-
-This repository is being developed incrementally with a clear pipeline target.  
-A current milestone is:
-
-- **Real-time person detection from webcam is validated**
-- The system is ready for the next stages:
-  - face identity gallery + matching
-  - gait/pose extraction and gait identity route
-  - fusion logic + category overlay
-  - event modules + alert state machine
+6. **Risk Event Analysis (parallel)**
+   - Event modules operate independently but may condition alert severity on identity context.
 
 ---
 
-## Goals
+## Operational Categories
 
-GaitGuard is designed to be:
+GaitGuard uses explicit, human-readable categories:
 
-- **Robust in crowds**
-- **Accurate-first**, but mindful of real-time performance
-- **Conservative by default** (avoid misidentification and false alarms)
-- **Operationally usable**, with clear categories and evidence-based alerts
-- **Extensible**, so modules can evolve (face-only → face+gait → full identity+events)
+- **Green** — known enrolled resident / trusted identity  
+- **Blue** — known temporary or visitor identity  
+- **Red / Dark-Red** — watch-list identity (severity encoded)  
+- **White** — unknown identity (no valid match found)
+
+Important distinction:
+
+- *Unknown* does not imply threat.
+- If biometric signals are insufficient, the system remains undecided rather than assigning a misleading label.
+
+---
+
+## Enrollment Concept
+
+The system assumes a controlled enrollment process.
+
+A typical enrollment session may include:
+
+- Face captures under mild pose and appearance variations
+- Short walking sequences to initialize gait identity
+- Optional metadata (internal ID, approximate height)
+
+Enrollment produces compact biometric templates that can later be matched during live operation.
+
+Template updates are designed to be **controlled and traceable**, avoiding uncontrolled drift.
+
+---
+
+## Identity Over Time
+
+GaitGuard is designed to improve identity reliability through time:
+
+- multiple observations reduce noise
+- confirmation requires persistence
+- identity switching requires stronger counter-evidence
+
+This temporal reasoning is essential for real-world deployments where single-frame recognition is unreliable.
+
+---
+
+## Risk Event Understanding
+
+Risk analysis operates in parallel to identity recognition.
+
+Target events include:
+
+- weapon presence
+- physical altercations
+- fallen or motionless individuals
+
+All event decisions are:
+
+- multi-frame
+- confidence-based
+- resistant to transient visual artifacts
+
+Alert severity may depend on:
+- identity category
+- event persistence
+- confidence strength
+
+---
+
+## Current Development Status
+
+This repository is under active development and represents an **incremental build**.
+
+Current progress includes:
+
+- validated real-time person detection
+- stable multi-person tracking
+- foundational pipeline structure
+
+Planned development stages include:
+
+- face identity gallery and matching
+- gait and motion-based identity cues
+- identity fusion logic
+- category overlay and visualization
+- event modules and alert state machines
+
+Not all components described here are fully implemented yet; the README documents the **intended system architecture and design direction**.
+
+---
+
+## Design Goals
+
+GaitGuard aims to be:
+
+- conservative by default  
+- robust in crowded environments  
+- identity-aware rather than frame-driven  
+- extensible for additional biometric or behavioral cues  
+- suitable for long-term monitoring scenarios  
 
 ---
 
 ## Repository Notes
 
-- This project evolves through iterations and branches.
-- The README describes the **system concept and logic** (not an exhaustive technical specification).
-- Implementation details and technical documentation may be added progressively as modules stabilize.
+- This project is developed as a research and engineering prototype.
+- The README documents system logic and design intent.
+- Detailed technical documentation and module-level descriptions may be added progressively as implementations stabilize.
 
 ---
 
-## License / Usage
+## Ethical and Legal Notice
 
-This project is a research and development effort.  
-If you plan to deploy similar systems in real environments, ensure compliance with applicable laws and ethical requirements regarding biometric identification, privacy, and surveillance.
+GaitGuard is intended strictly for research and academic exploration.
+
+Any real-world deployment of biometric systems must comply with applicable legal, ethical, and privacy regulations governing surveillance and biometric identification.
